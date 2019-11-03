@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a747c059306bbc70ec4a1b96e0fa78faf:
+
+Function init_module
+====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: init_module()

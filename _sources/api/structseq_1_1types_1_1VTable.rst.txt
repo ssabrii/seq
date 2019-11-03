@@ -1,0 +1,16 @@
+.. _exhale_struct_structseq_1_1types_1_1VTable:
+
+Struct VTable
+=============
+
+- Defined in :ref:`file_compiler_include_seq_types.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: seq::types::VTable
+   :members:
+   :protected-members:
+   :undoc-members:

@@ -1,0 +1,51 @@
+.. _exhale_class_classseq_1_1Stmt:
+
+Class Stmt
+==========
+
+- Defined in :ref:`file_compiler_include_seq_stmt.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public seq::SrcObject`` (:ref:`exhale_struct_structseq_1_1SrcObject`)
+
+
+Derived Types
+*************
+
+- ``public seq::Assert`` (:ref:`exhale_class_classseq_1_1Assert`)
+- ``public seq::Assign`` (:ref:`exhale_class_classseq_1_1Assign`)
+- ``public seq::AssignIndex`` (:ref:`exhale_class_classseq_1_1AssignIndex`)
+- ``public seq::AssignMember`` (:ref:`exhale_class_classseq_1_1AssignMember`)
+- ``public seq::Break`` (:ref:`exhale_class_classseq_1_1Break`)
+- ``public seq::Continue`` (:ref:`exhale_class_classseq_1_1Continue`)
+- ``public seq::Del`` (:ref:`exhale_class_classseq_1_1Del`)
+- ``public seq::DelIndex`` (:ref:`exhale_class_classseq_1_1DelIndex`)
+- ``public seq::ExprStmt`` (:ref:`exhale_class_classseq_1_1ExprStmt`)
+- ``public seq::For`` (:ref:`exhale_class_classseq_1_1For`)
+- ``public seq::FuncStmt`` (:ref:`exhale_class_classseq_1_1FuncStmt`)
+- ``public seq::If`` (:ref:`exhale_class_classseq_1_1If`)
+- ``public seq::Match`` (:ref:`exhale_class_classseq_1_1Match`)
+- ``public seq::Prefetch`` (:ref:`exhale_class_classseq_1_1Prefetch`)
+- ``public seq::Print`` (:ref:`exhale_class_classseq_1_1Print`)
+- ``public seq::Return`` (:ref:`exhale_class_classseq_1_1Return`)
+- ``public seq::Throw`` (:ref:`exhale_class_classseq_1_1Throw`)
+- ``public seq::TryCatch`` (:ref:`exhale_class_classseq_1_1TryCatch`)
+- ``public seq::VarStmt`` (:ref:`exhale_class_classseq_1_1VarStmt`)
+- ``public seq::While`` (:ref:`exhale_class_classseq_1_1While`)
+- ``public seq::Yield`` (:ref:`exhale_class_classseq_1_1Yield`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::Stmt
+   :members:
+   :protected-members:
+   :undoc-members:

@@ -1,0 +1,262 @@
+
+.. _namespace_seq:
+
+Namespace seq
+=============
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_seq__exc`
+
+- :ref:`namespace_seq__types`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structseq_1_1Block`
+
+- :ref:`exhale_struct_structseq_1_1MagicMethod`
+
+- :ref:`exhale_struct_structseq_1_1MagicOverload`
+
+- :ref:`exhale_struct_structseq_1_1Op`
+
+- :ref:`exhale_struct_structseq_1_1SrcInfo`
+
+- :ref:`exhale_struct_structseq_1_1SrcObject`
+
+- :ref:`exhale_class_classseq_1_1ArrayContainsExpr`
+
+- :ref:`exhale_class_classseq_1_1ArrayExpr`
+
+- :ref:`exhale_class_classseq_1_1ArrayLookupExpr`
+
+- :ref:`exhale_class_classseq_1_1ArrayPattern`
+
+- :ref:`exhale_class_classseq_1_1ArraySliceExpr`
+
+- :ref:`exhale_class_classseq_1_1Assert`
+
+- :ref:`exhale_class_classseq_1_1Assign`
+
+- :ref:`exhale_class_classseq_1_1AssignIndex`
+
+- :ref:`exhale_class_classseq_1_1AssignMember`
+
+- :ref:`exhale_class_classseq_1_1AtomicExpr`
+
+- :ref:`exhale_class_classseq_1_1BaseFunc`
+
+- :ref:`exhale_class_classseq_1_1BaseFuncLite`
+
+- :ref:`exhale_class_classseq_1_1BlankExpr`
+
+- :ref:`exhale_class_classseq_1_1BoolExpr`
+
+- :ref:`exhale_class_classseq_1_1BoolPattern`
+
+- :ref:`exhale_class_classseq_1_1BOpExpr`
+
+- :ref:`exhale_class_classseq_1_1BoundPattern`
+
+- :ref:`exhale_class_classseq_1_1Break`
+
+- :ref:`exhale_class_classseq_1_1CallExpr`
+
+- :ref:`exhale_class_classseq_1_1CondExpr`
+
+- :ref:`exhale_class_classseq_1_1ConstructExpr`
+
+- :ref:`exhale_class_classseq_1_1Continue`
+
+- :ref:`exhale_class_classseq_1_1DefaultExpr`
+
+- :ref:`exhale_class_classseq_1_1Del`
+
+- :ref:`exhale_class_classseq_1_1DelIndex`
+
+- :ref:`exhale_class_classseq_1_1DictCompExpr`
+
+- :ref:`exhale_class_classseq_1_1DictExpr`
+
+- :ref:`exhale_class_classseq_1_1Expr`
+
+- :ref:`exhale_class_classseq_1_1ExprStmt`
+
+- :ref:`exhale_class_classseq_1_1FloatExpr`
+
+- :ref:`exhale_class_classseq_1_1For`
+
+- :ref:`exhale_class_classseq_1_1Func`
+
+- :ref:`exhale_class_classseq_1_1FuncExpr`
+
+- :ref:`exhale_class_classseq_1_1FuncStmt`
+
+- :ref:`exhale_class_classseq_1_1Generic`
+
+- :ref:`exhale_class_classseq_1_1GenExpr`
+
+- :ref:`exhale_class_classseq_1_1GetElemExpr`
+
+- :ref:`exhale_class_classseq_1_1GetStaticElemExpr`
+
+- :ref:`exhale_class_classseq_1_1GuardedPattern`
+
+- :ref:`exhale_class_classseq_1_1If`
+
+- :ref:`exhale_class_classseq_1_1IntExpr`
+
+- :ref:`exhale_class_classseq_1_1IntPattern`
+
+- :ref:`exhale_class_classseq_1_1IsExpr`
+
+- :ref:`exhale_class_classseq_1_1ListCompExpr`
+
+- :ref:`exhale_class_classseq_1_1ListExpr`
+
+- :ref:`exhale_class_classseq_1_1Match`
+
+- :ref:`exhale_class_classseq_1_1MatchExpr`
+
+- :ref:`exhale_class_classseq_1_1MethodExpr`
+
+- :ref:`exhale_class_classseq_1_1NoneExpr`
+
+- :ref:`exhale_class_classseq_1_1OptExpr`
+
+- :ref:`exhale_class_classseq_1_1OptPattern`
+
+- :ref:`exhale_class_classseq_1_1OrPattern`
+
+- :ref:`exhale_class_classseq_1_1PartialCallExpr`
+
+- :ref:`exhale_class_classseq_1_1Pattern`
+
+- :ref:`exhale_class_classseq_1_1PipeExpr`
+
+- :ref:`exhale_class_classseq_1_1Prefetch`
+
+- :ref:`exhale_class_classseq_1_1Print`
+
+- :ref:`exhale_class_classseq_1_1RangePattern`
+
+- :ref:`exhale_class_classseq_1_1RCache`
+
+- :ref:`exhale_class_classseq_1_1RecordExpr`
+
+- :ref:`exhale_class_classseq_1_1RecordPattern`
+
+- :ref:`exhale_class_classseq_1_1Return`
+
+- :ref:`exhale_class_classseq_1_1SeqExpr`
+
+- :ref:`exhale_class_classseq_1_1SeqModule`
+
+- :ref:`exhale_class_classseq_1_1SeqPattern`
+
+- :ref:`exhale_class_classseq_1_1SetCompExpr`
+
+- :ref:`exhale_class_classseq_1_1SetExpr`
+
+- :ref:`exhale_class_classseq_1_1StarPattern`
+
+- :ref:`exhale_class_classseq_1_1Stmt`
+
+- :ref:`exhale_class_classseq_1_1StrExpr`
+
+- :ref:`exhale_class_classseq_1_1StrPattern`
+
+- :ref:`exhale_class_classseq_1_1Throw`
+
+- :ref:`exhale_class_classseq_1_1TryCatch`
+
+- :ref:`exhale_class_classseq_1_1TypeExpr`
+
+- :ref:`exhale_class_classseq_1_1TypeOfExpr`
+
+- :ref:`exhale_class_classseq_1_1UOpExpr`
+
+- :ref:`exhale_class_classseq_1_1ValueExpr`
+
+- :ref:`exhale_class_classseq_1_1Var`
+
+- :ref:`exhale_class_classseq_1_1VarExpr`
+
+- :ref:`exhale_class_classseq_1_1VarPtrExpr`
+
+- :ref:`exhale_class_classseq_1_1VarStmt`
+
+- :ref:`exhale_class_classseq_1_1While`
+
+- :ref:`exhale_class_classseq_1_1Wildcard`
+
+- :ref:`exhale_class_classseq_1_1Yield`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_ops_8h_1aee37aa70c83a5818b36c41145b517525`
+
+- :ref:`exhale_function_seq_8h_1ab91cf63d5897c85920299a22b7fae18a`
+
+- :ref:`exhale_function_seq_8h_1afba990a18eeb85dac25b10fbfe1bb0e7`
+
+- :ref:`exhale_function_parser_8h_1adf669f351177432082e45446b45c924b`
+
+- :ref:`exhale_function_parser_8h_1a73c88ebe2109ec86c2aab44827b861af`
+
+- :ref:`exhale_function_parser_8h_1a9e2f86b2a63829708ef7581d641d18cc`
+
+- :ref:`exhale_function_common_8h_1ac92314b01940206c022e1dbaab732795`
+
+- :ref:`exhale_function_common_8h_1af8735153f37becf7577ba16b592fc0ee`
+
+- :ref:`exhale_function_common_8h_1a46b4da56836070fdf858b7a89b758850`
+
+- :ref:`exhale_function_common_8h_1a5421f66f584562fce8c12205b91ac149`
+
+- :ref:`exhale_function_common_8h_1a3f2e836c830e5ff161e4d810bfc12f7f`
+
+- :ref:`exhale_function_common_8h_1ab8ba733f60e2589110adca1a66f73f24`
+
+- :ref:`exhale_function_common_8h_1a1296616979d2d04d22c89d6332a37752`
+
+- :ref:`exhale_function_common_8h_1a2892047209fe9beb3b42b36e2608f370`
+
+- :ref:`exhale_function_common_8h_1a46c6677f301448fcd4168c6a02f722cd`
+
+- :ref:`exhale_function_common_8h_1aafe8c48ec16adb9f8d7b99a49dbbde22`
+
+- :ref:`exhale_function_common_8h_1acef9e0810281c168e7473b324bb2ad15`
+
+- :ref:`exhale_function_common_8h_1a1839d912434635ce5b8d87dcd7d86747`
+
+- :ref:`exhale_function_common_8h_1a58650077835964bebab82a42d670519d`
+
+- :ref:`exhale_function_parser_8h_1a89acf1ec7074e57445e89f607cd30372`
+
+- :ref:`exhale_function_parser_8h_1a4abf9cff27d3d1c539d4b33177a985c4`
+
+- :ref:`exhale_function_common_8h_1ac51c5a784ab114e324a69402a9b47c84`
+
+- :ref:`exhale_function_generic_8h_1af12c6e360abb72b3ed4812e982834c30`
+
+- :ref:`exhale_function_ops_8h_1a985c6b0de6caa845e716061e4a6636f5`
+
+- :ref:`exhale_function_common_8h_1ad713823906a0d1537a8d1c1500f8a6e4`

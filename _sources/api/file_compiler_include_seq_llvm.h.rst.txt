@@ -1,0 +1,119 @@
+
+.. _file_compiler_include_seq_llvm.h:
+
+File llvm.h
+===========
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_include_seq>` (``compiler/include/seq``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/include/seq/llvm.h``)
+--------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_include_seq_llvm.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``llvm/ADT/StringRef.h``
+
+- ``llvm/ADT/Triple.h``
+
+- ``llvm/Analysis/TargetLibraryInfo.h``
+
+- ``llvm/Analysis/TargetTransformInfo.h``
+
+- ``llvm/Bitcode/BitcodeWriter.h``
+
+- ``llvm/CodeGen/TargetPassConfig.h``
+
+- ``llvm/ExecutionEngine/ExecutionEngine.h``
+
+- ``llvm/ExecutionEngine/GenericValue.h``
+
+- ``llvm/ExecutionEngine/JITSymbol.h``
+
+- ``llvm/ExecutionEngine/MCJIT.h``
+
+- ``llvm/ExecutionEngine/OrcMCJITReplacement.h``
+
+- ``llvm/ExecutionEngine/SectionMemoryManager.h``
+
+- ``llvm/IR/Argument.h``
+
+- ``llvm/IR/BasicBlock.h``
+
+- ``llvm/IR/Constants.h``
+
+- ``llvm/IR/DataLayout.h``
+
+- ``llvm/IR/DerivedTypes.h``
+
+- ``llvm/IR/Function.h``
+
+- ``llvm/IR/IRBuilder.h``
+
+- ``llvm/IR/InstrTypes.h``
+
+- ``llvm/IR/Instructions.h``
+
+- ``llvm/IR/LLVMContext.h``
+
+- ``llvm/IR/LegacyPassManager.h``
+
+- ``llvm/IR/LegacyPassNameParser.h``
+
+- ``llvm/IR/Module.h``
+
+- ``llvm/IR/Type.h``
+
+- ``llvm/IR/Verifier.h``
+
+- ``llvm/Support/Casting.h``
+
+- ``llvm/Support/DynamicLibrary.h``
+
+- ``llvm/Support/TargetRegistry.h``
+
+- ``llvm/Support/TargetSelect.h``
+
+- ``llvm/Support/raw_ostream.h``
+
+- ``llvm/Target/TargetMachine.h``
+
+- ``llvm/Transforms/Coroutines.h``
+
+- ``llvm/Transforms/IPO.h``
+
+- ``llvm/Transforms/IPO/PassManagerBuilder.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_compiler_include_seq_types.h`
+
+- :ref:`file_compiler_include_seq_common.h`
+
+- :ref:`file_compiler_include_seq_stmt.h`
+
+- :ref:`file_compiler_include_seq_seq.h`
+
+
+

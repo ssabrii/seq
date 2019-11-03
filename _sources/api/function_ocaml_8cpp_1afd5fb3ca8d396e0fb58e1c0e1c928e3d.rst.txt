@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1afd5fb3ca8d396e0fb58e1c0e1c928e3d:
+
+Function get_type
+=================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get_type(Expr *)

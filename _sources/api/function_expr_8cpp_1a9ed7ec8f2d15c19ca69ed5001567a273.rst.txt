@@ -1,0 +1,13 @@
+.. _exhale_function_expr_8cpp_1a9ed7ec8f2d15c19ca69ed5001567a273:
+
+Function translateIndex
+=======================
+
+- Defined in :ref:`file_compiler_lang_expr.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: translateIndex(seq_int_t, seq_int_t, bool)

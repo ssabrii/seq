@@ -1,0 +1,202 @@
+
+.. _file_compiler_include_seq_seq.h:
+
+File seq.h
+==========
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_include_seq>` (``compiler/include/seq``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/include/seq/seq.h``)
+-------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_include_seq_seq.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``any.h`` (:ref:`file_compiler_include_seq_any.h`)
+
+- ``array.h`` (:ref:`file_compiler_include_seq_array.h`)
+
+- ``base.h`` (:ref:`file_compiler_include_seq_base.h`)
+
+- ``common.h`` (:ref:`file_compiler_include_seq_common.h`)
+
+- ``cstdint``
+
+- ``cstdlib``
+
+- ``expr.h`` (:ref:`file_compiler_include_seq_expr.h`)
+
+- ``func.h`` (:ref:`file_compiler_include_seq_func.h`)
+
+- ``funct.h`` (:ref:`file_compiler_include_seq_funct.h`)
+
+- ``generic.h`` (:ref:`file_compiler_include_seq_generic.h`)
+
+- ``lang.h`` (:ref:`file_compiler_include_seq_lang.h`)
+
+- ``llvm.h`` (:ref:`file_compiler_include_seq_llvm.h`)
+
+- ``map``
+
+- ``memory``
+
+- ``num.h`` (:ref:`file_compiler_include_seq_num.h`)
+
+- ``ops.h`` (:ref:`file_compiler_include_seq_ops.h`)
+
+- ``optional.h`` (:ref:`file_compiler_include_seq_optional.h`)
+
+- ``patterns.h`` (:ref:`file_compiler_include_seq_patterns.h`)
+
+- ``ptr.h`` (:ref:`file_compiler_include_seq_ptr.h`)
+
+- ``record.h`` (:ref:`file_compiler_include_seq_record.h`)
+
+- ``ref.h`` (:ref:`file_compiler_include_seq_ref.h`)
+
+- ``seqt.h`` (:ref:`file_compiler_include_seq_seqt.h`)
+
+- ``string``
+
+- ``types.h`` (:ref:`file_compiler_include_seq_types.h`)
+
+- ``var.h`` (:ref:`file_compiler_include_seq_var.h`)
+
+- ``vector``
+
+- ``void.h`` (:ref:`file_compiler_include_seq_void.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_compiler_include_seq_parser.h`
+
+- :ref:`file_compiler_lang_expr.cpp`
+
+- :ref:`file_compiler_lang_func.cpp`
+
+- :ref:`file_compiler_lang_lang.cpp`
+
+- :ref:`file_compiler_lang_ops.cpp`
+
+- :ref:`file_compiler_lang_patterns.cpp`
+
+- :ref:`file_compiler_lang_seq.cpp`
+
+- :ref:`file_compiler_lang_stmt.cpp`
+
+- :ref:`file_compiler_lang_var.cpp`
+
+- :ref:`file_compiler_types_any.cpp`
+
+- :ref:`file_compiler_types_array.cpp`
+
+- :ref:`file_compiler_types_base.cpp`
+
+- :ref:`file_compiler_types_funct.cpp`
+
+- :ref:`file_compiler_types_generic.cpp`
+
+- :ref:`file_compiler_types_num.cpp`
+
+- :ref:`file_compiler_types_optional.cpp`
+
+- :ref:`file_compiler_types_ptr.cpp`
+
+- :ref:`file_compiler_types_record.cpp`
+
+- :ref:`file_compiler_types_ref.cpp`
+
+- :ref:`file_compiler_types_seqt.cpp`
+
+- :ref:`file_compiler_types_types.cpp`
+
+- :ref:`file_compiler_types_void.cpp`
+
+- :ref:`file_compiler_util_ocaml.cpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_seq`
+
+- :ref:`namespace_seq__types`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classseq_1_1SeqModule`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_seq_8h_1ab91cf63d5897c85920299a22b7fae18a`
+
+- :ref:`exhale_function_seq_8h_1afba990a18eeb85dac25b10fbfe1bb0e7`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_seq_8h_1a2313755916fd32e39954800affdd9fe5`
+
+- :ref:`exhale_define_seq_8h_1a68d05c689f70a5756e0eaff84f679ab6`
+
+- :ref:`exhale_define_seq_8h_1a5b9aada676ec5d60e9e7badb8d209354`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_seq_8h_1a98a022ccd04b49f73e5ad4d04a95d7b5`
+
+- :ref:`exhale_variable_seq_8h_1a02ecbeef8e7274c5a7b2c27d8435da9f`
+
+- :ref:`exhale_variable_seq_8h_1ae91a056ea3a0717c6cddcd9617809bdb`
+
+- :ref:`exhale_variable_seq_8h_1a12349422a28e7a96c624003e378d38b6`
+
+- :ref:`exhale_variable_seq_8h_1af1e2cc4de9a4e0aed05c2d6402e40471`
+
+- :ref:`exhale_variable_seq_8h_1aeb3a008d69873b6215bc0cdfd50e7d99`
+
+- :ref:`exhale_variable_seq_8h_1ae1b50d1501b03fab9600bf97d86a6a1c`
+
+- :ref:`exhale_variable_seq_8h_1acc2643a95458576010bff29f44fbce6d`
+
+- :ref:`exhale_variable_seq_8h_1a9c7963a8531729167a2507a665f1d0d3`
+
+- :ref:`exhale_variable_seq_8h_1a61c501ae26a341d410b6c0b22effa1f8`
+
+- :ref:`exhale_variable_seq_8h_1a322f6b02a781e9e4d866ad0b4988debd`
+

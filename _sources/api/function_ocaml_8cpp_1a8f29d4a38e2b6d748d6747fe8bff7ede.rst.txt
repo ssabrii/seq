@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a8f29d4a38e2b6d748d6747fe8bff7ede:
+
+Function str_type
+=================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: str_type()

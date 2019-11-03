@@ -1,0 +1,13 @@
+.. _exhale_variable_ops_8cpp_1a5eadb569da9385c0cf77c6c310ea7759:
+
+Variable ops
+============
+
+- Defined in :ref:`file_compiler_lang_ops.cpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: ops

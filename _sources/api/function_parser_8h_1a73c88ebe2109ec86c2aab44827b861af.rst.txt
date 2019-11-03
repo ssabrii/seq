@@ -1,0 +1,13 @@
+.. _exhale_function_parser_8h_1a73c88ebe2109ec86c2aab44827b861af:
+
+Function seq::execute
+=====================
+
+- Defined in :ref:`file_compiler_include_seq_parser.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::execute(SeqModule *, std::vector<std::string>, std::vector<std::string>, bool)

@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a5fa87355f50189aaf94ef6115d1be103:
+
+Function generic_type
+=====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: generic_type()

@@ -1,0 +1,25 @@
+.. _exhale_class_classseq_1_1types_1_1StrType:
+
+Class StrType
+=============
+
+- Defined in :ref:`file_compiler_include_seq_seqt.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public seq::types::BaseSeqType`` (:ref:`exhale_class_classseq_1_1types_1_1BaseSeqType`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::types::StrType
+   :members:
+   :protected-members:
+   :undoc-members:

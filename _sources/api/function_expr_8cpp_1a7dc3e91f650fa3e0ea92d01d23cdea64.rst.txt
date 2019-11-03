@@ -1,0 +1,13 @@
+.. _exhale_function_expr_8cpp_1a7dc3e91f650fa3e0ea92d01d23cdea64:
+
+Function getFuncFromFuncExpr
+============================
+
+- Defined in :ref:`file_compiler_lang_expr.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: getFuncFromFuncExpr(Expr *)

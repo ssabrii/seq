@@ -1,0 +1,13 @@
+.. _exhale_function_seqt_8cpp_1af31f70182a29ac7bf31fc2c9c7a66587:
+
+Function getInitFunc
+====================
+
+- Defined in :ref:`file_compiler_types_seqt.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: getInitFunc(types::KMer *, Module *, bool)

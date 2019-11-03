@@ -1,0 +1,16 @@
+.. _exhale_struct_structseq_1_1Block:
+
+Struct Block
+============
+
+- Defined in :ref:`file_compiler_include_seq_stmt.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: seq::Block
+   :members:
+   :protected-members:
+   :undoc-members:

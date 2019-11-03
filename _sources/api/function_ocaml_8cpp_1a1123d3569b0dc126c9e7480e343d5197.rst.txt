@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a1123d3569b0dc126c9e7480e343d5197:
+
+Function caml_error_callback
+============================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: caml_error_callback(char *, int, int, char *)

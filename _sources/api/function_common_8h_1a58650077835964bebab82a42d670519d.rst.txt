@@ -1,0 +1,13 @@
+.. _exhale_function_common_8h_1a58650077835964bebab82a42d670519d:
+
+Function seq::oneLLVM
+=====================
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::oneLLVM(llvm::LLVMContext&)

@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a1c90782b7fa2db238655d7c34b91a3b9:
+
+Function kmer_type
+==================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: kmer_type(unsigned)

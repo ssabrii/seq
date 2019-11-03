@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1aef01913444c5f3164701a69f8634bcfe:
+
+Function set_ref_record
+=======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_ref_record(types::RefType *, types::RecordType *)

@@ -1,0 +1,411 @@
+
+.. _file_compiler_util_ocaml.cpp:
+
+File ocaml.cpp
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_util>` (``compiler/util``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/util/ocaml.cpp``)
+----------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_util_ocaml.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``caml/fail.h``
+
+- ``seq/seq.h`` (:ref:`file_compiler_include_seq_seq.h`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_std`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structseq__srcinfo`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_ocaml_8cpp_1ab454944725bae3c11ae8f77f2db16ddb`
+
+- :ref:`exhale_function_ocaml_8cpp_1a96f428c1a17c37cbe3e7c184fa7f91d0`
+
+- :ref:`exhale_function_ocaml_8cpp_1aa7e458f004c6e4112e7895ceef69aa70`
+
+- :ref:`exhale_function_ocaml_8cpp_1a3d0d5de0ad80364b88691755849f9162`
+
+- :ref:`exhale_function_ocaml_8cpp_1a50000b088659d2591e669731310eb9f2`
+
+- :ref:`exhale_function_ocaml_8cpp_1a66c028220bd3564bc1e23c608ea52c44`
+
+- :ref:`exhale_function_ocaml_8cpp_1ad255f10966d37d9d8da51933a9f5263a`
+
+- :ref:`exhale_function_ocaml_8cpp_1af60b75b943cd34f9f213405d21c3da64`
+
+- :ref:`exhale_function_ocaml_8cpp_1a93e2b2a8b97645ab8bb4a92561a83e03`
+
+- :ref:`exhale_function_ocaml_8cpp_1a5c47ab00b65690d143aac9bd001d8491`
+
+- :ref:`exhale_function_ocaml_8cpp_1a774367ec555fea771ab6b9f1dba8a374`
+
+- :ref:`exhale_function_ocaml_8cpp_1accfe51874f30b738f617b59a09995e07`
+
+- :ref:`exhale_function_ocaml_8cpp_1a6617baef9a2de1005a71da32e70533f6`
+
+- :ref:`exhale_function_ocaml_8cpp_1a5380620cbb86bdd45ae9d9a905be8421`
+
+- :ref:`exhale_function_ocaml_8cpp_1aaf0a267b90e2c734895c4d87637737f2`
+
+- :ref:`exhale_function_ocaml_8cpp_1a7d61ba3f254fae870b8d98499dc51ce7`
+
+- :ref:`exhale_function_ocaml_8cpp_1af6dd3ab40b08290bfff92074a8f49af9`
+
+- :ref:`exhale_function_ocaml_8cpp_1a92e340781bcba48fca316dde63793e71`
+
+- :ref:`exhale_function_ocaml_8cpp_1aedec20b36e92af35fa618ed94d05f57e`
+
+- :ref:`exhale_function_ocaml_8cpp_1a864536695c26dbf0e7af68da0ee758f2`
+
+- :ref:`exhale_function_ocaml_8cpp_1ad850d8109b3a6668846f99f70b7e6c03`
+
+- :ref:`exhale_function_ocaml_8cpp_1ab79a4985a07529ef99535e048962ca16`
+
+- :ref:`exhale_function_ocaml_8cpp_1ad4513cc923b255b16aa58a5d8e30f569`
+
+- :ref:`exhale_function_ocaml_8cpp_1a8e2d086f41973e31991cd25790292f22`
+
+- :ref:`exhale_function_ocaml_8cpp_1affb6c255c4cf3fb7427db732e2c72f1e`
+
+- :ref:`exhale_function_ocaml_8cpp_1a1e5e98469b79a9d0dd3a7665338b23fe`
+
+- :ref:`exhale_function_ocaml_8cpp_1af589bbe54a509466b2a58e76dc4e255e`
+
+- :ref:`exhale_function_ocaml_8cpp_1aae9e23ce5766599a227343cc4c24f1ef`
+
+- :ref:`exhale_function_ocaml_8cpp_1a67f26ebcec182ae338250804ca09f6d7`
+
+- :ref:`exhale_function_ocaml_8cpp_1ad164e5a0debb36900f1e93e598f87433`
+
+- :ref:`exhale_function_ocaml_8cpp_1af7ac333c33409d7902dad150f3e179b4`
+
+- :ref:`exhale_function_ocaml_8cpp_1a6915176895ba7bcd3b1382dd66515f42`
+
+- :ref:`exhale_function_ocaml_8cpp_1aec693b998cb0591cb706b15687416fbe`
+
+- :ref:`exhale_function_ocaml_8cpp_1a1123d3569b0dc126c9e7480e343d5197`
+
+- :ref:`exhale_function_ocaml_8cpp_1afd2f1009f820d01c5620673b20b66fd8`
+
+- :ref:`exhale_function_ocaml_8cpp_1a898443681d21effbfbc0018e5449ae71`
+
+- :ref:`exhale_function_ocaml_8cpp_1a0455354b0ba09a922f0c9fcfc1b11275`
+
+- :ref:`exhale_function_ocaml_8cpp_1abf49c0c52e0f382a20120141be8b4827`
+
+- :ref:`exhale_function_ocaml_8cpp_1ab2dac3fea736dd3d1ba2fa6ab16bb3cc`
+
+- :ref:`exhale_function_ocaml_8cpp_1a7b7fb229d51fd9649a448c88146af292`
+
+- :ref:`exhale_function_ocaml_8cpp_1a93c9a14f1cc7a15cb9a87f4376298bcd`
+
+- :ref:`exhale_function_ocaml_8cpp_1aa4156788b3fbc9db24cdffa19c6962c7`
+
+- :ref:`exhale_function_ocaml_8cpp_1ac0b63b01b424f9b9096808d32c0c3224`
+
+- :ref:`exhale_function_ocaml_8cpp_1aad2bdd0140c48ae22dbc5b648c8546b8`
+
+- :ref:`exhale_function_ocaml_8cpp_1ad0eaf3b7b4e4fcb4638056c72049971c`
+
+- :ref:`exhale_function_ocaml_8cpp_1a4f4986681a02d199af64be7ab7e0c2f5`
+
+- :ref:`exhale_function_ocaml_8cpp_1a72318fa0506c398c2de3ed8674763e16`
+
+- :ref:`exhale_function_ocaml_8cpp_1ac22bc02ec9d391a19b3f2328cb6f2da5`
+
+- :ref:`exhale_function_ocaml_8cpp_1aeb20d548a8921487e7b2ba0190253927`
+
+- :ref:`exhale_function_ocaml_8cpp_1a6074d1f9df836e16aabfa9e5721c7127`
+
+- :ref:`exhale_function_ocaml_8cpp_1ad0d45f0b1ceea44b1e3ded60cb5dd440`
+
+- :ref:`exhale_function_ocaml_8cpp_1a2498b80db09d6926dd4b231576d006b5`
+
+- :ref:`exhale_function_ocaml_8cpp_1a70e62a3e8cb9bd4b888f4e094a946efc`
+
+- :ref:`exhale_function_ocaml_8cpp_1a5fa87355f50189aaf94ef6115d1be103`
+
+- :ref:`exhale_function_ocaml_8cpp_1acba879da3dd9420b3784a59777622e08`
+
+- :ref:`exhale_function_ocaml_8cpp_1ad68e634b0eda8d102bc6ad20a3633ba8`
+
+- :ref:`exhale_function_ocaml_8cpp_1abc9c6ee163f2deff37da745d97874cd7`
+
+- :ref:`exhale_function_ocaml_8cpp_1ab59e0bbd9b1265d561e134f927e2f3f3`
+
+- :ref:`exhale_function_ocaml_8cpp_1a17b6a669a9123ddef72a941d259dcfb3`
+
+- :ref:`exhale_function_ocaml_8cpp_1abb5bc92c13b19e721b271a8d8cc445c8`
+
+- :ref:`exhale_function_ocaml_8cpp_1a406b246a2e9ada2454a33aa2a5c0d627`
+
+- :ref:`exhale_function_ocaml_8cpp_1ab8cc2ed364167e12c98446ce20527a32`
+
+- :ref:`exhale_function_ocaml_8cpp_1a22e8f334feccc52222b1b509972068f4`
+
+- :ref:`exhale_function_ocaml_8cpp_1a07f0cbc4ac3f4f0daf82c8a04b8f88cd`
+
+- :ref:`exhale_function_ocaml_8cpp_1a4012afb08c62db34b0fe96b0a6f8dc37`
+
+- :ref:`exhale_function_ocaml_8cpp_1a16a22f98587a75a4abfd1cc707f7535f`
+
+- :ref:`exhale_function_ocaml_8cpp_1a9287e3c6fc4e7e1dbb6ea5067629c5fc`
+
+- :ref:`exhale_function_ocaml_8cpp_1a212e88c022f4c6ae9b1a27f7c00c1bd9`
+
+- :ref:`exhale_function_ocaml_8cpp_1a31200a0e38af1c18f6c1ce160754e183`
+
+- :ref:`exhale_function_ocaml_8cpp_1aadccac7884ab68df0dbfb6ff97ec76ed`
+
+- :ref:`exhale_function_ocaml_8cpp_1aa4f204d3d44528cd34b9661e08bd5811`
+
+- :ref:`exhale_function_ocaml_8cpp_1a057a00f4b0bcd392d80335bb0b4f42fc`
+
+- :ref:`exhale_function_ocaml_8cpp_1a6568a3eee620c8849dd88a3c15e13460`
+
+- :ref:`exhale_function_ocaml_8cpp_1afe63152914c7a8f65bc8b5ac19db20e6`
+
+- :ref:`exhale_function_ocaml_8cpp_1a938bc85a9704c70fcbc4ec33ecccb190`
+
+- :ref:`exhale_function_ocaml_8cpp_1afd5fb3ca8d396e0fb58e1c0e1c928e3d`
+
+- :ref:`exhale_function_ocaml_8cpp_1ac46338e6928244eb3e35e7eea8e1ac8e`
+
+- :ref:`exhale_function_ocaml_8cpp_1a7206cdd924bc9193c5d387f8eabb16be`
+
+- :ref:`exhale_function_ocaml_8cpp_1adabcbeeb9ed6922581b05c4a3656ec40`
+
+- :ref:`exhale_function_ocaml_8cpp_1a8f421656163281ddb9aa0177186af127`
+
+- :ref:`exhale_function_ocaml_8cpp_1aac27d6430b05d734beeb852ea3a996f6`
+
+- :ref:`exhale_function_ocaml_8cpp_1a360cb7e1fe81271e5ed6d5120b816a74`
+
+- :ref:`exhale_function_ocaml_8cpp_1ae875eea63b67641492f90fcc7a97625a`
+
+- :ref:`exhale_function_ocaml_8cpp_1a747c059306bbc70ec4a1b96e0fa78faf`
+
+- :ref:`exhale_function_ocaml_8cpp_1adbb05bfb4601d7cc73e3641cfd89186f`
+
+- :ref:`exhale_function_ocaml_8cpp_1a81c9dbf23114312ac2c65dafa6e82de3`
+
+- :ref:`exhale_function_ocaml_8cpp_1ad40733293fc248e5e3715eaa2a5e7355`
+
+- :ref:`exhale_function_ocaml_8cpp_1aa71175221ddff6921ed7ffe42b3f183f`
+
+- :ref:`exhale_function_ocaml_8cpp_1a976864b3a8b3e91beae9b72b7e076c50`
+
+- :ref:`exhale_function_ocaml_8cpp_1ab129ee34fb8f9427447430483ae78039`
+
+- :ref:`exhale_function_ocaml_8cpp_1a3bf653b9c9f34d6daf89e051513050da`
+
+- :ref:`exhale_function_ocaml_8cpp_1a9605ae39a2bb3b9a873ec5894b6b050f`
+
+- :ref:`exhale_function_ocaml_8cpp_1a1c90782b7fa2db238655d7c34b91a3b9`
+
+- :ref:`exhale_function_ocaml_8cpp_1a59354bc942ed26811ecda474bab0e1d1`
+
+- :ref:`exhale_function_ocaml_8cpp_1ae45a55601a88ab07f165cd344cffd5c4`
+
+- :ref:`exhale_function_ocaml_8cpp_1a48bfee58d7a7ed12acafab640505871a`
+
+- :ref:`exhale_function_ocaml_8cpp_1ad6dc12e84366c55dbcf2fe7bc86cfaf9`
+
+- :ref:`exhale_function_ocaml_8cpp_1a475e580198716363fd9c2213ade8391e`
+
+- :ref:`exhale_function_ocaml_8cpp_1a75eee8d2576d67a6d4df9066744dfd1f`
+
+- :ref:`exhale_function_ocaml_8cpp_1afc8a9de7e158e642c84b7bf6fe57a81f`
+
+- :ref:`exhale_function_ocaml_8cpp_1a75d0531c04b9963ce8c196f106a95fc3`
+
+- :ref:`exhale_function_ocaml_8cpp_1a08b8e37a754834fd715ffef679c204ca`
+
+- :ref:`exhale_function_ocaml_8cpp_1a62991fc0a8a6dba43351f7eefb6aa07f`
+
+- :ref:`exhale_function_ocaml_8cpp_1a293bf4183e35387bbe212d14bf682f1c`
+
+- :ref:`exhale_function_ocaml_8cpp_1a1050972f0f404f45dda9bd63b1ab1c5d`
+
+- :ref:`exhale_function_ocaml_8cpp_1a6446ebd25f064b1c302aeba9ffc6c7dc`
+
+- :ref:`exhale_function_ocaml_8cpp_1aaaf24e9779af328a94e5cb9a003fbafa`
+
+- :ref:`exhale_function_ocaml_8cpp_1a8d79ece225428c5d32599340e396d05d`
+
+- :ref:`exhale_function_ocaml_8cpp_1a76957cea09d15e57c51dacfe26baf548`
+
+- :ref:`exhale_function_ocaml_8cpp_1ab20a42323375b1cd66981118a2974904`
+
+- :ref:`exhale_function_ocaml_8cpp_1acac94cc3aa99003a4dfe152e7b2ba218`
+
+- :ref:`exhale_function_ocaml_8cpp_1a9e0a5e56a138f8635a9c3afc34a575c4`
+
+- :ref:`exhale_function_ocaml_8cpp_1a18bce0786c12e2b276714ef4e2cbcd9a`
+
+- :ref:`exhale_function_ocaml_8cpp_1a2af7ebee02af2573efe3b5bd327688d9`
+
+- :ref:`exhale_function_ocaml_8cpp_1a6546de75821cfff11a4ea6266b8a02ac`
+
+- :ref:`exhale_function_ocaml_8cpp_1a9396cfc83c1e1e40e2da9c8abe2833d3`
+
+- :ref:`exhale_function_ocaml_8cpp_1a2f88c2b1e2870c34538a086d25703372`
+
+- :ref:`exhale_function_ocaml_8cpp_1a9dd959f27d6e26d138fb8f58bfde001d`
+
+- :ref:`exhale_function_ocaml_8cpp_1ada04c6bb3c18e4d9714742e347aba002`
+
+- :ref:`exhale_function_ocaml_8cpp_1a7fc61023623f757a6ece8c5cb58eacda`
+
+- :ref:`exhale_function_ocaml_8cpp_1ad4b04fe546f51f9e4d32b216c02acb39`
+
+- :ref:`exhale_function_ocaml_8cpp_1a71f657bccba8865b9c1638e8976079ed`
+
+- :ref:`exhale_function_ocaml_8cpp_1a13bed7f4abdd35ce8a8f1e899aa9f226`
+
+- :ref:`exhale_function_ocaml_8cpp_1a921a5d137b402a0f77c72a91505db6f9`
+
+- :ref:`exhale_function_ocaml_8cpp_1ab14399511e6426e52aa0d60501c96276`
+
+- :ref:`exhale_function_ocaml_8cpp_1a03060451b801d519eb57a1dbeff034b9`
+
+- :ref:`exhale_function_ocaml_8cpp_1a2267343037307aa5f91d917e351ab13c`
+
+- :ref:`exhale_function_ocaml_8cpp_1a5571eaa1bbc8012fcbf2f01e94538247`
+
+- :ref:`exhale_function_ocaml_8cpp_1a343285587b289b80c1c803da71eeaae4`
+
+- :ref:`exhale_function_ocaml_8cpp_1a1b33529b959cb028558f8a2ec33cb8e3`
+
+- :ref:`exhale_function_ocaml_8cpp_1a8c7f27248ba5bac12cd97fcd5849086c`
+
+- :ref:`exhale_function_ocaml_8cpp_1a5d3c4c3a30c32855222bd3155d836ae7`
+
+- :ref:`exhale_function_ocaml_8cpp_1a6188c5f2d9f0e3868d19fa3d78bbed97`
+
+- :ref:`exhale_function_ocaml_8cpp_1a4428c98675c811c5e20575b178f48a48`
+
+- :ref:`exhale_function_ocaml_8cpp_1a428d282f38752b9c4eb941aaf50b8ba0`
+
+- :ref:`exhale_function_ocaml_8cpp_1a53bc3cbe480b692a3b501581d627a75a`
+
+- :ref:`exhale_function_ocaml_8cpp_1ad3f2d30e1b1be093ee2c83c488cb39be`
+
+- :ref:`exhale_function_ocaml_8cpp_1a5daa8440985eef3a3c9487dd05156ae0`
+
+- :ref:`exhale_function_ocaml_8cpp_1a274501bb2e2f43b03d5f4b0848e296fc`
+
+- :ref:`exhale_function_ocaml_8cpp_1a4c0e08feaeed1f5dd35c6659d0b49354`
+
+- :ref:`exhale_function_ocaml_8cpp_1a57f0445e62dbfb6d54bafd267c38b657`
+
+- :ref:`exhale_function_ocaml_8cpp_1a29fe17419b3aea2ae512e5db3d8897a3`
+
+- :ref:`exhale_function_ocaml_8cpp_1ac804eba326cb213012238388f7b14f56`
+
+- :ref:`exhale_function_ocaml_8cpp_1a45664268a9334bd5bc83ab1adc87d064`
+
+- :ref:`exhale_function_ocaml_8cpp_1aef01913444c5f3164701a69f8634bcfe`
+
+- :ref:`exhale_function_ocaml_8cpp_1ac8c890a1e1976233fd837c0a1a8592f8`
+
+- :ref:`exhale_function_ocaml_8cpp_1a12a0f57597ff972d945ca9ed5acb5e8c`
+
+- :ref:`exhale_function_ocaml_8cpp_1ac1057f8add41da1df41c69770836717d`
+
+- :ref:`exhale_function_ocaml_8cpp_1a97a6cd68de67d21ca46f5f63142cb602`
+
+- :ref:`exhale_function_ocaml_8cpp_1a05b07b07f42bd7d2324e92772b722e93`
+
+- :ref:`exhale_function_ocaml_8cpp_1aaa200b0eb536bcb799a566cbce355771`
+
+- :ref:`exhale_function_ocaml_8cpp_1a8e0da76d4adef5bb14700b9a0f03cb89`
+
+- :ref:`exhale_function_ocaml_8cpp_1a3bd06128f287c493e216a205a7d9d8df`
+
+- :ref:`exhale_function_ocaml_8cpp_1a62c5efb46a5c9c6c230521f88b8e5911`
+
+- :ref:`exhale_function_ocaml_8cpp_1a8f29d4a38e2b6d748d6747fe8bff7ede`
+
+- :ref:`exhale_function_ocaml_8cpp_1a82350d50201ac2f1ba03552740d4c817`
+
+- :ref:`exhale_function_ocaml_8cpp_1afdc78c1f7472f6ab6a987a2a9ae83e15`
+
+- :ref:`exhale_function_ocaml_8cpp_1ae1f14f86a6d3e97fda61b1c65ba464c7`
+
+- :ref:`exhale_function_ocaml_8cpp_1a1c4adc00ae8d9d93203443e9fd9b64f3`
+
+- :ref:`exhale_function_ocaml_8cpp_1a2ebb58e701442aee38eecf012d23e1a2`
+
+- :ref:`exhale_function_ocaml_8cpp_1a85c5a3631b4a63449de5410d4f9552a3`
+
+- :ref:`exhale_function_ocaml_8cpp_1aec6eeafd86005db028703595c5dc8734`
+
+- :ref:`exhale_function_ocaml_8cpp_1a8acec327bb345d8ae7a78c9dd551e387`
+
+- :ref:`exhale_function_ocaml_8cpp_1a9b5be026a5b59dd1a5b8317f993767b7`
+
+- :ref:`exhale_function_ocaml_8cpp_1a3f6c672db014628b2ee1a26cc7b6d5c1`
+
+- :ref:`exhale_function_ocaml_8cpp_1ab7e57cdcb4e504ed141395517a7e357a`
+
+- :ref:`exhale_function_ocaml_8cpp_1a0e7ac99eca217120175cb36e15aa82bb`
+
+- :ref:`exhale_function_ocaml_8cpp_1ab4aa0b924bd4b14126ffb5184d0b6b41`
+
+- :ref:`exhale_function_ocaml_8cpp_1a6078830a59e94001d3bb3515bbbeadb0`
+
+- :ref:`exhale_function_ocaml_8cpp_1aa25eb8d3c22d13d6b57d0c83c13e3615`
+
+- :ref:`exhale_function_ocaml_8cpp_1a9dca7436b6d736ae98aaa1d85f4b681f`
+
+- :ref:`exhale_function_ocaml_8cpp_1a566f1144ab9866bce9f8d60c97243e1f`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_ocaml_8cpp_1a9bbde653c719c2b425b2818ca844b46b`
+
+- :ref:`exhale_define_ocaml_8cpp_1af039cc21a3132fdb4f8d4a9c57ac0250`
+

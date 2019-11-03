@@ -1,0 +1,13 @@
+.. _exhale_function_types_8h_1afdd6758aac53b1222176aade671351f1:
+
+Function seq::types::is
+=======================
+
+- Defined in :ref:`file_compiler_include_seq_types.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::types::is(Type *, Type *)

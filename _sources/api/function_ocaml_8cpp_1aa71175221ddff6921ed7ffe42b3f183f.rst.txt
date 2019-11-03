@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1aa71175221ddff6921ed7ffe42b3f183f:
+
+Function is_expr
+================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: is_expr(Expr *, Expr *)

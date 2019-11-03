@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a71f657bccba8865b9c1638e8976079ed:
+
+Function set_elem_realize_types
+===============================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_elem_realize_types(GetElemExpr *, types::Type **, size_t)

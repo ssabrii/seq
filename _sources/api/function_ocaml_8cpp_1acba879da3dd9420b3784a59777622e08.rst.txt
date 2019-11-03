@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1acba879da3dd9420b3784a59777622e08:
+
+Function get_bound_pattern_var
+==============================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get_bound_pattern_var(BoundPattern *)

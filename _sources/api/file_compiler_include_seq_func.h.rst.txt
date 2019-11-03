@@ -1,0 +1,73 @@
+
+.. _file_compiler_include_seq_func.h:
+
+File func.h
+===========
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_include_seq>` (``compiler/include/seq``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/include/seq/func.h``)
+--------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_include_seq_func.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``common.h`` (:ref:`file_compiler_include_seq_common.h`)
+
+- ``funct.h`` (:ref:`file_compiler_include_seq_funct.h`)
+
+- ``generic.h`` (:ref:`file_compiler_include_seq_generic.h`)
+
+- ``stmt.h`` (:ref:`file_compiler_include_seq_stmt.h`)
+
+- ``types.h`` (:ref:`file_compiler_include_seq_types.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_compiler_include_seq_patterns.h`
+
+- :ref:`file_compiler_include_seq_var.h`
+
+- :ref:`file_compiler_include_seq_seq.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_seq`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classseq_1_1BaseFunc`
+
+- :ref:`exhale_class_classseq_1_1BaseFuncLite`
+
+- :ref:`exhale_class_classseq_1_1Func`
+

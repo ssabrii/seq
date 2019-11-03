@@ -1,0 +1,46 @@
+
+.. _file_compiler_lang_patterns.cpp:
+
+File patterns.cpp
+=================
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_lang>` (``compiler/lang``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/lang/patterns.cpp``)
+-------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_lang_patterns.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``seq/seq.h`` (:ref:`file_compiler_include_seq_seq.h`)
+
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_patterns_8cpp_1ad361120ec3ff42b44686069ee5e90200`
+
+- :ref:`exhale_function_patterns_8cpp_1a9ccb47b00f093cc30a68ec6096e5190b`
+

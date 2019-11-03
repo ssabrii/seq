@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a59354bc942ed26811ecda474bab0e1d1:
+
+Function list_comp_expr
+=======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: list_comp_expr(types::Type *, Expr *)

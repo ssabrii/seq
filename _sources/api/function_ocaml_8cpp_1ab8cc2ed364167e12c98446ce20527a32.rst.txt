@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ab8cc2ed364167e12c98446ce20527a32:
+
+Function get_func
+=================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get_func(FuncExpr *)

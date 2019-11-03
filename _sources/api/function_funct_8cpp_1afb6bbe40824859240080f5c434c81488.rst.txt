@@ -1,0 +1,13 @@
+.. _exhale_function_funct_8cpp_1afb6bbe40824859240080f5c434c81488:
+
+Template Function nullMatch
+===========================
+
+- Defined in :ref:`file_compiler_types_funct.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: nullMatch(std::vector<T *>, std::vector<T *>)

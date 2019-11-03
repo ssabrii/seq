@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a13bed7f4abdd35ce8a8f1e899aa9f226:
+
+Function set_enclosing_trycatch
+===============================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_enclosing_trycatch(Expr *, TryCatch *)

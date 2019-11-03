@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a3f6c672db014628b2ee1a26cc7b6d5c1:
+
+Function var_expr
+=================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: var_expr(Var *)

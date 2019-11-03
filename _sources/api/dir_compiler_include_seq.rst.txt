@@ -1,0 +1,43 @@
+.. _dir_compiler_include_seq:
+
+
+Directory seq
+=============
+
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_include>` (``compiler/include``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+*Directory path:* ``compiler/include/seq``
+
+
+Files
+-----
+
+- :ref:`file_compiler_include_seq_any.h`
+- :ref:`file_compiler_include_seq_array.h`
+- :ref:`file_compiler_include_seq_base.h`
+- :ref:`file_compiler_include_seq_common.h`
+- :ref:`file_compiler_include_seq_expr.h`
+- :ref:`file_compiler_include_seq_func.h`
+- :ref:`file_compiler_include_seq_funct.h`
+- :ref:`file_compiler_include_seq_generic.h`
+- :ref:`file_compiler_include_seq_lang.h`
+- :ref:`file_compiler_include_seq_llvm.h`
+- :ref:`file_compiler_include_seq_num.h`
+- :ref:`file_compiler_include_seq_ops.h`
+- :ref:`file_compiler_include_seq_optional.h`
+- :ref:`file_compiler_include_seq_parser.h`
+- :ref:`file_compiler_include_seq_patterns.h`
+- :ref:`file_compiler_include_seq_ptr.h`
+- :ref:`file_compiler_include_seq_record.h`
+- :ref:`file_compiler_include_seq_ref.h`
+- :ref:`file_compiler_include_seq_seq.h`
+- :ref:`file_compiler_include_seq_seqt.h`
+- :ref:`file_compiler_include_seq_stmt.h`
+- :ref:`file_compiler_include_seq_types.h`
+- :ref:`file_compiler_include_seq_var.h`
+- :ref:`file_compiler_include_seq_void.h`
+
+

@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a1c4adc00ae8d9d93203443e9fd9b64f3:
+
+Function type_eq
+================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: type_eq(types::Type *, types::Type *)

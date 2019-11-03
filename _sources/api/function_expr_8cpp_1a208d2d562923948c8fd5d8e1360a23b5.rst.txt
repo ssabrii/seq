@@ -1,0 +1,13 @@
+.. _exhale_function_expr_8cpp_1a208d2d562923948c8fd5d8e1360a23b5:
+
+Function getFullCallTypesForPartial
+===================================
+
+- Defined in :ref:`file_compiler_lang_expr.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: getFullCallTypesForPartial(Func *, types::PartialFuncType *, const std::vector<types::Type *>&, std::vector<types::Type *>&)

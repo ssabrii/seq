@@ -1,0 +1,704 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Program Listing for File types.cpp &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Compiler Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doxygen.html">Compiler API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Program Listing for File types.cpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/program_listing_file_compiler_types_types.cpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-for-file-types-cpp">
+<span id="program-listing-file-compiler-types-types-cpp"></span><h1>Program Listing for File types.cpp<a class="headerlink" href="#program-listing-for-file-types-cpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_compiler_types_types.cpp.html#file-compiler-types-types-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">compiler/types/types.cpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;seq/seq.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cstdlib&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;typeinfo&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">seq</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">llvm</span><span class="p">;</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">Type</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">parent</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">abstract</span><span class="p">,</span>
+                  <span class="kt">bool</span> <span class="n">extendable</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">name</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">name</span><span class="p">)),</span> <span class="n">parent</span><span class="p">(</span><span class="n">parent</span><span class="p">),</span> <span class="n">abstract</span><span class="p">(</span><span class="n">abstract</span><span class="p">),</span>
+      <span class="n">extendable</span><span class="p">(</span><span class="n">extendable</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="kt">int</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">getID</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">std</span><span class="o">::</span><span class="n">hash</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">()(</span><span class="n">getName</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">getName</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">nameFull</span> <span class="o">=</span> <span class="n">name</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">numBaseTypes</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">nameFull</span> <span class="o">+=</span> <span class="s">&quot;[&quot;</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numBaseTypes</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">nameFull</span> <span class="o">+=</span> <span class="n">getBaseType</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">();</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">numBaseTypes</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">nameFull</span> <span class="o">+=</span> <span class="s">&quot;,&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">nameFull</span> <span class="o">+=</span> <span class="s">&quot;]&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">nameFull</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">getParent</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">parent</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">isAbstract</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">abstract</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">VTable</span> <span class="o">&amp;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">getVTable</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vtable</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">alloc</span><span class="p">(</span><span class="n">Value</span> <span class="o">*</span><span class="n">count</span><span class="p">,</span> <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">isAbstract</span><span class="p">())</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;cannot create array of type &#39;&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+  <span class="n">Module</span> <span class="o">*</span><span class="n">module</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getModule</span><span class="p">();</span>
+  <span class="k">auto</span> <span class="o">*</span><span class="n">allocFunc</span> <span class="o">=</span> <span class="n">makeAllocFunc</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">isAtomic</span><span class="p">());</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">count</span><span class="p">)</span>
+    <span class="n">count</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+
+  <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">elemSize</span> <span class="o">=</span>
+      <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">size</span><span class="p">(</span><span class="n">block</span><span class="o">-&gt;</span><span class="n">getModule</span><span class="p">()));</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">fullSize</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateMul</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">elemSize</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">mem</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">allocFunc</span><span class="p">,</span> <span class="n">fullSize</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreatePointerCast</span><span class="p">(</span><span class="n">mem</span><span class="p">,</span>
+                                   <span class="n">PointerType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">0</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">call</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span>
+                         <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="o">&amp;</span><span class="n">args</span><span class="p">,</span> <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span><span class="p">,</span>
+                         <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">normal</span><span class="p">,</span> <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">unwind</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;cannot call type &#39;&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="n">Value</span> <span class="o">*</span><span class="n">funcAsMethod</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">BaseFunc</span> <span class="o">*</span><span class="n">method</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span>
+                           <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">FuncExpr</span> <span class="n">e</span><span class="p">(</span><span class="n">method</span><span class="p">);</span>
+  <span class="k">auto</span> <span class="o">*</span><span class="n">funcType</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">FuncType</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">getType</span><span class="p">());</span>
+  <span class="n">assert</span><span class="p">(</span><span class="n">funcType</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">func</span> <span class="o">=</span> <span class="n">e</span><span class="p">.</span><span class="n">codegen</span><span class="p">(</span><span class="k">nullptr</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">types</span><span class="o">::</span><span class="n">MethodType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="n">funcType</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">make</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="n">types</span><span class="o">::</span><span class="n">MethodType</span> <span class="o">*</span><span class="n">funcAsMethodType</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span>
+                                           <span class="n">BaseFunc</span> <span class="o">*</span><span class="n">method</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">FuncExpr</span> <span class="n">e</span><span class="p">(</span><span class="n">method</span><span class="p">);</span>
+  <span class="k">auto</span> <span class="o">*</span><span class="n">funcType</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">FuncType</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">getType</span><span class="p">());</span>
+  <span class="n">assert</span><span class="p">(</span><span class="n">funcType</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">types</span><span class="o">::</span><span class="n">MethodType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="n">funcType</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="n">Value</span> <span class="o">*</span><span class="n">funcAsStaticMethod</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">method</span><span class="p">,</span> <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">FuncExpr</span> <span class="n">e</span><span class="p">(</span><span class="n">method</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">func</span> <span class="o">=</span> <span class="n">e</span><span class="p">.</span><span class="n">codegen</span><span class="p">(</span><span class="k">nullptr</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">func</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="n">types</span><span class="o">::</span><span class="n">FuncType</span> <span class="o">*</span><span class="n">funcAsStaticMethodType</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">method</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">FuncExpr</span> <span class="n">e</span><span class="p">(</span><span class="n">method</span><span class="p">);</span>
+  <span class="k">auto</span> <span class="o">*</span><span class="n">funcType</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">FuncType</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">getType</span><span class="p">());</span>
+  <span class="n">assert</span><span class="p">(</span><span class="n">funcType</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">funcType</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">memb</span><span class="p">(</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">,</span>
+                         <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">initFields</span><span class="p">();</span>
+  <span class="n">initOps</span><span class="p">();</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">overloads</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="n">magic</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">funcAsMethod</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">magic</span><span class="p">.</span><span class="n">func</span><span class="p">,</span> <span class="n">self</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">magic</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="n">magic</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">funcAsMethod</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">magic</span><span class="p">.</span><span class="n">asFunc</span><span class="p">(</span><span class="k">this</span><span class="p">),</span> <span class="n">self</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">auto</span> <span class="n">iter1</span> <span class="o">=</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">methods</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">iter1</span> <span class="o">!=</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">methods</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">funcAsMethod</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">iter1</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">,</span> <span class="n">self</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+
+  <span class="k">auto</span> <span class="n">iter2</span> <span class="o">=</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">fields</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">iter2</span> <span class="o">==</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">fields</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;type &#39;&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39; has no member &#39;&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span>
+                            <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+
+  <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateExtractValue</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">iter2</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">first</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">membType</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">initFields</span><span class="p">();</span>
+  <span class="n">initOps</span><span class="p">();</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">overloads</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="n">magic</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">funcAsMethodType</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">magic</span><span class="p">.</span><span class="n">func</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">magic</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="n">magic</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">funcAsMethodType</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">magic</span><span class="p">.</span><span class="n">asFunc</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="k">auto</span> <span class="n">iter1</span> <span class="o">=</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">methods</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">iter1</span> <span class="o">!=</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">methods</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">funcAsMethodType</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">iter1</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">);</span>
+
+  <span class="k">auto</span> <span class="n">iter2</span> <span class="o">=</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">fields</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">iter2</span> <span class="o">==</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">fields</span><span class="p">.</span><span class="n">end</span><span class="p">()</span> <span class="o">||</span>
+      <span class="n">iter2</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">is</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Void</span><span class="p">))</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;type &#39;&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39; has no member &#39;&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span>
+                            <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="n">iter2</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">staticMemb</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">,</span> <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">initOps</span><span class="p">();</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">overloads</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="n">magic</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">funcAsStaticMethod</span><span class="p">(</span><span class="n">magic</span><span class="p">.</span><span class="n">func</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">magic</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="n">magic</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">funcAsStaticMethod</span><span class="p">(</span><span class="n">magic</span><span class="p">.</span><span class="n">asFunc</span><span class="p">(</span><span class="k">this</span><span class="p">),</span> <span class="n">block</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">auto</span> <span class="n">iter1</span> <span class="o">=</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">methods</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">iter1</span> <span class="o">!=</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">methods</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">funcAsStaticMethod</span><span class="p">(</span><span class="n">iter1</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+
+  <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;type &#39;&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39; has no static member &#39;&quot;</span> <span class="o">+</span>
+                          <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">staticMembType</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">initOps</span><span class="p">();</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">overloads</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="n">magic</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">funcAsStaticMethodType</span><span class="p">(</span><span class="n">magic</span><span class="p">.</span><span class="n">func</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">magic</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="n">magic</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">funcAsStaticMethodType</span><span class="p">(</span><span class="n">magic</span><span class="p">.</span><span class="n">asFunc</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="k">auto</span> <span class="n">iter1</span> <span class="o">=</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">methods</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">iter1</span> <span class="o">!=</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">methods</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">funcAsStaticMethodType</span><span class="p">(</span><span class="n">iter1</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">);</span>
+
+  <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;type &#39;&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39; has no static member &#39;&quot;</span> <span class="o">+</span>
+                          <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">setMemb</span><span class="p">(</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span>
+                            <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">initFields</span><span class="p">();</span>
+  <span class="k">auto</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">fields</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">iter</span> <span class="o">==</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">fields</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;type &#39;&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span>
+                            <span class="s">&quot;&#39; has no assignable member &#39;&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+
+  <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateInsertValue</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">iter</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">.</span><span class="n">first</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">hasMethod</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">initOps</span><span class="p">();</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">overloads</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="n">magic</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">magic</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="n">magic</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">methods</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">!=</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">methods</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="kt">bool</span> <span class="n">isMagic</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">name</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;=</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="n">name</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;_&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">name</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;_&#39;</span> <span class="o">&amp;&amp;</span>
+         <span class="n">name</span><span class="p">[</span><span class="n">name</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;_&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">name</span><span class="p">[</span><span class="n">name</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;_&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">addMethod</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">,</span> <span class="n">BaseFunc</span> <span class="o">*</span><span class="n">func</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">force</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">force</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">extendable</span><span class="p">)</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;cannot extend type &#39;&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">isMagic</span><span class="p">(</span><span class="n">name</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="s">&quot;__new__&quot;</span><span class="p">)</span>
+      <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;cannot override __new__&quot;</span><span class="p">);</span>
+
+    <span class="c1">// insert at the start so we always find the latest-added alternative first</span>
+    <span class="n">func</span><span class="o">-&gt;</span><span class="n">setEnclosingClass</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="n">getVTable</span><span class="p">().</span><span class="n">overloads</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">getVTable</span><span class="p">().</span><span class="n">overloads</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="p">{</span><span class="n">name</span><span class="p">,</span> <span class="n">func</span><span class="p">});</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">hasMethod</span><span class="p">(</span><span class="n">name</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">func</span><span class="o">-&gt;</span><span class="n">setEnclosingClass</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+    <span class="n">getVTable</span><span class="p">().</span><span class="n">methods</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span><span class="p">;</span>
+    <span class="k">return</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">getVTable</span><span class="p">().</span><span class="n">fields</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="o">!=</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">fields</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;field &#39;&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;&#39; conflicts with method&quot;</span><span class="p">);</span>
+
+  <span class="n">func</span><span class="o">-&gt;</span><span class="n">setEnclosingClass</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="n">getVTable</span><span class="p">().</span><span class="n">methods</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="n">name</span><span class="p">,</span> <span class="n">func</span><span class="p">});</span>
+<span class="p">}</span>
+
+<span class="n">BaseFunc</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">getMethod</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">initOps</span><span class="p">();</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">overloads</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="n">magic</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">magic</span><span class="p">.</span><span class="n">func</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">magic</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="n">magic</span><span class="p">.</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">magic</span><span class="p">.</span><span class="n">asFunc</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">auto</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">methods</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">iter</span> <span class="o">==</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">methods</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;type &#39;&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39; has no method &#39;&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span>
+                            <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="n">iter</span><span class="o">-&gt;</span><span class="n">second</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">defaultValue</span><span class="p">(</span><span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;type &#39;&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39; has no default value&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">boolValue</span><span class="p">(</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">,</span> <span class="n">TryCatch</span> <span class="o">*</span><span class="n">tc</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">magicOut</span><span class="p">(</span><span class="s">&quot;__bool__&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">-&gt;</span><span class="n">is</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Bool</span><span class="p">))</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;the output type of __bool__ is not boolean&quot;</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nf">callMagic</span><span class="p">(</span><span class="s">&quot;__bool__&quot;</span><span class="p">,</span> <span class="p">{},</span> <span class="n">self</span><span class="p">,</span> <span class="p">{},</span> <span class="n">block</span><span class="p">,</span> <span class="n">tc</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">strValue</span><span class="p">(</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">,</span> <span class="n">TryCatch</span> <span class="o">*</span><span class="n">tc</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">magicOut</span><span class="p">(</span><span class="s">&quot;__str__&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">-&gt;</span><span class="n">is</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Str</span><span class="p">))</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;the output type of __str__ is not string&quot;</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nf">callMagic</span><span class="p">(</span><span class="s">&quot;__str__&quot;</span><span class="p">,</span> <span class="p">{},</span> <span class="n">self</span><span class="p">,</span> <span class="p">{},</span> <span class="n">block</span><span class="p">,</span> <span class="n">tc</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">lenValue</span><span class="p">(</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">,</span> <span class="n">TryCatch</span> <span class="o">*</span><span class="n">tc</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">magicOut</span><span class="p">(</span><span class="s">&quot;__len__&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">-&gt;</span><span class="n">is</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Int</span><span class="p">))</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;the output type of __len__ is not int&quot;</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="nf">callMagic</span><span class="p">(</span><span class="s">&quot;__len__&quot;</span><span class="p">,</span> <span class="p">{},</span> <span class="n">self</span><span class="p">,</span> <span class="p">{},</span> <span class="n">block</span><span class="p">,</span> <span class="n">tc</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">initOps</span><span class="p">()</span> <span class="p">{}</span>
+
+<span class="kt">void</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">initFields</span><span class="p">()</span> <span class="p">{}</span>
+
+<span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">argsVecToStr</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="o">&amp;</span><span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+    <span class="k">return</span> <span class="s">&quot;()&quot;</span><span class="p">;</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">result</span> <span class="o">=</span> <span class="s">&quot;(&quot;</span> <span class="o">+</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">();</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">args</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">+=</span> <span class="s">&quot;, &quot;</span> <span class="o">+</span> <span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">();</span>
+
+  <span class="n">result</span> <span class="o">+=</span> <span class="s">&quot;)&quot;</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">callType</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">func</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">auto</span> <span class="o">*</span><span class="n">f</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Func</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">func</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">f</span> <span class="o">&amp;&amp;</span> <span class="n">f</span><span class="o">-&gt;</span><span class="n">numGenerics</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;magic method overrides cannot be generic (&quot;</span> <span class="o">+</span>
+                            <span class="n">f</span><span class="o">-&gt;</span><span class="n">genericName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;)&quot;</span><span class="p">);</span>
+
+  <span class="n">types</span><span class="o">::</span><span class="n">FuncType</span> <span class="o">*</span><span class="n">funcType</span> <span class="o">=</span> <span class="n">func</span><span class="o">-&gt;</span><span class="n">getFuncType</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">!=</span> <span class="n">funcType</span><span class="o">-&gt;</span><span class="n">numBaseTypes</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">funcType</span><span class="o">-&gt;</span><span class="n">numBaseTypes</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">types</span><span class="o">::</span><span class="n">is</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">funcType</span><span class="o">-&gt;</span><span class="n">getBaseType</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
+      <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">funcType</span><span class="o">-&gt;</span><span class="n">getBaseType</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">magicOut</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">,</span>
+                                   <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span>
+                                   <span class="kt">bool</span> <span class="n">nullOnMissing</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">initOps</span><span class="p">();</span>
+
+  <span class="k">const</span> <span class="kt">bool</span> <span class="n">isStatic</span> <span class="o">=</span> <span class="p">(</span><span class="o">!</span><span class="n">args</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">args</span><span class="p">.</span><span class="n">back</span><span class="p">()</span> <span class="o">==</span> <span class="k">nullptr</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">isStatic</span><span class="p">)</span>
+    <span class="n">args</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+  <span class="k">else</span>
+    <span class="n">args</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="k">this</span><span class="p">);</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">vtable</span><span class="p">.</span><span class="n">overloads</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">magic</span><span class="p">.</span><span class="n">name</span> <span class="o">!=</span> <span class="n">name</span><span class="p">)</span>
+      <span class="k">continue</span><span class="p">;</span>
+
+    <span class="n">magic</span><span class="p">.</span><span class="n">func</span><span class="o">-&gt;</span><span class="n">resolveTypes</span><span class="p">();</span>
+    <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span> <span class="o">=</span> <span class="n">callType</span><span class="p">(</span><span class="n">magic</span><span class="p">.</span><span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">type</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">type</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isStatic</span><span class="p">)</span>
+    <span class="n">args</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">vtable</span><span class="p">.</span><span class="n">magic</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="n">magic</span><span class="p">.</span><span class="n">name</span> <span class="o">&amp;&amp;</span> <span class="n">typeMatch</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">magic</span><span class="p">.</span><span class="n">args</span><span class="p">))</span>
+      <span class="k">return</span> <span class="n">magic</span><span class="p">.</span><span class="n">out</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">nullOnMissing</span><span class="p">)</span>
+    <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+
+  <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;cannot find method &#39;&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;&#39; for type &#39;&quot;</span> <span class="o">+</span>
+                          <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39; with specified argument types &quot;</span> <span class="o">+</span>
+                          <span class="n">argsVecToStr</span><span class="p">(</span><span class="n">args</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">callMagic</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">,</span>
+                              <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">argTypes</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span>
+                              <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">,</span>
+                              <span class="n">TryCatch</span> <span class="o">*</span><span class="n">tc</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">initOps</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">argTypes</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">argTypes</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="k">this</span><span class="p">);</span>
+    <span class="n">args</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">self</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">vtable</span><span class="p">.</span><span class="n">overloads</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">magic</span><span class="p">.</span><span class="n">name</span> <span class="o">!=</span> <span class="n">name</span><span class="p">)</span>
+      <span class="k">continue</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">callType</span><span class="p">(</span><span class="n">magic</span><span class="p">.</span><span class="n">func</span><span class="p">,</span> <span class="n">argTypes</span><span class="p">))</span> <span class="p">{</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">argExprs</span><span class="p">;</span>
+      <span class="n">assert</span><span class="p">(</span><span class="n">argTypes</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="n">args</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">args</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">argExprs</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="k">new</span> <span class="n">ValueExpr</span><span class="p">(</span><span class="n">argTypes</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">]));</span>
+
+      <span class="n">FuncExpr</span> <span class="nf">func</span><span class="p">(</span><span class="n">magic</span><span class="p">.</span><span class="n">func</span><span class="p">);</span>
+      <span class="n">CallExpr</span> <span class="nf">call</span><span class="p">(</span><span class="o">&amp;</span><span class="n">func</span><span class="p">,</span> <span class="n">argExprs</span><span class="p">);</span>
+      <span class="n">call</span><span class="p">.</span><span class="n">setTryCatch</span><span class="p">(</span><span class="n">tc</span><span class="p">);</span>
+      <span class="n">call</span><span class="p">.</span><span class="n">resolveTypes</span><span class="p">();</span>
+      <span class="k">return</span> <span class="n">call</span><span class="p">.</span><span class="n">codegen</span><span class="p">(</span><span class="k">nullptr</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">argTypes</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">argTypes</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+    <span class="n">args</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">vtable</span><span class="p">.</span><span class="n">magic</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">==</span> <span class="n">magic</span><span class="p">.</span><span class="n">name</span> <span class="o">&amp;&amp;</span> <span class="n">typeMatch</span><span class="o">&lt;&gt;</span><span class="p">(</span><span class="n">argTypes</span><span class="p">,</span> <span class="n">magic</span><span class="p">.</span><span class="n">args</span><span class="p">))</span> <span class="p">{</span>
+      <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+      <span class="k">return</span> <span class="n">magic</span><span class="p">.</span><span class="n">codegen</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">builder</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;cannot find method &#39;&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;&#39; for type &#39;&quot;</span> <span class="o">+</span>
+                          <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39; with specified argument types &quot;</span> <span class="o">+</span>
+                          <span class="n">argsVecToStr</span><span class="p">(</span><span class="n">argTypes</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">isAtomic</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">is</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">isGeneric</span><span class="p">(</span><span class="n">type</span><span class="p">);</span> <span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">isGeneric</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">typeid</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">)</span> <span class="o">==</span> <span class="k">typeid</span><span class="p">(</span><span class="o">*</span><span class="n">type</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">unsigned</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">numBaseTypes</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">getBaseType</span><span class="p">(</span><span class="kt">unsigned</span> <span class="n">idx</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;type &#39;&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39; has no base types&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">getCallType</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="o">&amp;</span><span class="n">inTypes</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;cannot call type &#39;&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Type</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;cannot instantiate &#39;&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;&#39; class&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">size_t</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">size</span><span class="p">(</span><span class="n">Module</span> <span class="o">*</span><span class="n">module</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">RecordType</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">asRec</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">RefType</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">asRef</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">GenType</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">asGen</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">OptionalType</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">asOpt</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">KMer</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">asKMer</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">BaseFunc</span> <span class="o">*</span><span class="n">MagicMethod</span><span class="o">::</span><span class="n">asFunc</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">argsFull</span><span class="p">(</span><span class="n">args</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isStatic</span><span class="p">)</span>
+    <span class="n">argsFull</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">argsFull</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">type</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="k">new</span> <span class="nf">BaseFuncLite</span><span class="p">(</span><span class="n">argsFull</span><span class="p">,</span> <span class="n">out</span><span class="p">,</span> <span class="p">[</span><span class="k">this</span><span class="p">,</span> <span class="n">argsFull</span><span class="p">](</span><span class="n">Module</span> <span class="o">*</span><span class="n">module</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">module</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">*</span><span class="nl">arg</span> <span class="p">:</span> <span class="n">argsFull</span><span class="p">)</span>
+      <span class="n">types</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">arg</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">));</span>
+
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">idx</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">auto</span> <span class="o">*</span><span class="n">func</span> <span class="o">=</span> <span class="n">cast</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&gt;</span><span class="p">(</span><span class="n">module</span><span class="o">-&gt;</span><span class="n">getOrInsertFunction</span><span class="p">(</span>
+        <span class="s">&quot;seq.magic.&quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;.&quot;</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">idx</span><span class="o">++</span><span class="p">),</span>
+        <span class="n">FunctionType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">out</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">types</span><span class="p">,</span> <span class="nb">false</span><span class="p">)));</span>
+    <span class="n">func</span><span class="o">-&gt;</span><span class="n">setLinkage</span><span class="p">(</span><span class="n">GlobalValue</span><span class="o">::</span><span class="n">PrivateLinkage</span><span class="p">);</span>
+
+    <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">entry</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;entry&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">arg</span> <span class="p">:</span> <span class="n">func</span><span class="o">-&gt;</span><span class="n">args</span><span class="p">())</span>
+      <span class="n">args</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arg</span><span class="p">);</span>
+
+    <span class="n">Value</span> <span class="o">*</span><span class="n">self</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isStatic</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">args</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+      <span class="n">self</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+      <span class="n">args</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span>
+    <span class="p">}</span>
+
+    <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">entry</span><span class="p">);</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="n">codegen</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">builder</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">)</span>
+      <span class="n">builder</span><span class="p">.</span><span class="n">CreateRet</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+    <span class="k">else</span>
+      <span class="n">builder</span><span class="p">.</span><span class="n">CreateRetVoid</span><span class="p">();</span>
+
+    <span class="k">return</span> <span class="n">func</span><span class="p">;</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">types</span><span class="o">::</span><span class="n">is</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type1</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">type1</span><span class="o">-&gt;</span><span class="n">is</span><span class="p">(</span><span class="n">type2</span><span class="p">)</span> <span class="o">||</span> <span class="n">type2</span><span class="o">-&gt;</span><span class="n">is</span><span class="p">(</span><span class="n">type1</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

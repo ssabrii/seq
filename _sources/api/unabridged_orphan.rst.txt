@@ -1,0 +1,278 @@
+:orphan:
+
+
+Full API
+========
+
+Directories
+***********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_compiler.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_compiler_include.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_compiler_include_seq.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_compiler_lang.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_compiler_types.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   dir_compiler_util.rst
+
+Files
+*****
+
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_types_any.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_any.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_types_array.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_array.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_types_base.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_base.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_common.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_lang_expr.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_expr.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_lang_func.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_func.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_types_funct.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_funct.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_types_generic.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_generic.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_util_jit.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_lang_lang.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_lang.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_llvm.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_types_num.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_num.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_util_ocaml.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_lang_ops.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_ops.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_types_optional.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_optional.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_parser.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_lang_patterns.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_patterns.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_types_ptr.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_ptr.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_types_record.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_record.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_types_ref.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_ref.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_lang_seq.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_seq.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_types_seqt.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_seqt.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_lang_stmt.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_stmt.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_types_types.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_types.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_lang_var.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_var.h.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_types_void.cpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file_compiler_include_seq_void.h.rst

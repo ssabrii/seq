@@ -1,0 +1,16 @@
+.. _exhale_struct_structseq_1_1Op:
+
+Struct Op
+=========
+
+- Defined in :ref:`file_compiler_include_seq_ops.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: seq::Op
+   :members:
+   :protected-members:
+   :undoc-members:

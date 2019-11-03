@@ -1,0 +1,37 @@
+
+.. _file_compiler_lang_func.cpp:
+
+File func.cpp
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_lang>` (``compiler/lang``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/lang/func.cpp``)
+---------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_lang_func.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``seq/seq.h`` (:ref:`file_compiler_include_seq_seq.h`)
+
+
+
+
+

@@ -1,0 +1,13 @@
+.. _exhale_function_expr_8cpp_1a766bfb253f21c2314afde8c13588108d:
+
+Function setBodyBase
+====================
+
+- Defined in :ref:`file_compiler_lang_expr.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: setBodyBase(For *, BaseFunc *)

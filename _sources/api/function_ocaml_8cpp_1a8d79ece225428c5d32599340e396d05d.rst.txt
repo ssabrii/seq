@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a8d79ece225428c5d32599340e396d05d:
+
+Function ptr_expr
+=================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ptr_expr(Var *)

@@ -1,0 +1,13 @@
+.. _exhale_function_patterns_8cpp_1a9ccb47b00f093cc30a68ec6096e5190b:
+
+Function codegenSeqMatchForSeq
+==============================
+
+- Defined in :ref:`file_compiler_lang_patterns.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: codegenSeqMatchForSeq(const std::vector<char>&, BaseFunc *, types::Type *, Value *, BasicBlock *&)

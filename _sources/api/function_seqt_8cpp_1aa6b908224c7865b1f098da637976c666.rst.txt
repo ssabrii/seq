@@ -1,0 +1,13 @@
+.. _exhale_function_seqt_8cpp_1aa6b908224c7865b1f098da637976c666:
+
+Function getStrFunc
+===================
+
+- Defined in :ref:`file_compiler_types_seqt.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: getStrFunc(types::KMer *, Module *)

@@ -1,0 +1,26 @@
+.. _exhale_class_classseq_1_1types_1_1RefType:
+
+Class RefType
+=============
+
+- Defined in :ref:`file_compiler_include_seq_ref.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Types
+**********
+
+- ``public seq::types::Type`` (:ref:`exhale_class_classseq_1_1types_1_1Type`)
+- ``public seq::Generic`` (:ref:`exhale_class_classseq_1_1Generic`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::types::RefType
+   :members:
+   :protected-members:
+   :undoc-members:

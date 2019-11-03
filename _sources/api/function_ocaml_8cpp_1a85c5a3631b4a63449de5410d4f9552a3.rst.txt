@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a85c5a3631b4a63449de5410d4f9552a3:
+
+Function type_of_expr
+=====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: type_of_expr(Expr *)

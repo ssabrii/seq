@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ab14399511e6426e52aa0d60501c96276:
+
+Function set_func_attr
+======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_func_attr(Func *, char *)

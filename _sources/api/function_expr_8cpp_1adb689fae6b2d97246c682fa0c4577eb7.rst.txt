@@ -1,0 +1,13 @@
+.. _exhale_function_expr_8cpp_1adb689fae6b2d97246c682fa0c4577eb7:
+
+Function unsupportedBOpError
+============================
+
+- Defined in :ref:`file_compiler_lang_expr.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: unsupportedBOpError(std::string, types::Type *, types::Type *)

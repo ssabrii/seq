@@ -1,0 +1,13 @@
+.. _exhale_define_seq_8h_1a68d05c689f70a5756e0eaff84f679ab6:
+
+Define SEQ_VERSION_MINOR
+========================
+
+- Defined in :ref:`file_compiler_include_seq_seq.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: SEQ_VERSION_MINOR

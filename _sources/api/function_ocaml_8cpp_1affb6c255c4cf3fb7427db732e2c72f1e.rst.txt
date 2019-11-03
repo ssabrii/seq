@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1affb6c255c4cf3fb7427db732e2c72f1e:
+
+Function bool_expr
+==================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: bool_expr(char)

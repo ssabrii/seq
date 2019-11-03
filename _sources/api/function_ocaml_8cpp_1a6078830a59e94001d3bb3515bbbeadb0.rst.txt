@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a6078830a59e94001d3bb3515bbbeadb0:
+
+Function void_type
+==================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: void_type()

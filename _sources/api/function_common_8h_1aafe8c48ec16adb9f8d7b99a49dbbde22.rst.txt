@@ -1,0 +1,13 @@
+.. _exhale_function_common_8h_1aafe8c48ec16adb9f8d7b99a49dbbde22:
+
+Function seq::makeTerminateFunc
+===============================
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::makeTerminateFunc(llvm::Module *)

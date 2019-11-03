@@ -1,0 +1,13 @@
+.. _exhale_function_generic_8h_1af12c6e360abb72b3ed4812e982834c30:
+
+Template Function seq::typeMatch
+================================
+
+- Defined in :ref:`file_compiler_include_seq_generic.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::typeMatch(const std::vector<T *>&, const std::vector<T *>&)

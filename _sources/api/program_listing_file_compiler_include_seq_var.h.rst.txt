@@ -1,0 +1,76 @@
+
+.. _program_listing_file_compiler_include_seq_var.h:
+
+Program Listing for File var.h
+==============================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_compiler_include_seq_var.h>` (``compiler/include/seq/var.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #ifndef SEQ_VAR_H
+   #define SEQ_VAR_H
+   
+   #include "expr.h"
+   #include "func.h"
+   #include "types.h"
+   #include <stack>
+   
+   namespace seq {
+   class Var {
+   private:
+     std::string name;
+   
+     types::Type *type;
+   
+     llvm::Value *ptr;
+   
+     llvm::Module *module;
+   
+     bool global;
+   
+     bool tls;
+   
+     bool repl;
+   
+     bool external;
+   
+     std::stack<Var *> mapped;
+   
+     void allocaIfNeeded(BaseFunc *base);
+   
+   public:
+     explicit Var(types::Type *type = nullptr);
+   
+     std::string getName();
+     void setName(std::string name);
+     bool isGlobal();
+     void setGlobal();
+     void setThreadLocal();
+     void setREPL();
+     void setExternal();
+   
+     void mapTo(Var *other);
+   
+     void unmap();
+   
+     llvm::Value *getPtr(BaseFunc *base);
+   
+     llvm::Value *load(BaseFunc *base, llvm::BasicBlock *block,
+                       bool atomic = false);
+   
+     void store(BaseFunc *base, llvm::Value *val, llvm::BasicBlock *block,
+                bool atomic = false);
+   
+     void setType(types::Type *type);
+   
+     types::Type *getType();
+   
+     Var *clone(Generic *ref);
+   };
+   
+   } // namespace seq
+   
+   #endif /* SEQ_VAR_H */

@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a08b8e37a754834fd715ffef679c204ca:
+
+Function pass_stmt
+==================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pass_stmt()

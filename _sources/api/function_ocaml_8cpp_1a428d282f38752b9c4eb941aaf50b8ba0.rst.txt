@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a428d282f38752b9c4eb941aaf50b8ba0:
+
+Function set_func_yield
+=======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_func_yield(Func *, Yield *)

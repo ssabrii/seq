@@ -1,0 +1,25 @@
+.. _exhale_class_classseq_1_1IntPattern:
+
+Class IntPattern
+================
+
+- Defined in :ref:`file_compiler_include_seq_patterns.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public seq::Pattern`` (:ref:`exhale_class_classseq_1_1Pattern`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::IntPattern
+   :members:
+   :protected-members:
+   :undoc-members:

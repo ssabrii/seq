@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a75d0531c04b9963ce8c196f106a95fc3:
+
+Function partial_expr
+=====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: partial_expr(Expr *, Expr **, size_t)

@@ -1,0 +1,830 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class GenericType &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class GenType" href="classseq_1_1types_1_1GenType.html" />
+    <link rel="prev" title="Class FuncType" href="classseq_1_1types_1_1FuncType.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Compiler Internals</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="doxygen.html">Compiler API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="doxygen.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doxygen.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="doxygen.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="doxygen.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structDrainState.html">Struct DrainState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1Block.html">Struct Block</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1MagicMethod.html">Struct MagicMethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1MagicOverload.html">Struct MagicOverload</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1Op.html">Struct Op</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1SrcInfo.html">Struct SrcInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1SrcObject.html">Struct SrcObject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1types_1_1ExtInfo.html">Struct ExtInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1types_1_1VTable.html">Struct VTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq__srcinfo.html">Struct seq_srcinfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoehmGCMemoryManager.html">Class BoehmGCMemoryManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArrayContainsExpr.html">Class ArrayContainsExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArrayExpr.html">Class ArrayExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArrayLookupExpr.html">Class ArrayLookupExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArrayPattern.html">Class ArrayPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArraySliceExpr.html">Class ArraySliceExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Assert.html">Class Assert</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Assign.html">Class Assign</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1AssignIndex.html">Class AssignIndex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1AssignMember.html">Class AssignMember</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1AtomicExpr.html">Class AtomicExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BaseFunc.html">Class BaseFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BaseFuncLite.html">Class BaseFuncLite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BlankExpr.html">Class BlankExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BoolExpr.html">Class BoolExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BoolPattern.html">Class BoolPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BOpExpr.html">Class BOpExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BoundPattern.html">Class BoundPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Break.html">Class Break</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1CallExpr.html">Class CallExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1CondExpr.html">Class CondExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ConstructExpr.html">Class ConstructExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Continue.html">Class Continue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1DefaultExpr.html">Class DefaultExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Del.html">Class Del</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1DelIndex.html">Class DelIndex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1DictCompExpr.html">Class DictCompExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1DictExpr.html">Class DictExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1exc_1_1SeqException.html">Class SeqException</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Expr.html">Class Expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ExprStmt.html">Class ExprStmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1FloatExpr.html">Class FloatExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1For.html">Class For</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Func.html">Class Func</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1FuncExpr.html">Class FuncExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1FuncStmt.html">Class FuncStmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Generic.html">Class Generic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1GenExpr.html">Class GenExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1GetElemExpr.html">Class GetElemExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1GetStaticElemExpr.html">Class GetStaticElemExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1GuardedPattern.html">Class GuardedPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1If.html">Class If</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1IntExpr.html">Class IntExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1IntPattern.html">Class IntPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1IsExpr.html">Class IsExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ListCompExpr.html">Class ListCompExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ListExpr.html">Class ListExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Match.html">Class Match</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1MatchExpr.html">Class MatchExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1MethodExpr.html">Class MethodExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1NoneExpr.html">Class NoneExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1OptExpr.html">Class OptExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1OptPattern.html">Class OptPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1OrPattern.html">Class OrPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1PartialCallExpr.html">Class PartialCallExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Pattern.html">Class Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1PipeExpr.html">Class PipeExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Prefetch.html">Class Prefetch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Print.html">Class Print</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1RangePattern.html">Class RangePattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1RCache.html">Template Class RCache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1RecordExpr.html">Class RecordExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1RecordPattern.html">Class RecordPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Return.html">Class Return</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SeqExpr.html">Class SeqExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SeqModule.html">Class SeqModule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SeqPattern.html">Class SeqPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SetCompExpr.html">Class SetCompExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SetExpr.html">Class SetExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1StarPattern.html">Class StarPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Stmt.html">Class Stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1StrExpr.html">Class StrExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1StrPattern.html">Class StrPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Throw.html">Class Throw</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1TryCatch.html">Class TryCatch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1TypeExpr.html">Class TypeExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1TypeOfExpr.html">Class TypeOfExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1AnyType.html">Class AnyType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1ArrayType.html">Class ArrayType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1BaseSeqType.html">Class BaseSeqType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1BaseType.html">Class BaseType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1BoolType.html">Class BoolType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1ByteType.html">Class ByteType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1FloatType.html">Class FloatType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1FuncType.html">Class FuncType</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Class GenericType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1GenType.html">Class GenType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1IntNType.html">Class IntNType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1IntType.html">Class IntType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1KMer.html">Class KMer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1MethodType.html">Class MethodType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1NumberType.html">Class NumberType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1OptionalType.html">Class OptionalType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1PartialFuncType.html">Class PartialFuncType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1PtrType.html">Class PtrType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1RecordType.html">Class RecordType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1RefType.html">Class RefType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1SeqType.html">Class SeqType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1StrType.html">Class StrType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1Type.html">Class Type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1VoidType.html">Class VoidType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1UOpExpr.html">Class UOpExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ValueExpr.html">Class ValueExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Var.html">Class Var</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1VarExpr.html">Class VarExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1VarPtrExpr.html">Class VarPtrExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1VarStmt.html">Class VarStmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1While.html">Class While</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Wildcard.html">Class Wildcard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Yield.html">Class Yield</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="doxygen.html">Compiler API</a> &raquo;</li>
+        
+      <li>Class GenericType</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/classseq_1_1types_1_1GenericType.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-generictype">
+<span id="exhale-class-classseq-1-1types-1-1generictype"></span><h1>Class GenericType<a class="headerlink" href="#class-generictype" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_compiler_include_seq_generic.h.html#file-compiler-include-seq-generic-h"><span class="std std-ref">File generic.h</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="base-type">
+<h3>Base Type<a class="headerlink" href="#base-type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">seq::types::Type</span></code> (<a class="reference internal" href="classseq_1_1types_1_1Type.html#exhale-class-classseq-1-1types-1-1type"><span class="std std-ref">Class Type</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv4N3seq5types11GenericTypeE">
+<span id="_CPPv3N3seq5types11GenericTypeE"></span><span id="_CPPv2N3seq5types11GenericTypeE"></span><span id="seq::types::GenericType"></span><span class="target" id="classseq_1_1types_1_1GenericType"></span><em class="property">class </em><code class="sig-name descname">GenericType</code> : <em class="property">public</em> seq::types::<a class="reference internal" href="classseq_1_1types_1_1Type.html#_CPPv4N3seq5types4TypeE" title="seq::types::Type">Type</a><a class="headerlink" href="#_CPPv4N3seq5types11GenericTypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>A generic type simply delegates all of its functionality to some other type, which is determined later during type resolution. However, this class is also reused for two other purposes:</p>
+<p><ul class="simple">
+<li><p>Realized generic types like <code class="docutils literal notranslate"><span class="pre">A[int]</span></code>: Realization is deferred until absolutely necessary by this class.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">typeof</span></code> expressions: This class can hold an expression object whose type will not be checked until (again) absolutely necessary.</p></li>
+</ul>
+</p>
+<p>This deferral allows some type-checking corner-cases to work properly. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType11GenericTypeEv">
+<span id="_CPPv3N5types11GenericType11GenericTypeEv"></span><span id="_CPPv2N5types11GenericType11GenericTypeEv"></span><span id="types::GenericType::GenericType"></span><span class="target" id="classseq_1_1types_1_1GenericType_1acaa0408b6c6f4d23b54ad44bc9a9af89"></span><code class="sig-name descname">GenericType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType11GenericTypeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3seq5types11GenericType11GenericTypeEP7RefTypeNSt6vectorIP4TypeEEP4Expr">
+<span id="_CPPv3N3seq5types11GenericType11GenericTypeEP7RefTypeNSt6vectorIP4TypeEEP4Expr"></span><span id="_CPPv2N3seq5types11GenericType11GenericTypeEP7RefTypeNSt6vectorIP4TypeEEP4Expr"></span><span id="seq::types::GenericType::GenericType__RefTypeP.std::vector:TypeP:.ExprP"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a8a9d3e74b092f257d9117c42c6f511e5"></span><code class="sig-name descname">GenericType</code><span class="sig-paren">(</span><a class="reference internal" href="classseq_1_1types_1_1RefType.html#_CPPv4N3seq5types7RefTypeE" title="seq::types::RefType">RefType</a> *<em>pending</em>, std::vector&lt;<a class="reference internal" href="classseq_1_1types_1_1Type.html#_CPPv4N3seq5types4TypeE" title="seq::types::Type">Type</a> *&gt; <em>types</em>, <a class="reference internal" href="classseq_1_1Expr.html#_CPPv4N3seq4ExprE" title="seq::Expr">Expr</a> *<em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3seq5types11GenericType11GenericTypeEP7RefTypeNSt6vectorIP4TypeEEP4Expr" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType7setNameENSt6stringE">
+<span id="_CPPv3N5types11GenericType7setNameENSt6stringE"></span><span id="_CPPv2N5types11GenericType7setNameENSt6stringE"></span><span id="types::GenericType::setName__ss"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a74b1653895486b2a6bb2625ec21493d8"></span>void <code class="sig-name descname">setName</code><span class="sig-paren">(</span>std::string <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType7setNameENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType7realizeEP4Type">
+<span id="_CPPv3N5types11GenericType7realizeEP4Type"></span><span id="_CPPv2N5types11GenericType7realizeEP4Type"></span><span id="types::GenericType::realize__TypeP"></span><span class="target" id="classseq_1_1types_1_1GenericType_1adec362826cffbf9b9b00d1b388de685c"></span>void <code class="sig-name descname">realize</code><span class="sig-paren">(</span>Type *<em>type</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType7realizeEP4Type" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK5types11GenericType7realizeEv">
+<span id="_CPPv3NK5types11GenericType7realizeEv"></span><span id="_CPPv2NK5types11GenericType7realizeEv"></span><span id="types::GenericType::realizeC"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a5ace1ed0f88f5a06988fda1c50f1556a"></span>void <code class="sig-name descname">realize</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5types11GenericType7realizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK5types11GenericType8realizedEv">
+<span id="_CPPv3NK5types11GenericType8realizedEv"></span><span id="_CPPv2NK5types11GenericType8realizedEv"></span><span id="types::GenericType::realizedC"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a8f42aff8ee05e4f0d32da755371cc0d9"></span>bool <code class="sig-name descname">realized</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5types11GenericType8realizedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK5types11GenericType6ensureEv">
+<span id="_CPPv3NK5types11GenericType6ensureEv"></span><span id="_CPPv2NK5types11GenericType6ensureEv"></span><span id="types::GenericType::ensureC"></span><span class="target" id="classseq_1_1types_1_1GenericType_1aa9ec119d16d563b231f97ffdf6e653d0"></span>void <code class="sig-name descname">ensure</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5types11GenericType6ensureEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK5types11GenericType7getTypeEv">
+<span id="_CPPv3NK5types11GenericType7getTypeEv"></span><span id="_CPPv2NK5types11GenericType7getTypeEv"></span><span id="types::GenericType::getTypeC"></span><span class="target" id="classseq_1_1types_1_1GenericType_1ac260c7dd8be36627265aec50992ba1c8"></span>types::Type *<code class="sig-name descname">getType</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5types11GenericType7getTypeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK5types11GenericType5getIDEv">
+<span id="_CPPv3NK5types11GenericType5getIDEv"></span><span id="_CPPv2NK5types11GenericType5getIDEv"></span><span id="types::GenericType::getIDC"></span><span class="target" id="classseq_1_1types_1_1GenericType_1ad29827968a584f9910fceeba871cfba2"></span>int <code class="sig-name descname">getID</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5types11GenericType5getIDEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns a unique identifier for this type, based on <a class="reference internal" href="#classseq_1_1types_1_1GenericType_1ac8ce3f96f746713ca3d245dd28af839e"><span class="std std-ref">getName()</span></a>. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK5types11GenericType7getNameEv">
+<span id="_CPPv3NK5types11GenericType7getNameEv"></span><span id="_CPPv2NK5types11GenericType7getNameEv"></span><span id="types::GenericType::getNameC"></span><span class="target" id="classseq_1_1types_1_1GenericType_1ac8ce3f96f746713ca3d245dd28af839e"></span>std::string <code class="sig-name descname">getName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5types11GenericType7getNameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the full name (e.g. <code class="docutils literal notranslate"><span class="pre">array[int]</span></code>, <code class="docutils literal notranslate"><span class="pre">Foo[str,bool]</span></code>) of this type. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK5types11GenericType9getParentEv">
+<span id="_CPPv3NK5types11GenericType9getParentEv"></span><span id="_CPPv2NK5types11GenericType9getParentEv"></span><span id="types::GenericType::getParentC"></span><span class="target" id="classseq_1_1types_1_1GenericType_1add6bb5199c1f7aee1a7533d6e6e5b855"></span>types::Type *<code class="sig-name descname">getParent</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5types11GenericType9getParentEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns this type’s parent type. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK5types11GenericType10isAbstractEv">
+<span id="_CPPv3NK5types11GenericType10isAbstractEv"></span><span id="_CPPv2NK5types11GenericType10isAbstractEv"></span><span id="types::GenericType::isAbstractC"></span><span class="target" id="classseq_1_1types_1_1GenericType_1aaff4e05779469e79c4c80342e35654f5"></span>bool <code class="sig-name descname">isAbstract</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5types11GenericType10isAbstractEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns whether this type is abstract (i.e. cannot be instantiated). </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType9getVTableEv">
+<span id="_CPPv3N5types11GenericType9getVTableEv"></span><span id="_CPPv2N5types11GenericType9getVTableEv"></span><span id="types::GenericType::getVTable"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a033b4998c48069dddf481b612463b3f1"></span>types::VTable &amp;<code class="sig-name descname">getVTable</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType9getVTableEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns a reference to this type’s <a class="reference internal" href="structseq_1_1types_1_1VTable.html#structseq_1_1types_1_1VTable"><span class="std std-ref">VTable</span></a>. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK5types11GenericType8isAtomicEv">
+<span id="_CPPv3NK5types11GenericType8isAtomicEv"></span><span id="_CPPv2NK5types11GenericType8isAtomicEv"></span><span id="types::GenericType::isAtomicC"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a573c2bfd46e90080a49b01a2736e6554"></span>bool <code class="sig-name descname">isAtomic</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5types11GenericType8isAtomicEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns whether this type is “atomic”. A type is defined to be atomic if its LLVM representation contains no pointers to heap allocated data. This is used internally by the GC, as we can allocate “atomic” and “non-atomic” blocks separately. Atomic blocks do not need to be scanned when searching for pointers. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType5allocEPN4llvm5ValueEPN4llvm10BasicBlockE">
+<span id="_CPPv3N5types11GenericType5allocEPN4llvm5ValueEPN4llvm10BasicBlockE"></span><span id="_CPPv2N5types11GenericType5allocEPN4llvm5ValueEPN4llvm10BasicBlockE"></span><span id="types::GenericType::alloc__llvm::ValueP.llvm::BasicBlockP"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a454b0cf9cfbb9ef21d18c9b76105af66"></span>Value *<code class="sig-name descname">alloc</code><span class="sig-paren">(</span>llvm::Value *<em>count</em>, llvm::BasicBlock *<em>block</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType5allocEPN4llvm5ValueEPN4llvm10BasicBlockE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Codegen’s an allocation. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>value representing pointer returned from allocation </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">count</span></code>: how many units of this type to allocate </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">block</span></code>: where to codegen this allocation </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType4callEP8BaseFuncPN4llvm5ValueERKNSt6vectorIPN4llvm5ValueEEEPN4llvm10BasicBlockEPN4llvm10BasicBlockEPN4llvm10BasicBlockE">
+<span id="_CPPv3N5types11GenericType4callEP8BaseFuncPN4llvm5ValueERKNSt6vectorIPN4llvm5ValueEEEPN4llvm10BasicBlockEPN4llvm10BasicBlockEPN4llvm10BasicBlockE"></span><span id="_CPPv2N5types11GenericType4callEP8BaseFuncPN4llvm5ValueERKNSt6vectorIPN4llvm5ValueEEEPN4llvm10BasicBlockEPN4llvm10BasicBlockEPN4llvm10BasicBlockE"></span><span id="types::GenericType::call__BaseFuncP.llvm::ValueP.std::vector:llvm::ValueP:CR.llvm::BasicBlockP.llvm::BasicBlockP.llvm::BasicBlockP"></span><span class="target" id="classseq_1_1types_1_1GenericType_1ace65ef7cd5c568899dc567db6c085757"></span>Value *<code class="sig-name descname">call</code><span class="sig-paren">(</span>BaseFunc *<em>base</em>, llvm::Value *<em>self</em>, <em class="property">const</em> std::vector&lt;llvm::Value *&gt; &amp;<em>args</em>, llvm::BasicBlock *<em>block</em>, llvm::BasicBlock *<em>normal</em>, llvm::BasicBlock *<em>unwind</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType4callEP8BaseFuncPN4llvm5ValueERKNSt6vectorIPN4llvm5ValueEEEPN4llvm10BasicBlockEPN4llvm10BasicBlockEPN4llvm10BasicBlockE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calls this type. Usually a call to this method should be preceded by a call to <a class="reference internal" href="#classseq_1_1types_1_1GenericType_1a07a543252ed9cc938b89082ec0071260"><span class="std std-ref">getCallType()</span></a> to validate types and determine the output type. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>value resulting from call </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code>: the function containing <code class="docutils literal notranslate"><span class="pre">block</span></code> </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: a value of this type </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: vector of argument values </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">block</span></code>: where to codegen this call in </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">normal</span></code>: if in a try, block to branch to if call succeeds, or null otherwise </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">unwind</span></code>: if in a try, block to branch to if call raises an exception, or null otherwise </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType4membEPN4llvm5ValueERKNSt6stringEPN4llvm10BasicBlockE">
+<span id="_CPPv3N5types11GenericType4membEPN4llvm5ValueERKNSt6stringEPN4llvm10BasicBlockE"></span><span id="_CPPv2N5types11GenericType4membEPN4llvm5ValueERKNSt6stringEPN4llvm10BasicBlockE"></span><span id="types::GenericType::memb__llvm::ValueP.ssCR.llvm::BasicBlockP"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a084a24e72d0a829d6e6d7440a0c132a9"></span>Value *<code class="sig-name descname">memb</code><span class="sig-paren">(</span>llvm::Value *<em>self</em>, <em class="property">const</em> std::string &amp;<em>name</em>, llvm::BasicBlock *<em>block</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType4membEPN4llvm5ValueERKNSt6stringEPN4llvm10BasicBlockE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Extract a given member (field or method) from this type. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>member value </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: a value of this type </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: name of the member </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">block</span></code>: where to codegen the member </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType8membTypeERKNSt6stringE">
+<span id="_CPPv3N5types11GenericType8membTypeERKNSt6stringE"></span><span id="_CPPv2N5types11GenericType8membTypeERKNSt6stringE"></span><span id="types::GenericType::membType__ssCR"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a122d96fa0f8afbbdafa36d844e75ab45"></span>types::Type *<code class="sig-name descname">membType</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType8membTypeERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="classseq_1_1Return.html#classseq_1_1Return"><span class="std std-ref">Return</span></a> the type of a given member (field or method) of this type. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>type of the member </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: name of the member </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType7setMembEPN4llvm5ValueERKNSt6stringEPN4llvm5ValueEPN4llvm10BasicBlockE">
+<span id="_CPPv3N5types11GenericType7setMembEPN4llvm5ValueERKNSt6stringEPN4llvm5ValueEPN4llvm10BasicBlockE"></span><span id="_CPPv2N5types11GenericType7setMembEPN4llvm5ValueERKNSt6stringEPN4llvm5ValueEPN4llvm10BasicBlockE"></span><span id="types::GenericType::setMemb__llvm::ValueP.ssCR.llvm::ValueP.llvm::BasicBlockP"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a6b762b3f355fb55f5088aa4edc80b038"></span>Value *<code class="sig-name descname">setMemb</code><span class="sig-paren">(</span>llvm::Value *<em>self</em>, <em class="property">const</em> std::string &amp;<em>name</em>, llvm::Value *<em>val</em>, llvm::BasicBlock *<em>block</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType7setMembEPN4llvm5ValueERKNSt6stringEPN4llvm5ValueEPN4llvm10BasicBlockE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Sets the specified member of this type. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>value (possibly <code class="docutils literal notranslate"><span class="pre">self</span></code>) containing new member </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: a value of this type </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: name of the member </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">val</span></code>: value to assign to member </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">block</span></code>: where to codegen the assignment </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType9hasMethodERKNSt6stringE">
+<span id="_CPPv3N5types11GenericType9hasMethodERKNSt6stringE"></span><span id="_CPPv2N5types11GenericType9hasMethodERKNSt6stringE"></span><span id="types::GenericType::hasMethod__ssCR"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a214af8f1c804ec28ae1d19e06d647929"></span>bool <code class="sig-name descname">hasMethod</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType9hasMethodERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Checks whether type has specified (possibly magic) method. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>whether this type has the specified method </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: name of the method </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType9addMethodENSt6stringEP8BaseFuncb">
+<span id="_CPPv3N5types11GenericType9addMethodENSt6stringEP8BaseFuncb"></span><span id="_CPPv2N5types11GenericType9addMethodENSt6stringEP8BaseFuncb"></span><span id="types::GenericType::addMethod__ss.BaseFuncP.b"></span><span class="target" id="classseq_1_1types_1_1GenericType_1ac2577a4e75bbd1404a56948bb8bb3f4b"></span>void <code class="sig-name descname">addMethod</code><span class="sig-paren">(</span>std::string <em>name</em>, BaseFunc *<em>func</em>, bool <em>force</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType9addMethodENSt6stringEP8BaseFuncb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Adds a specified (possibly magic) method to this type. <dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: name of the method </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">func</span></code>: method to add </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">force</span></code>: error on duplicate method names if false override existing same-name method if true </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType9getMethodERKNSt6stringE">
+<span id="_CPPv3N5types11GenericType9getMethodERKNSt6stringE"></span><span id="_CPPv2N5types11GenericType9getMethodERKNSt6stringE"></span><span id="types::GenericType::getMethod__ssCR"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a2c1782351be8ae74a9a7d1c5fc59c283"></span>BaseFunc *<code class="sig-name descname">getMethod</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType9getMethodERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the specified (<strong>non-magic</strong>) method of this type. Throws an exception if the specified method does not exist. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><a class="reference internal" href="classseq_1_1BaseFunc.html#classseq_1_1BaseFunc"><span class="std std-ref">BaseFunc</span></a> representing the specified method </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: name of the method </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType10staticMembERKNSt6stringEPN4llvm10BasicBlockE">
+<span id="_CPPv3N5types11GenericType10staticMembERKNSt6stringEPN4llvm10BasicBlockE"></span><span id="_CPPv2N5types11GenericType10staticMembERKNSt6stringEPN4llvm10BasicBlockE"></span><span id="types::GenericType::staticMemb__ssCR.llvm::BasicBlockP"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a816811827939020a54961a25b278296c"></span>Value *<code class="sig-name descname">staticMemb</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, llvm::BasicBlock *<em>block</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType10staticMembERKNSt6stringEPN4llvm10BasicBlockE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the specified static member (usually a method) of this type. This works for both regular and magic methods. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>member value </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: name of the member </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">block</span></code>: where to codegen the member </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType14staticMembTypeERKNSt6stringE">
+<span id="_CPPv3N5types11GenericType14staticMembTypeERKNSt6stringE"></span><span id="_CPPv2N5types11GenericType14staticMembTypeERKNSt6stringE"></span><span id="types::GenericType::staticMembType__ssCR"></span><span class="target" id="classseq_1_1types_1_1GenericType_1af9b0fd81438a929a6445ebb9c0657f27"></span>types::Type *<code class="sig-name descname">staticMembType</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType14staticMembTypeERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the type of the specified static member (usually a method). This works for both regular and magic methods. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>type of the member </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: name of the member </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType12defaultValueEPN4llvm10BasicBlockE">
+<span id="_CPPv3N5types11GenericType12defaultValueEPN4llvm10BasicBlockE"></span><span id="_CPPv2N5types11GenericType12defaultValueEPN4llvm10BasicBlockE"></span><span id="types::GenericType::defaultValue__llvm::BasicBlockP"></span><span class="target" id="classseq_1_1types_1_1GenericType_1afdd1da5e9bfd474292b7208444b92302"></span>Value *<code class="sig-name descname">defaultValue</code><span class="sig-paren">(</span>llvm::BasicBlock *<em>block</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType12defaultValueEPN4llvm10BasicBlockE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Codegens the default value of this type. Usually this is just what you’d expect: zero for integral types, null for pointer and reference types, recursively defined for aggregate types. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>value of the default value </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">block</span></code>: where to codegen the default value </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType9boolValueEPN4llvm5ValueERPN4llvm10BasicBlockEP8TryCatch">
+<span id="_CPPv3N5types11GenericType9boolValueEPN4llvm5ValueERPN4llvm10BasicBlockEP8TryCatch"></span><span id="_CPPv2N5types11GenericType9boolValueEPN4llvm5ValueERPN4llvm10BasicBlockEP8TryCatch"></span><span id="types::GenericType::boolValue__llvm::ValueP.llvm::BasicBlockPR.TryCatchP"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a982f7ab48f015347355dcdd8e479d11e"></span>Value *<code class="sig-name descname">boolValue</code><span class="sig-paren">(</span>llvm::Value *<em>self</em>, llvm::BasicBlock *&amp;<em>block</em>, TryCatch *<em>tc</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType9boolValueEPN4llvm5ValueERPN4llvm10BasicBlockEP8TryCatch" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convenience method for calling <code class="docutils literal notranslate"><span class="pre">type.__bool__</span></code>. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>bool value of this type </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: value of this type </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">block</span></code>: where to codegen the bool value </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tc</span></code>: enclosing try-catch statement, or null if none </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType8strValueEPN4llvm5ValueERPN4llvm10BasicBlockEP8TryCatch">
+<span id="_CPPv3N5types11GenericType8strValueEPN4llvm5ValueERPN4llvm10BasicBlockEP8TryCatch"></span><span id="_CPPv2N5types11GenericType8strValueEPN4llvm5ValueERPN4llvm10BasicBlockEP8TryCatch"></span><span id="types::GenericType::strValue__llvm::ValueP.llvm::BasicBlockPR.TryCatchP"></span><span class="target" id="classseq_1_1types_1_1GenericType_1ad81cd1f4b9fb4f32c7f85750fcc10d3d"></span>Value *<code class="sig-name descname">strValue</code><span class="sig-paren">(</span>llvm::Value *<em>self</em>, llvm::BasicBlock *&amp;<em>block</em>, TryCatch *<em>tc</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType8strValueEPN4llvm5ValueERPN4llvm10BasicBlockEP8TryCatch" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convenience method for calling <code class="docutils literal notranslate"><span class="pre">type.__str__</span></code>. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>str value of this type </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: value of this type </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">block</span></code>: where to codegen the str value </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tc</span></code>: enclosing try-catch statement, or null if none </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType8lenValueEPN4llvm5ValueERPN4llvm10BasicBlockEP8TryCatch">
+<span id="_CPPv3N5types11GenericType8lenValueEPN4llvm5ValueERPN4llvm10BasicBlockEP8TryCatch"></span><span id="_CPPv2N5types11GenericType8lenValueEPN4llvm5ValueERPN4llvm10BasicBlockEP8TryCatch"></span><span id="types::GenericType::lenValue__llvm::ValueP.llvm::BasicBlockPR.TryCatchP"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a2ddee6ee24a4d9a3ab655e24bd733641"></span>Value *<code class="sig-name descname">lenValue</code><span class="sig-paren">(</span>llvm::Value *<em>self</em>, llvm::BasicBlock *&amp;<em>block</em>, TryCatch *<em>tc</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType8lenValueEPN4llvm5ValueERPN4llvm10BasicBlockEP8TryCatch" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convenience method for calling <code class="docutils literal notranslate"><span class="pre">type.__len__</span></code>. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>len value of this type </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: value of this type </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">block</span></code>: where to codegen the len value </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tc</span></code>: enclosing try-catch statement, or null if none </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType7initOpsEv">
+<span id="_CPPv3N5types11GenericType7initOpsEv"></span><span id="_CPPv2N5types11GenericType7initOpsEv"></span><span id="types::GenericType::initOps"></span><span class="target" id="classseq_1_1types_1_1GenericType_1aa5487d4dc18129ac199f24965a92d41a"></span>void <code class="sig-name descname">initOps</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType7initOpsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Performs a one-time initialization of this type’s methods, including magic methods. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType10initFieldsEv">
+<span id="_CPPv3N5types11GenericType10initFieldsEv"></span><span id="_CPPv2N5types11GenericType10initFieldsEv"></span><span id="types::GenericType::initFields"></span><span class="target" id="classseq_1_1types_1_1GenericType_1ab76d89fdd4bdfc7a6598612a2a5f36d3"></span>void <code class="sig-name descname">initFields</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType10initFieldsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Performs a one-time initialization of this type’s fields. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType8magicOutERKNSt6stringENSt6vectorIP4TypeEEb">
+<span id="_CPPv3N5types11GenericType8magicOutERKNSt6stringENSt6vectorIP4TypeEEb"></span><span id="_CPPv2N5types11GenericType8magicOutERKNSt6stringENSt6vectorIP4TypeEEb"></span><span id="types::GenericType::magicOut__ssCR.std::vector:TypeP:.b"></span><span class="target" id="classseq_1_1types_1_1GenericType_1abdfc4af7799cb705ee712504dfadd261"></span>types::Type *<code class="sig-name descname">magicOut</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, std::vector&lt;Type *&gt; <em>args</em>, bool <em>nullOnMissing</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType8magicOutERKNSt6stringENSt6vectorIP4TypeEEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the output type of the specified magic method with specified argument types. Throws an exception if the specified magic method does not exist by default. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>output type of specified magic method </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: full magic method name </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: vector of argument types (excluding ‘self’); last element being null indicates static. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nullOnMissing</span></code>: return null instead of throwing an exception if magic is missing </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType9callMagicERKNSt6stringENSt6vectorIP4TypeEEPN4llvm5ValueENSt6vectorIPN4llvm5ValueEEERPN4llvm10BasicBlockEP8TryCatch">
+<span id="_CPPv3N5types11GenericType9callMagicERKNSt6stringENSt6vectorIP4TypeEEPN4llvm5ValueENSt6vectorIPN4llvm5ValueEEERPN4llvm10BasicBlockEP8TryCatch"></span><span id="_CPPv2N5types11GenericType9callMagicERKNSt6stringENSt6vectorIP4TypeEEPN4llvm5ValueENSt6vectorIPN4llvm5ValueEEERPN4llvm10BasicBlockEP8TryCatch"></span><span id="types::GenericType::callMagic__ssCR.std::vector:TypeP:.llvm::ValueP.std::vector:llvm::ValueP:.llvm::BasicBlockPR.TryCatchP"></span><span class="target" id="classseq_1_1types_1_1GenericType_1af80bb4dc9a1f317340948271369ca3f8"></span>Value *<code class="sig-name descname">callMagic</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>name</em>, std::vector&lt;Type *&gt; <em>argTypes</em>, llvm::Value *<em>self</em>, std::vector&lt;llvm::Value *&gt; <em>args</em>, llvm::BasicBlock *&amp;<em>block</em>, TryCatch *<em>tc</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType9callMagicERKNSt6stringENSt6vectorIP4TypeEEPN4llvm5ValueENSt6vectorIPN4llvm5ValueEEERPN4llvm10BasicBlockEP8TryCatch" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Codegens a call to the specified magic method. Throws an exception if the specified magic method does not exist. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>result of calling the magic method </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code>: full magic method name </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">argTypes</span></code>: vector of argument types (exclusing self) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code>: value of this type; null if magic is static </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: vector of argument values (same size as <code class="docutils literal notranslate"><span class="pre">argTypes</span></code>) </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">block</span></code>: where to codegen the call </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tc</span></code>: enclosing try-catch statement, or null if none </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK5types11GenericType2isEP4Type">
+<span id="_CPPv3NK5types11GenericType2isEP4Type"></span><span id="_CPPv2NK5types11GenericType2isEP4Type"></span><span id="types::GenericType::is__TypePC"></span><span class="target" id="classseq_1_1types_1_1GenericType_1aca40f6ead9f55909db7a06c1fda9aac5"></span>bool <code class="sig-name descname">is</code><span class="sig-paren">(</span>Type *<em>type</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5types11GenericType2isEP4Type" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Checks whether this type “is” another type. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK5types11GenericType9isGenericEP4Type">
+<span id="_CPPv3NK5types11GenericType9isGenericEP4Type"></span><span id="_CPPv2NK5types11GenericType9isGenericEP4Type"></span><span id="types::GenericType::isGeneric__TypePC"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a4ba8d4d20baba5c3b16900fd0f7abfd0"></span>bool <code class="sig-name descname">isGeneric</code><span class="sig-paren">(</span>Type *<em>type</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5types11GenericType9isGenericEP4Type" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Checks whether this type “is” another type, excluding base types. E.g., <code class="docutils literal notranslate"><span class="pre">array[int].is(array[float])</span></code> would return true. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK5types11GenericType12numBaseTypesEv">
+<span id="_CPPv3NK5types11GenericType12numBaseTypesEv"></span><span id="_CPPv2NK5types11GenericType12numBaseTypesEv"></span><span id="types::GenericType::numBaseTypesC"></span><span class="target" id="classseq_1_1types_1_1GenericType_1ae7926aba873c137c105ee9ef29915b70"></span>unsigned <code class="sig-name descname">numBaseTypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5types11GenericType12numBaseTypesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the number of “base types” of this type. E.g., <code class="docutils literal notranslate"><span class="pre">int.numBaseTypes()</span></code> would return 0, whereas <code class="docutils literal notranslate"><span class="pre">array[str].</span><a class="reference internal" href="#classseq_1_1types_1_1GenericType_1ae7926aba873c137c105ee9ef29915b70"><span class="std std-ref"><span class="pre">numBaseTypes()</span></span></a></code> would return 1, and <code class="docutils literal notranslate"><span class="pre">(int,float,str).</span><a class="reference internal" href="#classseq_1_1types_1_1GenericType_1ae7926aba873c137c105ee9ef29915b70"><span class="std std-ref"><span class="pre">numBaseTypes()</span></span></a></code> would return 3. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK5types11GenericType11getBaseTypeEj">
+<span id="_CPPv3NK5types11GenericType11getBaseTypeEj"></span><span id="_CPPv2NK5types11GenericType11getBaseTypeEj"></span><span id="types::GenericType::getBaseType__unsignedC"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a3adc9bd741e0c9eb77ae0e7b898e7a5c"></span>types::Type *<code class="sig-name descname">getBaseType</code><span class="sig-paren">(</span>unsigned <em>idx</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5types11GenericType11getBaseTypeEj" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Obtain the base type at index <code class="docutils literal notranslate"><span class="pre">idx</span></code>. <code class="docutils literal notranslate"><span class="pre">idx</span></code> should be less than <a class="reference internal" href="#classseq_1_1types_1_1GenericType_1ae7926aba873c137c105ee9ef29915b70"><span class="std std-ref">numBaseTypes()</span></a>. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType11getCallTypeERKNSt6vectorIP4TypeEE">
+<span id="_CPPv3N5types11GenericType11getCallTypeERKNSt6vectorIP4TypeEE"></span><span id="_CPPv2N5types11GenericType11getCallTypeERKNSt6vectorIP4TypeEE"></span><span id="types::GenericType::getCallType__std::vector:TypeP:CR"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a07a543252ed9cc938b89082ec0071260"></span>types::Type *<code class="sig-name descname">getCallType</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;Type *&gt; &amp;<em>inTypes</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType11getCallTypeERKNSt6vectorIP4TypeEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the result of calling this type with the given argument types. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK5types11GenericType11getLLVMTypeERN4llvm11LLVMContextE">
+<span id="_CPPv3NK5types11GenericType11getLLVMTypeERN4llvm11LLVMContextE"></span><span id="_CPPv2NK5types11GenericType11getLLVMTypeERN4llvm11LLVMContextE"></span><span id="types::GenericType::getLLVMType__llvm::LLVMContextRC"></span><span class="target" id="classseq_1_1types_1_1GenericType_1ac182438bd1e07bb2a18b8e9ccf490f63"></span>Type *<code class="sig-name descname">getLLVMType</code><span class="sig-paren">(</span>llvm::LLVMContext &amp;<em>context</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5types11GenericType11getLLVMTypeERN4llvm11LLVMContextE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the LLVM type corresponding to this type. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK5types11GenericType4sizeEPN4llvm6ModuleE">
+<span id="_CPPv3NK5types11GenericType4sizeEPN4llvm6ModuleE"></span><span id="_CPPv2NK5types11GenericType4sizeEPN4llvm6ModuleE"></span><span id="types::GenericType::size__llvm::ModulePC"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a573fa9923d73903f4d4c67dfddd74a04"></span>size_t <code class="sig-name descname">size</code><span class="sig-paren">(</span>llvm::Module *<em>module</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK5types11GenericType4sizeEPN4llvm6ModuleE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns the size (in bytes) of the LLVM type corresponding to this type. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType5asRecEv">
+<span id="_CPPv3N5types11GenericType5asRecEv"></span><span id="_CPPv2N5types11GenericType5asRecEv"></span><span id="types::GenericType::asRec"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a5fbfedc1409ab15d6802e0cf017fdede"></span>types::RecordType *<code class="sig-name descname">asRec</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType5asRecEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns this type as a record type, or null if it isn’t a record type. This is basically for overriding C++’s RTTI/<code class="docutils literal notranslate"><span class="pre">dynamic_cast</span></code> so that generic types can be converted to their actual types. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType5asRefEv">
+<span id="_CPPv3N5types11GenericType5asRefEv"></span><span id="_CPPv2N5types11GenericType5asRefEv"></span><span id="types::GenericType::asRef"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a9a60ff89b213271f27f45e8b7ed7f602"></span>types::RefType *<code class="sig-name descname">asRef</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType5asRefEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns this type as a reference type, or null if it isn’t a reference type. This is basically for overriding C++’s RTTI/<code class="docutils literal notranslate"><span class="pre">dynamic_cast</span></code> so that generic types can be converted to their actual types. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType5asGenEv">
+<span id="_CPPv3N5types11GenericType5asGenEv"></span><span id="_CPPv2N5types11GenericType5asGenEv"></span><span id="types::GenericType::asGen"></span><span class="target" id="classseq_1_1types_1_1GenericType_1abee1e63e970c7905ceddd8e11b7fcc34"></span>types::GenType *<code class="sig-name descname">asGen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType5asGenEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns this type as a generator type, or null if it isn’t a generator type. This is basically for overriding C++’s RTTI/<code class="docutils literal notranslate"><span class="pre">dynamic_cast</span></code> so that generic types can be converted to their actual types. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType5asOptEv">
+<span id="_CPPv3N5types11GenericType5asOptEv"></span><span id="_CPPv2N5types11GenericType5asOptEv"></span><span id="types::GenericType::asOpt"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a23f7e71d89d9ced7bda87ff7490b8d38"></span>types::OptionalType *<code class="sig-name descname">asOpt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType5asOptEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns this type as an optional type, or null if it isn’t an optional type. This is basically for overriding C++’s RTTI/<code class="docutils literal notranslate"><span class="pre">dynamic_cast</span></code> so that generic types can be converted to their actual types. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType6asKMerEv">
+<span id="_CPPv3N5types11GenericType6asKMerEv"></span><span id="_CPPv2N5types11GenericType6asKMerEv"></span><span id="types::GenericType::asKMer"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a2c63d317f692dc2820278a5a6c065713"></span>types::KMer *<code class="sig-name descname">asKMer</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType6asKMerEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Returns this type as a k-mer type, or null if it isn’t a k-mer type. This is basically for overriding C++’s RTTI/<code class="docutils literal notranslate"><span class="pre">dynamic_cast</span></code> so that generic types can be converted to their actual types. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType5cloneEP7Generic">
+<span id="_CPPv3N5types11GenericType5cloneEP7Generic"></span><span id="_CPPv2N5types11GenericType5cloneEP7Generic"></span><span id="types::GenericType::clone__GenericP"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a21c5d8e398e5b309a96705b25a63e2b7"></span>types::GenericType *<code class="sig-name descname">clone</code><span class="sig-paren">(</span>Generic *<em>ref</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType5cloneEP7Generic" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Clones this type and all of its methods. <code class="docutils literal notranslate"><span class="pre">ref</span></code> is used internally to keep track of cloned objects, and to make sure we don’t clone certain objects twice. <dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>cloned type </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ref</span></code>: generic object that is being cloned </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType10findInTypeEPN5types4TypeERNSt6vectorIjEE">
+<span id="_CPPv3N5types11GenericType10findInTypeEPN5types4TypeERNSt6vectorIjEE"></span><span id="_CPPv2N5types11GenericType10findInTypeEPN5types4TypeERNSt6vectorIjEE"></span><span id="types::GenericType::findInType__types::TypeP.std::vector:unsigned:R"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a7aed06d14657479a5c250b52235bbe6f"></span>bool <code class="sig-name descname">findInType</code><span class="sig-paren">(</span>types::Type *<em>type</em>, std::vector&lt;unsigned&gt; &amp;<em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType10findInTypeEPN5types4TypeERNSt6vectorIjEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Static Functions</p>
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType3getEv">
+<span id="_CPPv3N5types11GenericType3getEv"></span><span id="_CPPv2N5types11GenericType3getEv"></span><span id="types::GenericType::get"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a9edb20df5428b4e5516a43d17f45f9e2"></span>types::GenericType *<code class="sig-name descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType3getEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3seq5types11GenericType3getEP7RefTypeNSt6vectorIP4TypeEE">
+<span id="_CPPv3N3seq5types11GenericType3getEP7RefTypeNSt6vectorIP4TypeEE"></span><span id="_CPPv2N3seq5types11GenericType3getEP7RefTypeNSt6vectorIP4TypeEE"></span><span id="seq::types::GenericType::get__RefTypeP.std::vector:TypeP:"></span><span class="target" id="classseq_1_1types_1_1GenericType_1ab879d1a7250bb15b566840bbc7f91f5f"></span><em class="property">static</em> <a class="reference internal" href="#_CPPv4N3seq5types11GenericTypeE" title="seq::types::GenericType">GenericType</a> *<code class="sig-name descname">get</code><span class="sig-paren">(</span><a class="reference internal" href="classseq_1_1types_1_1RefType.html#_CPPv4N3seq5types7RefTypeE" title="seq::types::RefType">RefType</a> *<em>pending</em>, std::vector&lt;<a class="reference internal" href="classseq_1_1types_1_1Type.html#_CPPv4N3seq5types4TypeE" title="seq::types::Type">Type</a> *&gt; <em>types</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3seq5types11GenericType3getEP7RefTypeNSt6vectorIP4TypeEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N5types11GenericType3getEP4Expr">
+<span id="_CPPv3N5types11GenericType3getEP4Expr"></span><span id="_CPPv2N5types11GenericType3getEP4Expr"></span><span id="types::GenericType::get__ExprP"></span><span class="target" id="classseq_1_1types_1_1GenericType_1a845ac53a29ae8a0b74cc34ab2f797002"></span>types::GenericType *<code class="sig-name descname">get</code><span class="sig-paren">(</span>Expr *<em>expr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N5types11GenericType3getEP4Expr" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classseq_1_1types_1_1GenType.html" class="btn btn-neutral float-right" title="Class GenType" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classseq_1_1types_1_1FuncType.html" class="btn btn-neutral float-left" title="Class FuncType" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

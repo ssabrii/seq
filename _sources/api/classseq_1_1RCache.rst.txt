@@ -1,0 +1,16 @@
+.. _exhale_class_classseq_1_1RCache:
+
+Template Class RCache
+=====================
+
+- Defined in :ref:`file_compiler_include_seq_generic.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::RCache
+   :members:
+   :protected-members:
+   :undoc-members:

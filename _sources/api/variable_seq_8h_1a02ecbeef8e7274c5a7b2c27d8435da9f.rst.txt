@@ -1,0 +1,13 @@
+.. _exhale_variable_seq_8h_1a02ecbeef8e7274c5a7b2c27d8435da9f:
+
+Variable seq::types::Array
+==========================
+
+- Defined in :ref:`file_compiler_include_seq_seq.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: seq::types::Array

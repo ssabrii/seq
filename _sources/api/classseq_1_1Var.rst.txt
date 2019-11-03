@@ -1,0 +1,16 @@
+.. _exhale_class_classseq_1_1Var:
+
+Class Var
+=========
+
+- Defined in :ref:`file_compiler_include_seq_var.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::Var
+   :members:
+   :protected-members:
+   :undoc-members:

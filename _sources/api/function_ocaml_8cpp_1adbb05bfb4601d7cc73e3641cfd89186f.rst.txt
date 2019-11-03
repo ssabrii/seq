@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1adbb05bfb4601d7cc73e3641cfd89186f:
+
+Function int_expr
+=================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: int_expr(int64_t)

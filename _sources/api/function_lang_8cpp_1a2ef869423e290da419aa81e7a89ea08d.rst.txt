@@ -1,0 +1,13 @@
+.. _exhale_function_lang_8cpp_1a2ef869423e290da419aa81e7a89ea08d:
+
+Function getInnermostTryCatchBeforeLoop
+=======================================
+
+- Defined in :ref:`file_compiler_lang_lang.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: getInnermostTryCatchBeforeLoop(Stmt *)

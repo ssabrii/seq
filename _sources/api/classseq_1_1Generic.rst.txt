@@ -1,0 +1,26 @@
+.. _exhale_class_classseq_1_1Generic:
+
+Class Generic
+=============
+
+- Defined in :ref:`file_compiler_include_seq_generic.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public seq::Func`` (:ref:`exhale_class_classseq_1_1Func`)
+- ``public seq::types::RefType`` (:ref:`exhale_class_classseq_1_1types_1_1RefType`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::Generic
+   :members:
+   :protected-members:
+   :undoc-members:

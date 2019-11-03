@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a2267343037307aa5f91d917e351ab13c:
+
+Function set_func_extern
+========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_func_extern(Func *)

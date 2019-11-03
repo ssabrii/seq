@@ -1,0 +1,73 @@
+
+.. _file_compiler_include_seq_ref.h:
+
+File ref.h
+==========
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_include_seq>` (``compiler/include/seq``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/include/seq/ref.h``)
+-------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_include_seq_ref.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``funct.h`` (:ref:`file_compiler_include_seq_funct.h`)
+
+- ``generic.h`` (:ref:`file_compiler_include_seq_generic.h`)
+
+- ``map``
+
+- ``record.h`` (:ref:`file_compiler_include_seq_record.h`)
+
+- ``utility``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_compiler_include_seq_expr.h`
+
+- :ref:`file_compiler_include_seq_seq.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_seq`
+
+- :ref:`namespace_seq__types`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classseq_1_1types_1_1MethodType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1RefType`
+

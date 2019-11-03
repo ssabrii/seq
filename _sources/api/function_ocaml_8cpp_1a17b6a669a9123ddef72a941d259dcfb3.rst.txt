@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a17b6a669a9123ddef72a941d259dcfb3:
+
+Function get_expr_name
+======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get_expr_name(Expr *)

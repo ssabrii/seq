@@ -1,0 +1,16 @@
+.. _exhale_struct_structDrainState:
+
+Struct DrainState
+=================
+
+- Defined in :ref:`file_compiler_lang_expr.cpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: DrainState
+   :members:
+   :protected-members:
+   :undoc-members:

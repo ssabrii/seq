@@ -1,0 +1,429 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>File ocaml.cpp &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Compiler Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doxygen.html">Compiler API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>File ocaml.cpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/file_compiler_util_ocaml.cpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="file-ocaml-cpp">
+<span id="file-compiler-util-ocaml-cpp"></span><h1>File ocaml.cpp<a class="headerlink" href="#file-ocaml-cpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="dir_compiler_util.html#dir-compiler-util"><span class="std std-ref">Parent directory</span></a> (<code class="docutils literal notranslate"><span class="pre">compiler/util</span></code>)</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#definition-compiler-util-ocaml-cpp" id="id1">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/util/ocaml.cpp</span></code>)</a></p></li>
+<li><p><a class="reference internal" href="#includes" id="id2">Includes</a></p></li>
+<li><p><a class="reference internal" href="#namespaces" id="id3">Namespaces</a></p></li>
+<li><p><a class="reference internal" href="#classes" id="id4">Classes</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id5">Functions</a></p></li>
+<li><p><a class="reference internal" href="#defines" id="id6">Defines</a></p></li>
+</ul>
+</div>
+<div class="section" id="definition-compiler-util-ocaml-cpp">
+<h2>Definition (<code class="docutils literal notranslate"><span class="pre">compiler/util/ocaml.cpp</span></code>)<a class="headerlink" href="#definition-compiler-util-ocaml-cpp" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="program_listing_file_compiler_util_ocaml.cpp.html">Program Listing for File ocaml.cpp</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="includes">
+<h2>Includes<a class="headerlink" href="#includes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">caml/fail.h</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seq/seq.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_seq.h.html#file-compiler-include-seq-seq-h"><span class="std std-ref">File seq.h</span></a>)</p></li>
+</ul>
+</div>
+<div class="section" id="namespaces">
+<h2>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="namespace_std.html#namespace-std"><span class="std std-ref">Namespace std</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="structseq__srcinfo.html#exhale-struct-structseq-srcinfo"><span class="std std-ref">Struct seq_srcinfo</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ab454944725bae3c11ae8f77f2db16ddb.html#exhale-function-ocaml-8cpp-1ab454944725bae3c11ae8f77f2db16ddb"><span class="std std-ref">Function add_match_case</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a96f428c1a17c37cbe3e7c184fa7f91d0.html#exhale-function-ocaml-8cpp-1a96f428c1a17c37cbe3e7c184fa7f91d0"><span class="std std-ref">Function add_ref_method</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aa7e458f004c6e4112e7895ceef69aa70.html#exhale-function-ocaml-8cpp-1aa7e458f004c6e4112e7895ceef69aa70"><span class="std std-ref">Function add_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a3d0d5de0ad80364b88691755849f9162.html#exhale-function-ocaml-8cpp-1a3d0d5de0ad80364b88691755849f9162"><span class="std std-ref">Function array_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a50000b088659d2591e669731310eb9f2.html#exhale-function-ocaml-8cpp-1a50000b088659d2591e669731310eb9f2"><span class="std std-ref">Function array_expr_alloca</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a66c028220bd3564bc1e23c608ea52c44.html#exhale-function-ocaml-8cpp-1a66c028220bd3564bc1e23c608ea52c44"><span class="std std-ref">Function array_lookup_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ad255f10966d37d9d8da51933a9f5263a.html#exhale-function-ocaml-8cpp-1ad255f10966d37d9d8da51933a9f5263a"><span class="std std-ref">Function array_pattern</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1af60b75b943cd34f9f213405d21c3da64.html#exhale-function-ocaml-8cpp-1af60b75b943cd34f9f213405d21c3da64"><span class="std std-ref">Function array_slice_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a93e2b2a8b97645ab8bb4a92561a83e03.html#exhale-function-ocaml-8cpp-1a93e2b2a8b97645ab8bb4a92561a83e03"><span class="std std-ref">Function array_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a5c47ab00b65690d143aac9bd001d8491.html#exhale-function-ocaml-8cpp-1a5c47ab00b65690d143aac9bd001d8491"><span class="std std-ref">Function assert_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a774367ec555fea771ab6b9f1dba8a374.html#exhale-function-ocaml-8cpp-1a774367ec555fea771ab6b9f1dba8a374"><span class="std std-ref">Function assign_index_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1accfe51874f30b738f617b59a09995e07.html#exhale-function-ocaml-8cpp-1accfe51874f30b738f617b59a09995e07"><span class="std std-ref">Function assign_member_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a6617baef9a2de1005a71da32e70533f6.html#exhale-function-ocaml-8cpp-1a6617baef9a2de1005a71da32e70533f6"><span class="std std-ref">Function assign_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a5380620cbb86bdd45ae9d9a905be8421.html#exhale-function-ocaml-8cpp-1a5380620cbb86bdd45ae9d9a905be8421"><span class="std std-ref">Function assign_stmt_set_atomic</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aaf0a267b90e2c734895c4d87637737f2.html#exhale-function-ocaml-8cpp-1aaf0a267b90e2c734895c4d87637737f2"><span class="std std-ref">Function atomic_add_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a7d61ba3f254fae870b8d98499dc51ce7.html#exhale-function-ocaml-8cpp-1a7d61ba3f254fae870b8d98499dc51ce7"><span class="std std-ref">Function atomic_and_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1af6dd3ab40b08290bfff92074a8f49af9.html#exhale-function-ocaml-8cpp-1af6dd3ab40b08290bfff92074a8f49af9"><span class="std std-ref">Function atomic_max_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a92e340781bcba48fca316dde63793e71.html#exhale-function-ocaml-8cpp-1a92e340781bcba48fca316dde63793e71"><span class="std std-ref">Function atomic_min_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aedec20b36e92af35fa618ed94d05f57e.html#exhale-function-ocaml-8cpp-1aedec20b36e92af35fa618ed94d05f57e"><span class="std std-ref">Function atomic_nand_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a864536695c26dbf0e7af68da0ee758f2.html#exhale-function-ocaml-8cpp-1a864536695c26dbf0e7af68da0ee758f2"><span class="std std-ref">Function atomic_or_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ad850d8109b3a6668846f99f70b7e6c03.html#exhale-function-ocaml-8cpp-1ad850d8109b3a6668846f99f70b7e6c03"><span class="std std-ref">Function atomic_sub_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ab79a4985a07529ef99535e048962ca16.html#exhale-function-ocaml-8cpp-1ab79a4985a07529ef99535e048962ca16"><span class="std std-ref">Function atomic_xchg_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ad4513cc923b255b16aa58a5d8e30f569.html#exhale-function-ocaml-8cpp-1ad4513cc923b255b16aa58a5d8e30f569"><span class="std std-ref">Function atomic_xor_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a8e2d086f41973e31991cd25790292f22.html#exhale-function-ocaml-8cpp-1a8e2d086f41973e31991cd25790292f22"><span class="std std-ref">Function bigint_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1affb6c255c4cf3fb7427db732e2c72f1e.html#exhale-function-ocaml-8cpp-1affb6c255c4cf3fb7427db732e2c72f1e"><span class="std std-ref">Function bool_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a1e5e98469b79a9d0dd3a7665338b23fe.html#exhale-function-ocaml-8cpp-1a1e5e98469b79a9d0dd3a7665338b23fe"><span class="std std-ref">Function bool_pattern</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1af589bbe54a509466b2a58e76dc4e255e.html#exhale-function-ocaml-8cpp-1af589bbe54a509466b2a58e76dc4e255e"><span class="std std-ref">Function bool_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aae9e23ce5766599a227343cc4c24f1ef.html#exhale-function-ocaml-8cpp-1aae9e23ce5766599a227343cc4c24f1ef"><span class="std std-ref">Function bop_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a67f26ebcec182ae338250804ca09f6d7.html#exhale-function-ocaml-8cpp-1a67f26ebcec182ae338250804ca09f6d7"><span class="std std-ref">Function bop_expr_in_place</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ad164e5a0debb36900f1e93e598f87433.html#exhale-function-ocaml-8cpp-1ad164e5a0debb36900f1e93e598f87433"><span class="std std-ref">Function bound_pattern</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1af7ac333c33409d7902dad150f3e179b4.html#exhale-function-ocaml-8cpp-1af7ac333c33409d7902dad150f3e179b4"><span class="std std-ref">Function break_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a6915176895ba7bcd3b1382dd66515f42.html#exhale-function-ocaml-8cpp-1a6915176895ba7bcd3b1382dd66515f42"><span class="std std-ref">Function byte_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aec693b998cb0591cb706b15687416fbe.html#exhale-function-ocaml-8cpp-1aec693b998cb0591cb706b15687416fbe"><span class="std std-ref">Function call_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a1123d3569b0dc126c9e7480e343d5197.html#exhale-function-ocaml-8cpp-1a1123d3569b0dc126c9e7480e343d5197"><span class="std std-ref">Function caml_error_callback</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1afd2f1009f820d01c5620673b20b66fd8.html#exhale-function-ocaml-8cpp-1afd2f1009f820d01c5620673b20b66fd8"><span class="std std-ref">Function caml_warning_callback</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a898443681d21effbfbc0018e5449ae71.html#exhale-function-ocaml-8cpp-1a898443681d21effbfbc0018e5449ae71"><span class="std std-ref">Function cond_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a0455354b0ba09a922f0c9fcfc1b11275.html#exhale-function-ocaml-8cpp-1a0455354b0ba09a922f0c9fcfc1b11275"><span class="std std-ref">Function construct_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1abf49c0c52e0f382a20120141be8b4827.html#exhale-function-ocaml-8cpp-1abf49c0c52e0f382a20120141be8b4827"><span class="std std-ref">Function continue_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ab2dac3fea736dd3d1ba2fa6ab16bb3cc.html#exhale-function-ocaml-8cpp-1ab2dac3fea736dd3d1ba2fa6ab16bb3cc"><span class="std std-ref">Function del_index_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a7b7fb229d51fd9649a448c88146af292.html#exhale-function-ocaml-8cpp-1a7b7fb229d51fd9649a448c88146af292"><span class="std std-ref">Function del_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a93c9a14f1cc7a15cb9a87f4376298bcd.html#exhale-function-ocaml-8cpp-1a93c9a14f1cc7a15cb9a87f4376298bcd"><span class="std std-ref">Function dict_comp_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aa4156788b3fbc9db24cdffa19c6962c7.html#exhale-function-ocaml-8cpp-1aa4156788b3fbc9db24cdffa19c6962c7"><span class="std std-ref">Function dict_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ac0b63b01b424f9b9096808d32c0c3224.html#exhale-function-ocaml-8cpp-1ac0b63b01b424f9b9096808d32c0c3224"><span class="std std-ref">Function exec_module</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aad2bdd0140c48ae22dbc5b648c8546b8.html#exhale-function-ocaml-8cpp-1aad2bdd0140c48ae22dbc5b648c8546b8"><span class="std std-ref">Function expr_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ad0eaf3b7b4e4fcb4638056c72049971c.html#exhale-function-ocaml-8cpp-1ad0eaf3b7b4e4fcb4638056c72049971c"><span class="std std-ref">Function float_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a4f4986681a02d199af64be7ab7e0c2f5.html#exhale-function-ocaml-8cpp-1a4f4986681a02d199af64be7ab7e0c2f5"><span class="std std-ref">Function float_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a72318fa0506c398c2de3ed8674763e16.html#exhale-function-ocaml-8cpp-1a72318fa0506c398c2de3ed8674763e16"><span class="std std-ref">Function for_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ac22bc02ec9d391a19b3f2328cb6f2da5.html#exhale-function-ocaml-8cpp-1ac22bc02ec9d391a19b3f2328cb6f2da5"><span class="std std-ref">Function func</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aeb20d548a8921487e7b2ba0190253927.html#exhale-function-ocaml-8cpp-1aeb20d548a8921487e7b2ba0190253927"><span class="std std-ref">Function func_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a6074d1f9df836e16aabfa9e5721c7127.html#exhale-function-ocaml-8cpp-1a6074d1f9df836e16aabfa9e5721c7127"><span class="std std-ref">Function func_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ad0d45f0b1ceea44b1e3ded60cb5dd440.html#exhale-function-ocaml-8cpp-1ad0d45f0b1ceea44b1e3ded60cb5dd440"><span class="std std-ref">Function func_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a2498b80db09d6926dd4b231576d006b5.html#exhale-function-ocaml-8cpp-1a2498b80db09d6926dd4b231576d006b5"><span class="std std-ref">Function gen_comp_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a70e62a3e8cb9bd4b888f4e094a946efc.html#exhale-function-ocaml-8cpp-1a70e62a3e8cb9bd4b888f4e094a946efc"><span class="std std-ref">Function generator_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a5fa87355f50189aaf94ef6115d1be103.html#exhale-function-ocaml-8cpp-1a5fa87355f50189aaf94ef6115d1be103"><span class="std std-ref">Function generic_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1acba879da3dd9420b3784a59777622e08.html#exhale-function-ocaml-8cpp-1acba879da3dd9420b3784a59777622e08"><span class="std std-ref">Function get_bound_pattern_var</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ad68e634b0eda8d102bc6ad20a3633ba8.html#exhale-function-ocaml-8cpp-1ad68e634b0eda8d102bc6ad20a3633ba8"><span class="std std-ref">Function get_elem_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1abc9c6ee163f2deff37da745d97874cd7.html#exhale-function-ocaml-8cpp-1abc9c6ee163f2deff37da745d97874cd7"><span class="std std-ref">Function get_elif_block</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ab59e0bbd9b1265d561e134f927e2f3f3.html#exhale-function-ocaml-8cpp-1ab59e0bbd9b1265d561e134f927e2f3f3"><span class="std std-ref">Function get_else_block</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a17b6a669a9123ddef72a941d259dcfb3.html#exhale-function-ocaml-8cpp-1a17b6a669a9123ddef72a941d259dcfb3"><span class="std std-ref">Function get_expr_name</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1abb5bc92c13b19e721b271a8d8cc445c8.html#exhale-function-ocaml-8cpp-1abb5bc92c13b19e721b271a8d8cc445c8"><span class="std std-ref">Function get_for_block</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a406b246a2e9ada2454a33aa2a5c0d627.html#exhale-function-ocaml-8cpp-1a406b246a2e9ada2454a33aa2a5c0d627"><span class="std std-ref">Function get_for_var</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ab8cc2ed364167e12c98446ce20527a32.html#exhale-function-ocaml-8cpp-1ab8cc2ed364167e12c98446ce20527a32"><span class="std std-ref">Function get_func</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a22e8f334feccc52222b1b509972068f4.html#exhale-function-ocaml-8cpp-1a22e8f334feccc52222b1b509972068f4"><span class="std std-ref">Function get_func_arg</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a07f0cbc4ac3f4f0daf82c8a04b8f88cd.html#exhale-function-ocaml-8cpp-1a07f0cbc4ac3f4f0daf82c8a04b8f88cd"><span class="std std-ref">Function get_func_attrs</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a4012afb08c62db34b0fe96b0a6f8dc37.html#exhale-function-ocaml-8cpp-1a4012afb08c62db34b0fe96b0a6f8dc37"><span class="std std-ref">Function get_func_block</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a16a22f98587a75a4abfd1cc707f7535f.html#exhale-function-ocaml-8cpp-1a16a22f98587a75a4abfd1cc707f7535f"><span class="std std-ref">Function get_func_generic</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a9287e3c6fc4e7e1dbb6ea5067629c5fc.html#exhale-function-ocaml-8cpp-1a9287e3c6fc4e7e1dbb6ea5067629c5fc"><span class="std std-ref">Function get_func_names</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a212e88c022f4c6ae9b1a27f7c00c1bd9.html#exhale-function-ocaml-8cpp-1a212e88c022f4c6ae9b1a27f7c00c1bd9"><span class="std std-ref">Function get_module_arg</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a31200a0e38af1c18f6c1ce160754e183.html#exhale-function-ocaml-8cpp-1a31200a0e38af1c18f6c1ce160754e183"><span class="std std-ref">Function get_module_block</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aadccac7884ab68df0dbfb6ff97ec76ed.html#exhale-function-ocaml-8cpp-1aadccac7884ab68df0dbfb6ff97ec76ed"><span class="std std-ref">Function get_pos</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aa4f204d3d44528cd34b9661e08bd5811.html#exhale-function-ocaml-8cpp-1aa4f204d3d44528cd34b9661e08bd5811"><span class="std std-ref">Function get_ref_generic</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a057a00f4b0bcd392d80335bb0b4f42fc.html#exhale-function-ocaml-8cpp-1a057a00f4b0bcd392d80335bb0b4f42fc"><span class="std std-ref">Function get_trycatch_block</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a6568a3eee620c8849dd88a3c15e13460.html#exhale-function-ocaml-8cpp-1a6568a3eee620c8849dd88a3c15e13460"><span class="std std-ref">Function get_trycatch_catch</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1afe63152914c7a8f65bc8b5ac19db20e6.html#exhale-function-ocaml-8cpp-1afe63152914c7a8f65bc8b5ac19db20e6"><span class="std std-ref">Function get_trycatch_finally</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a938bc85a9704c70fcbc4ec33ecccb190.html#exhale-function-ocaml-8cpp-1a938bc85a9704c70fcbc4ec33ecccb190"><span class="std std-ref">Function get_trycatch_var</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1afd5fb3ca8d396e0fb58e1c0e1c928e3d.html#exhale-function-ocaml-8cpp-1afd5fb3ca8d396e0fb58e1c0e1c928e3d"><span class="std std-ref">Function get_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ac46338e6928244eb3e35e7eea8e1ac8e.html#exhale-function-ocaml-8cpp-1ac46338e6928244eb3e35e7eea8e1ac8e"><span class="std std-ref">Function get_type_name</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a7206cdd924bc9193c5d387f8eabb16be.html#exhale-function-ocaml-8cpp-1a7206cdd924bc9193c5d387f8eabb16be"><span class="std std-ref">Function get_var_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1adabcbeeb9ed6922581b05c4a3656ec40.html#exhale-function-ocaml-8cpp-1adabcbeeb9ed6922581b05c4a3656ec40"><span class="std std-ref">Function get_while_block</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a8f421656163281ddb9aa0177186af127.html#exhale-function-ocaml-8cpp-1a8f421656163281ddb9aa0177186af127"><span class="std std-ref">Function guarded_pattern</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aac27d6430b05d734beeb852ea3a996f6.html#exhale-function-ocaml-8cpp-1aac27d6430b05d734beeb852ea3a996f6"><span class="std std-ref">Function if_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a360cb7e1fe81271e5ed6d5120b816a74.html#exhale-function-ocaml-8cpp-1a360cb7e1fe81271e5ed6d5120b816a74"><span class="std std-ref">Function in_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ae875eea63b67641492f90fcc7a97625a.html#exhale-function-ocaml-8cpp-1ae875eea63b67641492f90fcc7a97625a"><span class="std std-ref">Function iN_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a747c059306bbc70ec4a1b96e0fa78faf.html#exhale-function-ocaml-8cpp-1a747c059306bbc70ec4a1b96e0fa78faf"><span class="std std-ref">Function init_module</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1adbb05bfb4601d7cc73e3641cfd89186f.html#exhale-function-ocaml-8cpp-1adbb05bfb4601d7cc73e3641cfd89186f"><span class="std std-ref">Function int_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a81c9dbf23114312ac2c65dafa6e82de3.html#exhale-function-ocaml-8cpp-1a81c9dbf23114312ac2c65dafa6e82de3"><span class="std std-ref">Function int_pattern</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ad40733293fc248e5e3715eaa2a5e7355.html#exhale-function-ocaml-8cpp-1ad40733293fc248e5e3715eaa2a5e7355"><span class="std std-ref">Function int_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aa71175221ddff6921ed7ffe42b3f183f.html#exhale-function-ocaml-8cpp-1aa71175221ddff6921ed7ffe42b3f183f"><span class="std std-ref">Function is_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a976864b3a8b3e91beae9b72b7e076c50.html#exhale-function-ocaml-8cpp-1a976864b3a8b3e91beae9b72b7e076c50"><span class="std std-ref">Function is_not_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ab129ee34fb8f9427447430483ae78039.html#exhale-function-ocaml-8cpp-1ab129ee34fb8f9427447430483ae78039"><span class="std std-ref">Function jit_func</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a3bf653b9c9f34d6daf89e051513050da.html#exhale-function-ocaml-8cpp-1a3bf653b9c9f34d6daf89e051513050da"><span class="std std-ref">Function jit_init</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a9605ae39a2bb3b9a873ec5894b6b050f.html#exhale-function-ocaml-8cpp-1a9605ae39a2bb3b9a873ec5894b6b050f"><span class="std std-ref">Function jit_var</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a1c90782b7fa2db238655d7c34b91a3b9.html#exhale-function-ocaml-8cpp-1a1c90782b7fa2db238655d7c34b91a3b9"><span class="std std-ref">Function kmer_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a59354bc942ed26811ecda474bab0e1d1.html#exhale-function-ocaml-8cpp-1a59354bc942ed26811ecda474bab0e1d1"><span class="std std-ref">Function list_comp_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ae45a55601a88ab07f165cd344cffd5c4.html#exhale-function-ocaml-8cpp-1ae45a55601a88ab07f165cd344cffd5c4"><span class="std std-ref">Function list_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a48bfee58d7a7ed12acafab640505871a.html#exhale-function-ocaml-8cpp-1a48bfee58d7a7ed12acafab640505871a"><span class="std std-ref">Function match_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ad6dc12e84366c55dbcf2fe7bc86cfaf9.html#exhale-function-ocaml-8cpp-1ad6dc12e84366c55dbcf2fe7bc86cfaf9"><span class="std std-ref">Function method_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a475e580198716363fd9c2213ade8391e.html#exhale-function-ocaml-8cpp-1a475e580198716363fd9c2213ade8391e"><span class="std std-ref">Function none_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a75eee8d2576d67a6d4df9066744dfd1f.html#exhale-function-ocaml-8cpp-1a75eee8d2576d67a6d4df9066744dfd1f"><span class="std std-ref">Function not_in_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1afc8a9de7e158e642c84b7bf6fe57a81f.html#exhale-function-ocaml-8cpp-1afc8a9de7e158e642c84b7bf6fe57a81f"><span class="std std-ref">Function or_pattern</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a75d0531c04b9963ce8c196f106a95fc3.html#exhale-function-ocaml-8cpp-1a75d0531c04b9963ce8c196f106a95fc3"><span class="std std-ref">Function partial_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a08b8e37a754834fd715ffef679c204ca.html#exhale-function-ocaml-8cpp-1a08b8e37a754834fd715ffef679c204ca"><span class="std std-ref">Function pass_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a62991fc0a8a6dba43351f7eefb6aa07f.html#exhale-function-ocaml-8cpp-1a62991fc0a8a6dba43351f7eefb6aa07f"><span class="std std-ref">Function pipe_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a293bf4183e35387bbe212d14bf682f1c.html#exhale-function-ocaml-8cpp-1a293bf4183e35387bbe212d14bf682f1c"><span class="std std-ref">Function pipe_expr_set_parallel</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a1050972f0f404f45dda9bd63b1ab1c5d.html#exhale-function-ocaml-8cpp-1a1050972f0f404f45dda9bd63b1ab1c5d"><span class="std std-ref">Function prefetch_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a6446ebd25f064b1c302aeba9ffc6c7dc.html#exhale-function-ocaml-8cpp-1a6446ebd25f064b1c302aeba9ffc6c7dc"><span class="std std-ref">Function print_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aaaf24e9779af328a94e5cb9a003fbafa.html#exhale-function-ocaml-8cpp-1aaaf24e9779af328a94e5cb9a003fbafa"><span class="std std-ref">Function print_stmt_repl</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a8d79ece225428c5d32599340e396d05d.html#exhale-function-ocaml-8cpp-1a8d79ece225428c5d32599340e396d05d"><span class="std std-ref">Function ptr_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a76957cea09d15e57c51dacfe26baf548.html#exhale-function-ocaml-8cpp-1a76957cea09d15e57c51dacfe26baf548"><span class="std std-ref">Function ptr_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ab20a42323375b1cd66981118a2974904.html#exhale-function-ocaml-8cpp-1ab20a42323375b1cd66981118a2974904"><span class="std std-ref">Function range_pattern</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1acac94cc3aa99003a4dfe152e7b2ba218.html#exhale-function-ocaml-8cpp-1acac94cc3aa99003a4dfe152e7b2ba218"><span class="std std-ref">Function realize_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a9e0a5e56a138f8635a9c3afc34a575c4.html#exhale-function-ocaml-8cpp-1a9e0a5e56a138f8635a9c3afc34a575c4"><span class="std std-ref">Function record_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a18bce0786c12e2b276714ef4e2cbcd9a.html#exhale-function-ocaml-8cpp-1a18bce0786c12e2b276714ef4e2cbcd9a"><span class="std std-ref">Function record_pattern</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a2af7ebee02af2573efe3b5bd327688d9.html#exhale-function-ocaml-8cpp-1a2af7ebee02af2573efe3b5bd327688d9"><span class="std std-ref">Function record_type_named</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a6546de75821cfff11a4ea6266b8a02ac.html#exhale-function-ocaml-8cpp-1a6546de75821cfff11a4ea6266b8a02ac"><span class="std std-ref">Function ref_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a9396cfc83c1e1e40e2da9c8abe2833d3.html#exhale-function-ocaml-8cpp-1a9396cfc83c1e1e40e2da9c8abe2833d3"><span class="std std-ref">Function resolve_types</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a2f88c2b1e2870c34538a086d25703372.html#exhale-function-ocaml-8cpp-1a2f88c2b1e2870c34538a086d25703372"><span class="std std-ref">Function return_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a9dd959f27d6e26d138fb8f58bfde001d.html#exhale-function-ocaml-8cpp-1a9dd959f27d6e26d138fb8f58bfde001d"><span class="std std-ref">Function seq_pattern</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ada04c6bb3c18e4d9714742e347aba002.html#exhale-function-ocaml-8cpp-1ada04c6bb3c18e4d9714742e347aba002"><span class="std std-ref">Function set_base</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a7fc61023623f757a6ece8c5cb58eacda.html#exhale-function-ocaml-8cpp-1a7fc61023623f757a6ece8c5cb58eacda"><span class="std std-ref">Function set_comp_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ad4b04fe546f51f9e4d32b216c02acb39.html#exhale-function-ocaml-8cpp-1ad4b04fe546f51f9e4d32b216c02acb39"><span class="std std-ref">Function set_dict_comp_body</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a71f657bccba8865b9c1638e8976079ed.html#exhale-function-ocaml-8cpp-1a71f657bccba8865b9c1638e8976079ed"><span class="std std-ref">Function set_elem_realize_types</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a13bed7f4abdd35ce8a8f1e899aa9f226.html#exhale-function-ocaml-8cpp-1a13bed7f4abdd35ce8a8f1e899aa9f226"><span class="std std-ref">Function set_enclosing_trycatch</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a921a5d137b402a0f77c72a91505db6f9.html#exhale-function-ocaml-8cpp-1a921a5d137b402a0f77c72a91505db6f9"><span class="std std-ref">Function set_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ab14399511e6426e52aa0d60501c96276.html#exhale-function-ocaml-8cpp-1ab14399511e6426e52aa0d60501c96276"><span class="std std-ref">Function set_func_attr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a03060451b801d519eb57a1dbeff034b9.html#exhale-function-ocaml-8cpp-1a03060451b801d519eb57a1dbeff034b9"><span class="std std-ref">Function set_func_enclosing</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a2267343037307aa5f91d917e351ab13c.html#exhale-function-ocaml-8cpp-1a2267343037307aa5f91d917e351ab13c"><span class="std std-ref">Function set_func_extern</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a5571eaa1bbc8012fcbf2f01e94538247.html#exhale-function-ocaml-8cpp-1a5571eaa1bbc8012fcbf2f01e94538247"><span class="std std-ref">Function set_func_generic_name</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a343285587b289b80c1c803da71eeaae4.html#exhale-function-ocaml-8cpp-1a343285587b289b80c1c803da71eeaae4"><span class="std std-ref">Function set_func_generics</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a1b33529b959cb028558f8a2ec33cb8e3.html#exhale-function-ocaml-8cpp-1a1b33529b959cb028558f8a2ec33cb8e3"><span class="std std-ref">Function set_func_out</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a8c7f27248ba5bac12cd97fcd5849086c.html#exhale-function-ocaml-8cpp-1a8c7f27248ba5bac12cd97fcd5849086c"><span class="std std-ref">Function set_func_params</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a5d3c4c3a30c32855222bd3155d836ae7.html#exhale-function-ocaml-8cpp-1a5d3c4c3a30c32855222bd3155d836ae7"><span class="std std-ref">Function set_func_prefetch</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a6188c5f2d9f0e3868d19fa3d78bbed97.html#exhale-function-ocaml-8cpp-1a6188c5f2d9f0e3868d19fa3d78bbed97"><span class="std std-ref">Function set_func_realize_types</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a4428c98675c811c5e20575b178f48a48.html#exhale-function-ocaml-8cpp-1a4428c98675c811c5e20575b178f48a48"><span class="std std-ref">Function set_func_return</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a428d282f38752b9c4eb941aaf50b8ba0.html#exhale-function-ocaml-8cpp-1a428d282f38752b9c4eb941aaf50b8ba0"><span class="std std-ref">Function set_func_yield</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a53bc3cbe480b692a3b501581d627a75a.html#exhale-function-ocaml-8cpp-1a53bc3cbe480b692a3b501581d627a75a"><span class="std std-ref">Function set_gen_comp_body</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ad3f2d30e1b1be093ee2c83c488cb39be.html#exhale-function-ocaml-8cpp-1ad3f2d30e1b1be093ee2c83c488cb39be"><span class="std std-ref">Function set_global</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a5daa8440985eef3a3c9487dd05156ae0.html#exhale-function-ocaml-8cpp-1a5daa8440985eef3a3c9487dd05156ae0"><span class="std std-ref">Function set_list_comp_body</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a274501bb2e2f43b03d5f4b0848e296fc.html#exhale-function-ocaml-8cpp-1a274501bb2e2f43b03d5f4b0848e296fc"><span class="std std-ref">Function set_pattern_trycatch</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a4c0e08feaeed1f5dd35c6659d0b49354.html#exhale-function-ocaml-8cpp-1a4c0e08feaeed1f5dd35c6659d0b49354"><span class="std std-ref">Function set_pos</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a57f0445e62dbfb6d54bafd267c38b657.html#exhale-function-ocaml-8cpp-1a57f0445e62dbfb6d54bafd267c38b657"><span class="std std-ref">Function set_record_names</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a29fe17419b3aea2ae512e5db3d8897a3.html#exhale-function-ocaml-8cpp-1a29fe17419b3aea2ae512e5db3d8897a3"><span class="std std-ref">Function set_ref_done</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ac804eba326cb213012238388f7b14f56.html#exhale-function-ocaml-8cpp-1ac804eba326cb213012238388f7b14f56"><span class="std std-ref">Function set_ref_generic_name</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a45664268a9334bd5bc83ab1adc87d064.html#exhale-function-ocaml-8cpp-1a45664268a9334bd5bc83ab1adc87d064"><span class="std std-ref">Function set_ref_generics</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aef01913444c5f3164701a69f8634bcfe.html#exhale-function-ocaml-8cpp-1aef01913444c5f3164701a69f8634bcfe"><span class="std std-ref">Function set_ref_record</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ac8c890a1e1976233fd837c0a1a8592f8.html#exhale-function-ocaml-8cpp-1ac8c890a1e1976233fd837c0a1a8592f8"><span class="std std-ref">Function set_set_comp_body</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a12a0f57597ff972d945ca9ed5acb5e8c.html#exhale-function-ocaml-8cpp-1a12a0f57597ff972d945ca9ed5acb5e8c"><span class="std std-ref">Function set_static_realize_types</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ac1057f8add41da1df41c69770836717d.html#exhale-function-ocaml-8cpp-1ac1057f8add41da1df41c69770836717d"><span class="std std-ref">Function set_thread_local</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a97a6cd68de67d21ca46f5f63142cb602.html#exhale-function-ocaml-8cpp-1a97a6cd68de67d21ca46f5f63142cb602"><span class="std std-ref">Function star_pattern</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a05b07b07f42bd7d2324e92772b722e93.html#exhale-function-ocaml-8cpp-1a05b07b07f42bd7d2324e92772b722e93"><span class="std std-ref">Function static_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aaa200b0eb536bcb799a566cbce355771.html#exhale-function-ocaml-8cpp-1aaa200b0eb536bcb799a566cbce355771"><span class="std std-ref">Function str_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a8e0da76d4adef5bb14700b9a0f03cb89.html#exhale-function-ocaml-8cpp-1a8e0da76d4adef5bb14700b9a0f03cb89"><span class="std std-ref">Function str_pattern</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a3bd06128f287c493e216a205a7d9d8df.html#exhale-function-ocaml-8cpp-1a3bd06128f287c493e216a205a7d9d8df"><span class="std std-ref">Function str_seq_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a62c5efb46a5c9c6c230521f88b8e5911.html#exhale-function-ocaml-8cpp-1a62c5efb46a5c9c6c230521f88b8e5911"><span class="std std-ref">Function str_seq_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a8f29d4a38e2b6d748d6747fe8bff7ede.html#exhale-function-ocaml-8cpp-1a8f29d4a38e2b6d748d6747fe8bff7ede"><span class="std std-ref">Function str_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a82350d50201ac2f1ba03552740d4c817.html#exhale-function-ocaml-8cpp-1a82350d50201ac2f1ba03552740d4c817"><span class="std std-ref">Function strxdup</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1afdc78c1f7472f6ab6a987a2a9ae83e15.html#exhale-function-ocaml-8cpp-1afdc78c1f7472f6ab6a987a2a9ae83e15"><span class="std std-ref">Function throw_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ae1f14f86a6d3e97fda61b1c65ba464c7.html#exhale-function-ocaml-8cpp-1ae1f14f86a6d3e97fda61b1c65ba464c7"><span class="std std-ref">Function trycatch_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a1c4adc00ae8d9d93203443e9fd9b64f3.html#exhale-function-ocaml-8cpp-1a1c4adc00ae8d9d93203443e9fd9b64f3"><span class="std std-ref">Function type_eq</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a2ebb58e701442aee38eecf012d23e1a2.html#exhale-function-ocaml-8cpp-1a2ebb58e701442aee38eecf012d23e1a2"><span class="std std-ref">Function type_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a85c5a3631b4a63449de5410d4f9552a3.html#exhale-function-ocaml-8cpp-1a85c5a3631b4a63449de5410d4f9552a3"><span class="std std-ref">Function type_of_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aec6eeafd86005db028703595c5dc8734.html#exhale-function-ocaml-8cpp-1aec6eeafd86005db028703595c5dc8734"><span class="std std-ref">Function typeof_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a8acec327bb345d8ae7a78c9dd551e387.html#exhale-function-ocaml-8cpp-1a8acec327bb345d8ae7a78c9dd551e387"><span class="std std-ref">Function uN_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a9b5be026a5b59dd1a5b8317f993767b7.html#exhale-function-ocaml-8cpp-1a9b5be026a5b59dd1a5b8317f993767b7"><span class="std std-ref">Function uop_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a3f6c672db014628b2ee1a26cc7b6d5c1.html#exhale-function-ocaml-8cpp-1a3f6c672db014628b2ee1a26cc7b6d5c1"><span class="std std-ref">Function var_expr</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ab7e57cdcb4e504ed141395517a7e357a.html#exhale-function-ocaml-8cpp-1ab7e57cdcb4e504ed141395517a7e357a"><span class="std std-ref">Function var_expr_set_atomic</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a0e7ac99eca217120175cb36e15aa82bb.html#exhale-function-ocaml-8cpp-1a0e7ac99eca217120175cb36e15aa82bb"><span class="std std-ref">Function var_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1ab4aa0b924bd4b14126ffb5184d0b6b41.html#exhale-function-ocaml-8cpp-1ab4aa0b924bd4b14126ffb5184d0b6b41"><span class="std std-ref">Function var_stmt_var</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a6078830a59e94001d3bb3515bbbeadb0.html#exhale-function-ocaml-8cpp-1a6078830a59e94001d3bb3515bbbeadb0"><span class="std std-ref">Function void_type</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1aa25eb8d3c22d13d6b57d0c83c13e3615.html#exhale-function-ocaml-8cpp-1aa25eb8d3c22d13d6b57d0c83c13e3615"><span class="std std-ref">Function while_stmt</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a9dca7436b6d736ae98aaa1d85f4b681f.html#exhale-function-ocaml-8cpp-1a9dca7436b6d736ae98aaa1d85f4b681f"><span class="std std-ref">Function wildcard_pattern</span></a></p></li>
+<li><p><a class="reference internal" href="function_ocaml_8cpp_1a566f1144ab9866bce9f8d60c97243e1f.html#exhale-function-ocaml-8cpp-1a566f1144ab9866bce9f8d60c97243e1f"><span class="std std-ref">Function yield_stmt</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="defines">
+<h2>Defines<a class="headerlink" href="#defines" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="define_ocaml_8cpp_1a9bbde653c719c2b425b2818ca844b46b.html#exhale-define-ocaml-8cpp-1a9bbde653c719c2b425b2818ca844b46b"><span class="std std-ref">Define CATCH</span></a></p></li>
+<li><p><a class="reference internal" href="define_ocaml_8cpp_1af039cc21a3132fdb4f8d4a9c57ac0250.html#exhale-define-ocaml-8cpp-1af039cc21a3132fdb4f8d4a9c57ac0250"><span class="std std-ref">Define FOREIGN</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

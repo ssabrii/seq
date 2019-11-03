@@ -1,0 +1,13 @@
+.. _exhale_function_var_8cpp_1add366c04045114dc0cd8b5bb4abbaf7a:
+
+Function ensureNonVoid
+======================
+
+- Defined in :ref:`file_compiler_lang_var.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ensureNonVoid(types::Type *)

@@ -1,0 +1,59 @@
+
+.. _file_compiler_include_seq_void.h:
+
+File void.h
+===========
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_include_seq>` (``compiler/include/seq``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/include/seq/void.h``)
+--------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_include_seq_void.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``types.h`` (:ref:`file_compiler_include_seq_types.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_compiler_include_seq_seq.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_seq`
+
+- :ref:`namespace_seq__types`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classseq_1_1types_1_1VoidType`
+

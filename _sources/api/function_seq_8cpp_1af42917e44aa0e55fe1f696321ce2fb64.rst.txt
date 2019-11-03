@@ -1,0 +1,13 @@
+.. _exhale_function_seq_8cpp_1af42917e44aa0e55fe1f696321ce2fb64:
+
+Function optimizeModule
+=======================
+
+- Defined in :ref:`file_compiler_lang_seq.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: optimizeModule(Module *, bool)

@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a81c9dbf23114312ac2c65dafa6e82de3:
+
+Function int_pattern
+====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: int_pattern(int)

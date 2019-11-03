@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a03060451b801d519eb57a1dbeff034b9:
+
+Function set_func_enclosing
+===========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_func_enclosing(Func *, Func *)

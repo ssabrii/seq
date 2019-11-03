@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1acac94cc3aa99003a4dfe152e7b2ba218:
+
+Function realize_type
+=====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: realize_type(types::RefType *, types::Type **, size_t, char **)

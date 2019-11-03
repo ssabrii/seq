@@ -1,0 +1,13 @@
+.. _exhale_function_common_8h_1a5421f66f584562fce8c12205b91ac149:
+
+Function seq::makeExcAllocFunc
+==============================
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::makeExcAllocFunc(llvm::Module *)

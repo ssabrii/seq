@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ad255f10966d37d9d8da51933a9f5263a:
+
+Function array_pattern
+======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: array_pattern(Pattern **, size_t)

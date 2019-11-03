@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ac1057f8add41da1df41c69770836717d:
+
+Function set_thread_local
+=========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_thread_local(Var *)

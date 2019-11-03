@@ -1,0 +1,13 @@
+.. _exhale_function_common_8h_1a46c6677f301448fcd4168c6a02f722cd:
+
+Function seq::makePersonalityFunc
+=================================
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::makePersonalityFunc(llvm::Module *)

@@ -1,0 +1,16 @@
+.. _exhale_struct_structseq_1_1MagicOverload:
+
+Struct MagicOverload
+====================
+
+- Defined in :ref:`file_compiler_include_seq_types.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: seq::MagicOverload
+   :members:
+   :protected-members:
+   :undoc-members:

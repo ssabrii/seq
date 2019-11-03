@@ -1,0 +1,27 @@
+
+.. _program_listing_file_compiler_types_void.cpp:
+
+Program Listing for File void.cpp
+=================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_compiler_types_void.cpp>` (``compiler/types/void.cpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #include "seq/seq.h"
+   
+   using namespace seq;
+   using namespace llvm;
+   
+   types::VoidType::VoidType() : Type("void", AnyType::get(), true) {}
+   
+   Type *types::VoidType::getLLVMType(LLVMContext &context) const {
+     return llvm::Type::getVoidTy(context);
+   }
+   
+   types::VoidType *types::VoidType::get() noexcept {
+     static types::VoidType instance;
+     return &instance;
+   }

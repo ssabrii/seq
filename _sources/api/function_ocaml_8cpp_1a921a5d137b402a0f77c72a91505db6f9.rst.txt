@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a921a5d137b402a0f77c72a91505db6f9:
+
+Function set_expr
+=================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_expr(types::Type *, Expr **, size_t)

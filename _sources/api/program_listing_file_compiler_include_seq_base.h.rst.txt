@@ -1,0 +1,33 @@
+
+.. _program_listing_file_compiler_include_seq_base.h:
+
+Program Listing for File base.h
+===============================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_compiler_include_seq_base.h>` (``compiler/include/seq/base.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #ifndef SEQ_BASE_H
+   #define SEQ_BASE_H
+   
+   #include "types.h"
+   
+   namespace seq {
+   namespace types {
+   class BaseType : public Type {
+   private:
+     BaseType();
+   
+   public:
+     BaseType(BaseType const &) = delete;
+     void operator=(BaseType const &) = delete;
+     static BaseType *get() noexcept;
+   };
+   
+   } // namespace types
+   } // namespace seq
+   
+   #endif /* SEQ_BASE_H */

@@ -1,0 +1,13 @@
+.. _exhale_function_patterns_8cpp_1ad361120ec3ff42b44686069ee5e90200:
+
+Function codegenSeqMatchForKmer
+===============================
+
+- Defined in :ref:`file_compiler_lang_patterns.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: codegenSeqMatchForKmer(const std::vector<char>&, BaseFunc *, types::KMer *, Value *, BasicBlock *&)

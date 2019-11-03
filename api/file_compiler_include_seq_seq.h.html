@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>File seq.h &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Compiler Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doxygen.html">Compiler API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>File seq.h</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/file_compiler_include_seq_seq.h.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="file-seq-h">
+<span id="file-compiler-include-seq-seq-h"></span><h1>File seq.h<a class="headerlink" href="#file-seq-h" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="dir_compiler_include_seq.html#dir-compiler-include-seq"><span class="std std-ref">Parent directory</span></a> (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq</span></code>)</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#definition-compiler-include-seq-seq-h" id="id1">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/seq.h</span></code>)</a></p></li>
+<li><p><a class="reference internal" href="#includes" id="id2">Includes</a></p></li>
+<li><p><a class="reference internal" href="#included-by" id="id3">Included By</a></p></li>
+<li><p><a class="reference internal" href="#namespaces" id="id4">Namespaces</a></p></li>
+<li><p><a class="reference internal" href="#classes" id="id5">Classes</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id6">Functions</a></p></li>
+<li><p><a class="reference internal" href="#defines" id="id7">Defines</a></p></li>
+<li><p><a class="reference internal" href="#variables" id="id8">Variables</a></p></li>
+</ul>
+</div>
+<div class="section" id="definition-compiler-include-seq-seq-h">
+<h2>Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/seq.h</span></code>)<a class="headerlink" href="#definition-compiler-include-seq-seq-h" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="program_listing_file_compiler_include_seq_seq.h.html">Program Listing for File seq.h</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="includes">
+<h2>Includes<a class="headerlink" href="#includes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">any.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_any.h.html#file-compiler-include-seq-any-h"><span class="std std-ref">File any.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">array.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_array.h.html#file-compiler-include-seq-array-h"><span class="std std-ref">File array.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_base.h.html#file-compiler-include-seq-base-h"><span class="std std-ref">File base.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">common.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_common.h.html#file-compiler-include-seq-common-h"><span class="std std-ref">File common.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cstdint</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cstdlib</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">expr.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_expr.h.html#file-compiler-include-seq-expr-h"><span class="std std-ref">File expr.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">func.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_func.h.html#file-compiler-include-seq-func-h"><span class="std std-ref">File func.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">funct.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_funct.h.html#file-compiler-include-seq-funct-h"><span class="std std-ref">File funct.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">generic.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_generic.h.html#file-compiler-include-seq-generic-h"><span class="std std-ref">File generic.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lang.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_lang.h.html#file-compiler-include-seq-lang-h"><span class="std std-ref">File lang.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">llvm.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_llvm.h.html#file-compiler-include-seq-llvm-h"><span class="std std-ref">File llvm.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">map</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">memory</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">num.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_num.h.html#file-compiler-include-seq-num-h"><span class="std std-ref">File num.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ops.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_ops.h.html#file-compiler-include-seq-ops-h"><span class="std std-ref">File ops.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">optional.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_optional.h.html#file-compiler-include-seq-optional-h"><span class="std std-ref">File optional.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">patterns.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_patterns.h.html#file-compiler-include-seq-patterns-h"><span class="std std-ref">File patterns.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptr.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_ptr.h.html#file-compiler-include-seq-ptr-h"><span class="std std-ref">File ptr.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">record.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_record.h.html#file-compiler-include-seq-record-h"><span class="std std-ref">File record.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ref.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_ref.h.html#file-compiler-include-seq-ref-h"><span class="std std-ref">File ref.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seqt.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_seqt.h.html#file-compiler-include-seq-seqt-h"><span class="std std-ref">File seqt.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">types.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_types.h.html#file-compiler-include-seq-types-h"><span class="std std-ref">File types.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">var.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_var.h.html#file-compiler-include-seq-var-h"><span class="std std-ref">File var.h</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vector</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">void.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_void.h.html#file-compiler-include-seq-void-h"><span class="std std-ref">File void.h</span></a>)</p></li>
+</ul>
+</div>
+<div class="section" id="included-by">
+<h2>Included By<a class="headerlink" href="#included-by" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="file_compiler_include_seq_parser.h.html#file-compiler-include-seq-parser-h"><span class="std std-ref">File parser.h</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_lang_expr.cpp.html#file-compiler-lang-expr-cpp"><span class="std std-ref">File expr.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_lang_func.cpp.html#file-compiler-lang-func-cpp"><span class="std std-ref">File func.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_lang_lang.cpp.html#file-compiler-lang-lang-cpp"><span class="std std-ref">File lang.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_lang_ops.cpp.html#file-compiler-lang-ops-cpp"><span class="std std-ref">File ops.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_lang_patterns.cpp.html#file-compiler-lang-patterns-cpp"><span class="std std-ref">File patterns.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_lang_seq.cpp.html#file-compiler-lang-seq-cpp"><span class="std std-ref">File seq.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_lang_stmt.cpp.html#file-compiler-lang-stmt-cpp"><span class="std std-ref">File stmt.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_lang_var.cpp.html#file-compiler-lang-var-cpp"><span class="std std-ref">File var.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_types_any.cpp.html#file-compiler-types-any-cpp"><span class="std std-ref">File any.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_types_array.cpp.html#file-compiler-types-array-cpp"><span class="std std-ref">File array.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_types_base.cpp.html#file-compiler-types-base-cpp"><span class="std std-ref">File base.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_types_funct.cpp.html#file-compiler-types-funct-cpp"><span class="std std-ref">File funct.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_types_generic.cpp.html#file-compiler-types-generic-cpp"><span class="std std-ref">File generic.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_types_num.cpp.html#file-compiler-types-num-cpp"><span class="std std-ref">File num.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_types_optional.cpp.html#file-compiler-types-optional-cpp"><span class="std std-ref">File optional.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_types_ptr.cpp.html#file-compiler-types-ptr-cpp"><span class="std std-ref">File ptr.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_types_record.cpp.html#file-compiler-types-record-cpp"><span class="std std-ref">File record.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_types_ref.cpp.html#file-compiler-types-ref-cpp"><span class="std std-ref">File ref.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_types_seqt.cpp.html#file-compiler-types-seqt-cpp"><span class="std std-ref">File seqt.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_types_types.cpp.html#file-compiler-types-types-cpp"><span class="std std-ref">File types.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_types_void.cpp.html#file-compiler-types-void-cpp"><span class="std std-ref">File void.cpp</span></a></p></li>
+<li><p><a class="reference internal" href="file_compiler_util_ocaml.cpp.html#file-compiler-util-ocaml-cpp"><span class="std std-ref">File ocaml.cpp</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="namespaces">
+<h2>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="namespace_seq.html#namespace-seq"><span class="std std-ref">Namespace seq</span></a></p></li>
+<li><p><a class="reference internal" href="namespace_seq__types.html#namespace-seq-types"><span class="std std-ref">Namespace seq::types</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="classseq_1_1SeqModule.html#exhale-class-classseq-1-1seqmodule"><span class="std std-ref">Class SeqModule</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="function_seq_8h_1ab91cf63d5897c85920299a22b7fae18a.html#exhale-function-seq-8h-1ab91cf63d5897c85920299a22b7fae18a"><span class="std std-ref">Function seq::compilationError</span></a></p></li>
+<li><p><a class="reference internal" href="function_seq_8h_1afba990a18eeb85dac25b10fbfe1bb0e7.html#exhale-function-seq-8h-1afba990a18eeb85dac25b10fbfe1bb0e7"><span class="std std-ref">Function seq::compilationWarning</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="defines">
+<h2>Defines<a class="headerlink" href="#defines" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="define_seq_8h_1a2313755916fd32e39954800affdd9fe5.html#exhale-define-seq-8h-1a2313755916fd32e39954800affdd9fe5"><span class="std std-ref">Define SEQ_VERSION_MAJOR</span></a></p></li>
+<li><p><a class="reference internal" href="define_seq_8h_1a68d05c689f70a5756e0eaff84f679ab6.html#exhale-define-seq-8h-1a68d05c689f70a5756e0eaff84f679ab6"><span class="std std-ref">Define SEQ_VERSION_MINOR</span></a></p></li>
+<li><p><a class="reference internal" href="define_seq_8h_1a5b9aada676ec5d60e9e7badb8d209354.html#exhale-define-seq-8h-1a5b9aada676ec5d60e9e7badb8d209354"><span class="std std-ref">Define SEQ_VERSION_PATCH</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="variable_seq_8h_1a98a022ccd04b49f73e5ad4d04a95d7b5.html#exhale-variable-seq-8h-1a98a022ccd04b49f73e5ad4d04a95d7b5"><span class="std std-ref">Variable seq::types::Any</span></a></p></li>
+<li><p><a class="reference internal" href="variable_seq_8h_1a02ecbeef8e7274c5a7b2c27d8435da9f.html#exhale-variable-seq-8h-1a02ecbeef8e7274c5a7b2c27d8435da9f"><span class="std std-ref">Variable seq::types::Array</span></a></p></li>
+<li><p><a class="reference internal" href="variable_seq_8h_1ae91a056ea3a0717c6cddcd9617809bdb.html#exhale-variable-seq-8h-1ae91a056ea3a0717c6cddcd9617809bdb"><span class="std std-ref">Variable seq::types::Base</span></a></p></li>
+<li><p><a class="reference internal" href="variable_seq_8h_1a12349422a28e7a96c624003e378d38b6.html#exhale-variable-seq-8h-1a12349422a28e7a96c624003e378d38b6"><span class="std std-ref">Variable seq::types::Bool</span></a></p></li>
+<li><p><a class="reference internal" href="variable_seq_8h_1af1e2cc4de9a4e0aed05c2d6402e40471.html#exhale-variable-seq-8h-1af1e2cc4de9a4e0aed05c2d6402e40471"><span class="std std-ref">Variable seq::types::Byte</span></a></p></li>
+<li><p><a class="reference internal" href="variable_seq_8h_1aeb3a008d69873b6215bc0cdfd50e7d99.html#exhale-variable-seq-8h-1aeb3a008d69873b6215bc0cdfd50e7d99"><span class="std std-ref">Variable seq::types::Float</span></a></p></li>
+<li><p><a class="reference internal" href="variable_seq_8h_1ae1b50d1501b03fab9600bf97d86a6a1c.html#exhale-variable-seq-8h-1ae1b50d1501b03fab9600bf97d86a6a1c"><span class="std std-ref">Variable seq::types::Gen</span></a></p></li>
+<li><p><a class="reference internal" href="variable_seq_8h_1acc2643a95458576010bff29f44fbce6d.html#exhale-variable-seq-8h-1acc2643a95458576010bff29f44fbce6d"><span class="std std-ref">Variable seq::types::Int</span></a></p></li>
+<li><p><a class="reference internal" href="variable_seq_8h_1a9c7963a8531729167a2507a665f1d0d3.html#exhale-variable-seq-8h-1a9c7963a8531729167a2507a665f1d0d3"><span class="std std-ref">Variable seq::types::Seq</span></a></p></li>
+<li><p><a class="reference internal" href="variable_seq_8h_1a61c501ae26a341d410b6c0b22effa1f8.html#exhale-variable-seq-8h-1a61c501ae26a341d410b6c0b22effa1f8"><span class="std std-ref">Variable seq::types::Str</span></a></p></li>
+<li><p><a class="reference internal" href="variable_seq_8h_1a322f6b02a781e9e4d866ad0b4988debd.html#exhale-variable-seq-8h-1a322f6b02a781e9e4d866ad0b4988debd"><span class="std std-ref">Variable seq::types::Void</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

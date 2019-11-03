@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a8e0da76d4adef5bb14700b9a0f03cb89:
+
+Function str_pattern
+====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: str_pattern(char *, size_t)

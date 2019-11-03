@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a1b33529b959cb028558f8a2ec33cb8e3:
+
+Function set_func_out
+=====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_func_out(Func *, types::Type *)

@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a96f428c1a17c37cbe3e7c184fa7f91d0:
+
+Function add_ref_method
+=======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: add_ref_method(types::Type *, char *, Func *)

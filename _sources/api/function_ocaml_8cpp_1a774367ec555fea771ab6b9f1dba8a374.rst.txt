@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a774367ec555fea771ab6b9f1dba8a374:
+
+Function assign_index_stmt
+==========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: assign_index_stmt(Expr *, Expr *, Expr *)

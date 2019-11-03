@@ -1,0 +1,25 @@
+.. _exhale_class_classseq_1_1GenExpr:
+
+Class GenExpr
+=============
+
+- Defined in :ref:`file_compiler_include_seq_expr.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public seq::Expr`` (:ref:`exhale_class_classseq_1_1Expr`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::GenExpr
+   :members:
+   :protected-members:
+   :undoc-members:

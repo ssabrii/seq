@@ -1,0 +1,837 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Program Listing for File record.cpp &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Compiler Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doxygen.html">Compiler API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Program Listing for File record.cpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/program_listing_file_compiler_types_record.cpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-for-file-record-cpp">
+<span id="program-listing-file-compiler-types-record-cpp"></span><h1>Program Listing for File record.cpp<a class="headerlink" href="#program-listing-for-file-record-cpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_compiler_types_record.cpp.html#file-compiler-types-record-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">compiler/types/record.cpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;seq/seq.h&quot;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">seq</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">llvm</span><span class="p">;</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">RecordType</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span><span class="p">,</span>
+                              <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">Type</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">BaseType</span><span class="o">::</span><span class="n">get</span><span class="p">(),</span> <span class="nb">false</span><span class="p">,</span> <span class="o">!</span><span class="n">name</span><span class="p">.</span><span class="n">empty</span><span class="p">()),</span>
+      <span class="n">types</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">types</span><span class="p">)),</span> <span class="n">names</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">names</span><span class="p">))</span> <span class="p">{</span>
+  <span class="n">assert</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">names</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">||</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">names</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">setContents</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span><span class="p">,</span>
+                                    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="o">-&gt;</span><span class="n">types</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">types</span><span class="p">);</span>
+  <span class="k">this</span><span class="o">-&gt;</span><span class="n">names</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">names</span><span class="p">);</span>
+  <span class="n">assert</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">names</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">||</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">names</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">empty</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">types</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span> <span class="p">}</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">getTypes</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">types</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">getName</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">name</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;tuple[&quot;</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">name</span> <span class="o">+=</span> <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+      <span class="n">name</span> <span class="o">+=</span> <span class="s">&quot;,&quot;</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">name</span> <span class="o">+=</span> <span class="s">&quot;]&quot;</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">name</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">defaultValue</span><span class="p">(</span><span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">self</span> <span class="o">=</span> <span class="n">UndefValue</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">));</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">elem</span> <span class="o">=</span> <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">defaultValue</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+    <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+    <span class="n">self</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateInsertValue</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">elem</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">self</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">isAtomic</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">*</span><span class="nl">type</span> <span class="p">:</span> <span class="n">types</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">type</span><span class="o">-&gt;</span><span class="n">isAtomic</span><span class="p">())</span>
+      <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">is</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="kt">unsigned</span> <span class="n">b</span> <span class="o">=</span> <span class="n">numBaseTypes</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">isGeneric</span><span class="p">(</span><span class="n">type</span><span class="p">)</span> <span class="o">||</span> <span class="n">b</span> <span class="o">!=</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">numBaseTypes</span><span class="p">())</span>
+    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">name</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">auto</span> <span class="o">*</span><span class="n">rec</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">RecordType</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">type</span><span class="p">);</span>
+    <span class="n">assert</span><span class="p">(</span><span class="n">rec</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="o">!=</span> <span class="n">rec</span><span class="o">-&gt;</span><span class="n">name</span><span class="p">)</span>
+      <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">types</span><span class="o">::</span><span class="n">is</span><span class="p">(</span><span class="n">getBaseType</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">getBaseType</span><span class="p">(</span><span class="n">i</span><span class="p">)))</span>
+      <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Function</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">getContainsFunc</span><span class="p">(</span><span class="n">Module</span> <span class="o">*</span><span class="n">module</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// only support __contains__ for homogeneous tuples:</span>
+  <span class="n">assert</span><span class="p">(</span><span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">*</span><span class="nl">type</span> <span class="p">:</span> <span class="n">types</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">assert</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">is</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="n">types</span><span class="p">[</span><span class="mi">0</span><span class="p">]));</span>
+  <span class="p">}</span>
+
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;seq.&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;.__contains__&quot;</span><span class="p">;</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">module</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+  <span class="n">Function</span> <span class="o">*</span><span class="n">func</span> <span class="o">=</span> <span class="n">module</span><span class="o">-&gt;</span><span class="n">getFunction</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">func</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">func</span> <span class="o">=</span> <span class="n">cast</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&gt;</span><span class="p">(</span><span class="n">module</span><span class="o">-&gt;</span><span class="n">getOrInsertFunction</span><span class="p">(</span>
+        <span class="n">name</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Bool</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">),</span>
+        <span class="n">types</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">)));</span>
+    <span class="n">func</span><span class="o">-&gt;</span><span class="n">setLinkage</span><span class="p">(</span><span class="n">GlobalValue</span><span class="o">::</span><span class="n">PrivateLinkage</span><span class="p">);</span>
+    <span class="n">func</span><span class="o">-&gt;</span><span class="n">addFnAttr</span><span class="p">(</span><span class="n">Attribute</span><span class="o">::</span><span class="n">AlwaysInline</span><span class="p">);</span>
+
+    <span class="k">auto</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">func</span><span class="o">-&gt;</span><span class="n">arg_begin</span><span class="p">();</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">rec</span> <span class="o">=</span> <span class="n">iter</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">val</span> <span class="o">=</span> <span class="n">iter</span><span class="p">;</span>
+
+    <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;entry&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+    <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">retFalse</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;exit_false&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+    <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">retTrue</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;exit_true&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+    <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">m</span> <span class="o">=</span> <span class="n">memb</span><span class="p">(</span><span class="n">rec</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">block</span><span class="p">);</span>
+      <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">eqType</span> <span class="o">=</span> <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">magicOut</span><span class="p">(</span><span class="s">&quot;__eq__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]});</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">eq</span> <span class="o">=</span>
+          <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">callMagic</span><span class="p">(</span><span class="s">&quot;__eq__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]},</span> <span class="n">m</span><span class="p">,</span> <span class="p">{</span><span class="n">val</span><span class="p">},</span> <span class="n">block</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+      <span class="n">eq</span> <span class="o">=</span> <span class="n">eqType</span><span class="o">-&gt;</span><span class="n">boolValue</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+      <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+      <span class="n">eq</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpNE</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">builder</span><span class="p">.</span><span class="n">getInt8</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+
+      <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">next</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;cmp&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+      <span class="n">builder</span><span class="p">.</span><span class="n">CreateCondBr</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">retTrue</span><span class="p">,</span> <span class="n">next</span><span class="p">);</span>
+      <span class="n">block</span> <span class="o">=</span> <span class="n">next</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">CreateBr</span><span class="p">(</span><span class="n">retFalse</span><span class="p">);</span>
+
+    <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">retFalse</span><span class="p">);</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">CreateRet</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">getInt8</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+
+    <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">retTrue</span><span class="p">);</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">CreateRet</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">getInt8</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">func</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">enum</span> <span class="p">{</span> <span class="n">EQ</span><span class="p">,</span> <span class="n">NE</span><span class="p">,</span> <span class="n">LT</span><span class="p">,</span> <span class="n">LE</span><span class="p">,</span> <span class="n">GT</span><span class="p">,</span> <span class="n">GE</span> <span class="p">};</span>
+<span class="n">Function</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">getCmpFunc</span><span class="p">(</span><span class="n">Module</span> <span class="o">*</span><span class="n">module</span><span class="p">,</span> <span class="kt">int</span> <span class="n">kind</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">magic</span><span class="p">;</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="n">kind</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="nl">EQ</span><span class="p">:</span>
+    <span class="n">magic</span> <span class="o">=</span> <span class="s">&quot;__eq__&quot;</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="nl">NE</span><span class="p">:</span>
+    <span class="n">magic</span> <span class="o">=</span> <span class="s">&quot;__ne__&quot;</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="nl">LT</span><span class="p">:</span>
+    <span class="n">magic</span> <span class="o">=</span> <span class="s">&quot;__lt__&quot;</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="nl">LE</span><span class="p">:</span>
+    <span class="n">magic</span> <span class="o">=</span> <span class="s">&quot;__le__&quot;</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="nl">GT</span><span class="p">:</span>
+    <span class="n">magic</span> <span class="o">=</span> <span class="s">&quot;__gt__&quot;</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">case</span> <span class="nl">GE</span><span class="p">:</span>
+    <span class="n">magic</span> <span class="o">=</span> <span class="s">&quot;__ge__&quot;</span><span class="p">;</span>
+    <span class="k">break</span><span class="p">;</span>
+  <span class="k">default</span><span class="o">:</span>
+    <span class="n">assert</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&quot;seq.&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;.&quot;</span> <span class="o">+</span> <span class="n">magic</span><span class="p">;</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">module</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+  <span class="n">Function</span> <span class="o">*</span><span class="n">func</span> <span class="o">=</span> <span class="n">module</span><span class="o">-&gt;</span><span class="n">getFunction</span><span class="p">(</span><span class="n">name</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">func</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">func</span> <span class="o">=</span> <span class="n">cast</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&gt;</span><span class="p">(</span><span class="n">module</span><span class="o">-&gt;</span><span class="n">getOrInsertFunction</span><span class="p">(</span>
+        <span class="n">name</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Bool</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">),</span>
+        <span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">)));</span>
+    <span class="n">func</span><span class="o">-&gt;</span><span class="n">setLinkage</span><span class="p">(</span><span class="n">GlobalValue</span><span class="o">::</span><span class="n">PrivateLinkage</span><span class="p">);</span>
+    <span class="n">func</span><span class="o">-&gt;</span><span class="n">addFnAttr</span><span class="p">(</span><span class="n">Attribute</span><span class="o">::</span><span class="n">AlwaysInline</span><span class="p">);</span>
+
+    <span class="k">auto</span> <span class="n">iter</span> <span class="o">=</span> <span class="n">func</span><span class="o">-&gt;</span><span class="n">arg_begin</span><span class="p">();</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">r1</span> <span class="o">=</span> <span class="n">iter</span><span class="o">++</span><span class="p">;</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">r2</span> <span class="o">=</span> <span class="n">iter</span><span class="p">;</span>
+
+    <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;entry&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+    <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">retFalse</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;exit_false&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+    <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">retTrue</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;exit_true&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+    <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">val1</span> <span class="o">=</span> <span class="n">memb</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">block</span><span class="p">);</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">val2</span> <span class="o">=</span> <span class="n">memb</span><span class="p">(</span><span class="n">r2</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">block</span><span class="p">);</span>
+
+      <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">cmpType</span> <span class="o">=</span> <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">magicOut</span><span class="p">(</span><span class="n">magic</span><span class="p">,</span> <span class="p">{</span><span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]});</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">cmp</span> <span class="o">=</span>
+          <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">callMagic</span><span class="p">(</span><span class="n">magic</span><span class="p">,</span> <span class="p">{</span><span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]},</span> <span class="n">val1</span><span class="p">,</span> <span class="p">{</span><span class="n">val2</span><span class="p">},</span> <span class="n">block</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+      <span class="n">cmp</span> <span class="o">=</span> <span class="n">cmpType</span><span class="o">-&gt;</span><span class="n">boolValue</span><span class="p">(</span><span class="n">cmp</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+      <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+      <span class="n">cmp</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpNE</span><span class="p">(</span><span class="n">cmp</span><span class="p">,</span> <span class="n">builder</span><span class="p">.</span><span class="n">getInt8</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+      <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">next</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;cmp&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+
+      <span class="k">if</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="n">EQ</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">builder</span><span class="p">.</span><span class="n">CreateCondBr</span><span class="p">(</span><span class="n">cmp</span><span class="p">,</span> <span class="n">next</span><span class="p">,</span> <span class="n">retFalse</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="n">NE</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">builder</span><span class="p">.</span><span class="n">CreateCondBr</span><span class="p">(</span><span class="n">cmp</span><span class="p">,</span> <span class="n">retTrue</span><span class="p">,</span> <span class="n">next</span><span class="p">);</span>
+      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">eqBlock</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;eq&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+        <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">eqType</span> <span class="o">=</span> <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">magicOut</span><span class="p">(</span><span class="s">&quot;__eq__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]});</span>
+        <span class="n">Value</span> <span class="o">*</span><span class="n">eq</span> <span class="o">=</span> <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">callMagic</span><span class="p">(</span><span class="s">&quot;__eq__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]},</span> <span class="n">val1</span><span class="p">,</span> <span class="p">{</span><span class="n">val2</span><span class="p">},</span>
+                                        <span class="n">eqBlock</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+        <span class="n">eq</span> <span class="o">=</span> <span class="n">eqType</span><span class="o">-&gt;</span><span class="n">boolValue</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">eqBlock</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+        <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">eqBlock</span><span class="p">);</span>
+        <span class="n">eq</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpNE</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">builder</span><span class="p">.</span><span class="n">getInt8</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+        <span class="n">builder</span><span class="p">.</span><span class="n">CreateCondBr</span><span class="p">(</span><span class="n">eq</span><span class="p">,</span> <span class="n">next</span><span class="p">,</span>
+                             <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="n">LT</span> <span class="o">||</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">GT</span><span class="p">)</span> <span class="o">?</span> <span class="nl">retFalse</span> <span class="p">:</span> <span class="n">retTrue</span><span class="p">);</span>
+
+        <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">kind</span> <span class="o">==</span> <span class="n">LT</span> <span class="o">||</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">GT</span><span class="p">)</span> <span class="p">{</span>
+          <span class="n">builder</span><span class="p">.</span><span class="n">CreateCondBr</span><span class="p">(</span><span class="n">cmp</span><span class="p">,</span> <span class="n">retTrue</span><span class="p">,</span> <span class="n">eqBlock</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+          <span class="n">builder</span><span class="p">.</span><span class="n">CreateCondBr</span><span class="p">(</span><span class="n">cmp</span><span class="p">,</span> <span class="n">eqBlock</span><span class="p">,</span> <span class="n">retFalse</span><span class="p">);</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+
+      <span class="n">block</span> <span class="o">=</span> <span class="n">next</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">CreateBr</span><span class="p">((</span><span class="n">kind</span> <span class="o">==</span> <span class="n">EQ</span> <span class="o">||</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">LE</span> <span class="o">||</span> <span class="n">kind</span> <span class="o">==</span> <span class="n">GE</span><span class="p">)</span> <span class="o">?</span> <span class="nl">retTrue</span>
+                                                              <span class="p">:</span> <span class="n">retFalse</span><span class="p">);</span>
+
+    <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">retFalse</span><span class="p">);</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">CreateRet</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">getInt8</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+
+    <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">retTrue</span><span class="p">);</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">CreateRet</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">getInt8</span><span class="p">(</span><span class="mi">1</span><span class="p">));</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">func</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">initOps</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">vtable</span><span class="p">.</span><span class="n">magic</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+    <span class="k">return</span><span class="p">;</span>
+
+  <span class="k">static</span> <span class="n">RecordType</span> <span class="o">*</span><span class="n">pyObjType</span> <span class="o">=</span>
+      <span class="n">RecordType</span><span class="o">::</span><span class="n">get</span><span class="p">({</span><span class="n">PtrType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">Byte</span><span class="p">)},</span> <span class="p">{</span><span class="s">&quot;p&quot;</span><span class="p">},</span> <span class="s">&quot;PyObject&quot;</span><span class="p">);</span>
+
+  <span class="n">vtable</span><span class="p">.</span><span class="n">magic</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="p">{</span><span class="s">&quot;__init__&quot;</span><span class="p">,</span> <span class="n">types</span><span class="p">,</span> <span class="k">this</span><span class="p">,</span>
+       <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">Value</span> <span class="o">*</span><span class="n">val</span> <span class="o">=</span> <span class="n">defaultValue</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">GetInsertBlock</span><span class="p">());</span>
+         <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">args</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+           <span class="n">val</span> <span class="o">=</span>
+               <span class="n">setMemb</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">args</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">b</span><span class="p">.</span><span class="n">GetInsertBlock</span><span class="p">());</span>
+         <span class="k">return</span> <span class="n">val</span><span class="p">;</span>
+       <span class="p">},</span>
+       <span class="nb">false</span><span class="p">},</span>
+
+      <span class="p">{</span><span class="s">&quot;__str__&quot;</span><span class="p">,</span>
+       <span class="p">{},</span>
+       <span class="n">Str</span><span class="p">,</span>
+       <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">getContext</span><span class="p">();</span>
+         <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">GetInsertBlock</span><span class="p">();</span>
+         <span class="n">Module</span> <span class="o">*</span><span class="n">module</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getModule</span><span class="p">();</span>
+         <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">strName</span> <span class="o">=</span> <span class="s">&quot;seq.&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;.__str__&quot;</span><span class="p">;</span>
+         <span class="n">Function</span> <span class="o">*</span><span class="n">str</span> <span class="o">=</span> <span class="n">module</span><span class="o">-&gt;</span><span class="n">getFunction</span><span class="p">(</span><span class="n">strName</span><span class="p">);</span>
+
+         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">str</span><span class="p">)</span> <span class="p">{</span>
+           <span class="n">str</span> <span class="o">=</span> <span class="n">cast</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&gt;</span><span class="p">(</span><span class="n">module</span><span class="o">-&gt;</span><span class="n">getOrInsertFunction</span><span class="p">(</span>
+               <span class="n">strName</span><span class="p">,</span> <span class="n">Str</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">)));</span>
+           <span class="n">str</span><span class="o">-&gt;</span><span class="n">setLinkage</span><span class="p">(</span><span class="n">GlobalValue</span><span class="o">::</span><span class="n">PrivateLinkage</span><span class="p">);</span>
+           <span class="n">str</span><span class="o">-&gt;</span><span class="n">setPersonalityFn</span><span class="p">(</span><span class="n">makePersonalityFunc</span><span class="p">(</span><span class="n">module</span><span class="p">));</span>
+
+           <span class="n">Value</span> <span class="o">*</span><span class="n">arg</span> <span class="o">=</span> <span class="n">str</span><span class="o">-&gt;</span><span class="n">arg_begin</span><span class="p">();</span>
+           <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">entry</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;entry&quot;</span><span class="p">,</span> <span class="n">str</span><span class="p">);</span>
+           <span class="n">b</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">entry</span><span class="p">);</span>
+           <span class="n">Value</span> <span class="o">*</span><span class="n">len</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+           <span class="n">Value</span> <span class="o">*</span><span class="n">strs</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateAlloca</span><span class="p">(</span><span class="n">Str</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">len</span><span class="p">);</span>
+
+           <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+             <span class="n">Value</span> <span class="o">*</span><span class="n">v</span> <span class="o">=</span> <span class="n">memb</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">entry</span><span class="p">);</span>
+             <span class="c1">// won&#39;t create new block since no try-catch:</span>
+             <span class="n">Value</span> <span class="o">*</span><span class="n">s</span> <span class="o">=</span> <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">strValue</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">entry</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+             <span class="n">Value</span> <span class="o">*</span><span class="n">dest</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateGEP</span><span class="p">(</span><span class="n">strs</span><span class="p">,</span> <span class="n">b</span><span class="p">.</span><span class="n">getInt32</span><span class="p">(</span><span class="n">i</span><span class="p">));</span>
+             <span class="n">b</span><span class="p">.</span><span class="n">CreateStore</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">dest</span><span class="p">);</span>
+           <span class="p">}</span>
+
+           <span class="k">auto</span> <span class="o">*</span><span class="n">strReal</span> <span class="o">=</span> <span class="n">cast</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&gt;</span><span class="p">(</span><span class="n">module</span><span class="o">-&gt;</span><span class="n">getOrInsertFunction</span><span class="p">(</span>
+               <span class="s">&quot;seq_str_tuple&quot;</span><span class="p">,</span> <span class="n">Str</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">),</span>
+               <span class="n">Str</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getPointerTo</span><span class="p">(),</span> <span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">)));</span>
+           <span class="n">strReal</span><span class="o">-&gt;</span><span class="n">setDoesNotThrow</span><span class="p">();</span>
+           <span class="n">Value</span> <span class="o">*</span><span class="n">res</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">strReal</span><span class="p">,</span> <span class="p">{</span><span class="n">strs</span><span class="p">,</span> <span class="n">len</span><span class="p">});</span>
+           <span class="n">b</span><span class="p">.</span><span class="n">CreateRet</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
+         <span class="p">}</span>
+
+         <span class="n">b</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+         <span class="k">return</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="n">self</span><span class="p">);</span>
+       <span class="p">},</span>
+       <span class="nb">false</span><span class="p">},</span>
+
+      <span class="p">{</span><span class="s">&quot;__iter__&quot;</span><span class="p">,</span>
+       <span class="p">{},</span>
+       <span class="n">GenType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">types</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">?</span> <span class="nl">Void</span> <span class="p">:</span> <span class="n">types</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span>
+       <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">types</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+           <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;cannot iterate over empty tuple&quot;</span><span class="p">);</span>
+
+         <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">*</span><span class="nl">type</span> <span class="p">:</span> <span class="n">types</span><span class="p">)</span> <span class="p">{</span>
+           <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">types</span><span class="o">::</span><span class="n">is</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="n">types</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+             <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;cannot iterate over heterogeneous tuple&quot;</span><span class="p">);</span>
+         <span class="p">}</span>
+
+         <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">GetInsertBlock</span><span class="p">();</span>
+         <span class="n">Module</span> <span class="o">*</span><span class="n">module</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getModule</span><span class="p">();</span>
+         <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">iterName</span> <span class="o">=</span> <span class="s">&quot;seq.&quot;</span> <span class="o">+</span> <span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot;.__iter__&quot;</span><span class="p">;</span>
+         <span class="n">Function</span> <span class="o">*</span><span class="n">iter</span> <span class="o">=</span> <span class="n">module</span><span class="o">-&gt;</span><span class="n">getFunction</span><span class="p">(</span><span class="n">iterName</span><span class="p">);</span>
+
+         <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">iter</span><span class="p">)</span> <span class="p">{</span>
+           <span class="n">Func</span> <span class="n">iterFunc</span><span class="p">;</span>
+           <span class="n">iterFunc</span><span class="p">.</span><span class="n">setName</span><span class="p">(</span><span class="n">iterName</span><span class="p">);</span>
+           <span class="n">iterFunc</span><span class="p">.</span><span class="n">setIns</span><span class="p">({</span><span class="k">this</span><span class="p">});</span>
+           <span class="n">iterFunc</span><span class="p">.</span><span class="n">setOut</span><span class="p">(</span><span class="n">types</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+           <span class="n">iterFunc</span><span class="p">.</span><span class="n">setArgNames</span><span class="p">({</span><span class="s">&quot;self&quot;</span><span class="p">});</span>
+
+           <span class="n">VarExpr</span> <span class="nf">arg</span><span class="p">(</span><span class="n">iterFunc</span><span class="p">.</span><span class="n">getArgVar</span><span class="p">(</span><span class="s">&quot;self&quot;</span><span class="p">));</span>
+           <span class="n">Block</span> <span class="o">*</span><span class="n">body</span> <span class="o">=</span> <span class="n">iterFunc</span><span class="p">.</span><span class="n">getBlock</span><span class="p">();</span>
+           <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+             <span class="k">auto</span> <span class="o">*</span><span class="n">yield</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Yield</span><span class="p">(</span><span class="k">new</span> <span class="n">GetElemExpr</span><span class="p">(</span><span class="o">&amp;</span><span class="n">arg</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span>
+             <span class="n">yield</span><span class="o">-&gt;</span><span class="n">setBase</span><span class="p">(</span><span class="o">&amp;</span><span class="n">iterFunc</span><span class="p">);</span>
+             <span class="n">body</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">yield</span><span class="p">);</span>
+             <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+               <span class="n">iterFunc</span><span class="p">.</span><span class="n">sawYield</span><span class="p">(</span><span class="n">yield</span><span class="p">);</span>
+           <span class="p">}</span>
+
+           <span class="n">iterFunc</span><span class="p">.</span><span class="n">resolveTypes</span><span class="p">();</span>
+           <span class="n">iterFunc</span><span class="p">.</span><span class="n">codegen</span><span class="p">(</span><span class="n">module</span><span class="p">);</span>
+           <span class="n">iter</span> <span class="o">=</span> <span class="n">iterFunc</span><span class="p">.</span><span class="n">getFunc</span><span class="p">();</span>
+         <span class="p">}</span>
+
+         <span class="k">return</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">iter</span><span class="p">,</span> <span class="n">self</span><span class="p">);</span>
+       <span class="p">},</span>
+       <span class="nb">false</span><span class="p">},</span>
+
+      <span class="p">{</span><span class="s">&quot;__len__&quot;</span><span class="p">,</span>
+       <span class="p">{},</span>
+       <span class="n">Int</span><span class="p">,</span>
+       <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">return</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">getContext</span><span class="p">()),</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span>
+                                 <span class="nb">true</span><span class="p">);</span>
+       <span class="p">},</span>
+       <span class="nb">false</span><span class="p">},</span>
+
+      <span class="p">{</span><span class="s">&quot;__eq__&quot;</span><span class="p">,</span>
+       <span class="p">{</span><span class="k">this</span><span class="p">},</span>
+       <span class="n">Bool</span><span class="p">,</span>
+       <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">Function</span> <span class="o">*</span><span class="n">cmp</span> <span class="o">=</span> <span class="n">getCmpFunc</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">GetInsertBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getModule</span><span class="p">(),</span> <span class="n">EQ</span><span class="p">);</span>
+         <span class="k">return</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">cmp</span><span class="p">,</span> <span class="p">{</span><span class="n">self</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]});</span>
+       <span class="p">},</span>
+       <span class="nb">false</span><span class="p">},</span>
+
+      <span class="p">{</span><span class="s">&quot;__ne__&quot;</span><span class="p">,</span>
+       <span class="p">{</span><span class="k">this</span><span class="p">},</span>
+       <span class="n">Bool</span><span class="p">,</span>
+       <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">Function</span> <span class="o">*</span><span class="n">cmp</span> <span class="o">=</span> <span class="n">getCmpFunc</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">GetInsertBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getModule</span><span class="p">(),</span> <span class="n">NE</span><span class="p">);</span>
+         <span class="k">return</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">cmp</span><span class="p">,</span> <span class="p">{</span><span class="n">self</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]});</span>
+       <span class="p">},</span>
+       <span class="nb">false</span><span class="p">},</span>
+
+      <span class="p">{</span><span class="s">&quot;__lt__&quot;</span><span class="p">,</span>
+       <span class="p">{</span><span class="k">this</span><span class="p">},</span>
+       <span class="n">Bool</span><span class="p">,</span>
+       <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">Function</span> <span class="o">*</span><span class="n">cmp</span> <span class="o">=</span> <span class="n">getCmpFunc</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">GetInsertBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getModule</span><span class="p">(),</span> <span class="n">LT</span><span class="p">);</span>
+         <span class="k">return</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">cmp</span><span class="p">,</span> <span class="p">{</span><span class="n">self</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]});</span>
+       <span class="p">},</span>
+       <span class="nb">false</span><span class="p">},</span>
+
+      <span class="p">{</span><span class="s">&quot;__gt__&quot;</span><span class="p">,</span>
+       <span class="p">{</span><span class="k">this</span><span class="p">},</span>
+       <span class="n">Bool</span><span class="p">,</span>
+       <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">Function</span> <span class="o">*</span><span class="n">cmp</span> <span class="o">=</span> <span class="n">getCmpFunc</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">GetInsertBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getModule</span><span class="p">(),</span> <span class="n">GT</span><span class="p">);</span>
+         <span class="k">return</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">cmp</span><span class="p">,</span> <span class="p">{</span><span class="n">self</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]});</span>
+       <span class="p">},</span>
+       <span class="nb">false</span><span class="p">},</span>
+
+      <span class="p">{</span><span class="s">&quot;__le__&quot;</span><span class="p">,</span>
+       <span class="p">{</span><span class="k">this</span><span class="p">},</span>
+       <span class="n">Bool</span><span class="p">,</span>
+       <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">Function</span> <span class="o">*</span><span class="n">cmp</span> <span class="o">=</span> <span class="n">getCmpFunc</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">GetInsertBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getModule</span><span class="p">(),</span> <span class="n">LE</span><span class="p">);</span>
+         <span class="k">return</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">cmp</span><span class="p">,</span> <span class="p">{</span><span class="n">self</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]});</span>
+       <span class="p">},</span>
+       <span class="nb">false</span><span class="p">},</span>
+
+      <span class="p">{</span><span class="s">&quot;__ge__&quot;</span><span class="p">,</span>
+       <span class="p">{</span><span class="k">this</span><span class="p">},</span>
+       <span class="n">Bool</span><span class="p">,</span>
+       <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">Function</span> <span class="o">*</span><span class="n">cmp</span> <span class="o">=</span> <span class="n">getCmpFunc</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">GetInsertBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getModule</span><span class="p">(),</span> <span class="n">GE</span><span class="p">);</span>
+         <span class="k">return</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">cmp</span><span class="p">,</span> <span class="p">{</span><span class="n">self</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]});</span>
+       <span class="p">},</span>
+       <span class="nb">false</span><span class="p">},</span>
+
+      <span class="p">{</span><span class="s">&quot;__hash__&quot;</span><span class="p">,</span>
+       <span class="p">{},</span>
+       <span class="n">Int</span><span class="p">,</span>
+       <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+         <span class="c1">// hash_combine combine algorithm used in boost</span>
+         <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">getContext</span><span class="p">();</span>
+         <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">GetInsertBlock</span><span class="p">();</span>
+         <span class="n">Value</span> <span class="o">*</span><span class="n">seed</span> <span class="o">=</span> <span class="n">zeroLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+         <span class="n">Value</span> <span class="o">*</span><span class="n">phi</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mh">0x9e3779b9</span><span class="p">);</span>
+         <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+           <span class="n">Value</span> <span class="o">*</span><span class="n">val</span> <span class="o">=</span> <span class="n">memb</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">block</span><span class="p">);</span>
+           <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">magicOut</span><span class="p">(</span><span class="s">&quot;__hash__&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">-&gt;</span><span class="n">is</span><span class="p">(</span><span class="n">Int</span><span class="p">))</span>
+             <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;__hash__ for type &#39;&quot;</span> <span class="o">+</span>
+                                     <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">()</span> <span class="o">+</span>
+                                     <span class="s">&quot;&#39; does return an &#39;int&#39;&quot;</span><span class="p">);</span>
+           <span class="n">Value</span> <span class="o">*</span><span class="n">hash</span> <span class="o">=</span>
+               <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">callMagic</span><span class="p">(</span><span class="s">&quot;__hash__&quot;</span><span class="p">,</span> <span class="p">{},</span> <span class="n">val</span><span class="p">,</span> <span class="p">{},</span> <span class="n">block</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+           <span class="n">Value</span> <span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateShl</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+           <span class="n">Value</span> <span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateLShr</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+           <span class="n">hash</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateAdd</span><span class="p">(</span><span class="n">hash</span><span class="p">,</span> <span class="n">phi</span><span class="p">);</span>
+           <span class="n">hash</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateAdd</span><span class="p">(</span><span class="n">hash</span><span class="p">,</span> <span class="n">p1</span><span class="p">);</span>
+           <span class="n">hash</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateAdd</span><span class="p">(</span><span class="n">hash</span><span class="p">,</span> <span class="n">p2</span><span class="p">);</span>
+           <span class="n">seed</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateXor</span><span class="p">(</span><span class="n">seed</span><span class="p">,</span> <span class="n">hash</span><span class="p">);</span>
+         <span class="p">}</span>
+         <span class="k">return</span> <span class="n">seed</span><span class="p">;</span>
+       <span class="p">},</span>
+       <span class="nb">false</span><span class="p">},</span>
+
+      <span class="p">{</span><span class="s">&quot;__contains__&quot;</span><span class="p">,</span>
+       <span class="p">{</span><span class="n">types</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">?</span> <span class="nl">Base</span> <span class="p">:</span> <span class="n">types</span><span class="p">[</span><span class="mi">0</span><span class="p">]},</span>
+       <span class="n">Bool</span><span class="p">,</span>
+       <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">types</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+           <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;cannot use &#39;in&#39; on empty tuple&quot;</span><span class="p">);</span>
+
+         <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">*</span><span class="nl">type</span> <span class="p">:</span> <span class="n">types</span><span class="p">)</span> <span class="p">{</span>
+           <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">types</span><span class="o">::</span><span class="n">is</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="n">types</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+             <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;cannot use &#39;in&#39; on heterogeneous tuple&quot;</span><span class="p">);</span>
+         <span class="p">}</span>
+
+         <span class="n">Function</span> <span class="o">*</span><span class="n">contains</span> <span class="o">=</span> <span class="n">getContainsFunc</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">GetInsertBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getModule</span><span class="p">());</span>
+         <span class="k">return</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">contains</span><span class="p">,</span> <span class="p">{</span><span class="n">self</span><span class="p">,</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]});</span>
+       <span class="p">},</span>
+       <span class="nb">false</span><span class="p">},</span>
+
+      <span class="p">{</span><span class="s">&quot;__to_py__&quot;</span><span class="p">,</span>
+       <span class="p">{},</span>
+       <span class="n">pyObjType</span><span class="p">,</span>
+       <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">getContext</span><span class="p">();</span>
+         <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">GetInsertBlock</span><span class="p">();</span>
+         <span class="n">Module</span> <span class="o">*</span><span class="n">module</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getModule</span><span class="p">();</span>
+
+         <span class="k">auto</span> <span class="o">*</span><span class="n">pyTupNew</span> <span class="o">=</span> <span class="n">cast</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&gt;</span><span class="p">(</span><span class="n">module</span><span class="o">-&gt;</span><span class="n">getOrInsertFunction</span><span class="p">(</span>
+             <span class="s">&quot;seq_py_tuple_new&quot;</span><span class="p">,</span> <span class="n">PtrType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">Byte</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">),</span>
+             <span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">)));</span>
+
+         <span class="k">auto</span> <span class="o">*</span><span class="n">pyTupSet</span> <span class="o">=</span> <span class="n">cast</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&gt;</span><span class="p">(</span><span class="n">module</span><span class="o">-&gt;</span><span class="n">getOrInsertFunction</span><span class="p">(</span>
+             <span class="s">&quot;seq_py_tuple_setitem&quot;</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">Type</span><span class="o">::</span><span class="n">getVoidTy</span><span class="p">(</span><span class="n">context</span><span class="p">),</span>
+             <span class="n">PtrType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">Byte</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span>
+             <span class="n">PtrType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">Byte</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">)));</span>
+
+         <span class="n">pyTupNew</span><span class="o">-&gt;</span><span class="n">setDoesNotThrow</span><span class="p">();</span>
+         <span class="n">pyTupSet</span><span class="o">-&gt;</span><span class="n">setDoesNotThrow</span><span class="p">();</span>
+
+         <span class="n">Value</span> <span class="o">*</span><span class="n">pyTup</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span>
+             <span class="n">pyTupNew</span><span class="p">,</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">()));</span>
+         <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+           <span class="n">Value</span> <span class="o">*</span><span class="n">val</span> <span class="o">=</span> <span class="n">memb</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">block</span><span class="p">);</span>
+           <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">magicOut</span><span class="p">(</span><span class="s">&quot;__to_py__&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">-&gt;</span><span class="n">is</span><span class="p">(</span><span class="n">pyObjType</span><span class="p">))</span>
+             <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;__to_py__ for type &#39;&quot;</span> <span class="o">+</span>
+                                     <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">()</span> <span class="o">+</span>
+                                     <span class="s">&quot;&#39; does return a &#39;PyObject&#39;&quot;</span><span class="p">);</span>
+           <span class="n">Value</span> <span class="o">*</span><span class="n">pyVal</span> <span class="o">=</span>
+               <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">callMagic</span><span class="p">(</span><span class="s">&quot;__to_py__&quot;</span><span class="p">,</span> <span class="p">{},</span> <span class="n">val</span><span class="p">,</span> <span class="p">{},</span> <span class="n">block</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+           <span class="n">Value</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="n">pyObjType</span><span class="o">-&gt;</span><span class="n">memb</span><span class="p">(</span><span class="n">pyVal</span><span class="p">,</span> <span class="s">&quot;p&quot;</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+           <span class="n">b</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">pyTupSet</span><span class="p">,</span>
+                        <span class="p">{</span><span class="n">pyTup</span><span class="p">,</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">i</span><span class="p">),</span> <span class="n">ptr</span><span class="p">});</span>
+         <span class="p">}</span>
+
+         <span class="n">Value</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="n">pyObjType</span><span class="o">-&gt;</span><span class="n">defaultValue</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+         <span class="n">result</span> <span class="o">=</span> <span class="n">pyObjType</span><span class="o">-&gt;</span><span class="n">setMemb</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="s">&quot;p&quot;</span><span class="p">,</span> <span class="n">pyTup</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+         <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+       <span class="p">},</span>
+       <span class="nb">false</span><span class="p">},</span>
+
+      <span class="p">{</span><span class="s">&quot;__from_py__&quot;</span><span class="p">,</span>
+       <span class="p">{</span><span class="n">pyObjType</span><span class="p">},</span>
+       <span class="k">this</span><span class="p">,</span>
+       <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">getContext</span><span class="p">();</span>
+         <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">GetInsertBlock</span><span class="p">();</span>
+         <span class="n">Module</span> <span class="o">*</span><span class="n">module</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getModule</span><span class="p">();</span>
+
+         <span class="k">auto</span> <span class="o">*</span><span class="n">pyTupGet</span> <span class="o">=</span> <span class="n">cast</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&gt;</span><span class="p">(</span><span class="n">module</span><span class="o">-&gt;</span><span class="n">getOrInsertFunction</span><span class="p">(</span>
+             <span class="s">&quot;seq_py_tuple_getitem&quot;</span><span class="p">,</span> <span class="n">PtrType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">Byte</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">),</span>
+             <span class="n">PtrType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">Byte</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">)));</span>
+         <span class="n">pyTupGet</span><span class="o">-&gt;</span><span class="n">setDoesNotThrow</span><span class="p">();</span>
+
+         <span class="n">Value</span> <span class="o">*</span><span class="n">pyTup</span> <span class="o">=</span> <span class="n">pyObjType</span><span class="o">-&gt;</span><span class="n">memb</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&quot;p&quot;</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+         <span class="n">Value</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="n">defaultValue</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+         <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+           <span class="c1">// last arg type being null means static magic:</span>
+           <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">types</span><span class="o">::</span><span class="n">is</span><span class="p">(</span>
+                   <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">magicOut</span><span class="p">(</span><span class="s">&quot;__from_py__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">pyObjType</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">}),</span>
+                   <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+             <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;__from_py__ for type &#39;&quot;</span> <span class="o">+</span>
+                                     <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">()</span> <span class="o">+</span>
+                                     <span class="s">&quot;&#39; returns a different type&quot;</span><span class="p">);</span>
+           <span class="n">Value</span> <span class="o">*</span><span class="n">valPtr</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span>
+               <span class="n">pyTupGet</span><span class="p">,</span> <span class="p">{</span><span class="n">pyTup</span><span class="p">,</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">i</span><span class="p">)});</span>
+           <span class="n">Value</span> <span class="o">*</span><span class="n">val</span> <span class="o">=</span> <span class="n">pyObjType</span><span class="o">-&gt;</span><span class="n">defaultValue</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+           <span class="n">val</span> <span class="o">=</span> <span class="n">pyObjType</span><span class="o">-&gt;</span><span class="n">setMemb</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="s">&quot;p&quot;</span><span class="p">,</span> <span class="n">valPtr</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+           <span class="n">val</span> <span class="o">=</span> <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">callMagic</span><span class="p">(</span><span class="s">&quot;__from_py__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">pyObjType</span><span class="p">},</span> <span class="k">nullptr</span><span class="p">,</span> <span class="p">{</span><span class="n">val</span><span class="p">},</span>
+                                     <span class="n">block</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+           <span class="n">result</span> <span class="o">=</span> <span class="n">setMemb</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">val</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+         <span class="p">}</span>
+         <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+       <span class="p">},</span>
+       <span class="nb">true</span><span class="p">},</span>
+
+      <span class="p">{</span><span class="s">&quot;__pickle__&quot;</span><span class="p">,</span>
+       <span class="p">{</span><span class="n">PtrType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">Byte</span><span class="p">)},</span>
+       <span class="n">Void</span><span class="p">,</span>
+       <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">GetInsertBlock</span><span class="p">();</span>
+         <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+           <span class="n">Value</span> <span class="o">*</span><span class="n">val</span> <span class="o">=</span> <span class="n">memb</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">block</span><span class="p">);</span>
+           <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">callMagic</span><span class="p">(</span><span class="s">&quot;__pickle__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">PtrType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">Byte</span><span class="p">)},</span> <span class="n">val</span><span class="p">,</span>
+                               <span class="p">{</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]},</span> <span class="n">block</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+         <span class="p">}</span>
+         <span class="k">return</span> <span class="p">(</span><span class="n">Value</span> <span class="o">*</span><span class="p">)</span><span class="k">nullptr</span><span class="p">;</span>
+       <span class="p">},</span>
+       <span class="nb">false</span><span class="p">},</span>
+
+      <span class="p">{</span><span class="s">&quot;__unpickle__&quot;</span><span class="p">,</span>
+       <span class="p">{</span><span class="n">PtrType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">Byte</span><span class="p">)},</span>
+       <span class="k">this</span><span class="p">,</span>
+       <span class="p">[</span><span class="k">this</span><span class="p">](</span><span class="n">Value</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">,</span> <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span> <span class="o">=</span> <span class="n">b</span><span class="p">.</span><span class="n">GetInsertBlock</span><span class="p">();</span>
+         <span class="n">Value</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="n">defaultValue</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+         <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+           <span class="n">Value</span> <span class="o">*</span><span class="n">val</span> <span class="o">=</span>
+               <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">callMagic</span><span class="p">(</span><span class="s">&quot;__unpickle__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">PtrType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">Byte</span><span class="p">)},</span>
+                                   <span class="k">nullptr</span><span class="p">,</span> <span class="p">{</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]},</span> <span class="n">block</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+           <span class="n">result</span> <span class="o">=</span> <span class="n">setMemb</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">val</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+         <span class="p">}</span>
+         <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+       <span class="p">},</span>
+       <span class="nb">true</span><span class="p">},</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">initFields</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">getVTable</span><span class="p">().</span><span class="n">fields</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+    <span class="k">return</span><span class="p">;</span>
+
+  <span class="n">assert</span><span class="p">(</span><span class="n">names</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">||</span> <span class="n">names</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">getVTable</span><span class="p">().</span><span class="n">fields</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]}});</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">names</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">empty</span><span class="p">())</span>
+      <span class="n">getVTable</span><span class="p">().</span><span class="n">fields</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="p">{</span><span class="n">i</span><span class="p">,</span> <span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]}});</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">unsigned</span> <span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">numBaseTypes</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span><span class="kt">unsigned</span><span class="p">)</span><span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">getBaseType</span><span class="p">(</span><span class="kt">unsigned</span> <span class="n">idx</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">types</span><span class="p">[</span><span class="n">idx</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="n">Type</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">llvm</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">body</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">type</span> <span class="p">:</span> <span class="n">types</span><span class="p">)</span>
+    <span class="n">body</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">type</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">));</span>
+
+  <span class="k">return</span> <span class="n">StructType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="n">body</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">addLLVMTypesToStruct</span><span class="p">(</span><span class="n">StructType</span> <span class="o">*</span><span class="n">structType</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">llvm</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">body</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">type</span> <span class="p">:</span> <span class="n">types</span><span class="p">)</span>
+    <span class="n">body</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">type</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">structType</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">()));</span>
+  <span class="n">structType</span><span class="o">-&gt;</span><span class="n">setBody</span><span class="p">(</span><span class="n">body</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">size_t</span> <span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">size</span><span class="p">(</span><span class="n">Module</span> <span class="o">*</span><span class="n">module</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="n">module</span><span class="o">-&gt;</span><span class="n">getDataLayout</span><span class="p">().</span><span class="n">getTypeAllocSize</span><span class="p">(</span>
+      <span class="n">getLLVMType</span><span class="p">(</span><span class="n">module</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">()));</span>
+<span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">RecordType</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">asRec</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">RecordType</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">ref</span><span class="o">-&gt;</span><span class="n">seenClone</span><span class="p">(</span><span class="k">this</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">RecordType</span> <span class="o">*</span><span class="p">)</span><span class="n">ref</span><span class="o">-&gt;</span><span class="n">getClone</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+
+  <span class="k">auto</span> <span class="o">*</span><span class="n">x</span> <span class="o">=</span> <span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">get</span><span class="p">({},</span> <span class="p">{},</span> <span class="n">name</span><span class="p">);</span>
+  <span class="n">ref</span><span class="o">-&gt;</span><span class="n">addClone</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">typesCloned</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">*</span><span class="nl">type</span> <span class="p">:</span> <span class="n">types</span><span class="p">)</span>
+    <span class="n">typesCloned</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">type</span><span class="o">-&gt;</span><span class="n">clone</span><span class="p">(</span><span class="n">ref</span><span class="p">));</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">MagicOverload</span><span class="o">&gt;</span> <span class="n">overloadsCloned</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">magic</span> <span class="p">:</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">overloads</span><span class="p">)</span>
+    <span class="n">overloadsCloned</span><span class="p">.</span><span class="n">push_back</span><span class="p">({</span><span class="n">magic</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">magic</span><span class="p">.</span><span class="n">func</span><span class="o">-&gt;</span><span class="n">clone</span><span class="p">(</span><span class="n">ref</span><span class="p">)});</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">map</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">BaseFunc</span> <span class="o">*&gt;</span> <span class="n">methodsCloned</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">method</span> <span class="p">:</span> <span class="n">getVTable</span><span class="p">().</span><span class="n">methods</span><span class="p">)</span>
+    <span class="n">methodsCloned</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="n">method</span><span class="p">.</span><span class="n">first</span><span class="p">,</span> <span class="n">method</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">clone</span><span class="p">(</span><span class="n">ref</span><span class="p">)});</span>
+
+  <span class="n">x</span><span class="o">-&gt;</span><span class="n">types</span> <span class="o">=</span> <span class="n">typesCloned</span><span class="p">;</span>
+  <span class="n">x</span><span class="o">-&gt;</span><span class="n">names</span> <span class="o">=</span> <span class="n">names</span><span class="p">;</span>
+  <span class="n">x</span><span class="o">-&gt;</span><span class="n">getVTable</span><span class="p">().</span><span class="n">overloads</span> <span class="o">=</span> <span class="n">overloadsCloned</span><span class="p">;</span>
+  <span class="n">x</span><span class="o">-&gt;</span><span class="n">getVTable</span><span class="p">().</span><span class="n">methods</span> <span class="o">=</span> <span class="n">methodsCloned</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">types</span><span class="o">::</span><span class="n">RecordType</span> <span class="o">*</span><span class="n">types</span><span class="o">::</span><span class="n">RecordType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span><span class="p">,</span>
+                                          <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">,</span>
+                                          <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="k">new</span> <span class="n">RecordType</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">types</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">names</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">name</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

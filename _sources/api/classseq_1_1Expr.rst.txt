@@ -1,0 +1,70 @@
+.. _exhale_class_classseq_1_1Expr:
+
+Class Expr
+==========
+
+- Defined in :ref:`file_compiler_include_seq_expr.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public seq::SrcObject`` (:ref:`exhale_struct_structseq_1_1SrcObject`)
+
+
+Derived Types
+*************
+
+- ``public seq::ArrayContainsExpr`` (:ref:`exhale_class_classseq_1_1ArrayContainsExpr`)
+- ``public seq::ArrayExpr`` (:ref:`exhale_class_classseq_1_1ArrayExpr`)
+- ``public seq::ArrayLookupExpr`` (:ref:`exhale_class_classseq_1_1ArrayLookupExpr`)
+- ``public seq::ArraySliceExpr`` (:ref:`exhale_class_classseq_1_1ArraySliceExpr`)
+- ``public seq::AtomicExpr`` (:ref:`exhale_class_classseq_1_1AtomicExpr`)
+- ``public seq::BlankExpr`` (:ref:`exhale_class_classseq_1_1BlankExpr`)
+- ``public seq::BoolExpr`` (:ref:`exhale_class_classseq_1_1BoolExpr`)
+- ``public seq::BOpExpr`` (:ref:`exhale_class_classseq_1_1BOpExpr`)
+- ``public seq::CallExpr`` (:ref:`exhale_class_classseq_1_1CallExpr`)
+- ``public seq::CondExpr`` (:ref:`exhale_class_classseq_1_1CondExpr`)
+- ``public seq::ConstructExpr`` (:ref:`exhale_class_classseq_1_1ConstructExpr`)
+- ``public seq::DefaultExpr`` (:ref:`exhale_class_classseq_1_1DefaultExpr`)
+- ``public seq::DictCompExpr`` (:ref:`exhale_class_classseq_1_1DictCompExpr`)
+- ``public seq::DictExpr`` (:ref:`exhale_class_classseq_1_1DictExpr`)
+- ``public seq::FloatExpr`` (:ref:`exhale_class_classseq_1_1FloatExpr`)
+- ``public seq::FuncExpr`` (:ref:`exhale_class_classseq_1_1FuncExpr`)
+- ``public seq::GenExpr`` (:ref:`exhale_class_classseq_1_1GenExpr`)
+- ``public seq::GetElemExpr`` (:ref:`exhale_class_classseq_1_1GetElemExpr`)
+- ``public seq::GetStaticElemExpr`` (:ref:`exhale_class_classseq_1_1GetStaticElemExpr`)
+- ``public seq::IntExpr`` (:ref:`exhale_class_classseq_1_1IntExpr`)
+- ``public seq::IsExpr`` (:ref:`exhale_class_classseq_1_1IsExpr`)
+- ``public seq::ListCompExpr`` (:ref:`exhale_class_classseq_1_1ListCompExpr`)
+- ``public seq::ListExpr`` (:ref:`exhale_class_classseq_1_1ListExpr`)
+- ``public seq::MatchExpr`` (:ref:`exhale_class_classseq_1_1MatchExpr`)
+- ``public seq::MethodExpr`` (:ref:`exhale_class_classseq_1_1MethodExpr`)
+- ``public seq::NoneExpr`` (:ref:`exhale_class_classseq_1_1NoneExpr`)
+- ``public seq::OptExpr`` (:ref:`exhale_class_classseq_1_1OptExpr`)
+- ``public seq::PartialCallExpr`` (:ref:`exhale_class_classseq_1_1PartialCallExpr`)
+- ``public seq::PipeExpr`` (:ref:`exhale_class_classseq_1_1PipeExpr`)
+- ``public seq::RecordExpr`` (:ref:`exhale_class_classseq_1_1RecordExpr`)
+- ``public seq::SeqExpr`` (:ref:`exhale_class_classseq_1_1SeqExpr`)
+- ``public seq::SetCompExpr`` (:ref:`exhale_class_classseq_1_1SetCompExpr`)
+- ``public seq::SetExpr`` (:ref:`exhale_class_classseq_1_1SetExpr`)
+- ``public seq::StrExpr`` (:ref:`exhale_class_classseq_1_1StrExpr`)
+- ``public seq::TypeExpr`` (:ref:`exhale_class_classseq_1_1TypeExpr`)
+- ``public seq::TypeOfExpr`` (:ref:`exhale_class_classseq_1_1TypeOfExpr`)
+- ``public seq::UOpExpr`` (:ref:`exhale_class_classseq_1_1UOpExpr`)
+- ``public seq::ValueExpr`` (:ref:`exhale_class_classseq_1_1ValueExpr`)
+- ``public seq::VarExpr`` (:ref:`exhale_class_classseq_1_1VarExpr`)
+- ``public seq::VarPtrExpr`` (:ref:`exhale_class_classseq_1_1VarPtrExpr`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::Expr
+   :members:
+   :protected-members:
+   :undoc-members:

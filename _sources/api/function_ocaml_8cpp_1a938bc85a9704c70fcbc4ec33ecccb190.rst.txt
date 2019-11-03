@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a938bc85a9704c70fcbc4ec33ecccb190:
+
+Function get_trycatch_var
+=========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get_trycatch_var(TryCatch *, unsigned)

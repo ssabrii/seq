@@ -1,0 +1,13 @@
+.. _exhale_define_seq_8h_1a2313755916fd32e39954800affdd9fe5:
+
+Define SEQ_VERSION_MAJOR
+========================
+
+- Defined in :ref:`file_compiler_include_seq_seq.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: SEQ_VERSION_MAJOR

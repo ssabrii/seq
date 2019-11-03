@@ -1,0 +1,104 @@
+
+.. _namespace_seq__types:
+
+Namespace seq::types
+====================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structseq_1_1types_1_1ExtInfo`
+
+- :ref:`exhale_struct_structseq_1_1types_1_1VTable`
+
+- :ref:`exhale_class_classseq_1_1types_1_1AnyType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1ArrayType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1BaseSeqType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1BaseType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1BoolType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1ByteType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1FloatType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1FuncType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1GenericType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1GenType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1IntNType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1IntType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1KMer`
+
+- :ref:`exhale_class_classseq_1_1types_1_1MethodType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1NumberType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1OptionalType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1PartialFuncType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1PtrType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1RecordType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1RefType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1SeqType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1StrType`
+
+- :ref:`exhale_class_classseq_1_1types_1_1Type`
+
+- :ref:`exhale_class_classseq_1_1types_1_1VoidType`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_types_8h_1afdd6758aac53b1222176aade671351f1`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_seq_8h_1a98a022ccd04b49f73e5ad4d04a95d7b5`
+
+- :ref:`exhale_variable_seq_8h_1a02ecbeef8e7274c5a7b2c27d8435da9f`
+
+- :ref:`exhale_variable_seq_8h_1ae91a056ea3a0717c6cddcd9617809bdb`
+
+- :ref:`exhale_variable_seq_8h_1a12349422a28e7a96c624003e378d38b6`
+
+- :ref:`exhale_variable_seq_8h_1af1e2cc4de9a4e0aed05c2d6402e40471`
+
+- :ref:`exhale_variable_seq_8h_1aeb3a008d69873b6215bc0cdfd50e7d99`
+
+- :ref:`exhale_variable_seq_8h_1ae1b50d1501b03fab9600bf97d86a6a1c`
+
+- :ref:`exhale_variable_seq_8h_1acc2643a95458576010bff29f44fbce6d`
+
+- :ref:`exhale_variable_seq_8h_1a9c7963a8531729167a2507a665f1d0d3`
+
+- :ref:`exhale_variable_seq_8h_1a61c501ae26a341d410b6c0b22effa1f8`
+
+- :ref:`exhale_variable_seq_8h_1a322f6b02a781e9e4d866ad0b4988debd`

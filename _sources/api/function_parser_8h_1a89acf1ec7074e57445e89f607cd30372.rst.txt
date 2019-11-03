@@ -1,0 +1,13 @@
+.. _exhale_function_parser_8h_1a89acf1ec7074e57445e89f607cd30372:
+
+Function seq::parse
+===================
+
+- Defined in :ref:`file_compiler_include_seq_parser.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::parse(const std::string&)

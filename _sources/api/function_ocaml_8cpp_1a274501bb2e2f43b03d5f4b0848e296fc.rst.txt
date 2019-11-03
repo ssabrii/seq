@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a274501bb2e2f43b03d5f4b0848e296fc:
+
+Function set_pattern_trycatch
+=============================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_pattern_trycatch(Pattern *, TryCatch *)

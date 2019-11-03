@@ -1,0 +1,13 @@
+.. _exhale_function_num_8cpp_1a294d83d8a914aaa6edc72863cf0e6052:
+
+Function getIntNPickleFunc
+==========================
+
+- Defined in :ref:`file_compiler_types_num.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: getIntNPickleFunc(types::IntNType *, Module *)

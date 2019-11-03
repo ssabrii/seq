@@ -1,0 +1,380 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Namespace seq &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Namespace seq::exc" href="namespace_seq__exc.html" />
+    <link rel="prev" title="Namespace llvm::orc" href="namespace_llvm__orc.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Compiler Internals</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="doxygen.html">Compiler API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="doxygen.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doxygen.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="doxygen.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="doxygen.html#namespaces">Namespaces</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="namespace_llvm.html">Namespace llvm</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_llvm__orc.html">Namespace llvm::orc</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Namespace seq</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_seq__exc.html">Namespace seq::exc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_seq__types.html">Namespace seq::types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="namespace_std.html">Namespace std</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#classes-and-structs">Classes and Structs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="doxygen.html">Compiler API</a> &raquo;</li>
+        
+      <li>Namespace seq</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/namespace_seq.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="namespace-seq">
+<span id="id1"></span><h1>Namespace seq<a class="headerlink" href="#namespace-seq" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#namespaces" id="id2">Namespaces</a></p></li>
+<li><p><a class="reference internal" href="#classes" id="id3">Classes</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id4">Functions</a></p></li>
+</ul>
+</div>
+<div class="section" id="namespaces">
+<h2>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="namespace_seq__exc.html#namespace-seq-exc"><span class="std std-ref">Namespace seq::exc</span></a></p></li>
+<li><p><a class="reference internal" href="namespace_seq__types.html#namespace-seq-types"><span class="std std-ref">Namespace seq::types</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="structseq_1_1Block.html#exhale-struct-structseq-1-1block"><span class="std std-ref">Struct Block</span></a></p></li>
+<li><p><a class="reference internal" href="structseq_1_1MagicMethod.html#exhale-struct-structseq-1-1magicmethod"><span class="std std-ref">Struct MagicMethod</span></a></p></li>
+<li><p><a class="reference internal" href="structseq_1_1MagicOverload.html#exhale-struct-structseq-1-1magicoverload"><span class="std std-ref">Struct MagicOverload</span></a></p></li>
+<li><p><a class="reference internal" href="structseq_1_1Op.html#exhale-struct-structseq-1-1op"><span class="std std-ref">Struct Op</span></a></p></li>
+<li><p><a class="reference internal" href="structseq_1_1SrcInfo.html#exhale-struct-structseq-1-1srcinfo"><span class="std std-ref">Struct SrcInfo</span></a></p></li>
+<li><p><a class="reference internal" href="structseq_1_1SrcObject.html#exhale-struct-structseq-1-1srcobject"><span class="std std-ref">Struct SrcObject</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1ArrayContainsExpr.html#exhale-class-classseq-1-1arraycontainsexpr"><span class="std std-ref">Class ArrayContainsExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1ArrayExpr.html#exhale-class-classseq-1-1arrayexpr"><span class="std std-ref">Class ArrayExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1ArrayLookupExpr.html#exhale-class-classseq-1-1arraylookupexpr"><span class="std std-ref">Class ArrayLookupExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1ArrayPattern.html#exhale-class-classseq-1-1arraypattern"><span class="std std-ref">Class ArrayPattern</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1ArraySliceExpr.html#exhale-class-classseq-1-1arraysliceexpr"><span class="std std-ref">Class ArraySliceExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Assert.html#exhale-class-classseq-1-1assert"><span class="std std-ref">Class Assert</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Assign.html#exhale-class-classseq-1-1assign"><span class="std std-ref">Class Assign</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1AssignIndex.html#exhale-class-classseq-1-1assignindex"><span class="std std-ref">Class AssignIndex</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1AssignMember.html#exhale-class-classseq-1-1assignmember"><span class="std std-ref">Class AssignMember</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1AtomicExpr.html#exhale-class-classseq-1-1atomicexpr"><span class="std std-ref">Class AtomicExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1BaseFunc.html#exhale-class-classseq-1-1basefunc"><span class="std std-ref">Class BaseFunc</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1BaseFuncLite.html#exhale-class-classseq-1-1basefunclite"><span class="std std-ref">Class BaseFuncLite</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1BlankExpr.html#exhale-class-classseq-1-1blankexpr"><span class="std std-ref">Class BlankExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1BoolExpr.html#exhale-class-classseq-1-1boolexpr"><span class="std std-ref">Class BoolExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1BoolPattern.html#exhale-class-classseq-1-1boolpattern"><span class="std std-ref">Class BoolPattern</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1BOpExpr.html#exhale-class-classseq-1-1bopexpr"><span class="std std-ref">Class BOpExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1BoundPattern.html#exhale-class-classseq-1-1boundpattern"><span class="std std-ref">Class BoundPattern</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Break.html#exhale-class-classseq-1-1break"><span class="std std-ref">Class Break</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1CallExpr.html#exhale-class-classseq-1-1callexpr"><span class="std std-ref">Class CallExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1CondExpr.html#exhale-class-classseq-1-1condexpr"><span class="std std-ref">Class CondExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1ConstructExpr.html#exhale-class-classseq-1-1constructexpr"><span class="std std-ref">Class ConstructExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Continue.html#exhale-class-classseq-1-1continue"><span class="std std-ref">Class Continue</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1DefaultExpr.html#exhale-class-classseq-1-1defaultexpr"><span class="std std-ref">Class DefaultExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Del.html#exhale-class-classseq-1-1del"><span class="std std-ref">Class Del</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1DelIndex.html#exhale-class-classseq-1-1delindex"><span class="std std-ref">Class DelIndex</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1DictCompExpr.html#exhale-class-classseq-1-1dictcompexpr"><span class="std std-ref">Class DictCompExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1DictExpr.html#exhale-class-classseq-1-1dictexpr"><span class="std std-ref">Class DictExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Expr.html#exhale-class-classseq-1-1expr"><span class="std std-ref">Class Expr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1ExprStmt.html#exhale-class-classseq-1-1exprstmt"><span class="std std-ref">Class ExprStmt</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1FloatExpr.html#exhale-class-classseq-1-1floatexpr"><span class="std std-ref">Class FloatExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1For.html#exhale-class-classseq-1-1for"><span class="std std-ref">Class For</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Func.html#exhale-class-classseq-1-1func"><span class="std std-ref">Class Func</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1FuncExpr.html#exhale-class-classseq-1-1funcexpr"><span class="std std-ref">Class FuncExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1FuncStmt.html#exhale-class-classseq-1-1funcstmt"><span class="std std-ref">Class FuncStmt</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Generic.html#exhale-class-classseq-1-1generic"><span class="std std-ref">Class Generic</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1GenExpr.html#exhale-class-classseq-1-1genexpr"><span class="std std-ref">Class GenExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1GetElemExpr.html#exhale-class-classseq-1-1getelemexpr"><span class="std std-ref">Class GetElemExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1GetStaticElemExpr.html#exhale-class-classseq-1-1getstaticelemexpr"><span class="std std-ref">Class GetStaticElemExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1GuardedPattern.html#exhale-class-classseq-1-1guardedpattern"><span class="std std-ref">Class GuardedPattern</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1If.html#exhale-class-classseq-1-1if"><span class="std std-ref">Class If</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1IntExpr.html#exhale-class-classseq-1-1intexpr"><span class="std std-ref">Class IntExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1IntPattern.html#exhale-class-classseq-1-1intpattern"><span class="std std-ref">Class IntPattern</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1IsExpr.html#exhale-class-classseq-1-1isexpr"><span class="std std-ref">Class IsExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1ListCompExpr.html#exhale-class-classseq-1-1listcompexpr"><span class="std std-ref">Class ListCompExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1ListExpr.html#exhale-class-classseq-1-1listexpr"><span class="std std-ref">Class ListExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Match.html#exhale-class-classseq-1-1match"><span class="std std-ref">Class Match</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1MatchExpr.html#exhale-class-classseq-1-1matchexpr"><span class="std std-ref">Class MatchExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1MethodExpr.html#exhale-class-classseq-1-1methodexpr"><span class="std std-ref">Class MethodExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1NoneExpr.html#exhale-class-classseq-1-1noneexpr"><span class="std std-ref">Class NoneExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1OptExpr.html#exhale-class-classseq-1-1optexpr"><span class="std std-ref">Class OptExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1OptPattern.html#exhale-class-classseq-1-1optpattern"><span class="std std-ref">Class OptPattern</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1OrPattern.html#exhale-class-classseq-1-1orpattern"><span class="std std-ref">Class OrPattern</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1PartialCallExpr.html#exhale-class-classseq-1-1partialcallexpr"><span class="std std-ref">Class PartialCallExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Pattern.html#exhale-class-classseq-1-1pattern"><span class="std std-ref">Class Pattern</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1PipeExpr.html#exhale-class-classseq-1-1pipeexpr"><span class="std std-ref">Class PipeExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Prefetch.html#exhale-class-classseq-1-1prefetch"><span class="std std-ref">Class Prefetch</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Print.html#exhale-class-classseq-1-1print"><span class="std std-ref">Class Print</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1RangePattern.html#exhale-class-classseq-1-1rangepattern"><span class="std std-ref">Class RangePattern</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1RCache.html#exhale-class-classseq-1-1rcache"><span class="std std-ref">Template Class RCache</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1RecordExpr.html#exhale-class-classseq-1-1recordexpr"><span class="std std-ref">Class RecordExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1RecordPattern.html#exhale-class-classseq-1-1recordpattern"><span class="std std-ref">Class RecordPattern</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Return.html#exhale-class-classseq-1-1return"><span class="std std-ref">Class Return</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1SeqExpr.html#exhale-class-classseq-1-1seqexpr"><span class="std std-ref">Class SeqExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1SeqModule.html#exhale-class-classseq-1-1seqmodule"><span class="std std-ref">Class SeqModule</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1SeqPattern.html#exhale-class-classseq-1-1seqpattern"><span class="std std-ref">Class SeqPattern</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1SetCompExpr.html#exhale-class-classseq-1-1setcompexpr"><span class="std std-ref">Class SetCompExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1SetExpr.html#exhale-class-classseq-1-1setexpr"><span class="std std-ref">Class SetExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1StarPattern.html#exhale-class-classseq-1-1starpattern"><span class="std std-ref">Class StarPattern</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Stmt.html#exhale-class-classseq-1-1stmt"><span class="std std-ref">Class Stmt</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1StrExpr.html#exhale-class-classseq-1-1strexpr"><span class="std std-ref">Class StrExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1StrPattern.html#exhale-class-classseq-1-1strpattern"><span class="std std-ref">Class StrPattern</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Throw.html#exhale-class-classseq-1-1throw"><span class="std std-ref">Class Throw</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1TryCatch.html#exhale-class-classseq-1-1trycatch"><span class="std std-ref">Class TryCatch</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1TypeExpr.html#exhale-class-classseq-1-1typeexpr"><span class="std std-ref">Class TypeExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1TypeOfExpr.html#exhale-class-classseq-1-1typeofexpr"><span class="std std-ref">Class TypeOfExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1UOpExpr.html#exhale-class-classseq-1-1uopexpr"><span class="std std-ref">Class UOpExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1ValueExpr.html#exhale-class-classseq-1-1valueexpr"><span class="std std-ref">Class ValueExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Var.html#exhale-class-classseq-1-1var"><span class="std std-ref">Class Var</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1VarExpr.html#exhale-class-classseq-1-1varexpr"><span class="std std-ref">Class VarExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1VarPtrExpr.html#exhale-class-classseq-1-1varptrexpr"><span class="std std-ref">Class VarPtrExpr</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1VarStmt.html#exhale-class-classseq-1-1varstmt"><span class="std std-ref">Class VarStmt</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1While.html#exhale-class-classseq-1-1while"><span class="std std-ref">Class While</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Wildcard.html#exhale-class-classseq-1-1wildcard"><span class="std std-ref">Class Wildcard</span></a></p></li>
+<li><p><a class="reference internal" href="classseq_1_1Yield.html#exhale-class-classseq-1-1yield"><span class="std std-ref">Class Yield</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="function_ops_8h_1aee37aa70c83a5818b36c41145b517525.html#exhale-function-ops-8h-1aee37aa70c83a5818b36c41145b517525"><span class="std std-ref">Function seq::bop</span></a></p></li>
+<li><p><a class="reference internal" href="function_seq_8h_1ab91cf63d5897c85920299a22b7fae18a.html#exhale-function-seq-8h-1ab91cf63d5897c85920299a22b7fae18a"><span class="std std-ref">Function seq::compilationError</span></a></p></li>
+<li><p><a class="reference internal" href="function_seq_8h_1afba990a18eeb85dac25b10fbfe1bb0e7.html#exhale-function-seq-8h-1afba990a18eeb85dac25b10fbfe1bb0e7"><span class="std std-ref">Function seq::compilationWarning</span></a></p></li>
+<li><p><a class="reference internal" href="function_parser_8h_1adf669f351177432082e45446b45c924b.html#exhale-function-parser-8h-1adf669f351177432082e45446b45c924b"><span class="std std-ref">Function seq::compile</span></a></p></li>
+<li><p><a class="reference internal" href="function_parser_8h_1a73c88ebe2109ec86c2aab44827b861af.html#exhale-function-parser-8h-1a73c88ebe2109ec86c2aab44827b861af"><span class="std std-ref">Function seq::execute</span></a></p></li>
+<li><p><a class="reference internal" href="function_parser_8h_1a9e2f86b2a63829708ef7581d641d18cc.html#exhale-function-parser-8h-1a9e2f86b2a63829708ef7581d641d18cc"><span class="std std-ref">Function seq::init</span></a></p></li>
+<li><p><a class="reference internal" href="function_common_8h_1ac92314b01940206c022e1dbaab732795.html#exhale-function-common-8h-1ac92314b01940206c022e1dbaab732795"><span class="std std-ref">Function seq::makeAlloca(llvm::Type *, llvm::BasicBlock *, uint64_t)</span></a></p></li>
+<li><p><a class="reference internal" href="function_common_8h_1af8735153f37becf7577ba16b592fc0ee.html#exhale-function-common-8h-1af8735153f37becf7577ba16b592fc0ee"><span class="std std-ref">Function seq::makeAlloca(llvm::Value *, llvm::BasicBlock *, uint64_t)</span></a></p></li>
+<li><p><a class="reference internal" href="function_common_8h_1a46b4da56836070fdf858b7a89b758850.html#exhale-function-common-8h-1a46b4da56836070fdf858b7a89b758850"><span class="std std-ref">Function seq::makeAllocFunc</span></a></p></li>
+<li><p><a class="reference internal" href="function_common_8h_1a5421f66f584562fce8c12205b91ac149.html#exhale-function-common-8h-1a5421f66f584562fce8c12205b91ac149"><span class="std std-ref">Function seq::makeExcAllocFunc</span></a></p></li>
+<li><p><a class="reference internal" href="function_common_8h_1a3f2e836c830e5ff161e4d810bfc12f7f.html#exhale-function-common-8h-1a3f2e836c830e5ff161e4d810bfc12f7f"><span class="std std-ref">Function seq::makeFreeFunc</span></a></p></li>
+<li><p><a class="reference internal" href="function_common_8h_1ab8ba733f60e2589110adca1a66f73f24.html#exhale-function-common-8h-1ab8ba733f60e2589110adca1a66f73f24"><span class="std std-ref">Function seq::makeMallocFunc</span></a></p></li>
+<li><p><a class="reference internal" href="function_common_8h_1a1296616979d2d04d22c89d6332a37752.html#exhale-function-common-8h-1a1296616979d2d04d22c89d6332a37752"><span class="std std-ref">Function seq::makeMemCpy</span></a></p></li>
+<li><p><a class="reference internal" href="function_common_8h_1a2892047209fe9beb3b42b36e2608f370.html#exhale-function-common-8h-1a2892047209fe9beb3b42b36e2608f370"><span class="std std-ref">Function seq::makeMemMove</span></a></p></li>
+<li><p><a class="reference internal" href="function_common_8h_1a46c6677f301448fcd4168c6a02f722cd.html#exhale-function-common-8h-1a46c6677f301448fcd4168c6a02f722cd"><span class="std std-ref">Function seq::makePersonalityFunc</span></a></p></li>
+<li><p><a class="reference internal" href="function_common_8h_1aafe8c48ec16adb9f8d7b99a49dbbde22.html#exhale-function-common-8h-1aafe8c48ec16adb9f8d7b99a49dbbde22"><span class="std std-ref">Function seq::makeTerminateFunc</span></a></p></li>
+<li><p><a class="reference internal" href="function_common_8h_1acef9e0810281c168e7473b324bb2ad15.html#exhale-function-common-8h-1acef9e0810281c168e7473b324bb2ad15"><span class="std std-ref">Function seq::makeThrowFunc</span></a></p></li>
+<li><p><a class="reference internal" href="function_common_8h_1a1839d912434635ce5b8d87dcd7d86747.html#exhale-function-common-8h-1a1839d912434635ce5b8d87dcd7d86747"><span class="std std-ref">Function seq::nullPtrLLVM</span></a></p></li>
+<li><p><a class="reference internal" href="function_common_8h_1a58650077835964bebab82a42d670519d.html#exhale-function-common-8h-1a58650077835964bebab82a42d670519d"><span class="std std-ref">Function seq::oneLLVM</span></a></p></li>
+<li><p><a class="reference internal" href="function_parser_8h_1a89acf1ec7074e57445e89f607cd30372.html#exhale-function-parser-8h-1a89acf1ec7074e57445e89f607cd30372"><span class="std std-ref">Function seq::parse</span></a></p></li>
+<li><p><a class="reference internal" href="function_parser_8h_1a4abf9cff27d3d1c539d4b33177a985c4.html#exhale-function-parser-8h-1a4abf9cff27d3d1c539d4b33177a985c4"><span class="std std-ref">Function seq::repl</span></a></p></li>
+<li><p><a class="reference internal" href="function_common_8h_1ac51c5a784ab114e324a69402a9b47c84.html#exhale-function-common-8h-1ac51c5a784ab114e324a69402a9b47c84"><span class="std std-ref">Function seq::seqIntLLVM</span></a></p></li>
+<li><p><a class="reference internal" href="function_generic_8h_1af12c6e360abb72b3ed4812e982834c30.html#exhale-function-generic-8h-1af12c6e360abb72b3ed4812e982834c30"><span class="std std-ref">Template Function seq::typeMatch</span></a></p></li>
+<li><p><a class="reference internal" href="function_ops_8h_1a985c6b0de6caa845e716061e4a6636f5.html#exhale-function-ops-8h-1a985c6b0de6caa845e716061e4a6636f5"><span class="std std-ref">Function seq::uop</span></a></p></li>
+<li><p><a class="reference internal" href="function_common_8h_1ad713823906a0d1537a8d1c1500f8a6e4.html#exhale-function-common-8h-1ad713823906a0d1537a8d1c1500f8a6e4"><span class="std std-ref">Function seq::zeroLLVM</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="namespace_seq__exc.html" class="btn btn-neutral float-right" title="Namespace seq::exc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="namespace_llvm__orc.html" class="btn btn-neutral float-left" title="Namespace llvm::orc" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

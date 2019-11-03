@@ -1,0 +1,791 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Program Listing for File expr.h &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Compiler Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doxygen.html">Compiler API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Program Listing for File expr.h</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/program_listing_file_compiler_include_seq_expr.h.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-for-file-expr-h">
+<span id="program-listing-file-compiler-include-seq-expr-h"></span><h1>Program Listing for File expr.h<a class="headerlink" href="#program-listing-for-file-expr-h" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_compiler_include_seq_expr.h.html#file-compiler-include-seq-expr-h"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/expr.h</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#ifndef SEQ_EXPR_H</span>
+<span class="cp">#define SEQ_EXPR_H</span>
+
+<span class="cp">#include</span> <span class="cpf">&quot;common.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ops.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;patterns.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;ref.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;types.h&quot;</span><span class="cp"></span>
+
+<span class="k">namespace</span> <span class="n">seq</span> <span class="p">{</span>
+<span class="k">class</span> <span class="nc">Expr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">SrcObject</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">;</span>
+
+  <span class="n">TryCatch</span> <span class="o">*</span><span class="n">tc</span><span class="p">;</span>
+
+<span class="k">protected</span><span class="o">:</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">explicit</span> <span class="n">Expr</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">);</span>
+
+  <span class="n">Expr</span><span class="p">();</span>
+
+  <span class="kt">void</span> <span class="nf">setTryCatch</span><span class="p">(</span><span class="n">TryCatch</span> <span class="o">*</span><span class="n">tc</span><span class="p">);</span>
+
+  <span class="n">TryCatch</span> <span class="o">*</span><span class="nf">getTryCatch</span><span class="p">();</span>
+
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">);</span>
+
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">getName</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+
+  <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">();</span>
+
+  <span class="k">virtual</span> <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">virtual</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+
+  <span class="k">virtual</span> <span class="kt">void</span> <span class="nf">ensure</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">);</span>
+
+  <span class="k">virtual</span> <span class="n">Expr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">BlankExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">BlankExpr</span><span class="p">();</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">NoneExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">NoneExpr</span><span class="p">();</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">TypeExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">explicit</span> <span class="n">TypeExpr</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">);</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">ValueExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">ValueExpr</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">);</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">IntExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">seq_int_t</span> <span class="n">n</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">explicit</span> <span class="n">IntExpr</span><span class="p">(</span><span class="n">seq_int_t</span> <span class="n">n</span><span class="p">);</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">seq_int_t</span> <span class="nf">value</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">FloatExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="kt">double</span> <span class="n">f</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">explicit</span> <span class="n">FloatExpr</span><span class="p">(</span><span class="kt">double</span> <span class="n">f</span><span class="p">);</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">BoolExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="kt">bool</span> <span class="n">b</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">explicit</span> <span class="n">BoolExpr</span><span class="p">(</span><span class="kt">bool</span> <span class="n">b</span><span class="p">);</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">StrExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">explicit</span> <span class="n">StrExpr</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">);</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">SeqExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">explicit</span> <span class="n">SeqExpr</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s</span><span class="p">);</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">ListExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">elems</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">listType</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">ListExpr</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">elems</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">listType</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">ListExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">SetExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">elems</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">setType</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">SetExpr</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">elems</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">setType</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">SetExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">DictExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">elems</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">dictType</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">DictExpr</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">elems</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">dictType</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">DictExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">For</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">ListCompExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">val</span><span class="p">;</span>
+  <span class="n">For</span> <span class="o">*</span><span class="n">body</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">listType</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">realize</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">ListCompExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span> <span class="n">For</span> <span class="o">*</span><span class="n">body</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">listType</span><span class="p">,</span>
+               <span class="kt">bool</span> <span class="n">realize</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">setBody</span><span class="p">(</span><span class="n">For</span> <span class="o">*</span><span class="n">body</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">ListCompExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">SetCompExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">val</span><span class="p">;</span>
+  <span class="n">For</span> <span class="o">*</span><span class="n">body</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">setType</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">realize</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">SetCompExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span> <span class="n">For</span> <span class="o">*</span><span class="n">body</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">setType</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">realize</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">setBody</span><span class="p">(</span><span class="n">For</span> <span class="o">*</span><span class="n">body</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">SetCompExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">DictCompExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">key</span><span class="p">;</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">val</span><span class="p">;</span>
+  <span class="n">For</span> <span class="o">*</span><span class="n">body</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">dictType</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">realize</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">DictCompExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">key</span><span class="p">,</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span> <span class="n">For</span> <span class="o">*</span><span class="n">body</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">dictType</span><span class="p">,</span>
+               <span class="kt">bool</span> <span class="n">realize</span> <span class="o">=</span> <span class="nb">true</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">setBody</span><span class="p">(</span><span class="n">For</span> <span class="o">*</span><span class="n">body</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">DictCompExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">GenExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">val</span><span class="p">;</span>
+  <span class="n">For</span> <span class="o">*</span><span class="n">body</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Var</span> <span class="o">*&gt;</span> <span class="n">captures</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">GenExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span> <span class="n">For</span> <span class="o">*</span><span class="n">body</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Var</span> <span class="o">*&gt;</span> <span class="n">captures</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">setBody</span><span class="p">(</span><span class="n">For</span> <span class="o">*</span><span class="n">body</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">GenExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">VarExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Var</span> <span class="o">*</span><span class="n">var</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">atomic</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">explicit</span> <span class="n">VarExpr</span><span class="p">(</span><span class="n">Var</span> <span class="o">*</span><span class="n">var</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">atomic</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">setAtomic</span><span class="p">();</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">VarExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">VarPtrExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Var</span> <span class="o">*</span><span class="n">var</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">explicit</span> <span class="n">VarPtrExpr</span><span class="p">(</span><span class="n">Var</span> <span class="o">*</span><span class="n">var</span><span class="p">);</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">VarPtrExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">FuncExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">BaseFunc</span> <span class="o">*</span><span class="n">func</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span><span class="p">;</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">orig</span><span class="p">;</span> <span class="c1">// original expression before type deduction, if any</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">FuncExpr</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">func</span><span class="p">,</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">orig</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span> <span class="o">=</span> <span class="p">{});</span>
+  <span class="k">explicit</span> <span class="nf">FuncExpr</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">func</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span> <span class="o">=</span> <span class="p">{});</span>
+  <span class="n">BaseFunc</span> <span class="o">*</span><span class="nf">getFunc</span><span class="p">();</span>
+  <span class="kt">bool</span> <span class="nf">isRealized</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="nf">setRealizeTypes</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">ArrayExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">count</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">doAlloca</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">ArrayExpr</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">count</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">doAlloca</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">ArrayExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">RecordExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">exprs</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">explicit</span> <span class="n">RecordExpr</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">exprs</span><span class="p">,</span>
+                      <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="n">names</span> <span class="o">=</span> <span class="p">{});</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">RecordExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">IsExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">lhs</span><span class="p">;</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">rhs</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">IsExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">lhs</span><span class="p">,</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">rhs</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">IsExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">UOpExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Op</span> <span class="n">op</span><span class="p">;</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">lhs</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">UOpExpr</span><span class="p">(</span><span class="n">Op</span> <span class="n">op</span><span class="p">,</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">lhs</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">UOpExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">BOpExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Op</span> <span class="n">op</span><span class="p">;</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">lhs</span><span class="p">;</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">rhs</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">inPlace</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">BOpExpr</span><span class="p">(</span><span class="n">Op</span> <span class="n">op</span><span class="p">,</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">lhs</span><span class="p">,</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">rhs</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">inPlace</span> <span class="o">=</span> <span class="nb">false</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">BOpExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">AtomicExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">enum</span> <span class="n">Op</span> <span class="p">{</span>
+    <span class="n">XCHG</span><span class="p">,</span>
+    <span class="n">ADD</span><span class="p">,</span>
+    <span class="n">SUB</span><span class="p">,</span>
+    <span class="n">AND</span><span class="p">,</span>
+    <span class="n">NAND</span><span class="p">,</span>
+    <span class="n">OR</span><span class="p">,</span>
+    <span class="n">XOR</span><span class="p">,</span>
+    <span class="n">MAX</span><span class="p">,</span>
+    <span class="n">MIN</span><span class="p">,</span>
+  <span class="p">};</span>
+
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">AtomicExpr</span><span class="o">::</span><span class="n">Op</span> <span class="n">op</span><span class="p">;</span>
+  <span class="n">Var</span> <span class="o">*</span><span class="n">lhs</span><span class="p">;</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">rhs</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">AtomicExpr</span><span class="p">(</span><span class="n">AtomicExpr</span><span class="o">::</span><span class="n">Op</span> <span class="n">op</span><span class="p">,</span> <span class="n">Var</span> <span class="o">*</span><span class="n">lhs</span><span class="p">,</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">rhs</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">AtomicExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">ArrayLookupExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">arr</span><span class="p">;</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">idx</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">ArrayLookupExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">arr</span><span class="p">,</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">idx</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">ArrayLookupExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">ArraySliceExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">arr</span><span class="p">;</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">from</span><span class="p">;</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">to</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">ArraySliceExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">arr</span><span class="p">,</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">from</span><span class="p">,</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">to</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">ArraySliceExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">ArrayContainsExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">val</span><span class="p">;</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">arr</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">ArrayContainsExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">arr</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">ArrayContainsExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">GetElemExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">rec</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">memb</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span><span class="p">;</span>
+  <span class="n">GetElemExpr</span> <span class="o">*</span><span class="n">orig</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">GetElemExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">rec</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">memb</span><span class="p">,</span> <span class="n">GetElemExpr</span> <span class="o">*</span><span class="n">orig</span><span class="p">,</span>
+              <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span> <span class="o">=</span> <span class="p">{});</span>
+  <span class="n">GetElemExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">rec</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">memb</span><span class="p">,</span>
+              <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span> <span class="o">=</span> <span class="p">{});</span>
+  <span class="n">GetElemExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">rec</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="n">memb</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span> <span class="o">=</span> <span class="p">{});</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="nf">getRec</span><span class="p">();</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">getMemb</span><span class="p">();</span>
+  <span class="kt">bool</span> <span class="nf">isRealized</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="nf">setRealizeTypes</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">GetElemExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">GetStaticElemExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">memb</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span><span class="p">;</span>
+  <span class="n">GetStaticElemExpr</span> <span class="o">*</span><span class="n">orig</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">GetStaticElemExpr</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">memb</span><span class="p">,</span>
+                    <span class="n">GetStaticElemExpr</span> <span class="o">*</span><span class="n">orig</span><span class="p">,</span>
+                    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span> <span class="o">=</span> <span class="p">{});</span>
+  <span class="n">GetStaticElemExpr</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">memb</span><span class="p">,</span>
+                    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span> <span class="o">=</span> <span class="p">{});</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getTypeInExpr</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">getMemb</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="nf">isRealized</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="nf">setRealizeTypes</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">GetStaticElemExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">CallExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="k">mutable</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">func</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">CallExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">func</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">);</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="nf">getFuncExpr</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="nf">setFuncExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">func</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">CallExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">PartialCallExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="k">mutable</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">func</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">PartialCallExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">func</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">);</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="nf">getFuncExpr</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="nf">setFuncExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">func</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">PartialFuncType</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">PartialCallExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">CondExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">cond</span><span class="p">;</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">ifTrue</span><span class="p">;</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">ifFalse</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">CondExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">cond</span><span class="p">,</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">ifTrue</span><span class="p">,</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">ifFalse</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">CondExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">MatchExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">value</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Pattern</span> <span class="o">*&gt;</span> <span class="n">patterns</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">exprs</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">MatchExpr</span><span class="p">();</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">MatchExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="kt">void</span> <span class="nf">setValue</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">value</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">addCase</span><span class="p">(</span><span class="n">Pattern</span> <span class="o">*</span><span class="n">pattern</span><span class="p">,</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">expr</span><span class="p">);</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">ConstructExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="k">mutable</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">ConstructExpr</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">args</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">ConstructExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">MethodExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">self</span><span class="p">;</span>
+  <span class="n">Func</span> <span class="o">*</span><span class="n">func</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">MethodExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">self</span><span class="p">,</span> <span class="n">Func</span> <span class="o">*</span><span class="n">method</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">MethodType</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">MethodExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">OptExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">val</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">explicit</span> <span class="n">OptExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">val</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">OptExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">DefaultExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">explicit</span> <span class="n">DefaultExpr</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">);</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">DefaultExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">TypeOfExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">Expr</span> <span class="o">*</span><span class="n">val</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">explicit</span> <span class="n">TypeOfExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">val</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">TypeOfExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">PipeExpr</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Expr</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">stages</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">parallel</span><span class="p">;</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="k">static</span> <span class="k">const</span> <span class="kt">unsigned</span> <span class="n">SCHED_WIDTH</span> <span class="o">=</span> <span class="mi">16</span><span class="p">;</span>
+  <span class="k">explicit</span> <span class="nf">PipeExpr</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Expr</span> <span class="o">*&gt;</span> <span class="n">stages</span><span class="p">,</span>
+                    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">parallel</span> <span class="o">=</span> <span class="p">{});</span>
+  <span class="kt">void</span> <span class="nf">setParallel</span><span class="p">(</span><span class="kt">unsigned</span> <span class="n">which</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">resolveTypes</span><span class="p">()</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">llvm</span><span class="o">::</span><span class="n">Value</span> <span class="o">*</span><span class="n">codegen0</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">getType0</span><span class="p">()</span> <span class="k">const</span> <span class="k">override</span><span class="p">;</span>
+  <span class="n">PipeExpr</span> <span class="o">*</span><span class="nf">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="k">override</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="p">}</span> <span class="c1">// namespace seq</span>
+
+<span class="cp">#endif </span><span class="cm">/* SEQ_EXPR_H */</span><span class="cp"></span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

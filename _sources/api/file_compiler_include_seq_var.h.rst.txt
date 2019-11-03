@@ -1,0 +1,65 @@
+
+.. _file_compiler_include_seq_var.h:
+
+File var.h
+==========
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_include_seq>` (``compiler/include/seq``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/include/seq/var.h``)
+-------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_include_seq_var.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``expr.h`` (:ref:`file_compiler_include_seq_expr.h`)
+
+- ``func.h`` (:ref:`file_compiler_include_seq_func.h`)
+
+- ``stack``
+
+- ``types.h`` (:ref:`file_compiler_include_seq_types.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_compiler_include_seq_lang.h`
+
+- :ref:`file_compiler_include_seq_seq.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_seq`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classseq_1_1Var`
+

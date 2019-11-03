@@ -1,0 +1,13 @@
+.. _exhale_function_seq_8cpp_1ad54c27ce61d2116b609fe6d807ccb8ca:
+
+Function seq_gc_remove_roots
+============================
+
+- Defined in :ref:`file_compiler_lang_seq.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq_gc_remove_roots(void *, void *)

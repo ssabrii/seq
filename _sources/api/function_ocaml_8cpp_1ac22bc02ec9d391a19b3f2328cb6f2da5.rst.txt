@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ac22bc02ec9d391a19b3f2328cb6f2da5:
+
+Function func
+=============
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: func(char *)

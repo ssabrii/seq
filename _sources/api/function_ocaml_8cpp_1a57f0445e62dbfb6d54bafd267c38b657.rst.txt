@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a57f0445e62dbfb6d54bafd267c38b657:
+
+Function set_record_names
+=========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_record_names(types::RecordType *, char **, types::Type **, size_t)

@@ -1,0 +1,460 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class Generic &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class GenExpr" href="classseq_1_1GenExpr.html" />
+    <link rel="prev" title="Class FuncStmt" href="classseq_1_1FuncStmt.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Compiler Internals</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="doxygen.html">Compiler API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="doxygen.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doxygen.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="doxygen.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="doxygen.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structDrainState.html">Struct DrainState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1Block.html">Struct Block</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1MagicMethod.html">Struct MagicMethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1MagicOverload.html">Struct MagicOverload</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1Op.html">Struct Op</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1SrcInfo.html">Struct SrcInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1SrcObject.html">Struct SrcObject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1types_1_1ExtInfo.html">Struct ExtInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1types_1_1VTable.html">Struct VTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq__srcinfo.html">Struct seq_srcinfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoehmGCMemoryManager.html">Class BoehmGCMemoryManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArrayContainsExpr.html">Class ArrayContainsExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArrayExpr.html">Class ArrayExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArrayLookupExpr.html">Class ArrayLookupExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArrayPattern.html">Class ArrayPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArraySliceExpr.html">Class ArraySliceExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Assert.html">Class Assert</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Assign.html">Class Assign</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1AssignIndex.html">Class AssignIndex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1AssignMember.html">Class AssignMember</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1AtomicExpr.html">Class AtomicExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BaseFunc.html">Class BaseFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BaseFuncLite.html">Class BaseFuncLite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BlankExpr.html">Class BlankExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BoolExpr.html">Class BoolExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BoolPattern.html">Class BoolPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BOpExpr.html">Class BOpExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BoundPattern.html">Class BoundPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Break.html">Class Break</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1CallExpr.html">Class CallExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1CondExpr.html">Class CondExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ConstructExpr.html">Class ConstructExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Continue.html">Class Continue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1DefaultExpr.html">Class DefaultExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Del.html">Class Del</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1DelIndex.html">Class DelIndex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1DictCompExpr.html">Class DictCompExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1DictExpr.html">Class DictExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1exc_1_1SeqException.html">Class SeqException</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Expr.html">Class Expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ExprStmt.html">Class ExprStmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1FloatExpr.html">Class FloatExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1For.html">Class For</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Func.html">Class Func</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1FuncExpr.html">Class FuncExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1FuncStmt.html">Class FuncStmt</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Class Generic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1GenExpr.html">Class GenExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1GetElemExpr.html">Class GetElemExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1GetStaticElemExpr.html">Class GetStaticElemExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1GuardedPattern.html">Class GuardedPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1If.html">Class If</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1IntExpr.html">Class IntExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1IntPattern.html">Class IntPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1IsExpr.html">Class IsExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ListCompExpr.html">Class ListCompExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ListExpr.html">Class ListExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Match.html">Class Match</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1MatchExpr.html">Class MatchExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1MethodExpr.html">Class MethodExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1NoneExpr.html">Class NoneExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1OptExpr.html">Class OptExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1OptPattern.html">Class OptPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1OrPattern.html">Class OrPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1PartialCallExpr.html">Class PartialCallExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Pattern.html">Class Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1PipeExpr.html">Class PipeExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Prefetch.html">Class Prefetch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Print.html">Class Print</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1RangePattern.html">Class RangePattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1RCache.html">Template Class RCache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1RecordExpr.html">Class RecordExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1RecordPattern.html">Class RecordPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Return.html">Class Return</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SeqExpr.html">Class SeqExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SeqModule.html">Class SeqModule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SeqPattern.html">Class SeqPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SetCompExpr.html">Class SetCompExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SetExpr.html">Class SetExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1StarPattern.html">Class StarPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Stmt.html">Class Stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1StrExpr.html">Class StrExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1StrPattern.html">Class StrPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Throw.html">Class Throw</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1TryCatch.html">Class TryCatch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1TypeExpr.html">Class TypeExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1TypeOfExpr.html">Class TypeOfExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1AnyType.html">Class AnyType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1ArrayType.html">Class ArrayType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1BaseSeqType.html">Class BaseSeqType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1BaseType.html">Class BaseType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1BoolType.html">Class BoolType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1ByteType.html">Class ByteType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1FloatType.html">Class FloatType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1FuncType.html">Class FuncType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1GenericType.html">Class GenericType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1GenType.html">Class GenType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1IntNType.html">Class IntNType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1IntType.html">Class IntType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1KMer.html">Class KMer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1MethodType.html">Class MethodType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1NumberType.html">Class NumberType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1OptionalType.html">Class OptionalType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1PartialFuncType.html">Class PartialFuncType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1PtrType.html">Class PtrType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1RecordType.html">Class RecordType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1RefType.html">Class RefType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1SeqType.html">Class SeqType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1StrType.html">Class StrType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1Type.html">Class Type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1VoidType.html">Class VoidType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1UOpExpr.html">Class UOpExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ValueExpr.html">Class ValueExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Var.html">Class Var</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1VarExpr.html">Class VarExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1VarPtrExpr.html">Class VarPtrExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1VarStmt.html">Class VarStmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1While.html">Class While</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Wildcard.html">Class Wildcard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Yield.html">Class Yield</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="doxygen.html">Compiler API</a> &raquo;</li>
+        
+      <li>Class Generic</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/classseq_1_1Generic.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-generic">
+<span id="exhale-class-classseq-1-1generic"></span><h1>Class Generic<a class="headerlink" href="#class-generic" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_compiler_include_seq_generic.h.html#file-compiler-include-seq-generic-h"><span class="std std-ref">File generic.h</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="derived-types">
+<h3>Derived Types<a class="headerlink" href="#derived-types" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">seq::Func</span></code> (<a class="reference internal" href="classseq_1_1Func.html#exhale-class-classseq-1-1func"><span class="std std-ref">Class Func</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">seq::types::RefType</span></code> (<a class="reference internal" href="classseq_1_1types_1_1RefType.html#exhale-class-classseq-1-1types-1-1reftype"><span class="std std-ref">Class RefType</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv4N3seq7GenericE">
+<span id="_CPPv3N3seq7GenericE"></span><span id="_CPPv2N3seq7GenericE"></span><span id="seq::Generic"></span><span class="target" id="classseq_1_1Generic"></span><em class="property">class </em><code class="sig-name descname">Generic</code><a class="headerlink" href="#_CPPv4N3seq7GenericE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><a class="reference internal" href="#classseq_1_1Generic"><span class="std std-ref">Generic</span></a> object abstraction for representing generic functions, methods, classes, etc. </p>
+<p>Subclassed by <a class="reference internal" href="classseq_1_1Func.html#classseq_1_1Func"><span class="std std-ref">seq::Func</span></a>, <a class="reference internal" href="classseq_1_1types_1_1RefType.html#classseq_1_1types_1_1RefType"><span class="std std-ref">seq::types::RefType</span></a></p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4N7Generic7GenericEv">
+<span id="_CPPv3N7Generic7GenericEv"></span><span id="_CPPv2N7Generic7GenericEv"></span><span id="Generic::Generic"></span><span class="target" id="classseq_1_1Generic_1a0cffb786c5d69dac1798256479e47134"></span><code class="sig-name descname">Generic</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Generic7GenericEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3seq7Generic11genericNameEv">
+<span id="_CPPv3N3seq7Generic11genericNameEv"></span><span id="_CPPv2N3seq7Generic11genericNameEv"></span><span id="seq::Generic::genericName"></span><span class="target" id="classseq_1_1Generic_1a38371a711e5af1d6efc4b8df7dcd7143"></span><em class="property">virtual</em> std::string <code class="sig-name descname">genericName</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N3seq7Generic11genericNameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N3seq7Generic5cloneEP7Generic">
+<span id="_CPPv3N3seq7Generic5cloneEP7Generic"></span><span id="_CPPv2N3seq7Generic5cloneEP7Generic"></span><span id="seq::Generic::clone__GenericP"></span><span class="target" id="classseq_1_1Generic_1a3daca636c6748bf42872b2683a70f9a0"></span><em class="property">virtual</em> <a class="reference internal" href="#_CPPv4N3seq7GenericE" title="seq::Generic">Generic</a> *<code class="sig-name descname">clone</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N3seq7GenericE" title="seq::Generic">Generic</a> *<em>ref</em><span class="sig-paren">)</span> = 0<a class="headerlink" href="#_CPPv4N3seq7Generic5cloneEP7Generic" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N7Generic17addCachedRealizedENSt6vectorIPN5types4TypeEEEP7Generic">
+<span id="_CPPv3N7Generic17addCachedRealizedENSt6vectorIPN5types4TypeEEEP7Generic"></span><span id="_CPPv2N7Generic17addCachedRealizedENSt6vectorIPN5types4TypeEEEP7Generic"></span><span id="Generic::addCachedRealized__std::vector:types::TypeP:.GenericP"></span><span class="target" id="classseq_1_1Generic_1a7175aa2a578abb3b36dfd8d3330d4cb1"></span>void <code class="sig-name descname">addCachedRealized</code><span class="sig-paren">(</span>std::vector&lt;<a class="reference internal" href="#_CPPv4N7Generic17addCachedRealizedENSt6vectorIPN5types4TypeEEEP7Generic" title="Generic::addCachedRealized::types">types</a>::Type *&gt; <em>types</em>, Generic *<em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Generic17addCachedRealizedENSt6vectorIPN5types4TypeEEEP7Generic" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N7Generic8realizedEv">
+<span id="_CPPv3N7Generic8realizedEv"></span><span id="_CPPv2N7Generic8realizedEv"></span><span id="Generic::realized"></span><span class="target" id="classseq_1_1Generic_1a46b50402e65a2aff20ec6aed5553f48d"></span>bool <code class="sig-name descname">realized</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Generic8realizedEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK7Generic16getRealizedTypesEv">
+<span id="_CPPv3NK7Generic16getRealizedTypesEv"></span><span id="_CPPv2NK7Generic16getRealizedTypesEv"></span><span id="Generic::getRealizedTypesC"></span><span class="target" id="classseq_1_1Generic_1ab059232c74a207dc7f5a51e9e5b7c6b9"></span>std::vector&lt;types::Type *&gt; <code class="sig-name descname">getRealizedTypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7Generic16getRealizedTypesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK7Generic2isEP7Generic">
+<span id="_CPPv3NK7Generic2isEP7Generic"></span><span id="_CPPv2NK7Generic2isEP7Generic"></span><span id="Generic::is__GenericPC"></span><span class="target" id="classseq_1_1Generic_1a65e78d831fbebf5c1590551b2716a3fc"></span>bool <code class="sig-name descname">is</code><span class="sig-paren">(</span>Generic *<em>other</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7Generic2isEP7Generic" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N7Generic12setCloneBaseEP7GenericP7Generic">
+<span id="_CPPv3N7Generic12setCloneBaseEP7GenericP7Generic"></span><span id="_CPPv2N7Generic12setCloneBaseEP7GenericP7Generic"></span><span id="Generic::setCloneBase__GenericP.GenericP"></span><span class="target" id="classseq_1_1Generic_1a0b7ff6d966c2edc031cb6d5533b69158"></span>void <code class="sig-name descname">setCloneBase</code><span class="sig-paren">(</span>Generic *<em>x</em>, Generic *<em>ref</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Generic12setCloneBaseEP7GenericP7Generic" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N7Generic11addGenericsEi">
+<span id="_CPPv3N7Generic11addGenericsEi"></span><span id="_CPPv2N7Generic11addGenericsEi"></span><span id="Generic::addGenerics__i"></span><span class="target" id="classseq_1_1Generic_1a3674257523b5f81c257a791a705863e5"></span>void <code class="sig-name descname">addGenerics</code><span class="sig-paren">(</span>int <em>count</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Generic11addGenericsEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK7Generic11numGenericsEv">
+<span id="_CPPv3NK7Generic11numGenericsEv"></span><span id="_CPPv2NK7Generic11numGenericsEv"></span><span id="Generic::numGenericsC"></span><span class="target" id="classseq_1_1Generic_1a04e3a06f57aa5cbade32535416694dfe"></span>unsigned <code class="sig-name descname">numGenerics</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7Generic11numGenericsEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK7Generic10getGenericEi">
+<span id="_CPPv3NK7Generic10getGenericEi"></span><span id="_CPPv2NK7Generic10getGenericEi"></span><span id="Generic::getGeneric__iC"></span><span class="target" id="classseq_1_1Generic_1ad578681a29a6b02072ec8c8c877b3f55"></span>types::GenericType *<code class="sig-name descname">getGeneric</code><span class="sig-paren">(</span>int <em>idx</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7Generic10getGenericEi" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N7Generic9seenCloneEPv">
+<span id="_CPPv3N7Generic9seenCloneEPv"></span><span id="_CPPv2N7Generic9seenCloneEPv"></span><span id="Generic::seenClone__voidP"></span><span class="target" id="classseq_1_1Generic_1a624642b4c5d7c59a17e1543b10bc5e60"></span>bool <code class="sig-name descname">seenClone</code><span class="sig-paren">(</span>void *<em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Generic9seenCloneEPv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N7Generic8getCloneEPv">
+<span id="_CPPv3N7Generic8getCloneEPv"></span><span id="_CPPv2N7Generic8getCloneEPv"></span><span id="Generic::getClone__voidP"></span><span class="target" id="classseq_1_1Generic_1acfb96bb0d5e2172d625a44e37b0d0fe7"></span>void *<code class="sig-name descname">getClone</code><span class="sig-paren">(</span>void *<em>p</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Generic8getCloneEPv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N7Generic8addCloneEPvPv">
+<span id="_CPPv3N7Generic8addCloneEPvPv"></span><span id="_CPPv2N7Generic8addCloneEPvPv"></span><span id="Generic::addClone__voidP.voidP"></span><span class="target" id="classseq_1_1Generic_1a57089d75b5bfbe462dc5bc7315fab795"></span>void <code class="sig-name descname">addClone</code><span class="sig-paren">(</span>void *<em>p</em>, void *<em>clone</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Generic8addCloneEPvPv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N7Generic14realizeGenericENSt6vectorIPN5types4TypeEEE">
+<span id="_CPPv3N7Generic14realizeGenericENSt6vectorIPN5types4TypeEEE"></span><span id="_CPPv2N7Generic14realizeGenericENSt6vectorIPN5types4TypeEEE"></span><span id="Generic::realizeGeneric__std::vector:types::TypeP:"></span><span class="target" id="classseq_1_1Generic_1afba4747e2d358d3466eb41162735b2ec"></span>Generic *<code class="sig-name descname">realizeGeneric</code><span class="sig-paren">(</span>std::vector&lt;<a class="reference internal" href="#_CPPv4N7Generic14realizeGenericENSt6vectorIPN5types4TypeEEE" title="Generic::realizeGeneric::types">types</a>::Type *&gt; <em>types</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Generic14realizeGenericENSt6vectorIPN5types4TypeEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N7Generic23deduceTypesFromArgTypesERKNSt6vectorIPN5types4TypeEEERKNSt6vectorIPN5types4TypeEEE">
+<span id="_CPPv3N7Generic23deduceTypesFromArgTypesERKNSt6vectorIPN5types4TypeEEERKNSt6vectorIPN5types4TypeEEE"></span><span id="_CPPv2N7Generic23deduceTypesFromArgTypesERKNSt6vectorIPN5types4TypeEEERKNSt6vectorIPN5types4TypeEEE"></span><span id="Generic::deduceTypesFromArgTypes__std::vector:types::TypeP:CR.std::vector:types::TypeP:CR"></span><span class="target" id="classseq_1_1Generic_1acb4dc98bd3c1c9b9b210ea7923889431"></span>std::vector&lt;types::Type *&gt; <code class="sig-name descname">deduceTypesFromArgTypes</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;types::Type *&gt; &amp;<em>inTypes</em>, <em class="property">const</em> std::vector&lt;types::Type *&gt; &amp;<em>argTypes</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7Generic23deduceTypesFromArgTypesERKNSt6vectorIPN5types4TypeEEERKNSt6vectorIPN5types4TypeEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classseq_1_1GenExpr.html" class="btn btn-neutral float-right" title="Class GenExpr" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classseq_1_1FuncStmt.html" class="btn btn-neutral float-left" title="Class FuncStmt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+.. _exhale_class_classseq_1_1exc_1_1SeqException:
+
+Class SeqException
+==================
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Types
+**********
+
+- ``public seq::SrcObject`` (:ref:`exhale_struct_structseq_1_1SrcObject`)
+- ``public runtime_error``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::exc::SeqException
+   :members:
+   :protected-members:
+   :undoc-members:

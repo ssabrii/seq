@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1afc8a9de7e158e642c84b7bf6fe57a81f:
+
+Function or_pattern
+===================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: or_pattern(Pattern **, size_t)

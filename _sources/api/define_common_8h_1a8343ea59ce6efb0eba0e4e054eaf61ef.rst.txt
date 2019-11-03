@@ -1,0 +1,13 @@
+.. _exhale_define_common_8h_1a8343ea59ce6efb0eba0e4e054eaf61ef:
+
+Define SEQ_HAS_TAPIR
+====================
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: SEQ_HAS_TAPIR

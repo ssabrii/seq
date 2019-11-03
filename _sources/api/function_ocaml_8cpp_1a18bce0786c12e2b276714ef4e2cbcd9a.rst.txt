@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a18bce0786c12e2b276714ef4e2cbcd9a:
+
+Function record_pattern
+=======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: record_pattern(Pattern **, size_t)

@@ -1,0 +1,13 @@
+.. _exhale_function_types_8cpp_1abc83ba36449e97fcbc178e708b629e59:
+
+Function callType
+=================
+
+- Defined in :ref:`file_compiler_types_types.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: callType(BaseFunc *, std::vector<types::Type *>)

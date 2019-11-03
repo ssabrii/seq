@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a70e62a3e8cb9bd4b888f4e094a946efc:
+
+Function generator_type
+=======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: generator_type(types::Type *)

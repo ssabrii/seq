@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a898443681d21effbfbc0018e5449ae71:
+
+Function cond_expr
+==================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: cond_expr(Expr *, Expr *, Expr *)

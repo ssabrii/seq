@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1adabcbeeb9ed6922581b05c4a3656ec40:
+
+Function get_while_block
+========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get_while_block(While *)

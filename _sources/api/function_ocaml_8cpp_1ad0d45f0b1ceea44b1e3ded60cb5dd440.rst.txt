@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ad0d45f0b1ceea44b1e3ded60cb5dd440:
+
+Function func_type
+==================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: func_type(types::Type *, types::Type **, size_t)

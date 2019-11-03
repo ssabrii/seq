@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1abb5bc92c13b19e721b271a8d8cc445c8:
+
+Function get_for_block
+======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get_for_block(For *)

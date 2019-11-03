@@ -1,0 +1,13 @@
+.. _exhale_function_seqt_8cpp_1a05f0971edc69518ae2b8249655926597:
+
+Function getShiftFunc
+=====================
+
+- Defined in :ref:`file_compiler_types_seqt.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: getShiftFunc(types::KMer *, Module *, bool)

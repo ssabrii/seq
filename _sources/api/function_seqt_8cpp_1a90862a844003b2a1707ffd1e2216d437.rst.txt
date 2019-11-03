@@ -1,0 +1,13 @@
+.. _exhale_function_seqt_8cpp_1a90862a844003b2a1707ffd1e2216d437:
+
+Function get2bitTableInv
+========================
+
+- Defined in :ref:`file_compiler_types_seqt.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get2bitTableInv(Module *, const std::string&)

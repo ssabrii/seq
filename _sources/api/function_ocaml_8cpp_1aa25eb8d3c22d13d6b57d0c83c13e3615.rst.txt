@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1aa25eb8d3c22d13d6b57d0c83c13e3615:
+
+Function while_stmt
+===================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: while_stmt(Expr *)

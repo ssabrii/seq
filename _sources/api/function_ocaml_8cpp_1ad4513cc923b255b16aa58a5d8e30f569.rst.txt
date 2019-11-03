@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ad4513cc923b255b16aa58a5d8e30f569:
+
+Function atomic_xor_expr
+========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: atomic_xor_expr(Var *, Expr *)

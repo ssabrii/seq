@@ -1,0 +1,149 @@
+
+.. _file_compiler_include_seq_expr.h:
+
+File expr.h
+===========
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_include_seq>` (``compiler/include/seq``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/include/seq/expr.h``)
+--------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_include_seq_expr.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``common.h`` (:ref:`file_compiler_include_seq_common.h`)
+
+- ``ops.h`` (:ref:`file_compiler_include_seq_ops.h`)
+
+- ``patterns.h`` (:ref:`file_compiler_include_seq_patterns.h`)
+
+- ``ref.h`` (:ref:`file_compiler_include_seq_ref.h`)
+
+- ``types.h`` (:ref:`file_compiler_include_seq_types.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_compiler_include_seq_lang.h`
+
+- :ref:`file_compiler_include_seq_var.h`
+
+- :ref:`file_compiler_include_seq_seq.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_seq`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classseq_1_1ArrayContainsExpr`
+
+- :ref:`exhale_class_classseq_1_1ArrayExpr`
+
+- :ref:`exhale_class_classseq_1_1ArrayLookupExpr`
+
+- :ref:`exhale_class_classseq_1_1ArraySliceExpr`
+
+- :ref:`exhale_class_classseq_1_1AtomicExpr`
+
+- :ref:`exhale_class_classseq_1_1BlankExpr`
+
+- :ref:`exhale_class_classseq_1_1BoolExpr`
+
+- :ref:`exhale_class_classseq_1_1BOpExpr`
+
+- :ref:`exhale_class_classseq_1_1CallExpr`
+
+- :ref:`exhale_class_classseq_1_1CondExpr`
+
+- :ref:`exhale_class_classseq_1_1ConstructExpr`
+
+- :ref:`exhale_class_classseq_1_1DefaultExpr`
+
+- :ref:`exhale_class_classseq_1_1DictCompExpr`
+
+- :ref:`exhale_class_classseq_1_1DictExpr`
+
+- :ref:`exhale_class_classseq_1_1Expr`
+
+- :ref:`exhale_class_classseq_1_1FloatExpr`
+
+- :ref:`exhale_class_classseq_1_1FuncExpr`
+
+- :ref:`exhale_class_classseq_1_1GenExpr`
+
+- :ref:`exhale_class_classseq_1_1GetElemExpr`
+
+- :ref:`exhale_class_classseq_1_1GetStaticElemExpr`
+
+- :ref:`exhale_class_classseq_1_1IntExpr`
+
+- :ref:`exhale_class_classseq_1_1IsExpr`
+
+- :ref:`exhale_class_classseq_1_1ListCompExpr`
+
+- :ref:`exhale_class_classseq_1_1ListExpr`
+
+- :ref:`exhale_class_classseq_1_1MatchExpr`
+
+- :ref:`exhale_class_classseq_1_1MethodExpr`
+
+- :ref:`exhale_class_classseq_1_1NoneExpr`
+
+- :ref:`exhale_class_classseq_1_1OptExpr`
+
+- :ref:`exhale_class_classseq_1_1PartialCallExpr`
+
+- :ref:`exhale_class_classseq_1_1PipeExpr`
+
+- :ref:`exhale_class_classseq_1_1RecordExpr`
+
+- :ref:`exhale_class_classseq_1_1SeqExpr`
+
+- :ref:`exhale_class_classseq_1_1SetCompExpr`
+
+- :ref:`exhale_class_classseq_1_1SetExpr`
+
+- :ref:`exhale_class_classseq_1_1StrExpr`
+
+- :ref:`exhale_class_classseq_1_1TypeExpr`
+
+- :ref:`exhale_class_classseq_1_1TypeOfExpr`
+
+- :ref:`exhale_class_classseq_1_1UOpExpr`
+
+- :ref:`exhale_class_classseq_1_1ValueExpr`
+
+- :ref:`exhale_class_classseq_1_1VarExpr`
+
+- :ref:`exhale_class_classseq_1_1VarPtrExpr`
+

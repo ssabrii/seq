@@ -1,0 +1,32 @@
+
+.. _program_listing_file_compiler_include_seq_any.h:
+
+Program Listing for File any.h
+==============================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_compiler_include_seq_any.h>` (``compiler/include/seq/any.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #ifndef SEQ_ANY_H
+   #define SEQ_ANY_H
+   
+   #include "types.h"
+   
+   namespace seq {
+   namespace types {
+   class AnyType : public Type {
+     AnyType();
+   
+   public:
+     AnyType(AnyType const &) = delete;
+     void operator=(AnyType const &) = delete;
+     static AnyType *get() noexcept;
+   };
+   
+   } // namespace types
+   } // namespace seq
+   
+   #endif /* SEQ_ANY_H */

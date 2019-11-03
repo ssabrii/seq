@@ -1,0 +1,13 @@
+.. _exhale_variable_seq_8h_1a322f6b02a781e9e4d866ad0b4988debd:
+
+Variable seq::types::Void
+=========================
+
+- Defined in :ref:`file_compiler_include_seq_seq.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: seq::types::Void

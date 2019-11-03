@@ -1,0 +1,13 @@
+.. _exhale_function_types_8cpp_1ae64cccf7914079295de1fb9852e0d122:
+
+Function funcAsMethod
+=====================
+
+- Defined in :ref:`file_compiler_types_types.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: funcAsMethod(types::Type *, BaseFunc *, Value *, BasicBlock *)

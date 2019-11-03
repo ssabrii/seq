@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a62c5efb46a5c9c6c230521f88b8e5911:
+
+Function str_seq_type
+=====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: str_seq_type()

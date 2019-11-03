@@ -1,0 +1,88 @@
+
+.. _file_compiler_include_seq_generic.h:
+
+File generic.h
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_include_seq>` (``compiler/include/seq``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/include/seq/generic.h``)
+-----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_include_seq_generic.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cassert``
+
+- ``map``
+
+- ``seq/types.h`` (:ref:`file_compiler_include_seq_types.h`)
+
+- ``string``
+
+- ``utility``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_compiler_include_seq_func.h`
+
+- :ref:`file_compiler_include_seq_stmt.h`
+
+- :ref:`file_compiler_include_seq_ref.h`
+
+- :ref:`file_compiler_include_seq_seq.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_seq`
+
+- :ref:`namespace_seq__types`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structseq_1_1types_1_1ExtInfo`
+
+- :ref:`exhale_class_classseq_1_1Generic`
+
+- :ref:`exhale_class_classseq_1_1RCache`
+
+- :ref:`exhale_class_classseq_1_1types_1_1GenericType`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_generic_8h_1af12c6e360abb72b3ed4812e982834c30`
+

@@ -1,0 +1,16 @@
+.. _exhale_struct_structseq__srcinfo:
+
+Struct seq_srcinfo
+==================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: seq_srcinfo
+   :members:
+   :protected-members:
+   :undoc-members:

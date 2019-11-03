@@ -1,0 +1,13 @@
+.. _exhale_function_expr_8cpp_1a4ac155907093626a43adc93ad46262ef:
+
+Function deduceTypeParametersIfNecessary
+========================================
+
+- Defined in :ref:`file_compiler_lang_expr.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: deduceTypeParametersIfNecessary(Expr *&, const std::vector<types::Type *>&)

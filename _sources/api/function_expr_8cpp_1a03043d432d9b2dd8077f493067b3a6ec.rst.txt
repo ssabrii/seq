@@ -1,0 +1,13 @@
+.. _exhale_function_expr_8cpp_1a03043d432d9b2dd8077f493067b3a6ec:
+
+Function unsupportedUOpError
+============================
+
+- Defined in :ref:`file_compiler_lang_expr.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: unsupportedUOpError(std::string, types::Type *)

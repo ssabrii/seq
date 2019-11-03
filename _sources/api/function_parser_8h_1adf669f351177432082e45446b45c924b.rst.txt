@@ -1,0 +1,13 @@
+.. _exhale_function_parser_8h_1adf669f351177432082e45446b45c924b:
+
+Function seq::compile
+=====================
+
+- Defined in :ref:`file_compiler_include_seq_parser.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::compile(SeqModule *, const std::string&, bool)

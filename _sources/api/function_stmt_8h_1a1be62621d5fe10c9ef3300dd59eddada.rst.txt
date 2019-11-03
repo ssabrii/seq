@@ -1,0 +1,13 @@
+.. _exhale_function_stmt_8h_1a1be62621d5fe10c9ef3300dd59eddada:
+
+Function operator<<(std::ostream&, seq::Stmt&)
+==============================================
+
+- Defined in :ref:`file_compiler_include_seq_stmt.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: operator<<(std::ostream&, seq::Stmt&)

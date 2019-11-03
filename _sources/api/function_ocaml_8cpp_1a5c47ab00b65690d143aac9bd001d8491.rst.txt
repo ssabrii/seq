@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a5c47ab00b65690d143aac9bd001d8491:
+
+Function assert_stmt
+====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: assert_stmt(Expr *)

@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a62991fc0a8a6dba43351f7eefb6aa07f:
+
+Function pipe_expr
+==================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pipe_expr(Expr **, size_t)

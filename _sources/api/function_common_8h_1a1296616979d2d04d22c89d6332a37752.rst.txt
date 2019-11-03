@@ -1,0 +1,13 @@
+.. _exhale_function_common_8h_1a1296616979d2d04d22c89d6332a37752:
+
+Function seq::makeMemCpy
+========================
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::makeMemCpy(llvm::Value *, llvm::Value *, llvm::Value *, llvm::BasicBlock *, unsigned)

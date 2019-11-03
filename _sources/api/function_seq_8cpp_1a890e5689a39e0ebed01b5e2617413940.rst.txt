@@ -1,0 +1,13 @@
+.. _exhale_function_seq_8cpp_1a890e5689a39e0ebed01b5e2617413940:
+
+Function compilationMessage
+===========================
+
+- Defined in :ref:`file_compiler_lang_seq.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: compilationMessage(const std::string&, const std::string&, const std::string&, int, int)

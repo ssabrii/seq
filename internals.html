@@ -1,0 +1,409 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Compiler Internals &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Compiler API" href="api/doxygen.html" />
+    <link rel="prev" title="Cookbook" href="cookbook.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook.html">Cookbook</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Compiler Internals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#statements">Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#expressions">Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#variables">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#patterns">Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#generics">Generics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#passes">Passes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-new-statements-and-expressions">Adding new statements and expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#try-except-finally"><code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">except</span></code>-<code class="docutils literal notranslate"><span class="pre">finally</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/doxygen.html">Compiler API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Compiler Internals</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/internals.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="compiler-internals">
+<h1>Compiler Internals<a class="headerlink" href="#compiler-internals" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This document describes Seq’s compiler internals (excluding parsing). This includes everything in the top-level <code class="docutils literal notranslate"><span class="pre">compiler/</span></code> directory.</p>
+<p>After a Seq program is parsed, the result is an AST that is built of several types of objects:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Stmt</span></code>: Top-level statements like <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>, variable assignments, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Expr</span></code>: Expressions like <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">+</span> <span class="pre">2</span></code>, <code class="docutils literal notranslate"><span class="pre">f(10)</span></code>, <code class="docutils literal notranslate"><span class="pre">a[i]</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Var</span></code>: Variables defined either by assignment, or implicitly by e.g. a <code class="docutils literal notranslate"><span class="pre">for</span></code> (as in <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">...</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Func</span></code>: Function (or generator) objects defined by the user</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Type</span></code>: Every expression and variable has an associated type, be it <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">array[float]</span></code>, <code class="docutils literal notranslate"><span class="pre">MyClass[str,bool]</span></code>, etc.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Pattern</span></code>: Patterns define how to match a value in a <code class="docutils literal notranslate"><span class="pre">match</span></code> statement (and are used nowhere else)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Block</span></code>: A list of statements</p></li>
+</ul>
+</div></blockquote>
+<p>There are a couple other less frequently used objects in addition to these:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">BaseFuncLite</span></code>: A lightweight wrapper around an LLVM function (basically a lambda that describes how to codegen the function in LLVM IR); useful for easily writing built-in methods or functions in LLVM IR.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SeqModule</span></code>: This represents top-level code, which gets wrapped in a <code class="docutils literal notranslate"><span class="pre">main</span></code> function at the IR level. A <code class="docutils literal notranslate"><span class="pre">SeqModule</span></code> instance is the final result of parsing a Seq program; it contains everything within it.</p></li>
+</ul>
+</div></blockquote>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">Func</span></code>, <code class="docutils literal notranslate"><span class="pre">BaseFuncLite</span></code> and <code class="docutils literal notranslate"><span class="pre">SeqModule</span></code> all inherit from the <code class="docutils literal notranslate"><span class="pre">BaseFunc</span></code> class, which defines a relatively barebones function interface.</p>
+<p>Each of these classes is described in more detail below, along with any unintuitive corner cases or gotchas. Afterwards, generics are described, and finally type resolution and code generation.</p>
+</div>
+<div class="section" id="statements">
+<h2>Statements<a class="headerlink" href="#statements" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Stmt</span></code> base class is defined in <code class="docutils literal notranslate"><span class="pre">compiler/lang/stmt.cpp</span></code>, but the actual subclasses representing real statements are defined in <code class="docutils literal notranslate"><span class="pre">compiler/lang/lang.cpp</span></code>.</p>
+<p>Statement objects typically hold expression objects internally. For example, <code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">42</span></code> would be converted to a <code class="docutils literal notranslate"><span class="pre">Print</span></code> object that internally stores an expression representing the literal <code class="docutils literal notranslate"><span class="pre">42</span></code>. Note also that expressions can be statements on their own (e.g. function calls that do not return anything), for which <code class="docutils literal notranslate"><span class="pre">ExprStmt</span></code> is used.</p>
+<p>Statement objects can also contain other statement objects. For example, a <code class="docutils literal notranslate"><span class="pre">While</span></code> object (representing a <code class="docutils literal notranslate"><span class="pre">while</span></code>-statement) contains an expression representing the condition, but also a list of statements that appear in the body of the loop. Any time a statement contains one or more internal “scopes” like this, a <code class="docutils literal notranslate"><span class="pre">Block</span></code> object is used to store the internal statements. For example, <code class="docutils literal notranslate"><span class="pre">While</span></code> stores just one <code class="docutils literal notranslate"><span class="pre">Block</span></code> internally, but <code class="docutils literal notranslate"><span class="pre">If</span></code> can store arbitrarily many, one for each branch. <code class="docutils literal notranslate"><span class="pre">Block</span></code> is nothing more than a wrapper around a vector of statements.</p>
+<p>Statement objects also have a <code class="docutils literal notranslate"><span class="pre">loop</span></code> flag indicating whether they represent loops. If so, during code generation these statements must expose two LLVM blocks: one to jump to when a <code class="docutils literal notranslate"><span class="pre">break</span></code> is encountered and one to jump to when a <code class="docutils literal notranslate"><span class="pre">continue</span></code> is encountered. This allows <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code> statements to be codegen’d easily by finding their innermost enclosing loops and branching to the appropriate block.</p>
+</div>
+<div class="section" id="expressions">
+<h2>Expressions<a class="headerlink" href="#expressions" title="Permalink to this headline">¶</a></h2>
+<p>All expressions inherit from <code class="docutils literal notranslate"><span class="pre">Expr</span></code>, and are defined in <code class="docutils literal notranslate"><span class="pre">compiler/lang/expr.cpp</span></code>. Expressions are very similar to statements in their implementation, with the main difference being that every expression has an associated type, accessible via the <code class="docutils literal notranslate"><span class="pre">getType()</span></code> method. While <code class="docutils literal notranslate"><span class="pre">getType()</span></code> is <em>usually</em> simple (e.g. the type of <code class="docutils literal notranslate"><span class="pre">42</span></code> is clearly <code class="docutils literal notranslate"><span class="pre">int</span></code> – no extra work required), occasionally <code class="docutils literal notranslate"><span class="pre">getType()</span></code> needs to do nontrivial work to determine the type. An example of this is calling a generic function/method; the type of the call could depend on the input type of the function, so <code class="docutils literal notranslate"><span class="pre">getType()</span></code> would have to clone the function, realize its generic type parameter with whatever the call type is, then deduce the return type.</p>
+<p>A few other notes on expressions:</p>
+<ul class="simple">
+<li><p>Every expression has a <code class="docutils literal notranslate"><span class="pre">tc</span></code> field pointing to a <code class="docutils literal notranslate"><span class="pre">TryCatch</span></code> object (subclass of <code class="docutils literal notranslate"><span class="pre">Stmt</span></code>), representing the innermost enclosing <code class="docutils literal notranslate"><span class="pre">try</span></code> block of the expression (or null if there isn’t any). This is purely to handle function calls within a <code class="docutils literal notranslate"><span class="pre">try</span></code> at the LLVM level. Basically, if you call a function in a <code class="docutils literal notranslate"><span class="pre">try</span></code> block in LLVM IR, and the function can potentially throw an exception, LLVM IR provides an instruction (<code class="docutils literal notranslate"><span class="pre">invoke</span></code>) for doing this, which takes as arguments the block to jump to if no exception is thrown <em>and</em> a block to jump to if an exception is in fact thrown. The latter block is given to us by the mentioned <code class="docutils literal notranslate"><span class="pre">TryCatch</span></code> object.</p></li>
+<li><p>Some fields of some expression objects can be modified as a result of calling <code class="docutils literal notranslate"><span class="pre">getType()</span></code> (although not in a way that should affect the user). This has to do with automatic type parameter deduction: if you call a generic function or instantiate a generic class without providing explicit type parameters, <code class="docutils literal notranslate"><span class="pre">getType()</span></code> must first deduce the type parameters. It does this by, for each type parameter <code class="docutils literal notranslate"><span class="pre">T</span></code>, finding <code class="docutils literal notranslate"><span class="pre">T</span></code> in each argument type of the function via a DFS, then extracting the corresponding type from the types the function is being called with. So, calling a function <code class="docutils literal notranslate"><span class="pre">f[T](array[T])</span></code> as <code class="docutils literal notranslate"><span class="pre">f(array[int](10))</span></code> would perform a DFS in <code class="docutils literal notranslate"><span class="pre">array[T]</span></code> for <code class="docutils literal notranslate"><span class="pre">T</span></code>, then extract the corresponding type in <code class="docutils literal notranslate"><span class="pre">array[int]</span></code> (or failing if this can’t be done), which is <code class="docutils literal notranslate"><span class="pre">int</span></code> in this case, meaning we deduce <code class="docutils literal notranslate"><span class="pre">T</span> <span class="pre">=</span> <span class="pre">int</span></code>. A new <code class="docutils literal notranslate"><span class="pre">FuncExpr</span></code> object with explicitly realized types is then created to replace the original unrealized one (note that a pointer to the original is also kept for cloning purposes, described below).</p></li>
+<li><p>Currently, the only times an expression contains a statement internally are comprehensions and generators (i.e. <code class="docutils literal notranslate"><span class="pre">ListCompExpr</span></code>, <code class="docutils literal notranslate"><span class="pre">SetCompExpr</span></code>, <code class="docutils literal notranslate"><span class="pre">DictCompExpr</span></code>, <code class="docutils literal notranslate"><span class="pre">GenExpr</span></code>). These all contain a single <code class="docutils literal notranslate"><span class="pre">For</span></code> object representing the “unrolled” generator loop. For example, <code class="docutils literal notranslate"><span class="pre">[a</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">in</span> <span class="pre">b</span> <span class="pre">if</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">10]</span></code> would be converted to a <code class="docutils literal notranslate"><span class="pre">For</span></code> representing <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">a</span> <span class="pre">in</span> <span class="pre">b:</span> <span class="pre">if</span> <span class="pre">a</span> <span class="pre">&lt;</span> <span class="pre">10:</span> <span class="pre">pass</span></code>. This is nothing more than a convenient interface for creating these kinds of expression objects.</p></li>
+<li><p>The types of most expressions (including all unary/binary operations and index/slice expressions) are determined through the type the operation is being applied to. For example, when determining the type of <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>, the type of <code class="docutils literal notranslate"><span class="pre">a</span></code> is searched for an <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method applicable to the type of <code class="docutils literal notranslate"><span class="pre">b</span></code>, and the output type of this method is returned. This is discussed in greater detail in the section on types.</p></li>
+</ul>
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<p>All variables in a program (implicit or explicit, local or global) are represented by a <code class="docutils literal notranslate"><span class="pre">Var</span></code> object, defined in <code class="docutils literal notranslate"><span class="pre">compiler/lang/var.cpp</span></code>. This includes standard assigned variables (<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">10</span></code>), <code class="docutils literal notranslate"><span class="pre">for</span></code>-loop variables (<code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">a</span> <span class="pre">in</span> <span class="pre">...</span></code>) and function arguments (<code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">f(a)</span></code>). This <strong>does not</strong> include functions themselves, however; these are represented with <code class="docutils literal notranslate"><span class="pre">Func</span></code> objects (described below). Variables are conceptually just a wrapper around an LLVM pointer. If a variable is marked as global, this pointer will represent a global LLVM value, otherwise it will be an LLVM <code class="docutils literal notranslate"><span class="pre">alloca</span></code> in the enclosing function. Variables also have types, which are usually set in the <em>type resolution</em> pass before code generation (described below); these types dictate how the variables will be translated to LLVM IR.</p>
+<p>There is one peculiar case that requires the ability to “map” a variable <code class="docutils literal notranslate"><span class="pre">v</span></code> to another <code class="docutils literal notranslate"><span class="pre">v'</span></code>, meaning any operation applied to <code class="docutils literal notranslate"><span class="pre">v</span></code> will be delegated to <code class="docutils literal notranslate"><span class="pre">v'</span></code>. This case is code generation of generators. Generators are converted to functions internally: e.g. <code class="docutils literal notranslate"><span class="pre">(a*2</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">in</span> <span class="pre">v)</span></code> is transformed to <code class="docutils literal notranslate"><span class="pre">def</span> <span class="pre">_implicit_gen(v):</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">in</span> <span class="pre">v:</span> <span class="pre">yield</span> <span class="pre">a*2</span></code>, which is then called with <code class="docutils literal notranslate"><span class="pre">v</span></code> as an argument. The way this is done internally is by creating a <code class="docutils literal notranslate"><span class="pre">Func</span></code> object representing the implicit function, assigning the generator’s internal <code class="docutils literal notranslate"><span class="pre">For</span></code> loop as the body of this function, and codegen’ing the function. This would work, if it weren’t for the fact that variables appearing in the <code class="docutils literal notranslate"><span class="pre">For</span></code> are referencing variables <em>outside</em> the implicit function! In the earlier example, for instance, <code class="docutils literal notranslate"><span class="pre">v</span></code> would have been assigned before the generator expression, but when we codegen the implicit function, we want <code class="docutils literal notranslate"><span class="pre">v</span></code> to refer to <em>the function’s argument</em>. This problem is solved by “mapping” the original <code class="docutils literal notranslate"><span class="pre">v</span></code> variable to the implicit function’s argument, codegen’ing the function, then unmapping <code class="docutils literal notranslate"><span class="pre">v</span></code>. (Note that, because nested generators are possible, we actually maintain a <em>stack</em> of mappings rather than a single one, but the idea is the same.)</p>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<p>Functions (i.e. those defined with <code class="docutils literal notranslate"><span class="pre">def</span></code> in a program) are represented by <code class="docutils literal notranslate"><span class="pre">Func</span></code> objects, defined in <code class="docutils literal notranslate"><span class="pre">compiler/lang/func.cpp</span></code>. For the most part, <code class="docutils literal notranslate"><span class="pre">Func</span></code> is a wrapper around a <code class="docutils literal notranslate"><span class="pre">Block</span></code> representing the function’s body, and a list of <code class="docutils literal notranslate"><span class="pre">Var</span></code> objects representing its arguments. Function return types can be deduced automatically. This is achieved by passing a pointer to the corresponding <code class="docutils literal notranslate"><span class="pre">Return</span></code> or <code class="docutils literal notranslate"><span class="pre">Yield</span></code> object to the function anytime a <code class="docutils literal notranslate"><span class="pre">return</span></code>/<code class="docutils literal notranslate"><span class="pre">yield</span></code> statement is parsed within it; then the return type (and whether the function is really a generator) is deduced by looking at the type of the expression being returned/yielded. Functions can also be marked as “external” (e.g. <code class="docutils literal notranslate"><span class="pre">extern</span> <span class="pre">c</span> <span class="pre">foo()</span></code>), in which case no body is associated with the function.</p>
+<p>Regular functions store a “preamble” LLVM block (which is their first block in the IR); this is where enclosed local variables (including function arguments) codegen their <code class="docutils literal notranslate"><span class="pre">alloca</span></code>. Generators additionally maintain several other blocks for general generator bookkeeping (these are all described in the <a class="reference external" href="https://www.llvm.org/docs/Coroutines.html">LLVM coroutine docs</a>).</p>
+<p>Lastly, function names are mangled in the LLVM IR, and include a combination of the base function name, argument type names, output type name, enclosing function name and enclosing class name (if the function is a method of some class). This is so a generic function doesn’t produce duplicate names in the IR if called on different types.</p>
+</div>
+<div class="section" id="types">
+<h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
+<p>Of all the classes, types are probably the most complicated. All types inherit from the <code class="docutils literal notranslate"><span class="pre">Type</span></code> class, and are located in <code class="docutils literal notranslate"><span class="pre">compiler/types/</span></code>. Fundamentally, each <code class="docutils literal notranslate"><span class="pre">Type</span></code> is a wrapper around an LLVM type, with some extra data dictating how to do various operations on instances of that type. Some types are “abstract”, meaning there can’t be any variables of that type (e.g. <code class="docutils literal notranslate"><span class="pre">Void</span></code>). Types can contain other subtypes internally: for example an array type stores the base type of the array, and a generic class stores its generic type parameters.</p>
+<p>All types have the following fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vtable.fields</span></code>: A map of string (field name) to a pair of integer (0-based field offset in structure) and <code class="docutils literal notranslate"><span class="pre">Type</span></code> (type of field).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtable.methods</span></code>: A map of string (method name) to <code class="docutils literal notranslate"><span class="pre">BaseFunc</span></code> (method of type).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtable.magic</span></code>: A vector of <code class="docutils literal notranslate"><span class="pre">MagicMethod</span></code> objects – these are built-in magic methods. Each <code class="docutils literal notranslate"><span class="pre">MagicMethod</span></code> object stores a name (e.g. <code class="docutils literal notranslate"><span class="pre">__add__</span></code>), a vector of argument types (excluding ‘self’), an output type, and a lambda that codegen’s a call to the method, given ‘self’ and a vector of arguments. Additionally, <code class="docutils literal notranslate"><span class="pre">MagicMethod</span></code> has a <code class="docutils literal notranslate"><span class="pre">asFunc()</span></code> method, which returns a <code class="docutils literal notranslate"><span class="pre">BaseFunc</span></code> object representing the magic method. This allows for cases where a magic method is not called, but is referenced (e.g. <code class="docutils literal notranslate"><span class="pre">x.__add__</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vtable.overloads</span></code>: A vector of <code class="docutils literal notranslate"><span class="pre">MagicOverload</span></code> objects – these are the magic methods defined in a Seq program. Each <code class="docutils literal notranslate"><span class="pre">MagicOverload</span></code> object stores a name (e.g. <code class="docutils literal notranslate"><span class="pre">__add__</span></code>) and a <code class="docutils literal notranslate"><span class="pre">BaseFunc</span></code> object representing the method. Note that magic methods defined by the user <em>must not</em> be generic, as they can be overloaded (e.g. you can have two <code class="docutils literal notranslate"><span class="pre">__add__</span></code> methods that take different argument types).</p></li>
+</ul>
+<p>Many operations, as codegen’d by various expression objects, are defined by magic methods. Returning to an earlier example: to codegen <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>, the type of <code class="docutils literal notranslate"><span class="pre">a</span></code> is searched for an <code class="docutils literal notranslate"><span class="pre">__add__</span></code> method applicable to the type of <code class="docutils literal notranslate"><span class="pre">b</span></code>, be it a built-in one (<code class="docutils literal notranslate"><span class="pre">MagicMethod</span></code>) or a user-defined one (<code class="docutils literal notranslate"><span class="pre">MagicOverload</span></code>). This method defines both how to codegen the addition <em>and</em> what the output type is.</p>
+<p>Importantly, note that a “method” is really a combination of the function defining the method <em>and</em> the object the method is called on (i.e. ‘self’). For example, after <code class="docutils literal notranslate"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">a.foo</span></code> where <code class="docutils literal notranslate"><span class="pre">foo</span></code> is a method, we can call <code class="docutils literal notranslate"><span class="pre">f()</span></code>; this works because <code class="docutils literal notranslate"><span class="pre">f</span></code> is not <em>just</em> a function, but a struct of <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">foo</span></code>, meaning <code class="docutils literal notranslate"><span class="pre">a</span></code> can be implicitly passed as the first argument of <code class="docutils literal notranslate"><span class="pre">foo</span></code>. If we obtained <code class="docutils literal notranslate"><span class="pre">foo</span></code> statically as in <code class="docutils literal notranslate"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">A.foo</span></code> (where <code class="docutils literal notranslate"><span class="pre">A</span></code> is the type of <code class="docutils literal notranslate"><span class="pre">a</span></code>), then there is no ‘self’ involved and <code class="docutils literal notranslate"><span class="pre">f</span></code> would be just a function.</p>
+<p>Thankfully, fields are much simpler than methods: to obtain the value of a field, we just search for its name in <code class="docutils literal notranslate"><span class="pre">vtable.fields</span></code> and produce the appropriate LLVM instruction with the resulting offset.</p>
+<p>A few other notes regarding types:</p>
+<ul class="simple">
+<li><p>Every type has <code class="docutils literal notranslate"><span class="pre">getBaseType(i)</span></code> and <code class="docutils literal notranslate"><span class="pre">numBaseType()</span></code> methods for retrieving inner types (e.g. <code class="docutils literal notranslate"><span class="pre">int</span></code> in <code class="docutils literal notranslate"><span class="pre">array[int]</span></code>). This is used in the DFS during type deduction mentioned above, and also for generating string names of types.</p></li>
+<li><p>Types can be marked as “atomic”, which means that the type, when converted to an LLVM type, will contain no pointers to heap-allocated data. This saves our GC from having to scan objects of the type when searching for pointers.</p></li>
+<li><p>Every type has a <code class="docutils literal notranslate"><span class="pre">getID()</span></code> method, which returns a unique integer identifier for the type. This is used for exception handling to determine if an exception type matches any <code class="docutils literal notranslate"><span class="pre">catch</span></code> clause.</p></li>
+</ul>
+</div>
+<div class="section" id="patterns">
+<h2>Patterns<a class="headerlink" href="#patterns" title="Permalink to this headline">¶</a></h2>
+<p>Patterns are relatively unimportant in the grand scheme of things, as they only apply to <code class="docutils literal notranslate"><span class="pre">match</span></code> statements. Nevertheless, all pattern objects inherit from <code class="docutils literal notranslate"><span class="pre">Pattern</span></code>, and are defined in <code class="docutils literal notranslate"><span class="pre">compiler/lang/patterns.cpp</span></code>. Patterns define how to “match” objects of a given type, and can be composed to form new patterns (e.g. as in <code class="docutils literal notranslate"><span class="pre">OrPattern</span></code>). Some patterns are “catch-all”, meaning they will match anything; this is important as we want the cases of a <code class="docutils literal notranslate"><span class="pre">match</span></code> to be exhaustive.</p>
+</div>
+<div class="section" id="generics">
+<h2>Generics<a class="headerlink" href="#generics" title="Permalink to this headline">¶</a></h2>
+<p>Functions and classes can be generic. General “generics” functionality, including type parameter realization and deduction, are factored out into a <code class="docutils literal notranslate"><span class="pre">Generic</span></code> class, defined in <code class="docutils literal notranslate"><span class="pre">compiler/types/generic.cpp</span></code>. This class is effectively a wrapper around a vector of generic type parameters, which are implemented as special type objects that delegate all operations to another underlying type.</p>
+<p>The core operation when realizing a generic object is “cloning”, which is essentially deep copying. For example, to realize a generic function, the entire function is cloned, and the cloned type parameters are realized. Here is a concrete example:</p>
+<div class="highlight-seq notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">[</span><span class="n">T</span><span class="p">](</span><span class="n">x</span><span class="p">:</span> <span class="n">T</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>Now if we call <code class="docutils literal notranslate"><span class="pre">f[int](42)</span></code>, the entire function will be cloned to create a new function <code class="docutils literal notranslate"><span class="pre">f2</span></code>:</p>
+<div class="highlight-seq notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f2</span><span class="p">[</span><span class="n">T2</span><span class="p">](</span><span class="n">x2</span><span class="p">:</span> <span class="n">T2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x2</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>and <code class="docutils literal notranslate"><span class="pre">T2</span></code> will be realized as <code class="docutils literal notranslate"><span class="pre">int</span></code>. To support this, <em>all</em> objects used by the compiler (including all those described here) are cloneable via a <code class="docutils literal notranslate"><span class="pre">clone</span></code> method. This method takes as an argument the <code class="docutils literal notranslate"><span class="pre">Generic</span></code> object that initiated the clone, which itself does some bookkeeping to ensure we don’t clone things twice (e.g. cloning two calls to a single function should produce only one cloned function at the end).</p>
+<p>Cloning classes can be complicated if the class definition contains realizations of itself (e.g. using <code class="docutils literal notranslate"><span class="pre">A[int]</span></code> in a generic <code class="docutils literal notranslate"><span class="pre">A</span></code> class). To solve this, such realizations are deferred, meaning <code class="docutils literal notranslate"><span class="pre">A[int]</span></code> (if used within <code class="docutils literal notranslate"><span class="pre">A</span></code>) will not cause an actual realization of <code class="docutils literal notranslate"><span class="pre">A</span></code>, but will instead create a generic type object that defers this realization until it is actually needed. Function and method realizations are always deferred similarly.</p>
+</div>
+<div class="section" id="passes">
+<h2>Passes<a class="headerlink" href="#passes" title="Permalink to this headline">¶</a></h2>
+<p>Code generation is done in two passes:</p>
+<ol class="arabic simple">
+<li><p><strong>Type resolution:</strong> Traverse the AST and set types of variables, and deduce function return types. Note that type resolution on functions can potentially fail if generic types are involved (e.g. how can we resolve the type of <code class="docutils literal notranslate"><span class="pre">a</span></code> in <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">a</span> <span class="pre">in</span> <span class="pre">x</span></code> if <code class="docutils literal notranslate"><span class="pre">x</span></code> is generic?); in this case, we fail silently in the hope of being able to resolve types fully when the function is realized.</p></li>
+<li><p><strong>Code generation:</strong> At this stage, all types should be fixed, so we re-traverse the AST and do the actual codegen.</p></li>
+</ol>
+</div>
+<div class="section" id="adding-new-statements-and-expressions">
+<h2>Adding new statements and expressions<a class="headerlink" href="#adding-new-statements-and-expressions" title="Permalink to this headline">¶</a></h2>
+<p>Looking at how some existing statements/expressions are implemented is probably the easiest way to understand what goes into them. Nevertheless, statements require the following:</p>
+<ul class="simple">
+<li><p>Inherit from <code class="docutils literal notranslate"><span class="pre">Stmt</span></code> class</p></li>
+<li><p>Override <code class="docutils literal notranslate"><span class="pre">resolveTypes()</span></code>: This method should perform any required type resolution and recursively call <code class="docutils literal notranslate"><span class="pre">resolveTypes()</span></code> on any internal <code class="docutils literal notranslate"><span class="pre">Stmt</span></code>/<code class="docutils literal notranslate"><span class="pre">Expr</span></code>/<code class="docutils literal notranslate"><span class="pre">Func</span></code>/<code class="docutils literal notranslate"><span class="pre">Pattern</span></code> object.</p></li>
+<li><p>Override <code class="docutils literal notranslate"><span class="pre">codegen0()</span></code>: This method takes an LLVM basic block reference as an argument, and performs code generation for the statement. By the time it returns, the argument basic block reference should point to a basic block where subsequent code generation can resume.</p></li>
+<li><p>Override <code class="docutils literal notranslate"><span class="pre">clone()</span></code>: This method should perform a deep copy of the given statement, and recursively call <code class="docutils literal notranslate"><span class="pre">clone()</span></code> on any internal Seq objects contained in the statement. The method takes a <code class="docutils literal notranslate"><span class="pre">Generic</span></code> object as an argument, which keeps track of which objects have already been cloned; implementations should generally check if a clone of the given statement already exists before actually cloning (check source for examples). Returns in this function should be done with the <code class="docutils literal notranslate"><span class="pre">SEQ_RETURN_CLONE</span></code> macro, which internally sets some other clone fields for source information etc.</p></li>
+</ul>
+<p>Expressions are very similar:</p>
+<ul class="simple">
+<li><p>Inherit from <code class="docutils literal notranslate"><span class="pre">Expr</span></code> class</p></li>
+<li><p>Override <code class="docutils literal notranslate"><span class="pre">resolveTypes()</span></code>: Same as above</p></li>
+<li><p>Override <code class="docutils literal notranslate"><span class="pre">codegen0()</span></code>: Same as above, except this method returns an LLVM value representing the result of the expression (can possibly be null if type is void).</p></li>
+<li><p>Override <code class="docutils literal notranslate"><span class="pre">getType0()</span></code>: Returns the expression’s type. You can assume this gets called <em>after</em> <code class="docutils literal notranslate"><span class="pre">resolveTypes()</span></code>. Note that if the expression type is fixed, it can alternatively be passed to the <code class="docutils literal notranslate"><span class="pre">Expr</span></code> constructor directly and this method need not be overriden.</p></li>
+<li><p>Override <code class="docutils literal notranslate"><span class="pre">clone()</span></code>: Same as above</p></li>
+</ul>
+<p>Of course, the lexer/parser must also be updated to create any new statement/expression objects: <code class="docutils literal notranslate"><span class="pre">compiler/util/ocaml.cpp</span></code> provides C stubs that get called from the OCaml lexer/parser to interface with the C++ objects; new statements/expressions should generally provide wrappers there as well.</p>
+<p>If an error (be it a type error or something else) occurs in any of these methods, a <code class="docutils literal notranslate"><span class="pre">SeqException</span></code> with an appropriate error message can be thrown.</p>
+</div>
+<div class="section" id="try-except-finally">
+<h2><code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">except</span></code>-<code class="docutils literal notranslate"><span class="pre">finally</span></code><a class="headerlink" href="#try-except-finally" title="Permalink to this headline">¶</a></h2>
+<p>Exception handling in Seq is implemented using <a class="reference external" href="https://www.llvm.org/docs/ExceptionHandling.html#itanium-abi-zero-cost-exception-handling">Itanium ABI zero-cost exception handling</a>. The implementation is fairly similar to how Clang compiles <code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">catch</span></code> constructs in C++. However, Seq also supports explicit <code class="docutils literal notranslate"><span class="pre">finally</span></code> blocks, which greatly complicates the exception handling logic.</p>
+<p>The first complicated case occurs when <code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">except</span></code>-<code class="docutils literal notranslate"><span class="pre">finally</span></code> statements are nested. Consider the following example:</p>
+<div class="highlight-seq notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">bar</span><span class="p">()</span>  <span class="c1"># raises C</span>
+                <span class="k">except</span> <span class="n">A</span><span class="p">:</span>
+                    <span class="k">print</span> <span class="s1">&#39;A&#39;</span>
+                <span class="k">finally</span><span class="p">:</span>
+                    <span class="k">print</span> <span class="s1">&#39;f A&#39;</span>
+            <span class="k">except</span> <span class="n">B</span><span class="p">:</span>
+                <span class="k">print</span> <span class="s1">&#39;B&#39;</span>
+            <span class="k">finally</span><span class="p">:</span>
+                <span class="k">print</span> <span class="s1">&#39;f B&#39;</span>
+        <span class="k">except</span> <span class="n">C</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s1">&#39;C&#39;</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s1">&#39;f C&#39;</span>
+    <span class="k">except</span> <span class="n">D</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s1">&#39;D&#39;</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s1">&#39;f D&#39;</span>
+</pre></div>
+</div>
+<p>The output is:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>f A
+f B
+C
+f C
+f D
+</pre></div>
+</div>
+<p>The call to <code class="docutils literal notranslate"><span class="pre">bar()</span></code> raises an exception of type <code class="docutils literal notranslate"><span class="pre">C</span></code>, which is handled by the <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">C</span></code> block. However, all prior <code class="docutils literal notranslate"><span class="pre">finally</span></code> blocks must be executed, so the exception really must be caught by the innermost <code class="docutils literal notranslate"><span class="pre">except</span></code>, whereupon some logic needs to be applied to determine that the next two <code class="docutils literal notranslate"><span class="pre">finally</span></code> blocks need to be executed, then the <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">C</span></code> handler, then the last two <code class="docutils literal notranslate"><span class="pre">finally</span></code> blocks.</p>
+<p>To handle this case, the compiler uses the concept of a handler’s “depth”: when an exception is caught, the depth of its handler is determined based on the exception type (e.g. when <code class="docutils literal notranslate"><span class="pre">C</span></code> is caught by <code class="docutils literal notranslate"><span class="pre">except</span> <span class="pre">A</span></code>, its handler depth is 2; if the exception had type <code class="docutils literal notranslate"><span class="pre">A</span></code> then the depth would be 0). Then, a total of that many <code class="docutils literal notranslate"><span class="pre">finally</span></code> blocks are executed, after which the appropriate handler is executed, which in turn branches to latter <code class="docutils literal notranslate"><span class="pre">finally</span></code> blocks. Internally, this is coordinated by storing a depth state for each nested <code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">except</span></code>-<code class="docutils literal notranslate"><span class="pre">finally</span></code> statement, which is set before reaching the <code class="docutils literal notranslate"><span class="pre">finally</span></code> block.</p>
+<p>Another nontrivial case is as follows:</p>
+<div class="highlight-seq notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Surprisingly to some, this function should actually return <code class="docutils literal notranslate"><span class="pre">2</span></code>, not <code class="docutils literal notranslate"><span class="pre">1</span></code>. This means that <code class="docutils literal notranslate"><span class="pre">return</span></code> statements in <code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">except</span></code>-<code class="docutils literal notranslate"><span class="pre">finally</span></code> cannot just directly return, but must instead first execute the appropriate <code class="docutils literal notranslate"><span class="pre">finally</span></code> block(s). An analogous situation arises with <code class="docutils literal notranslate"><span class="pre">break</span></code> and <code class="docutils literal notranslate"><span class="pre">continue</span></code>, which similarly cannot terminate the current loop iteration without executing the necessary <code class="docutils literal notranslate"><span class="pre">finally</span></code> blocks. (This is <em>not</em> the case with <code class="docutils literal notranslate"><span class="pre">yield</span></code> however, since it does not transfer control out of the block in the same way.) To handle this, nested <code class="docutils literal notranslate"><span class="pre">try</span></code>-<code class="docutils literal notranslate"><span class="pre">except</span></code>-<code class="docutils literal notranslate"><span class="pre">finally</span></code> statements share a “state” that can be one of the following:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">NOT_THROWN</span></code>: Nothing unusual has happened; execute as normal</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">THROWN</span></code>: An exception has been thrown and not caught; execute <code class="docutils literal notranslate"><span class="pre">finally</span></code> then resume exception</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CAUGHT</span></code>: An exception has been caught here; execute handler then <code class="docutils literal notranslate"><span class="pre">finally</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RETURN</span></code>: A <code class="docutils literal notranslate"><span class="pre">return</span></code> statement was executed; store return value for later, execute all necessary <code class="docutils literal notranslate"><span class="pre">finally</span></code> blocks, and only then return</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BREAK</span></code>: A <code class="docutils literal notranslate"><span class="pre">break</span></code> statement was executed; execute all necessary <code class="docutils literal notranslate"><span class="pre">finally</span></code> blocks within the enclosing loop, and only then break</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CONTINUE</span></code>: A <code class="docutils literal notranslate"><span class="pre">continue</span></code> statement was executed; execute all necessary <code class="docutils literal notranslate"><span class="pre">finally</span></code> blocks within the enclosing, and only then continue</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">finally</span></code> blocks use this state to determine what block to branch to next. Note that “depth” takes precedence here: if the depth is positive then the next <code class="docutils literal notranslate"><span class="pre">finally</span></code> block must be executed before considering the state.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="api/doxygen.html" class="btn btn-neutral float-right" title="Compiler API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="cookbook.html" class="btn btn-neutral float-left" title="Cookbook" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ac0b63b01b424f9b9096808d32c0c3224:
+
+Function exec_module
+====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: exec_module(SeqModule *, char **, size_t, char, char **)

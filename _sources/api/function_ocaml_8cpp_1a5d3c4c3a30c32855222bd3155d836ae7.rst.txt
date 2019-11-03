@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a5d3c4c3a30c32855222bd3155d836ae7:
+
+Function set_func_prefetch
+==========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_func_prefetch(Func *, Prefetch *)

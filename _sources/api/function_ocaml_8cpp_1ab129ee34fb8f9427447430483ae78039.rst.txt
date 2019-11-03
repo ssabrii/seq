@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ab129ee34fb8f9427447430483ae78039:
+
+Function jit_func
+=================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: jit_func(void *, Func *, char **)

@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a9396cfc83c1e1e40e2da9c8abe2833d3:
+
+Function resolve_types
+======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: resolve_types(Stmt *)

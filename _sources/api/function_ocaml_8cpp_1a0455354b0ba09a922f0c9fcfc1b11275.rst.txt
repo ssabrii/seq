@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a0455354b0ba09a922f0c9fcfc1b11275:
+
+Function construct_expr
+=======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: construct_expr(types::Type *, Expr **, size_t)

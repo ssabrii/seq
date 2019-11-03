@@ -1,0 +1,13 @@
+.. _exhale_function_num_8cpp_1ac4ac777bf2c6496f91fc8c60c237a208:
+
+Function getByteCompTable
+=========================
+
+- Defined in :ref:`file_compiler_types_num.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: getByteCompTable(Module *, const std::string&)

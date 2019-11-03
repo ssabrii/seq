@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a45664268a9334bd5bc83ab1adc87d064:
+
+Function set_ref_generics
+=========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_ref_generics(types::RefType *, int)

@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ab59e0bbd9b1265d561e134f927e2f3f3:
+
+Function get_else_block
+=======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get_else_block(If *)

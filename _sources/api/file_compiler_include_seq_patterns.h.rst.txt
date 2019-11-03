@@ -1,0 +1,93 @@
+
+.. _file_compiler_include_seq_patterns.h:
+
+File patterns.h
+===============
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_include_seq>` (``compiler/include/seq``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/include/seq/patterns.h``)
+------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_include_seq_patterns.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``common.h`` (:ref:`file_compiler_include_seq_common.h`)
+
+- ``func.h`` (:ref:`file_compiler_include_seq_func.h`)
+
+- ``types.h`` (:ref:`file_compiler_include_seq_types.h`)
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_compiler_include_seq_expr.h`
+
+- :ref:`file_compiler_include_seq_lang.h`
+
+- :ref:`file_compiler_include_seq_seq.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_seq`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classseq_1_1ArrayPattern`
+
+- :ref:`exhale_class_classseq_1_1BoolPattern`
+
+- :ref:`exhale_class_classseq_1_1BoundPattern`
+
+- :ref:`exhale_class_classseq_1_1GuardedPattern`
+
+- :ref:`exhale_class_classseq_1_1IntPattern`
+
+- :ref:`exhale_class_classseq_1_1OptPattern`
+
+- :ref:`exhale_class_classseq_1_1OrPattern`
+
+- :ref:`exhale_class_classseq_1_1Pattern`
+
+- :ref:`exhale_class_classseq_1_1RangePattern`
+
+- :ref:`exhale_class_classseq_1_1RecordPattern`
+
+- :ref:`exhale_class_classseq_1_1SeqPattern`
+
+- :ref:`exhale_class_classseq_1_1StarPattern`
+
+- :ref:`exhale_class_classseq_1_1StrPattern`
+
+- :ref:`exhale_class_classseq_1_1Wildcard`
+

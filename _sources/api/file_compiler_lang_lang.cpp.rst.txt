@@ -1,0 +1,50 @@
+
+.. _file_compiler_lang_lang.cpp:
+
+File lang.cpp
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_lang>` (``compiler/lang``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/lang/lang.cpp``)
+---------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_lang_lang.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``seq/seq.h`` (:ref:`file_compiler_include_seq_seq.h`)
+
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_lang_8cpp_1ae361adafda45a0dcc3078023c1eb7291`
+
+- :ref:`exhale_function_lang_8cpp_1a2ef869423e290da419aa81e7a89ea08d`
+
+- :ref:`exhale_function_lang_8cpp_1ab2bbc60b9c1004228b1e3a9c4656e730`
+
+- :ref:`exhale_function_lang_8cpp_1a02b29413a8567314db7c25a1caf878ce`
+

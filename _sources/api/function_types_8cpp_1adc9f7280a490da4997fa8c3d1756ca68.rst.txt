@@ -1,0 +1,13 @@
+.. _exhale_function_types_8cpp_1adc9f7280a490da4997fa8c3d1756ca68:
+
+Function isMagic
+================
+
+- Defined in :ref:`file_compiler_types_types.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: isMagic(const std::string&)

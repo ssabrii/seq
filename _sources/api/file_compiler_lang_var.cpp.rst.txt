@@ -1,0 +1,51 @@
+
+.. _file_compiler_lang_var.cpp:
+
+File var.cpp
+============
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_lang>` (``compiler/lang``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/lang/var.cpp``)
+--------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_lang_var.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``seq/seq.h`` (:ref:`file_compiler_include_seq_seq.h`)
+
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_var_8cpp_1add366c04045114dc0cd8b5bb4abbaf7a`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_var_8cpp_1a4e0fe24f6c557a7fe32f089d6b75be38`
+

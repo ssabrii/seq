@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a72318fa0506c398c2de3ed8674763e16:
+
+Function for_stmt
+=================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: for_stmt(Expr *)

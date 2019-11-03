@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ad40733293fc248e5e3715eaa2a5e7355:
+
+Function int_type
+=================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: int_type()

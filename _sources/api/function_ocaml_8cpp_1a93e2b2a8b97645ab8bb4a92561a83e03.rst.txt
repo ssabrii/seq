@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a93e2b2a8b97645ab8bb4a92561a83e03:
+
+Function array_type
+===================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: array_type(types::Type *)

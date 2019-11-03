@@ -1,0 +1,63 @@
+
+.. _file_compiler_util_jit.cpp:
+
+File jit.cpp
+============
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_util>` (``compiler/util``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/util/jit.cpp``)
+--------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_util_jit.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``caml/alloc.h``
+
+- ``caml/callback.h``
+
+- ``caml/mlvalues.h``
+
+- ``stdio.h``
+
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_jit_8cpp_1a2cdc3cbaef443d1763809af1aef2128c`
+
+- :ref:`exhale_function_jit_8cpp_1ad3cc29b944ee72b5372bf27317962d2b`
+
+- :ref:`exhale_function_jit_8cpp_1ab22f3e2484ee2e0f42c0f03d786bd9b0`
+
+- :ref:`exhale_function_jit_8cpp_1a59516bfcfa8e9d9498b720413ce0b4c0`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_jit_8cpp_1af039cc21a3132fdb4f8d4a9c57ac0250`
+

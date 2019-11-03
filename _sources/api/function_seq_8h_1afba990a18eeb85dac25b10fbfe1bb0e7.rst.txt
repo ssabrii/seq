@@ -1,0 +1,13 @@
+.. _exhale_function_seq_8h_1afba990a18eeb85dac25b10fbfe1bb0e7:
+
+Function seq::compilationWarning
+================================
+
+- Defined in :ref:`file_compiler_include_seq_seq.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::compilationWarning(const std::string&, const std::string&, int, int)

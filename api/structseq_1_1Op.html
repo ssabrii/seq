@@ -1,0 +1,406 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Struct Op &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Struct SrcInfo" href="structseq_1_1SrcInfo.html" />
+    <link rel="prev" title="Struct MagicOverload" href="structseq_1_1MagicOverload.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Compiler Internals</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="doxygen.html">Compiler API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="doxygen.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doxygen.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="doxygen.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="doxygen.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structDrainState.html">Struct DrainState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1Block.html">Struct Block</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1MagicMethod.html">Struct MagicMethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1MagicOverload.html">Struct MagicOverload</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Struct Op</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1SrcInfo.html">Struct SrcInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1SrcObject.html">Struct SrcObject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1types_1_1ExtInfo.html">Struct ExtInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1types_1_1VTable.html">Struct VTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq__srcinfo.html">Struct seq_srcinfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoehmGCMemoryManager.html">Class BoehmGCMemoryManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArrayContainsExpr.html">Class ArrayContainsExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArrayExpr.html">Class ArrayExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArrayLookupExpr.html">Class ArrayLookupExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArrayPattern.html">Class ArrayPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArraySliceExpr.html">Class ArraySliceExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Assert.html">Class Assert</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Assign.html">Class Assign</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1AssignIndex.html">Class AssignIndex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1AssignMember.html">Class AssignMember</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1AtomicExpr.html">Class AtomicExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BaseFunc.html">Class BaseFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BaseFuncLite.html">Class BaseFuncLite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BlankExpr.html">Class BlankExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BoolExpr.html">Class BoolExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BoolPattern.html">Class BoolPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BOpExpr.html">Class BOpExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BoundPattern.html">Class BoundPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Break.html">Class Break</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1CallExpr.html">Class CallExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1CondExpr.html">Class CondExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ConstructExpr.html">Class ConstructExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Continue.html">Class Continue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1DefaultExpr.html">Class DefaultExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Del.html">Class Del</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1DelIndex.html">Class DelIndex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1DictCompExpr.html">Class DictCompExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1DictExpr.html">Class DictExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1exc_1_1SeqException.html">Class SeqException</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Expr.html">Class Expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ExprStmt.html">Class ExprStmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1FloatExpr.html">Class FloatExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1For.html">Class For</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Func.html">Class Func</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1FuncExpr.html">Class FuncExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1FuncStmt.html">Class FuncStmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Generic.html">Class Generic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1GenExpr.html">Class GenExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1GetElemExpr.html">Class GetElemExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1GetStaticElemExpr.html">Class GetStaticElemExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1GuardedPattern.html">Class GuardedPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1If.html">Class If</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1IntExpr.html">Class IntExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1IntPattern.html">Class IntPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1IsExpr.html">Class IsExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ListCompExpr.html">Class ListCompExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ListExpr.html">Class ListExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Match.html">Class Match</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1MatchExpr.html">Class MatchExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1MethodExpr.html">Class MethodExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1NoneExpr.html">Class NoneExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1OptExpr.html">Class OptExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1OptPattern.html">Class OptPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1OrPattern.html">Class OrPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1PartialCallExpr.html">Class PartialCallExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Pattern.html">Class Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1PipeExpr.html">Class PipeExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Prefetch.html">Class Prefetch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Print.html">Class Print</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1RangePattern.html">Class RangePattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1RCache.html">Template Class RCache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1RecordExpr.html">Class RecordExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1RecordPattern.html">Class RecordPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Return.html">Class Return</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SeqExpr.html">Class SeqExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SeqModule.html">Class SeqModule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SeqPattern.html">Class SeqPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SetCompExpr.html">Class SetCompExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SetExpr.html">Class SetExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1StarPattern.html">Class StarPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Stmt.html">Class Stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1StrExpr.html">Class StrExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1StrPattern.html">Class StrPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Throw.html">Class Throw</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1TryCatch.html">Class TryCatch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1TypeExpr.html">Class TypeExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1TypeOfExpr.html">Class TypeOfExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1AnyType.html">Class AnyType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1ArrayType.html">Class ArrayType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1BaseSeqType.html">Class BaseSeqType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1BaseType.html">Class BaseType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1BoolType.html">Class BoolType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1ByteType.html">Class ByteType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1FloatType.html">Class FloatType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1FuncType.html">Class FuncType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1GenericType.html">Class GenericType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1GenType.html">Class GenType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1IntNType.html">Class IntNType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1IntType.html">Class IntType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1KMer.html">Class KMer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1MethodType.html">Class MethodType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1NumberType.html">Class NumberType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1OptionalType.html">Class OptionalType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1PartialFuncType.html">Class PartialFuncType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1PtrType.html">Class PtrType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1RecordType.html">Class RecordType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1RefType.html">Class RefType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1SeqType.html">Class SeqType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1StrType.html">Class StrType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1Type.html">Class Type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1VoidType.html">Class VoidType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1UOpExpr.html">Class UOpExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ValueExpr.html">Class ValueExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Var.html">Class Var</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1VarExpr.html">Class VarExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1VarPtrExpr.html">Class VarPtrExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1VarStmt.html">Class VarStmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1While.html">Class While</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Wildcard.html">Class Wildcard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Yield.html">Class Yield</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="doxygen.html">Compiler API</a> &raquo;</li>
+        
+      <li>Struct Op</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/structseq_1_1Op.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="struct-op">
+<span id="exhale-struct-structseq-1-1op"></span><h1>Struct Op<a class="headerlink" href="#struct-op" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_compiler_include_seq_ops.h.html#file-compiler-include-seq-ops-h"><span class="std std-ref">File ops.h</span></a></p></li>
+</ul>
+<div class="section" id="struct-documentation">
+<h2>Struct Documentation<a class="headerlink" href="#struct-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv4N3seq2OpE">
+<span id="_CPPv3N3seq2OpE"></span><span id="_CPPv2N3seq2OpE"></span><span id="seq::Op"></span><span class="target" id="structseq_1_1Op"></span><em class="property">struct </em><code class="sig-name descname">Op</code><a class="headerlink" href="#_CPPv4N3seq2OpE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4N3seq2Op2OpENSt6stringEbNSt6stringENSt6stringENSt6stringE">
+<span id="_CPPv3N3seq2Op2OpENSt6stringEbNSt6stringENSt6stringENSt6stringE"></span><span id="_CPPv2N3seq2Op2OpENSt6stringEbNSt6stringENSt6stringENSt6stringE"></span><span id="seq::Op::Op__ss.b.ss.ss.ss"></span><span class="target" id="structseq_1_1Op_1aa45038a7833b36b6f757f8411297b6d8"></span><code class="sig-name descname">Op</code><span class="sig-paren">(</span>std::string <em>symbol</em>, bool <em>binary</em>, std::string <em>magic</em> = &quot;&quot;, std::string <em>magicReflected</em> = &quot;&quot;, std::string <em>magicInPlace</em> = &quot;&quot;<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3seq2Op2OpENSt6stringEbNSt6stringENSt6stringENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4NK3seq2OpeqERK2Op">
+<span id="_CPPv3NK3seq2OpeqERK2Op"></span><span id="_CPPv2NK3seq2OpeqERK2Op"></span><span id="seq::Op::eq-operator__OpCRC"></span><span class="target" id="structseq_1_1Op_1addebe504c9d4b33fb6be84dfae431cd5"></span>bool <code class="sig-name descname">operator==</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N3seq2OpE" title="seq::Op">Op</a> &amp;<em>op</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK3seq2OpeqERK2Op" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv4N3seq2Op6symbolE">
+<span id="_CPPv3N3seq2Op6symbolE"></span><span id="_CPPv2N3seq2Op6symbolE"></span><span id="seq::Op::symbol__ss"></span><span class="target" id="structseq_1_1Op_1af65aff36750a16cc696d14675a97bcf5"></span>std::string <code class="sig-name descname">symbol</code><a class="headerlink" href="#_CPPv4N3seq2Op6symbolE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N3seq2Op6binaryE">
+<span id="_CPPv3N3seq2Op6binaryE"></span><span id="_CPPv2N3seq2Op6binaryE"></span><span id="seq::Op::binary__b"></span><span class="target" id="structseq_1_1Op_1ab8100404bd0cea08b7188b87b524f0df"></span>bool <code class="sig-name descname">binary</code><a class="headerlink" href="#_CPPv4N3seq2Op6binaryE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N3seq2Op5magicE">
+<span id="_CPPv3N3seq2Op5magicE"></span><span id="_CPPv2N3seq2Op5magicE"></span><span id="seq::Op::magic__ss"></span><span class="target" id="structseq_1_1Op_1abe667fdfe5dd38c4b773b9b006c10b63"></span>std::string <code class="sig-name descname">magic</code><a class="headerlink" href="#_CPPv4N3seq2Op5magicE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N3seq2Op14magicReflectedE">
+<span id="_CPPv3N3seq2Op14magicReflectedE"></span><span id="_CPPv2N3seq2Op14magicReflectedE"></span><span id="seq::Op::magicReflected__ss"></span><span class="target" id="structseq_1_1Op_1a52691f5cefa59a651ef8b2317fe8d554"></span>std::string <code class="sig-name descname">magicReflected</code><a class="headerlink" href="#_CPPv4N3seq2Op14magicReflectedE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="member">
+<dt id="_CPPv4N3seq2Op12magicInPlaceE">
+<span id="_CPPv3N3seq2Op12magicInPlaceE"></span><span id="_CPPv2N3seq2Op12magicInPlaceE"></span><span id="seq::Op::magicInPlace__ss"></span><span class="target" id="structseq_1_1Op_1ae35d9d5faa1c2973f5258dc5450b56be"></span>std::string <code class="sig-name descname">magicInPlace</code><a class="headerlink" href="#_CPPv4N3seq2Op12magicInPlaceE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="structseq_1_1SrcInfo.html" class="btn btn-neutral float-right" title="Struct SrcInfo" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="structseq_1_1MagicOverload.html" class="btn btn-neutral float-left" title="Struct MagicOverload" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

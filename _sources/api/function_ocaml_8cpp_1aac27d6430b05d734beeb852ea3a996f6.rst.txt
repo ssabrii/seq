@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1aac27d6430b05d734beeb852ea3a996f6:
+
+Function if_stmt
+================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: if_stmt()

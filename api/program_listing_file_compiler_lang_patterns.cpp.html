@@ -1,0 +1,958 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Program Listing for File patterns.cpp &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Compiler Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doxygen.html">Compiler API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Program Listing for File patterns.cpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/program_listing_file_compiler_lang_patterns.cpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-for-file-patterns-cpp">
+<span id="program-listing-file-compiler-lang-patterns-cpp"></span><h1>Program Listing for File patterns.cpp<a class="headerlink" href="#program-listing-for-file-patterns-cpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_compiler_lang_patterns.cpp.html#file-compiler-lang-patterns-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">compiler/lang/patterns.cpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;seq/seq.h&quot;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">seq</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">llvm</span><span class="p">;</span>
+
+<span class="n">Pattern</span><span class="o">::</span><span class="n">Pattern</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">)</span> <span class="o">:</span> <span class="n">SrcObject</span><span class="p">(),</span> <span class="n">type</span><span class="p">(</span><span class="n">type</span><span class="p">),</span> <span class="n">tc</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="kt">void</span> <span class="n">Pattern</span><span class="o">::</span><span class="n">setTryCatch</span><span class="p">(</span><span class="n">TryCatch</span> <span class="o">*</span><span class="n">tc</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">tc</span> <span class="o">=</span> <span class="n">tc</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">TryCatch</span> <span class="o">*</span><span class="n">Pattern</span><span class="o">::</span><span class="n">getTryCatch</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">tc</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">Pattern</span><span class="o">::</span><span class="n">resolveTypes</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">types</span><span class="o">::</span><span class="n">is</span><span class="p">(</span><span class="n">type</span><span class="p">,</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">type</span><span class="p">))</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;pattern type mismatch: expected &quot;</span> <span class="o">+</span>
+                                <span class="k">this</span><span class="o">-&gt;</span><span class="n">type</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; but got &quot;</span> <span class="o">+</span>
+                                <span class="n">type</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">(),</span>
+                            <span class="n">getSrcInfo</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">Pattern</span><span class="o">::</span><span class="n">isCatchAll</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">Pattern</span> <span class="o">*</span><span class="n">Pattern</span><span class="o">::</span><span class="n">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="k">this</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">Wildcard</span><span class="o">::</span><span class="n">Wildcard</span><span class="p">()</span> <span class="o">:</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Any</span><span class="p">),</span> <span class="n">var</span><span class="p">(</span><span class="k">new</span> <span class="n">Var</span><span class="p">())</span> <span class="p">{}</span>
+
+<span class="kt">void</span> <span class="n">Wildcard</span><span class="o">::</span><span class="n">resolveTypes</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">)</span> <span class="p">{</span> <span class="n">var</span><span class="o">-&gt;</span><span class="n">setType</span><span class="p">(</span><span class="n">type</span><span class="p">);</span> <span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">Wildcard</span><span class="o">::</span><span class="n">isCatchAll</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="nb">true</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">Wildcard</span> <span class="o">*</span><span class="n">Wildcard</span><span class="o">::</span><span class="n">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">ref</span><span class="o">-&gt;</span><span class="n">seenClone</span><span class="p">(</span><span class="k">this</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">Wildcard</span> <span class="o">*</span><span class="p">)</span><span class="n">ref</span><span class="o">-&gt;</span><span class="n">getClone</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+
+  <span class="k">auto</span> <span class="o">*</span><span class="n">x</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Wildcard</span><span class="p">();</span>
+  <span class="n">ref</span><span class="o">-&gt;</span><span class="n">addClone</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+  <span class="k">delete</span> <span class="n">x</span><span class="o">-&gt;</span><span class="n">var</span><span class="p">;</span>
+  <span class="n">x</span><span class="o">-&gt;</span><span class="n">var</span> <span class="o">=</span> <span class="n">var</span><span class="o">-&gt;</span><span class="n">clone</span><span class="p">(</span><span class="n">ref</span><span class="p">);</span>
+  <span class="n">SEQ_RETURN_CLONE</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Var</span> <span class="o">*</span><span class="n">Wildcard</span><span class="o">::</span><span class="n">getVar</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">var</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">Wildcard</span><span class="o">::</span><span class="n">codegen</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span>
+                         <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+  <span class="n">var</span><span class="o">-&gt;</span><span class="n">store</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">BoundPattern</span><span class="o">::</span><span class="n">BoundPattern</span><span class="p">(</span><span class="n">Pattern</span> <span class="o">*</span><span class="n">pattern</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Any</span><span class="p">),</span> <span class="n">var</span><span class="p">(</span><span class="k">new</span> <span class="n">Var</span><span class="p">()),</span> <span class="n">pattern</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="kt">void</span> <span class="n">BoundPattern</span><span class="o">::</span><span class="n">resolveTypes</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">var</span><span class="o">-&gt;</span><span class="n">setType</span><span class="p">(</span><span class="n">type</span><span class="p">);</span>
+  <span class="n">pattern</span><span class="o">-&gt;</span><span class="n">resolveTypes</span><span class="p">(</span><span class="n">type</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">BoundPattern</span><span class="o">::</span><span class="n">isCatchAll</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">pattern</span><span class="o">-&gt;</span><span class="n">isCatchAll</span><span class="p">();</span> <span class="p">}</span>
+
+<span class="n">BoundPattern</span> <span class="o">*</span><span class="n">BoundPattern</span><span class="o">::</span><span class="n">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">ref</span><span class="o">-&gt;</span><span class="n">seenClone</span><span class="p">(</span><span class="k">this</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">BoundPattern</span> <span class="o">*</span><span class="p">)</span><span class="n">ref</span><span class="o">-&gt;</span><span class="n">getClone</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+
+  <span class="k">auto</span> <span class="o">*</span><span class="n">x</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BoundPattern</span><span class="p">(</span><span class="n">pattern</span><span class="o">-&gt;</span><span class="n">clone</span><span class="p">(</span><span class="n">ref</span><span class="p">));</span>
+  <span class="n">ref</span><span class="o">-&gt;</span><span class="n">addClone</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+  <span class="k">delete</span> <span class="n">x</span><span class="o">-&gt;</span><span class="n">var</span><span class="p">;</span>
+  <span class="n">x</span><span class="o">-&gt;</span><span class="n">var</span> <span class="o">=</span> <span class="n">var</span><span class="o">-&gt;</span><span class="n">clone</span><span class="p">(</span><span class="n">ref</span><span class="p">);</span>
+  <span class="n">SEQ_RETURN_CLONE</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Var</span> <span class="o">*</span><span class="n">BoundPattern</span><span class="o">::</span><span class="n">getVar</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">var</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">BoundPattern</span><span class="o">::</span><span class="n">codegen</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span>
+                             <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">var</span><span class="o">-&gt;</span><span class="n">store</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">pattern</span><span class="o">-&gt;</span><span class="n">codegen</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">StarPattern</span><span class="o">::</span><span class="n">StarPattern</span><span class="p">()</span> <span class="o">:</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Any</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="kt">void</span> <span class="n">StarPattern</span><span class="o">::</span><span class="n">resolveTypes</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">StarPattern</span><span class="o">::</span><span class="n">codegen</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span>
+                            <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">assert</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">IntPattern</span><span class="o">::</span><span class="n">IntPattern</span><span class="p">(</span><span class="n">seq_int_t</span> <span class="n">val</span><span class="p">)</span> <span class="o">:</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Int</span><span class="p">),</span> <span class="n">val</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="n">BoolPattern</span><span class="o">::</span><span class="n">BoolPattern</span><span class="p">(</span><span class="kt">bool</span> <span class="n">val</span><span class="p">)</span> <span class="o">:</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Bool</span><span class="p">),</span> <span class="n">val</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="n">StrPattern</span><span class="o">::</span><span class="n">StrPattern</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">val</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Str</span><span class="p">),</span> <span class="n">val</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">val</span><span class="p">))</span> <span class="p">{}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">IntPattern</span><span class="o">::</span><span class="n">codegen</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span>
+                           <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+  <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">pat</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Int</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">),</span>
+                                <span class="p">(</span><span class="kt">uint64_t</span><span class="p">)</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpEQ</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">pat</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">BoolPattern</span><span class="o">::</span><span class="n">codegen</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span>
+                            <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+  <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">pat</span> <span class="o">=</span>
+      <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Bool</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="p">(</span><span class="kt">uint64_t</span><span class="p">)</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateFCmpOEQ</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">pat</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">StrPattern</span><span class="o">::</span><span class="n">codegen</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span>
+                           <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">pat</span> <span class="o">=</span> <span class="n">StrExpr</span><span class="p">(</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">).</span><span class="n">codegen</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">b</span> <span class="o">=</span>
+      <span class="n">types</span><span class="o">::</span><span class="n">Str</span><span class="o">-&gt;</span><span class="n">callMagic</span><span class="p">(</span><span class="s">&quot;__eq__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">type</span><span class="p">},</span> <span class="n">pat</span><span class="p">,</span> <span class="p">{</span><span class="n">val</span><span class="p">},</span> <span class="n">block</span><span class="p">,</span> <span class="n">getTryCatch</span><span class="p">());</span>
+  <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateTrunc</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">RecordPattern</span><span class="o">::</span><span class="n">RecordPattern</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Pattern</span> <span class="o">*&gt;</span> <span class="n">patterns</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Any</span><span class="p">),</span> <span class="n">patterns</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">patterns</span><span class="p">))</span> <span class="p">{}</span>
+
+<span class="kt">void</span> <span class="n">RecordPattern</span><span class="o">::</span><span class="n">resolveTypes</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">RecordType</span> <span class="o">*</span><span class="n">rec</span> <span class="o">=</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">asRec</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">rec</span><span class="p">)</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;cannot match record pattern with non-record value&quot;</span><span class="p">,</span>
+                            <span class="n">getSrcInfo</span><span class="p">());</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">types</span> <span class="o">=</span> <span class="n">rec</span><span class="o">-&gt;</span><span class="n">getTypes</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">!=</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">())</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;record element count mismatch in pattern&quot;</span><span class="p">,</span>
+                            <span class="n">getSrcInfo</span><span class="p">());</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">types</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="n">patterns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">resolveTypes</span><span class="p">(</span><span class="n">types</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">RecordPattern</span><span class="o">::</span><span class="n">codegen</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span>
+                              <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">m</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">sub</span> <span class="o">=</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">memb</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">subRes</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">codegen</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">membType</span><span class="p">(</span><span class="n">m</span><span class="p">),</span> <span class="n">sub</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+    <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">subRes</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">RecordPattern</span><span class="o">::</span><span class="n">isCatchAll</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">*</span><span class="nl">pattern</span> <span class="p">:</span> <span class="n">patterns</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">pattern</span><span class="o">-&gt;</span><span class="n">isCatchAll</span><span class="p">())</span>
+      <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">RecordPattern</span> <span class="o">*</span><span class="n">RecordPattern</span><span class="o">::</span><span class="n">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Pattern</span> <span class="o">*&gt;</span> <span class="n">patternsCloned</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">*</span><span class="nl">elem</span> <span class="p">:</span> <span class="n">patterns</span><span class="p">)</span>
+    <span class="n">patternsCloned</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">elem</span><span class="o">-&gt;</span><span class="n">clone</span><span class="p">(</span><span class="n">ref</span><span class="p">));</span>
+  <span class="n">SEQ_RETURN_CLONE</span><span class="p">(</span><span class="k">new</span> <span class="n">RecordPattern</span><span class="p">(</span><span class="n">patternsCloned</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">ArrayPattern</span><span class="o">::</span><span class="n">ArrayPattern</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Pattern</span> <span class="o">*&gt;</span> <span class="n">patterns</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Any</span><span class="p">),</span> <span class="n">patterns</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">patterns</span><span class="p">))</span> <span class="p">{}</span>
+
+<span class="kt">void</span> <span class="n">ArrayPattern</span><span class="o">::</span><span class="n">resolveTypes</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">type</span><span class="o">-&gt;</span><span class="n">isGeneric</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Array</span><span class="p">))</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;cannot match array pattern with non-array value&quot;</span><span class="p">,</span>
+                            <span class="n">getSrcInfo</span><span class="p">());</span>
+
+  <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">baseType</span> <span class="o">=</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">getBaseType</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">*</span><span class="nl">pattern</span> <span class="p">:</span> <span class="n">patterns</span><span class="p">)</span>
+    <span class="n">pattern</span><span class="o">-&gt;</span><span class="n">resolveTypes</span><span class="p">(</span><span class="n">baseType</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">ArrayPattern</span><span class="o">::</span><span class="n">codegen</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span>
+                             <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+
+  <span class="kt">bool</span> <span class="n">hasStar</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="kt">unsigned</span> <span class="n">star</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">StarPattern</span> <span class="o">*&gt;</span><span class="p">(</span><span class="n">patterns</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="p">{</span>
+      <span class="n">assert</span><span class="p">(</span><span class="o">!</span><span class="n">hasStar</span><span class="p">);</span>
+      <span class="n">star</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+      <span class="n">hasStar</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="n">Value</span> <span class="o">*</span><span class="n">len</span> <span class="o">=</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">memb</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="s">&quot;len&quot;</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">lenMatch</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+  <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">startBlock</span> <span class="o">=</span> <span class="n">block</span><span class="p">;</span>
+  <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">hasStar</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">minLen</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">lenMatch</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpSGE</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="n">minLen</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">expectedLen</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+    <span class="n">lenMatch</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpEQ</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="n">expectedLen</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">block</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span>
+      <span class="n">context</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+      <span class="n">block</span><span class="o">-&gt;</span><span class="n">getParent</span><span class="p">());</span> <span class="c1">// block for checking array contents</span>
+  <span class="n">BranchInst</span> <span class="o">*</span><span class="n">branch</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateCondBr</span><span class="p">(</span><span class="n">lenMatch</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+
+  <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">hasStar</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">star</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">idx</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">i</span><span class="p">);</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">sub</span> <span class="o">=</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">callMagic</span><span class="p">(</span><span class="s">&quot;__getitem__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">types</span><span class="o">::</span><span class="n">Int</span><span class="p">},</span> <span class="n">val</span><span class="p">,</span> <span class="p">{</span><span class="n">idx</span><span class="p">},</span>
+                                   <span class="n">block</span><span class="p">,</span> <span class="n">getTryCatch</span><span class="p">());</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">subRes</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">codegen</span><span class="p">(</span>
+          <span class="n">base</span><span class="p">,</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">magicOut</span><span class="p">(</span><span class="s">&quot;__getitem__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">types</span><span class="o">::</span><span class="n">Int</span><span class="p">}),</span> <span class="n">sub</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+      <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span>
+          <span class="n">block</span><span class="p">);</span> <span class="c1">// recall that pattern codegen can change the block</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">subRes</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="n">star</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">idx</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">i</span><span class="p">);</span>
+      <span class="n">idx</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateAdd</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
+      <span class="n">idx</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateSub</span><span class="p">(</span>
+          <span class="n">idx</span><span class="p">,</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">()));</span>
+
+      <span class="n">Value</span> <span class="o">*</span><span class="n">sub</span> <span class="o">=</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">callMagic</span><span class="p">(</span><span class="s">&quot;__getitem__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">types</span><span class="o">::</span><span class="n">Int</span><span class="p">},</span> <span class="n">val</span><span class="p">,</span> <span class="p">{</span><span class="n">idx</span><span class="p">},</span>
+                                   <span class="n">block</span><span class="p">,</span> <span class="n">getTryCatch</span><span class="p">());</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">subRes</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">codegen</span><span class="p">(</span>
+          <span class="n">base</span><span class="p">,</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">magicOut</span><span class="p">(</span><span class="s">&quot;__getitem__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">types</span><span class="o">::</span><span class="n">Int</span><span class="p">}),</span> <span class="n">sub</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+      <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span>
+          <span class="n">block</span><span class="p">);</span> <span class="c1">// recall that pattern codegen can change the block</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">subRes</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">idx</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">i</span><span class="p">);</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">sub</span> <span class="o">=</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">callMagic</span><span class="p">(</span><span class="s">&quot;__getitem__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">types</span><span class="o">::</span><span class="n">Int</span><span class="p">},</span> <span class="n">val</span><span class="p">,</span> <span class="p">{</span><span class="n">idx</span><span class="p">},</span>
+                                   <span class="n">block</span><span class="p">,</span> <span class="n">getTryCatch</span><span class="p">());</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">subRes</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-&gt;</span><span class="n">codegen</span><span class="p">(</span>
+          <span class="n">base</span><span class="p">,</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">magicOut</span><span class="p">(</span><span class="s">&quot;__getitem__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">types</span><span class="o">::</span><span class="n">Int</span><span class="p">}),</span> <span class="n">sub</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+      <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span>
+          <span class="n">block</span><span class="p">);</span> <span class="c1">// recall that pattern codegen can change the block</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">subRes</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">checkBlock</span> <span class="o">=</span> <span class="n">block</span><span class="p">;</span>
+
+  <span class="n">block</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">block</span><span class="o">-&gt;</span><span class="n">getParent</span><span class="p">());</span> <span class="c1">// final result block</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">CreateBr</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">branch</span><span class="o">-&gt;</span><span class="n">setSuccessor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+
+  <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">PHINode</span> <span class="o">*</span><span class="n">resultFinal</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreatePHI</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">2</span><span class="p">);</span>
+  <span class="n">resultFinal</span><span class="o">-&gt;</span><span class="n">addIncoming</span><span class="p">(</span><span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span>
+                           <span class="n">startBlock</span><span class="p">);</span> <span class="c1">// length didn&#39;t match</span>
+  <span class="n">resultFinal</span><span class="o">-&gt;</span><span class="n">addIncoming</span><span class="p">(</span><span class="n">result</span><span class="p">,</span>
+                           <span class="n">checkBlock</span><span class="p">);</span> <span class="c1">// result of checking array elements</span>
+
+  <span class="k">return</span> <span class="n">resultFinal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">ArrayPattern</span> <span class="o">*</span><span class="n">ArrayPattern</span><span class="o">::</span><span class="n">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Pattern</span> <span class="o">*&gt;</span> <span class="n">patternsCloned</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">*</span><span class="nl">elem</span> <span class="p">:</span> <span class="n">patterns</span><span class="p">)</span>
+    <span class="n">patternsCloned</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">elem</span><span class="o">-&gt;</span><span class="n">clone</span><span class="p">(</span><span class="n">ref</span><span class="p">));</span>
+  <span class="n">SEQ_RETURN_CLONE</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayPattern</span><span class="p">(</span><span class="n">patternsCloned</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">SeqPattern</span><span class="o">::</span><span class="n">SeqPattern</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">pattern</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Any</span><span class="p">),</span> <span class="n">pattern</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">pattern</span><span class="p">))</span> <span class="p">{}</span>
+
+<span class="kt">void</span> <span class="n">SeqPattern</span><span class="o">::</span><span class="n">resolveTypes</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">type</span><span class="o">-&gt;</span><span class="n">is</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Seq</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">type</span><span class="o">-&gt;</span><span class="n">asKMer</span><span class="p">())</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span>
+        <span class="s">&quot;sequence pattern must be used with sequence or k-mer type&quot;</span><span class="p">,</span>
+        <span class="n">getSrcInfo</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="n">Value</span> <span class="o">*</span><span class="n">codegenSeqMatchForSeq</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">patterns</span><span class="p">,</span>
+                                    <span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span>
+                                    <span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span> <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kt">unsigned</span> <span class="n">star</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">hasStar</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">patterns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;\0&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">star</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+      <span class="n">hasStar</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">memb</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="s">&quot;ptr&quot;</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">len</span> <span class="o">=</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">memb</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="s">&quot;len&quot;</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">lenMatch</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+  <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">startBlock</span> <span class="o">=</span> <span class="n">block</span><span class="p">;</span>
+  <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+
+  <span class="c1">// check lengths:</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">hasStar</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">minLen</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">lenMatch</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpSGE</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="n">minLen</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">expectedLen</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+    <span class="n">lenMatch</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpEQ</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="n">expectedLen</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">block</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span>
+      <span class="n">context</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+      <span class="n">block</span><span class="o">-&gt;</span><span class="n">getParent</span><span class="p">());</span> <span class="c1">// block for checking array contents</span>
+  <span class="n">BranchInst</span> <span class="o">*</span><span class="n">branch</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateCondBr</span><span class="p">(</span><span class="n">lenMatch</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+
+  <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">hasStar</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">star</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">patterns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;_&#39;</span><span class="p">)</span>
+        <span class="k">continue</span><span class="p">;</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">idx</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">i</span><span class="p">);</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">sub</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateLoad</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">CreateGEP</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="n">idx</span><span class="p">));</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">c</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt8Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span>
+                                  <span class="p">(</span><span class="kt">uint64_t</span><span class="p">)</span><span class="n">patterns</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">subRes</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpEQ</span><span class="p">(</span><span class="n">sub</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+      <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span>
+          <span class="n">block</span><span class="p">);</span> <span class="c1">// recall that pattern codegen can change the block</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">subRes</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="n">star</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">patterns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;_&#39;</span><span class="p">)</span>
+        <span class="k">continue</span><span class="p">;</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">idx</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">i</span><span class="p">);</span>
+      <span class="n">idx</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateAdd</span><span class="p">(</span><span class="n">idx</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
+      <span class="n">idx</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateSub</span><span class="p">(</span>
+          <span class="n">idx</span><span class="p">,</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">()));</span>
+
+      <span class="n">Value</span> <span class="o">*</span><span class="n">sub</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateLoad</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">CreateGEP</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="n">idx</span><span class="p">));</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">c</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt8Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span>
+                                  <span class="p">(</span><span class="kt">uint64_t</span><span class="p">)</span><span class="n">patterns</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">subRes</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpEQ</span><span class="p">(</span><span class="n">sub</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+      <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span>
+          <span class="n">block</span><span class="p">);</span> <span class="c1">// recall that pattern codegen can change the block</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">subRes</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">patterns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;_&#39;</span><span class="p">)</span>
+        <span class="k">continue</span><span class="p">;</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">idx</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">i</span><span class="p">);</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">sub</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateLoad</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">CreateGEP</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="n">idx</span><span class="p">));</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">c</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt8Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span>
+                                  <span class="p">(</span><span class="kt">uint64_t</span><span class="p">)</span><span class="n">patterns</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">subRes</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpEQ</span><span class="p">(</span><span class="n">sub</span><span class="p">,</span> <span class="n">c</span><span class="p">);</span>
+      <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span>
+          <span class="n">block</span><span class="p">);</span> <span class="c1">// recall that pattern codegen can change the block</span>
+      <span class="n">result</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">subRes</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">checkBlock</span> <span class="o">=</span> <span class="n">block</span><span class="p">;</span>
+
+  <span class="n">block</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">block</span><span class="o">-&gt;</span><span class="n">getParent</span><span class="p">());</span> <span class="c1">// final result block</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">CreateBr</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">branch</span><span class="o">-&gt;</span><span class="n">setSuccessor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+
+  <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">PHINode</span> <span class="o">*</span><span class="n">resultFinal</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreatePHI</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">2</span><span class="p">);</span>
+  <span class="n">resultFinal</span><span class="o">-&gt;</span><span class="n">addIncoming</span><span class="p">(</span><span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span>
+                           <span class="n">startBlock</span><span class="p">);</span> <span class="c1">// length didn&#39;t match</span>
+  <span class="n">resultFinal</span><span class="o">-&gt;</span><span class="n">addIncoming</span><span class="p">(</span><span class="n">result</span><span class="p">,</span>
+                           <span class="n">checkBlock</span><span class="p">);</span> <span class="c1">// result of checking array elements</span>
+
+  <span class="k">return</span> <span class="n">resultFinal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="n">Value</span> <span class="o">*</span><span class="n">codegenSeqMatchForKmer</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">patterns</span><span class="p">,</span>
+                                     <span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">KMer</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span>
+                                     <span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span> <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">fail</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">succ</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">patterns</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">fail</span><span class="p">;</span> <span class="c1">// k-mer length must be at least 1</span>
+
+  <span class="k">const</span> <span class="kt">unsigned</span> <span class="n">k</span> <span class="o">=</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">getK</span><span class="p">();</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="o">&gt;</span> <span class="n">wildcardsLeft</span><span class="p">;</span>  <span class="c1">// left of star</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="o">&gt;</span> <span class="n">wildcardsRight</span><span class="p">;</span> <span class="c1">// right of star</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">unsigned</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">wildcards</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">wildcardsLeft</span><span class="p">;</span>
+  <span class="kt">unsigned</span> <span class="n">star</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">hasStar</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">patterns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;\0&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">star</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+      <span class="n">hasStar</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+      <span class="n">wildcards</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">wildcardsRight</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">patterns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;_&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">wildcards</span><span class="o">-&gt;</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">patterns</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;N&#39;</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="n">fail</span><span class="p">;</span> <span class="c1">// k-mers can&#39;t contain N</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="kt">bool</span> <span class="n">hasWildcard</span> <span class="o">=</span> <span class="o">!</span><span class="p">(</span><span class="n">wildcardsLeft</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">wildcardsRight</span><span class="p">.</span><span class="n">empty</span><span class="p">());</span>
+
+  <span class="c1">// check lengths:</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">hasStar</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="kt">unsigned</span> <span class="n">minLen</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">&lt;</span> <span class="n">minLen</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">fail</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="kt">unsigned</span> <span class="n">expectedLen</span> <span class="o">=</span> <span class="n">patterns</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">k</span> <span class="o">!=</span> <span class="n">expectedLen</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">fail</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="n">Type</span> <span class="o">*</span><span class="n">llvmType</span> <span class="o">=</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">hasStar</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">SeqExpr</span> <span class="n">s</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="n">patterns</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">patterns</span><span class="p">.</span><span class="n">end</span><span class="p">()));</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">expectedSeq</span> <span class="o">=</span> <span class="n">s</span><span class="p">.</span><span class="n">codegen</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">expectedKmer</span> <span class="o">=</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">callMagic</span><span class="p">(</span><span class="s">&quot;__init__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">types</span><span class="o">::</span><span class="n">Seq</span><span class="p">},</span> <span class="k">nullptr</span><span class="p">,</span>
+                                          <span class="p">{</span><span class="n">expectedSeq</span><span class="p">},</span> <span class="n">block</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+    <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">hasWildcard</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// just build the k-mer and compare</span>
+      <span class="k">return</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpEQ</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">expectedKmer</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="c1">// similar to above, but zero out wildcard bases with a mask</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">mask</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">llvmType</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="nl">pos</span> <span class="p">:</span> <span class="n">wildcardsLeft</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Value</span> <span class="o">*</span><span class="n">shift</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">llvmType</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+        <span class="n">shift</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateShl</span><span class="p">(</span><span class="n">shift</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">pos</span> <span class="o">-</span> <span class="mi">1</span><span class="p">));</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateOr</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">shift</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="n">mask</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateNot</span><span class="p">(</span><span class="n">mask</span><span class="p">);</span>
+      <span class="k">return</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpEQ</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">mask</span><span class="p">),</span>
+                                  <span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">expectedKmer</span><span class="p">,</span> <span class="n">mask</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">// handle left and right separately</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">leftString</span><span class="p">(</span><span class="n">patterns</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">patterns</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="n">star</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">rightString</span><span class="p">(</span><span class="n">patterns</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span> <span class="o">+</span> <span class="n">star</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">patterns</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+
+    <span class="n">types</span><span class="o">::</span><span class="n">KMer</span> <span class="o">*</span><span class="n">typeLeft</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="n">types</span><span class="o">::</span><span class="n">KMer</span> <span class="o">*</span><span class="n">typeRight</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+
+    <span class="n">Value</span> <span class="o">*</span><span class="n">expectedKmerLeft</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">expectedKmerRight</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">leftString</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+      <span class="n">SeqExpr</span> <span class="n">sLeft</span><span class="p">(</span><span class="n">leftString</span><span class="p">);</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">expectedSeqLeft</span> <span class="o">=</span> <span class="n">sLeft</span><span class="p">.</span><span class="n">codegen</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+      <span class="n">typeLeft</span> <span class="o">=</span> <span class="n">types</span><span class="o">::</span><span class="n">KMer</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">leftString</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+      <span class="n">expectedKmerLeft</span> <span class="o">=</span> <span class="n">typeLeft</span><span class="o">-&gt;</span><span class="n">callMagic</span><span class="p">(</span><span class="s">&quot;__init__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">types</span><span class="o">::</span><span class="n">Seq</span><span class="p">},</span> <span class="k">nullptr</span><span class="p">,</span>
+                                             <span class="p">{</span><span class="n">expectedSeqLeft</span><span class="p">},</span> <span class="n">block</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">rightString</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>
+      <span class="n">SeqExpr</span> <span class="n">sRight</span><span class="p">(</span><span class="n">rightString</span><span class="p">);</span>
+      <span class="n">Value</span> <span class="o">*</span><span class="n">expectedSeqRight</span> <span class="o">=</span> <span class="n">sRight</span><span class="p">.</span><span class="n">codegen</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+      <span class="n">typeRight</span> <span class="o">=</span> <span class="n">types</span><span class="o">::</span><span class="n">KMer</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">rightString</span><span class="p">.</span><span class="n">size</span><span class="p">());</span>
+      <span class="n">expectedKmerRight</span> <span class="o">=</span>
+          <span class="n">typeRight</span><span class="o">-&gt;</span><span class="n">callMagic</span><span class="p">(</span><span class="s">&quot;__init__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">types</span><span class="o">::</span><span class="n">Seq</span><span class="p">},</span> <span class="k">nullptr</span><span class="p">,</span>
+                               <span class="p">{</span><span class="n">expectedSeqRight</span><span class="p">},</span> <span class="n">block</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">expectedKmerLeft</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">expectedKmerLeft</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateZExt</span><span class="p">(</span><span class="n">expectedKmerLeft</span><span class="p">,</span> <span class="n">llvmType</span><span class="p">);</span>
+      <span class="n">expectedKmerLeft</span> <span class="o">=</span>
+          <span class="n">builder</span><span class="p">.</span><span class="n">CreateShl</span><span class="p">(</span><span class="n">expectedKmerLeft</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">typeLeft</span><span class="o">-&gt;</span><span class="n">getK</span><span class="p">()));</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">expectedKmerRight</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">expectedKmerRight</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateZExt</span><span class="p">(</span><span class="n">expectedKmerRight</span><span class="p">,</span> <span class="n">llvmType</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c1">// left and right masks for comparing correct bases:</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">maskLeft</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">llvmType</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">typeLeft</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">maskLeft</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateShl</span><span class="p">(</span><span class="n">maskLeft</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">typeLeft</span><span class="o">-&gt;</span><span class="n">getK</span><span class="p">());</span>
+      <span class="n">maskLeft</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateSub</span><span class="p">(</span><span class="n">maskLeft</span><span class="p">,</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">llvmType</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
+      <span class="n">maskLeft</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateShl</span><span class="p">(</span><span class="n">maskLeft</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">typeLeft</span><span class="o">-&gt;</span><span class="n">getK</span><span class="p">()));</span>
+    <span class="p">}</span>
+
+    <span class="n">Value</span> <span class="o">*</span><span class="n">maskRight</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">llvmType</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">typeRight</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">maskRight</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateShl</span><span class="p">(</span><span class="n">maskRight</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">typeRight</span><span class="o">-&gt;</span><span class="n">getK</span><span class="p">());</span>
+      <span class="n">maskRight</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateSub</span><span class="p">(</span><span class="n">maskRight</span><span class="p">,</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">llvmType</span><span class="p">,</span> <span class="mi">1</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">hasWildcard</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// zero out wildcard bases:</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="nl">pos</span> <span class="p">:</span> <span class="n">wildcardsLeft</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Value</span> <span class="o">*</span><span class="n">shift</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">llvmType</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+        <span class="n">shift</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateShl</span><span class="p">(</span><span class="n">shift</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">typeLeft</span><span class="o">-&gt;</span><span class="n">getK</span><span class="p">()</span> <span class="o">-</span> <span class="n">pos</span> <span class="o">-</span> <span class="mi">1</span><span class="p">));</span>
+        <span class="n">shift</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateShl</span><span class="p">(</span><span class="n">shift</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">k</span> <span class="o">-</span> <span class="n">typeLeft</span><span class="o">-&gt;</span><span class="n">getK</span><span class="p">()));</span>
+        <span class="n">shift</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateNot</span><span class="p">(</span><span class="n">shift</span><span class="p">);</span>
+        <span class="n">maskLeft</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">maskLeft</span><span class="p">,</span> <span class="n">shift</span><span class="p">);</span>
+      <span class="p">}</span>
+
+      <span class="k">for</span> <span class="p">(</span><span class="kt">unsigned</span> <span class="nl">pos</span> <span class="p">:</span> <span class="n">wildcardsRight</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// fix pos to be relative to right side:</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="p">(</span><span class="n">pos</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">star</span><span class="p">;</span>
+        <span class="n">Value</span> <span class="o">*</span><span class="n">shift</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">llvmType</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span>
+        <span class="n">shift</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateShl</span><span class="p">(</span><span class="n">shift</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">typeRight</span><span class="o">-&gt;</span><span class="n">getK</span><span class="p">()</span> <span class="o">-</span> <span class="n">pos</span> <span class="o">-</span> <span class="mi">1</span><span class="p">));</span>
+        <span class="n">shift</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateNot</span><span class="p">(</span><span class="n">shift</span><span class="p">);</span>
+        <span class="n">maskRight</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">maskRight</span><span class="p">,</span> <span class="n">shift</span><span class="p">);</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="n">Value</span> <span class="o">*</span><span class="n">lhsEq</span> <span class="o">=</span> <span class="n">expectedKmerLeft</span>
+                       <span class="o">?</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpEQ</span><span class="p">(</span>
+                             <span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">maskLeft</span><span class="p">),</span>
+                             <span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">expectedKmerLeft</span><span class="p">,</span> <span class="n">maskLeft</span><span class="p">))</span>
+                       <span class="o">:</span> <span class="n">succ</span><span class="p">;</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">rhsEq</span> <span class="o">=</span> <span class="n">expectedKmerRight</span>
+                       <span class="o">?</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpEQ</span><span class="p">(</span>
+                             <span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">maskRight</span><span class="p">),</span>
+                             <span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">expectedKmerRight</span><span class="p">,</span> <span class="n">maskRight</span><span class="p">))</span>
+                       <span class="o">:</span> <span class="n">succ</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">lhsEq</span><span class="p">,</span> <span class="n">rhsEq</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">assert</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">SeqPattern</span><span class="o">::</span><span class="n">codegen</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span>
+                           <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;</span> <span class="n">patterns</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">hasStar</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+
+  <span class="c1">// parse pattern:</span>
+  <span class="kt">unsigned</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">pattern</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="n">pattern</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">isspace</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+      <span class="k">continue</span><span class="p">;</span>
+
+    <span class="k">switch</span> <span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="sc">&#39;A&#39;</span><span class="o">:</span>
+    <span class="k">case</span> <span class="sc">&#39;C&#39;</span><span class="o">:</span>
+    <span class="k">case</span> <span class="sc">&#39;G&#39;</span><span class="o">:</span>
+    <span class="k">case</span> <span class="sc">&#39;T&#39;</span><span class="o">:</span>
+    <span class="k">case</span> <span class="sc">&#39;N&#39;</span><span class="o">:</span>
+    <span class="k">case</span> <span class="sc">&#39;_&#39;</span><span class="o">:</span>
+      <span class="n">patterns</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="sc">&#39;.&#39;</span><span class="o">:</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">hasStar</span><span class="p">)</span>
+        <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span>
+            <span class="s">&quot;at most one &#39;...&#39; allowed in sequence pattern&quot;</span><span class="p">);</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">pattern</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="n">pattern</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;.&#39;</span> <span class="o">&amp;&amp;</span>
+            <span class="n">pattern</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="sc">&#39;.&#39;</span><span class="p">))</span>
+        <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;invalid sequence pattern: &#39;&quot;</span> <span class="o">+</span> <span class="n">pattern</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+      <span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">;</span>
+      <span class="n">patterns</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="sc">&#39;\0&#39;</span><span class="p">);</span>
+      <span class="n">hasStar</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span>
+      <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span><span class="s">&quot;invalid character in sequence pattern: &#39;&quot;</span> <span class="o">+</span>
+                              <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="o">++</span><span class="n">i</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">type</span><span class="o">-&gt;</span><span class="n">is</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Seq</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">codegenSeqMatchForSeq</span><span class="p">(</span><span class="n">patterns</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">KMer</span> <span class="o">*</span><span class="n">kmerType</span> <span class="o">=</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">asKMer</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">codegenSeqMatchForKmer</span><span class="p">(</span><span class="n">patterns</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">kmerType</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">assert</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">OptPattern</span><span class="o">::</span><span class="n">OptPattern</span><span class="p">(</span><span class="n">Pattern</span> <span class="o">*</span><span class="n">pattern</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Any</span><span class="p">),</span> <span class="n">pattern</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="kt">void</span> <span class="n">OptPattern</span><span class="o">::</span><span class="n">resolveTypes</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">types</span><span class="o">::</span><span class="n">OptionalType</span> <span class="o">*</span><span class="n">optType</span> <span class="o">=</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">asOpt</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">optType</span><span class="p">)</span>
+    <span class="k">throw</span> <span class="n">exc</span><span class="o">::</span><span class="n">SeqException</span><span class="p">(</span>
+        <span class="s">&quot;cannot match optional pattern against non-optional value&quot;</span><span class="p">,</span>
+        <span class="n">getSrcInfo</span><span class="p">());</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
+    <span class="n">pattern</span><span class="o">-&gt;</span><span class="n">resolveTypes</span><span class="p">(</span><span class="n">optType</span><span class="o">-&gt;</span><span class="n">getBaseType</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">OptPattern</span><span class="o">::</span><span class="n">codegen</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span>
+                           <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+
+  <span class="n">types</span><span class="o">::</span><span class="n">OptionalType</span> <span class="o">*</span><span class="n">optType</span> <span class="o">=</span> <span class="n">type</span><span class="o">-&gt;</span><span class="n">asOpt</span><span class="p">();</span>
+  <span class="n">assert</span><span class="p">(</span><span class="n">optType</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">pattern</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// no pattern means we&#39;re matching the empty optional pattern</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">has</span> <span class="o">=</span> <span class="n">optType</span><span class="o">-&gt;</span><span class="n">has</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+    <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateNot</span><span class="p">(</span><span class="n">has</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">Value</span> <span class="o">*</span><span class="n">hasResult</span> <span class="o">=</span> <span class="n">optType</span><span class="o">-&gt;</span><span class="n">has</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">startBlock</span> <span class="o">=</span> <span class="n">block</span><span class="p">;</span>
+  <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">block</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">block</span><span class="o">-&gt;</span><span class="n">getParent</span><span class="p">());</span> <span class="c1">// pattern eval block</span>
+  <span class="n">BranchInst</span> <span class="o">*</span><span class="n">branch</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateCondBr</span><span class="p">(</span><span class="n">hasResult</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+
+  <span class="n">Value</span> <span class="o">*</span><span class="n">had</span> <span class="o">=</span> <span class="n">optType</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">patternResult</span> <span class="o">=</span>
+      <span class="n">pattern</span><span class="o">-&gt;</span><span class="n">codegen</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">optType</span><span class="o">-&gt;</span><span class="n">getBaseType</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">had</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">checkBlock</span> <span class="o">=</span> <span class="n">block</span><span class="p">;</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+
+  <span class="n">block</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">block</span><span class="o">-&gt;</span><span class="n">getParent</span><span class="p">());</span> <span class="c1">// final result block</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">CreateBr</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">branch</span><span class="o">-&gt;</span><span class="n">setSuccessor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+
+  <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">PHINode</span> <span class="o">*</span><span class="n">resultFinal</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreatePHI</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">2</span><span class="p">);</span>
+  <span class="n">resultFinal</span><span class="o">-&gt;</span><span class="n">addIncoming</span><span class="p">(</span><span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span>
+                           <span class="n">startBlock</span><span class="p">);</span> <span class="c1">// no value</span>
+  <span class="n">resultFinal</span><span class="o">-&gt;</span><span class="n">addIncoming</span><span class="p">(</span><span class="n">patternResult</span><span class="p">,</span>
+                           <span class="n">checkBlock</span><span class="p">);</span> <span class="c1">// result of pattern match</span>
+
+  <span class="k">return</span> <span class="n">resultFinal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">OptPattern</span> <span class="o">*</span><span class="n">OptPattern</span><span class="o">::</span><span class="n">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">SEQ_RETURN_CLONE</span><span class="p">(</span><span class="k">new</span> <span class="n">OptPattern</span><span class="p">(</span><span class="n">pattern</span> <span class="o">?</span> <span class="n">pattern</span><span class="o">-&gt;</span><span class="n">clone</span><span class="p">(</span><span class="n">ref</span><span class="p">)</span> <span class="o">:</span> <span class="k">nullptr</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">RangePattern</span><span class="o">::</span><span class="n">RangePattern</span><span class="p">(</span><span class="n">seq_int_t</span> <span class="n">a</span><span class="p">,</span> <span class="n">seq_int_t</span> <span class="n">b</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Int</span><span class="p">),</span> <span class="n">a</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">b</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">RangePattern</span><span class="o">::</span><span class="n">codegen</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span>
+                             <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+
+  <span class="n">Value</span> <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="p">(</span><span class="kt">uint64_t</span><span class="p">)</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">a</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="p">(</span><span class="kt">uint64_t</span><span class="p">)</span><span class="k">this</span><span class="o">-&gt;</span><span class="n">b</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+
+  <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">c1</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpSLE</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">c2</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpSLE</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateAnd</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">OrPattern</span><span class="o">::</span><span class="n">OrPattern</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Pattern</span> <span class="o">*&gt;</span> <span class="n">patterns</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Any</span><span class="p">),</span> <span class="n">patterns</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">patterns</span><span class="p">))</span> <span class="p">{}</span>
+
+<span class="kt">void</span> <span class="n">OrPattern</span><span class="o">::</span><span class="n">resolveTypes</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">*</span><span class="nl">pattern</span> <span class="p">:</span> <span class="n">patterns</span><span class="p">)</span>
+    <span class="n">pattern</span><span class="o">-&gt;</span><span class="n">resolveTypes</span><span class="p">(</span><span class="n">type</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">OrPattern</span><span class="o">::</span><span class="n">codegen</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span>
+                          <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">*</span><span class="nl">pattern</span> <span class="p">:</span> <span class="n">patterns</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">subRes</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">-&gt;</span><span class="n">codegen</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+    <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateOr</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">subRes</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="n">OrPattern</span><span class="o">::</span><span class="n">isCatchAll</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">*</span><span class="nl">pattern</span> <span class="p">:</span> <span class="n">patterns</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pattern</span><span class="o">-&gt;</span><span class="n">isCatchAll</span><span class="p">())</span>
+      <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">OrPattern</span> <span class="o">*</span><span class="n">OrPattern</span><span class="o">::</span><span class="n">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Pattern</span> <span class="o">*&gt;</span> <span class="n">patternsCloned</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">*</span><span class="nl">elem</span> <span class="p">:</span> <span class="n">patterns</span><span class="p">)</span>
+    <span class="n">patternsCloned</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">elem</span><span class="o">-&gt;</span><span class="n">clone</span><span class="p">(</span><span class="n">ref</span><span class="p">));</span>
+  <span class="n">SEQ_RETURN_CLONE</span><span class="p">(</span><span class="k">new</span> <span class="n">OrPattern</span><span class="p">(</span><span class="n">patternsCloned</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">GuardedPattern</span><span class="o">::</span><span class="n">GuardedPattern</span><span class="p">(</span><span class="n">Pattern</span> <span class="o">*</span><span class="n">pattern</span><span class="p">,</span> <span class="n">Expr</span> <span class="o">*</span><span class="n">guard</span><span class="p">)</span>
+    <span class="o">:</span> <span class="n">Pattern</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Int</span><span class="p">),</span> <span class="n">pattern</span><span class="p">(</span><span class="n">pattern</span><span class="p">),</span> <span class="n">guard</span><span class="p">(</span><span class="n">guard</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="kt">void</span> <span class="n">GuardedPattern</span><span class="o">::</span><span class="n">resolveTypes</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">pattern</span><span class="o">-&gt;</span><span class="n">resolveTypes</span><span class="p">(</span><span class="n">type</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="n">Value</span> <span class="o">*</span><span class="n">GuardedPattern</span><span class="o">::</span><span class="n">codegen</span><span class="p">(</span><span class="n">BaseFunc</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Type</span> <span class="o">*</span><span class="n">type</span><span class="p">,</span> <span class="n">Value</span> <span class="o">*</span><span class="n">val</span><span class="p">,</span>
+                               <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+
+  <span class="n">Value</span> <span class="o">*</span><span class="n">patternResult</span> <span class="o">=</span> <span class="n">pattern</span><span class="o">-&gt;</span><span class="n">codegen</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">startBlock</span> <span class="o">=</span> <span class="n">block</span><span class="p">;</span>
+  <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">block</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">block</span><span class="o">-&gt;</span><span class="n">getParent</span><span class="p">());</span> <span class="c1">// guard eval block</span>
+  <span class="n">BranchInst</span> <span class="o">*</span><span class="n">branch</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateCondBr</span><span class="p">(</span><span class="n">patternResult</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+
+  <span class="n">Value</span> <span class="o">*</span><span class="n">guardResult</span> <span class="o">=</span> <span class="n">guard</span><span class="o">-&gt;</span><span class="n">codegen</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+  <span class="n">guardResult</span> <span class="o">=</span> <span class="n">guard</span><span class="o">-&gt;</span><span class="n">getType</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">boolValue</span><span class="p">(</span><span class="n">guardResult</span><span class="p">,</span> <span class="n">block</span><span class="p">,</span> <span class="n">getTryCatch</span><span class="p">());</span>
+  <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">checkBlock</span> <span class="o">=</span> <span class="n">block</span><span class="p">;</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">guardResult</span> <span class="o">=</span>
+      <span class="n">builder</span><span class="p">.</span><span class="n">CreateTrunc</span><span class="p">(</span><span class="n">guardResult</span><span class="p">,</span> <span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">));</span>
+
+  <span class="n">block</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">,</span>
+                             <span class="n">block</span><span class="o">-&gt;</span><span class="n">getParent</span><span class="p">());</span> <span class="c1">// final result block</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">CreateBr</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">branch</span><span class="o">-&gt;</span><span class="n">setSuccessor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">block</span><span class="p">);</span>
+
+  <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">PHINode</span> <span class="o">*</span><span class="n">resultFinal</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreatePHI</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">2</span><span class="p">);</span>
+  <span class="n">resultFinal</span><span class="o">-&gt;</span><span class="n">addIncoming</span><span class="p">(</span><span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt1Ty</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">0</span><span class="p">),</span>
+                           <span class="n">startBlock</span><span class="p">);</span>              <span class="c1">// pattern didn&#39;t match</span>
+  <span class="n">resultFinal</span><span class="o">-&gt;</span><span class="n">addIncoming</span><span class="p">(</span><span class="n">guardResult</span><span class="p">,</span> <span class="n">checkBlock</span><span class="p">);</span> <span class="c1">// result of guard</span>
+
+  <span class="k">return</span> <span class="n">resultFinal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">GuardedPattern</span> <span class="o">*</span><span class="n">GuardedPattern</span><span class="o">::</span><span class="n">clone</span><span class="p">(</span><span class="n">Generic</span> <span class="o">*</span><span class="n">ref</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">SEQ_RETURN_CLONE</span><span class="p">(</span><span class="k">new</span> <span class="n">GuardedPattern</span><span class="p">(</span><span class="n">pattern</span><span class="o">-&gt;</span><span class="n">clone</span><span class="p">(</span><span class="n">ref</span><span class="p">),</span> <span class="n">guard</span><span class="o">-&gt;</span><span class="n">clone</span><span class="p">(</span><span class="n">ref</span><span class="p">)));</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

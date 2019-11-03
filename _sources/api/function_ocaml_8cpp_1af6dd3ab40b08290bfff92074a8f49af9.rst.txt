@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1af6dd3ab40b08290bfff92074a8f49af9:
+
+Function atomic_max_expr
+========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: atomic_max_expr(Var *, Expr *)

@@ -1,0 +1,32 @@
+.. _exhale_class_classseq_1_1types_1_1BaseSeqType:
+
+Class BaseSeqType
+=================
+
+- Defined in :ref:`file_compiler_include_seq_seqt.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public seq::types::Type`` (:ref:`exhale_class_classseq_1_1types_1_1Type`)
+
+
+Derived Types
+*************
+
+- ``public seq::types::SeqType`` (:ref:`exhale_class_classseq_1_1types_1_1SeqType`)
+- ``public seq::types::StrType`` (:ref:`exhale_class_classseq_1_1types_1_1StrType`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::types::BaseSeqType
+   :members:
+   :protected-members:
+   :undoc-members:

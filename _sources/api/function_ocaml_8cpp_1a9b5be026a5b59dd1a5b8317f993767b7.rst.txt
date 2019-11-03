@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a9b5be026a5b59dd1a5b8317f993767b7:
+
+Function uop_expr
+=================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: uop_expr(char *, Expr *)

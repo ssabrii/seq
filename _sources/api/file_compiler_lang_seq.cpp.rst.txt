@@ -1,0 +1,94 @@
+
+.. _file_compiler_lang_seq.cpp:
+
+File seq.cpp
+============
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_lang>` (``compiler/lang``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/lang/seq.cpp``)
+--------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_lang_seq.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cassert``
+
+- ``iostream``
+
+- ``llvm/CodeGen/CommandFlags.def``
+
+- ``memory``
+
+- ``seq/seq.h`` (:ref:`file_compiler_include_seq_seq.h`)
+
+- ``system_error``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_llvm__orc`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classBoehmGCMemoryManager`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_seq_8cpp_1a890e5689a39e0ebed01b5e2617413940`
+
+- :ref:`exhale_function_seq_8cpp_1a50b88f9361ceeae1dff72a741ca6ef33`
+
+- :ref:`exhale_function_seq_8cpp_1a76371e7a8cf9f09c535636f851a6ff0d`
+
+- :ref:`exhale_function_seq_8cpp_1af42917e44aa0e55fe1f696321ce2fb64`
+
+- :ref:`exhale_function_seq_8cpp_1adb83291c6c0edb6358adc743e3ffeb3b`
+
+- :ref:`exhale_function_seq_8cpp_1ad54c27ce61d2116b609fe6d807ccb8ca`
+
+- :ref:`exhale_function_seq_8cpp_1a5804e2b07415aa6cfb268fc9e7959149`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_seq_8cpp_1a546df7c50d60bc886d8ecd44ffc1ab10`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_seq_8cpp_1a0d3e81f8b8b1e54c54b41ab1399443ce`
+

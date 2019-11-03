@@ -1,0 +1,31 @@
+.. _exhale_class_classseq_1_1types_1_1RecordType:
+
+Class RecordType
+================
+
+- Defined in :ref:`file_compiler_include_seq_record.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public seq::types::Type`` (:ref:`exhale_class_classseq_1_1types_1_1Type`)
+
+
+Derived Type
+************
+
+- ``public seq::types::MethodType`` (:ref:`exhale_class_classseq_1_1types_1_1MethodType`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::types::RecordType
+   :members:
+   :protected-members:
+   :undoc-members:

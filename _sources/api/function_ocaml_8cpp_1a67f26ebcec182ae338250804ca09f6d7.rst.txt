@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a67f26ebcec182ae338250804ca09f6d7:
+
+Function bop_expr_in_place
+==========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: bop_expr_in_place(char *, Expr *, Expr *)

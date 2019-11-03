@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a22e8f334feccc52222b1b509972068f4:
+
+Function get_func_arg
+=====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get_func_arg(Func *, char *)

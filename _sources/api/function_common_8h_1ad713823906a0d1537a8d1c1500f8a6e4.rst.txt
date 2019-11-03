@@ -1,0 +1,13 @@
+.. _exhale_function_common_8h_1ad713823906a0d1537a8d1c1500f8a6e4:
+
+Function seq::zeroLLVM
+======================
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::zeroLLVM(llvm::LLVMContext&)

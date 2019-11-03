@@ -1,0 +1,13 @@
+.. _exhale_function_lang_8cpp_1ab2bbc60b9c1004228b1e3a9c4656e730:
+
+Function getTypeInfoType
+========================
+
+- Defined in :ref:`file_compiler_lang_lang.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: getTypeInfoType(LLVMContext&)

@@ -1,0 +1,13 @@
+.. _exhale_define_seq_8cpp_1a546df7c50d60bc886d8ecd44ffc1ab10:
+
+Define LLVM_I32
+===============
+
+- Defined in :ref:`file_compiler_lang_seq.cpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: LLVM_I32

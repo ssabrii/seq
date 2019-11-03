@@ -1,0 +1,78 @@
+
+.. _file_compiler_lang_expr.cpp:
+
+File expr.cpp
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_lang>` (``compiler/lang``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/lang/expr.cpp``)
+---------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_lang_expr.cpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``queue``
+
+- ``seq/seq.h`` (:ref:`file_compiler_include_seq_seq.h`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_llvm`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structDrainState`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_expr_8cpp_1a22cdad8762fb4bccf43c3c224666cc74`
+
+- :ref:`exhale_function_expr_8cpp_1a6ada7b8e9c1c4d5443266f377ed6e42f`
+
+- :ref:`exhale_function_expr_8cpp_1a4ac155907093626a43adc93ad46262ef`
+
+- :ref:`exhale_function_expr_8cpp_1a208d2d562923948c8fd5d8e1360a23b5`
+
+- :ref:`exhale_function_expr_8cpp_1a7dc3e91f650fa3e0ea92d01d23cdea64`
+
+- :ref:`exhale_function_expr_8cpp_1aab4769778ad376e43b20e5b4a33025b1`
+
+- :ref:`exhale_function_expr_8cpp_1a766bfb253f21c2314afde8c13588108d`
+
+- :ref:`exhale_function_expr_8cpp_1a9ed7ec8f2d15c19ca69ed5001567a273`
+
+- :ref:`exhale_function_expr_8cpp_1adb689fae6b2d97246c682fa0c4577eb7`
+
+- :ref:`exhale_function_expr_8cpp_1a03043d432d9b2dd8077f493067b3a6ec`
+

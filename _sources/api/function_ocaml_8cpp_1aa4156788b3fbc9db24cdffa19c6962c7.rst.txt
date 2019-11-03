@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1aa4156788b3fbc9db24cdffa19c6962c7:
+
+Function dict_expr
+==================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: dict_expr(types::Type *, Expr **, size_t)

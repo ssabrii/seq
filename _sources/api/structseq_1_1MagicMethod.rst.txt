@@ -1,0 +1,16 @@
+.. _exhale_struct_structseq_1_1MagicMethod:
+
+Struct MagicMethod
+==================
+
+- Defined in :ref:`file_compiler_include_seq_types.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: seq::MagicMethod
+   :members:
+   :protected-members:
+   :undoc-members:

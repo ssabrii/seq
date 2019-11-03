@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a2498b80db09d6926dd4b231576d006b5:
+
+Function gen_comp_expr
+======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: gen_comp_expr(Expr *, Var **, size_t)

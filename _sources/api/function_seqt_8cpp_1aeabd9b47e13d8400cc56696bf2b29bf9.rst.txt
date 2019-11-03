@@ -1,0 +1,13 @@
+.. _exhale_function_seqt_8cpp_1aeabd9b47e13d8400cc56696bf2b29bf9:
+
+Function getRevCompTable
+========================
+
+- Defined in :ref:`file_compiler_types_seqt.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: getRevCompTable(Module *, const std::string&)

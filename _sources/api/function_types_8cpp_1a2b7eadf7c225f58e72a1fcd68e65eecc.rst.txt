@@ -1,0 +1,13 @@
+.. _exhale_function_types_8cpp_1a2b7eadf7c225f58e72a1fcd68e65eecc:
+
+Function funcAsStaticMethodType
+===============================
+
+- Defined in :ref:`file_compiler_types_types.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: funcAsStaticMethodType(BaseFunc *)

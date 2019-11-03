@@ -1,0 +1,13 @@
+.. _exhale_function_lang_8cpp_1ae361adafda45a0dcc3078023c1eb7291:
+
+Function anyMatch
+=================
+
+- Defined in :ref:`file_compiler_lang_lang.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: anyMatch(types::Type *, std::vector<types::Type *>)

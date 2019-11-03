@@ -1,0 +1,25 @@
+.. _exhale_class_classseq_1_1types_1_1VoidType:
+
+Class VoidType
+==============
+
+- Defined in :ref:`file_compiler_include_seq_void.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public seq::types::Type`` (:ref:`exhale_class_classseq_1_1types_1_1Type`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::types::VoidType
+   :members:
+   :protected-members:
+   :undoc-members:

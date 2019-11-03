@@ -1,0 +1,25 @@
+.. _exhale_class_classseq_1_1TryCatch:
+
+Class TryCatch
+==============
+
+- Defined in :ref:`file_compiler_include_seq_lang.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public seq::Stmt`` (:ref:`exhale_class_classseq_1_1Stmt`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::TryCatch
+   :members:
+   :protected-members:
+   :undoc-members:

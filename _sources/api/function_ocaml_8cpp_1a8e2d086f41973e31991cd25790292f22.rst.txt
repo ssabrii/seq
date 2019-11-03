@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a8e2d086f41973e31991cd25790292f22:
+
+Function bigint_expr
+====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: bigint_expr(char *)

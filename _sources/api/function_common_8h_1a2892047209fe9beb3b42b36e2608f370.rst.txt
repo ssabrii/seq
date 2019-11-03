@@ -1,0 +1,13 @@
+.. _exhale_function_common_8h_1a2892047209fe9beb3b42b36e2608f370:
+
+Function seq::makeMemMove
+=========================
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::makeMemMove(llvm::Value *, llvm::Value *, llvm::Value *, llvm::BasicBlock *, unsigned)

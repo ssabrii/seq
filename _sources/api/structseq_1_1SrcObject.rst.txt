@@ -1,0 +1,29 @@
+.. _exhale_struct_structseq_1_1SrcObject:
+
+Struct SrcObject
+================
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public seq::exc::SeqException`` (:ref:`exhale_class_classseq_1_1exc_1_1SeqException`)
+- ``public seq::Expr`` (:ref:`exhale_class_classseq_1_1Expr`)
+- ``public seq::Func`` (:ref:`exhale_class_classseq_1_1Func`)
+- ``public seq::Pattern`` (:ref:`exhale_class_classseq_1_1Pattern`)
+- ``public seq::Stmt`` (:ref:`exhale_class_classseq_1_1Stmt`)
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: seq::SrcObject
+   :members:
+   :protected-members:
+   :undoc-members:

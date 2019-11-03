@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a8acec327bb345d8ae7a78c9dd551e387:
+
+Function uN_type
+================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: uN_type(unsigned)

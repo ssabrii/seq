@@ -1,0 +1,13 @@
+.. _exhale_define_common_8h_1a5d475453654af93d6203537bde0093ca:
+
+Define SEQ_RETURN_CLONE
+=======================
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: SEQ_RETURN_CLONE

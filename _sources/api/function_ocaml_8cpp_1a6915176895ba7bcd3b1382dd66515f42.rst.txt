@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a6915176895ba7bcd3b1382dd66515f42:
+
+Function byte_type
+==================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: byte_type()

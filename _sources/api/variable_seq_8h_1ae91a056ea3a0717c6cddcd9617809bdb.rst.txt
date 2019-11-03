@@ -1,0 +1,13 @@
+.. _exhale_variable_seq_8h_1ae91a056ea3a0717c6cddcd9617809bdb:
+
+Variable seq::types::Base
+=========================
+
+- Defined in :ref:`file_compiler_include_seq_seq.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: seq::types::Base

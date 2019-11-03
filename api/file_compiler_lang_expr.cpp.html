@@ -1,0 +1,259 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>File expr.cpp &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Compiler Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doxygen.html">Compiler API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>File expr.cpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/file_compiler_lang_expr.cpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="file-expr-cpp">
+<span id="file-compiler-lang-expr-cpp"></span><h1>File expr.cpp<a class="headerlink" href="#file-expr-cpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="dir_compiler_lang.html#dir-compiler-lang"><span class="std std-ref">Parent directory</span></a> (<code class="docutils literal notranslate"><span class="pre">compiler/lang</span></code>)</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title first">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#definition-compiler-lang-expr-cpp" id="id1">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/lang/expr.cpp</span></code>)</a></p></li>
+<li><p><a class="reference internal" href="#includes" id="id2">Includes</a></p></li>
+<li><p><a class="reference internal" href="#namespaces" id="id3">Namespaces</a></p></li>
+<li><p><a class="reference internal" href="#classes" id="id4">Classes</a></p></li>
+<li><p><a class="reference internal" href="#functions" id="id5">Functions</a></p></li>
+</ul>
+</div>
+<div class="section" id="definition-compiler-lang-expr-cpp">
+<h2>Definition (<code class="docutils literal notranslate"><span class="pre">compiler/lang/expr.cpp</span></code>)<a class="headerlink" href="#definition-compiler-lang-expr-cpp" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="program_listing_file_compiler_lang_expr.cpp.html">Program Listing for File expr.cpp</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="includes">
+<h2>Includes<a class="headerlink" href="#includes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">queue</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seq/seq.h</span></code> (<a class="reference internal" href="file_compiler_include_seq_seq.h.html#file-compiler-include-seq-seq-h"><span class="std std-ref">File seq.h</span></a>)</p></li>
+</ul>
+</div>
+<div class="section" id="namespaces">
+<h2>Namespaces<a class="headerlink" href="#namespaces" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="namespace_llvm.html#namespace-llvm"><span class="std std-ref">Namespace llvm</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="structDrainState.html#exhale-struct-structdrainstate"><span class="std std-ref">Struct DrainState</span></a></p></li>
+</ul>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="function_expr_8cpp_1a22cdad8762fb4bccf43c3c224666cc74.html#exhale-function-expr-8cpp-1a22cdad8762fb4bccf43c3c224666cc74"><span class="std std-ref">Function argName</span></a></p></li>
+<li><p><a class="reference internal" href="function_expr_8cpp_1a6ada7b8e9c1c4d5443266f377ed6e42f.html#exhale-function-expr-8cpp-1a6ada7b8e9c1c4d5443266f377ed6e42f"><span class="std std-ref">Function codegenPipe</span></a></p></li>
+<li><p><a class="reference internal" href="function_expr_8cpp_1a4ac155907093626a43adc93ad46262ef.html#exhale-function-expr-8cpp-1a4ac155907093626a43adc93ad46262ef"><span class="std std-ref">Function deduceTypeParametersIfNecessary</span></a></p></li>
+<li><p><a class="reference internal" href="function_expr_8cpp_1a208d2d562923948c8fd5d8e1360a23b5.html#exhale-function-expr-8cpp-1a208d2d562923948c8fd5d8e1360a23b5"><span class="std std-ref">Function getFullCallTypesForPartial</span></a></p></li>
+<li><p><a class="reference internal" href="function_expr_8cpp_1a7dc3e91f650fa3e0ea92d01d23cdea64.html#exhale-function-expr-8cpp-1a7dc3e91f650fa3e0ea92d01d23cdea64"><span class="std std-ref">Function getFuncFromFuncExpr</span></a></p></li>
+<li><p><a class="reference internal" href="function_expr_8cpp_1aab4769778ad376e43b20e5b4a33025b1.html#exhale-function-expr-8cpp-1aab4769778ad376e43b20e5b4a33025b1"><span class="std std-ref">Function noGenericMethodError</span></a></p></li>
+<li><p><a class="reference internal" href="function_expr_8cpp_1a766bfb253f21c2314afde8c13588108d.html#exhale-function-expr-8cpp-1a766bfb253f21c2314afde8c13588108d"><span class="std std-ref">Function setBodyBase</span></a></p></li>
+<li><p><a class="reference internal" href="function_expr_8cpp_1a9ed7ec8f2d15c19ca69ed5001567a273.html#exhale-function-expr-8cpp-1a9ed7ec8f2d15c19ca69ed5001567a273"><span class="std std-ref">Function translateIndex</span></a></p></li>
+<li><p><a class="reference internal" href="function_expr_8cpp_1adb689fae6b2d97246c682fa0c4577eb7.html#exhale-function-expr-8cpp-1adb689fae6b2d97246c682fa0c4577eb7"><span class="std std-ref">Function unsupportedBOpError</span></a></p></li>
+<li><p><a class="reference internal" href="function_expr_8cpp_1a03043d432d9b2dd8077f493067b3a6ec.html#exhale-function-expr-8cpp-1a03043d432d9b2dd8077f493067b3a6ec"><span class="std std-ref">Function unsupportedUOpError</span></a></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

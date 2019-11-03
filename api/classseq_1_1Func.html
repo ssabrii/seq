@@ -1,0 +1,515 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Class Func &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class FuncExpr" href="classseq_1_1FuncExpr.html" />
+    <link rel="prev" title="Class For" href="classseq_1_1For.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Compiler Internals</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="doxygen.html">Compiler API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="doxygen.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doxygen.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="doxygen.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="doxygen.html#classes-and-structs">Classes and Structs</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="structDrainState.html">Struct DrainState</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1Block.html">Struct Block</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1MagicMethod.html">Struct MagicMethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1MagicOverload.html">Struct MagicOverload</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1Op.html">Struct Op</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1SrcInfo.html">Struct SrcInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1SrcObject.html">Struct SrcObject</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1types_1_1ExtInfo.html">Struct ExtInfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq_1_1types_1_1VTable.html">Struct VTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="structseq__srcinfo.html">Struct seq_srcinfo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classBoehmGCMemoryManager.html">Class BoehmGCMemoryManager</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArrayContainsExpr.html">Class ArrayContainsExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArrayExpr.html">Class ArrayExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArrayLookupExpr.html">Class ArrayLookupExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArrayPattern.html">Class ArrayPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ArraySliceExpr.html">Class ArraySliceExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Assert.html">Class Assert</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Assign.html">Class Assign</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1AssignIndex.html">Class AssignIndex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1AssignMember.html">Class AssignMember</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1AtomicExpr.html">Class AtomicExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BaseFunc.html">Class BaseFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BaseFuncLite.html">Class BaseFuncLite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BlankExpr.html">Class BlankExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BoolExpr.html">Class BoolExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BoolPattern.html">Class BoolPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BOpExpr.html">Class BOpExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1BoundPattern.html">Class BoundPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Break.html">Class Break</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1CallExpr.html">Class CallExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1CondExpr.html">Class CondExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ConstructExpr.html">Class ConstructExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Continue.html">Class Continue</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1DefaultExpr.html">Class DefaultExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Del.html">Class Del</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1DelIndex.html">Class DelIndex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1DictCompExpr.html">Class DictCompExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1DictExpr.html">Class DictExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1exc_1_1SeqException.html">Class SeqException</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Expr.html">Class Expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ExprStmt.html">Class ExprStmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1FloatExpr.html">Class FloatExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1For.html">Class For</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Class Func</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1FuncExpr.html">Class FuncExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1FuncStmt.html">Class FuncStmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Generic.html">Class Generic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1GenExpr.html">Class GenExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1GetElemExpr.html">Class GetElemExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1GetStaticElemExpr.html">Class GetStaticElemExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1GuardedPattern.html">Class GuardedPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1If.html">Class If</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1IntExpr.html">Class IntExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1IntPattern.html">Class IntPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1IsExpr.html">Class IsExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ListCompExpr.html">Class ListCompExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ListExpr.html">Class ListExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Match.html">Class Match</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1MatchExpr.html">Class MatchExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1MethodExpr.html">Class MethodExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1NoneExpr.html">Class NoneExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1OptExpr.html">Class OptExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1OptPattern.html">Class OptPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1OrPattern.html">Class OrPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1PartialCallExpr.html">Class PartialCallExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Pattern.html">Class Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1PipeExpr.html">Class PipeExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Prefetch.html">Class Prefetch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Print.html">Class Print</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1RangePattern.html">Class RangePattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1RCache.html">Template Class RCache</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1RecordExpr.html">Class RecordExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1RecordPattern.html">Class RecordPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Return.html">Class Return</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SeqExpr.html">Class SeqExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SeqModule.html">Class SeqModule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SeqPattern.html">Class SeqPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SetCompExpr.html">Class SetCompExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1SetExpr.html">Class SetExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1StarPattern.html">Class StarPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Stmt.html">Class Stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1StrExpr.html">Class StrExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1StrPattern.html">Class StrPattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Throw.html">Class Throw</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1TryCatch.html">Class TryCatch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1TypeExpr.html">Class TypeExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1TypeOfExpr.html">Class TypeOfExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1AnyType.html">Class AnyType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1ArrayType.html">Class ArrayType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1BaseSeqType.html">Class BaseSeqType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1BaseType.html">Class BaseType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1BoolType.html">Class BoolType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1ByteType.html">Class ByteType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1FloatType.html">Class FloatType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1FuncType.html">Class FuncType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1GenericType.html">Class GenericType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1GenType.html">Class GenType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1IntNType.html">Class IntNType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1IntType.html">Class IntType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1KMer.html">Class KMer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1MethodType.html">Class MethodType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1NumberType.html">Class NumberType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1OptionalType.html">Class OptionalType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1PartialFuncType.html">Class PartialFuncType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1PtrType.html">Class PtrType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1RecordType.html">Class RecordType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1RefType.html">Class RefType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1SeqType.html">Class SeqType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1StrType.html">Class StrType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1Type.html">Class Type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1types_1_1VoidType.html">Class VoidType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1UOpExpr.html">Class UOpExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1ValueExpr.html">Class ValueExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Var.html">Class Var</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1VarExpr.html">Class VarExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1VarPtrExpr.html">Class VarPtrExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1VarStmt.html">Class VarStmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1While.html">Class While</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Wildcard.html">Class Wildcard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classseq_1_1Yield.html">Class Yield</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#enums">Enums</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="doxygen.html">Compiler API</a> &raquo;</li>
+        
+      <li>Class Func</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/classseq_1_1Func.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="class-func">
+<span id="exhale-class-classseq-1-1func"></span><h1>Class Func<a class="headerlink" href="#class-func" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_compiler_include_seq_func.h.html#file-compiler-include-seq-func-h"><span class="std std-ref">File func.h</span></a></p></li>
+</ul>
+<div class="section" id="inheritance-relationships">
+<h2>Inheritance Relationships<a class="headerlink" href="#inheritance-relationships" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="base-types">
+<h3>Base Types<a class="headerlink" href="#base-types" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">seq::BaseFunc</span></code> (<a class="reference internal" href="classseq_1_1BaseFunc.html#exhale-class-classseq-1-1basefunc"><span class="std std-ref">Class BaseFunc</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">seq::Generic</span></code> (<a class="reference internal" href="classseq_1_1Generic.html#exhale-class-classseq-1-1generic"><span class="std std-ref">Class Generic</span></a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public</span> <span class="pre">seq::SrcObject</span></code> (<a class="reference internal" href="structseq_1_1SrcObject.html#exhale-struct-structseq-1-1srcobject"><span class="std std-ref">Struct SrcObject</span></a>)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="_CPPv4N3seq4FuncE">
+<span id="_CPPv3N3seq4FuncE"></span><span id="_CPPv2N3seq4FuncE"></span><span id="seq::Func"></span><span class="target" id="classseq_1_1Func"></span><em class="property">class </em><code class="sig-name descname">Func</code> : <em class="property">public</em> seq::<a class="reference internal" href="classseq_1_1BaseFunc.html#_CPPv4N3seq8BaseFuncE" title="seq::BaseFunc">BaseFunc</a>, <em class="property">public</em> seq::<a class="reference internal" href="classseq_1_1Generic.html#_CPPv4N3seq7GenericE" title="seq::Generic">Generic</a>, <em class="property">public</em> seq::<a class="reference internal" href="structseq_1_1SrcObject.html#_CPPv4N3seq9SrcObjectE" title="seq::SrcObject">SrcObject</a><a class="headerlink" href="#_CPPv4N3seq4FuncE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Functions in a program are represented by this class. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="function">
+<dt id="_CPPv4N4Func4FuncEv">
+<span id="_CPPv3N4Func4FuncEv"></span><span id="_CPPv2N4Func4FuncEv"></span><span id="Func::Func"></span><span class="target" id="classseq_1_1Func_1a40daeb97f8741804efd42aeff8ce4a08"></span><code class="sig-name descname">Func</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func4FuncEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func8getBlockEv">
+<span id="_CPPv3N4Func8getBlockEv"></span><span id="_CPPv2N4Func8getBlockEv"></span><span id="Func::getBlock"></span><span class="target" id="classseq_1_1Func_1a05796dc7fde71f818b695898c4f6d920"></span>Block *<code class="sig-name descname">getBlock</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func8getBlockEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func11genericNameEv">
+<span id="_CPPv3N4Func11genericNameEv"></span><span id="_CPPv2N4Func11genericNameEv"></span><span id="Func::genericName"></span><span class="target" id="classseq_1_1Func_1a3f032615d176d1673680bd78813fa4ef"></span>std::string <code class="sig-name descname">genericName</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func11genericNameEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func17addCachedRealizedENSt6vectorIPN5types4TypeEEEP7Generic">
+<span id="_CPPv3N4Func17addCachedRealizedENSt6vectorIPN5types4TypeEEEP7Generic"></span><span id="_CPPv2N4Func17addCachedRealizedENSt6vectorIPN5types4TypeEEEP7Generic"></span><span id="Func::addCachedRealized__std::vector:types::TypeP:.GenericP"></span><span class="target" id="classseq_1_1Func_1a94b8628dbf519e0d14c396c169006853"></span>void <code class="sig-name descname">addCachedRealized</code><span class="sig-paren">(</span>std::vector&lt;<a class="reference internal" href="#_CPPv4N4Func17addCachedRealizedENSt6vectorIPN5types4TypeEEEP7Generic" title="Func::addCachedRealized::types">types</a>::Type *&gt; <em>types</em>, Generic *<em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func17addCachedRealizedENSt6vectorIPN5types4TypeEEEP7Generic" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func7realizeENSt6vectorIPN5types4TypeEEE">
+<span id="_CPPv3N4Func7realizeENSt6vectorIPN5types4TypeEEE"></span><span id="_CPPv2N4Func7realizeENSt6vectorIPN5types4TypeEEE"></span><span id="Func::realize__std::vector:types::TypeP:"></span><span class="target" id="classseq_1_1Func_1ae764c58370d06c5086f5b72c51fab2d5"></span>Func *<code class="sig-name descname">realize</code><span class="sig-paren">(</span>std::vector&lt;<a class="reference internal" href="#_CPPv4N4Func7realizeENSt6vectorIPN5types4TypeEEE" title="Func::realize::types">types</a>::Type *&gt; <em>types</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func7realizeENSt6vectorIPN5types4TypeEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func23deduceTypesFromArgTypesENSt6vectorIPN5types4TypeEEE">
+<span id="_CPPv3N4Func23deduceTypesFromArgTypesENSt6vectorIPN5types4TypeEEE"></span><span id="_CPPv2N4Func23deduceTypesFromArgTypesENSt6vectorIPN5types4TypeEEE"></span><span id="Func::deduceTypesFromArgTypes__std::vector:types::TypeP:"></span><span class="target" id="classseq_1_1Func_1a26a7e1a7000301c496c379c6eef6e891"></span>std::vector&lt;types::Type *&gt; <code class="sig-name descname">deduceTypesFromArgTypes</code><span class="sig-paren">(</span>std::vector&lt;types::Type *&gt; <em>argTypes</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func23deduceTypesFromArgTypesENSt6vectorIPN5types4TypeEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func16setEnclosingFuncEP4Func">
+<span id="_CPPv3N4Func16setEnclosingFuncEP4Func"></span><span id="_CPPv2N4Func16setEnclosingFuncEP4Func"></span><span id="Func::setEnclosingFunc__FuncP"></span><span class="target" id="classseq_1_1Func_1a066683269b84c44deaa86e68edb7796b"></span>void <code class="sig-name descname">setEnclosingFunc</code><span class="sig-paren">(</span>Func *<em>parentFunc</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func16setEnclosingFuncEP4Func" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func9sawReturnEP6Return">
+<span id="_CPPv3N4Func9sawReturnEP6Return"></span><span id="_CPPv2N4Func9sawReturnEP6Return"></span><span id="Func::sawReturn__ReturnP"></span><span class="target" id="classseq_1_1Func_1aecd9a2d23bf4d1517887ff87802275ed"></span>void <code class="sig-name descname">sawReturn</code><span class="sig-paren">(</span>Return *<em>ret</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func9sawReturnEP6Return" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func8sawYieldEP5Yield">
+<span id="_CPPv3N4Func8sawYieldEP5Yield"></span><span id="_CPPv2N4Func8sawYieldEP5Yield"></span><span id="Func::sawYield__YieldP"></span><span class="target" id="classseq_1_1Func_1afd71ef40e6e5e31f2b2b6297d277852d"></span>void <code class="sig-name descname">sawYield</code><span class="sig-paren">(</span>Yield *<em>yield</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func8sawYieldEP5Yield" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func11sawPrefetchEP8Prefetch">
+<span id="_CPPv3N4Func11sawPrefetchEP8Prefetch"></span><span id="_CPPv2N4Func11sawPrefetchEP8Prefetch"></span><span id="Func::sawPrefetch__PrefetchP"></span><span class="target" id="classseq_1_1Func_1a02d1a75799d6f66b511e87a7ffe2a7a9"></span>void <code class="sig-name descname">sawPrefetch</code><span class="sig-paren">(</span>Prefetch *<em>prefetch</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func11sawPrefetchEP8Prefetch" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func12addAttributeENSt6stringE">
+<span id="_CPPv3N4Func12addAttributeENSt6stringE"></span><span id="_CPPv2N4Func12addAttributeENSt6stringE"></span><span id="Func::addAttribute__ss"></span><span class="target" id="classseq_1_1Func_1acab8065ed104325732658ea77376b7d5"></span>void <code class="sig-name descname">addAttribute</code><span class="sig-paren">(</span>std::string <em>attr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func12addAttributeENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func13getAttributesEv">
+<span id="_CPPv3N4Func13getAttributesEv"></span><span id="_CPPv2N4Func13getAttributesEv"></span><span id="Func::getAttributes"></span><span class="target" id="classseq_1_1Func_1a0676e152141d1fc5f483019a85ae06b0"></span>std::vector&lt;std::string&gt; <code class="sig-name descname">getAttributes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func13getAttributesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func12hasAttributeERKNSt6stringE">
+<span id="_CPPv3N4Func12hasAttributeERKNSt6stringE"></span><span id="_CPPv2N4Func12hasAttributeERKNSt6stringE"></span><span id="Func::hasAttribute__ssCR"></span><span class="target" id="classseq_1_1Func_1a590e2bee89f841bb5851bad0f84dc378"></span>bool <code class="sig-name descname">hasAttribute</code><span class="sig-paren">(</span><em class="property">const</em> std::string &amp;<em>attr</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func12hasAttributeERKNSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func12resolveTypesEv">
+<span id="_CPPv3N4Func12resolveTypesEv"></span><span id="_CPPv2N4Func12resolveTypesEv"></span><span id="Func::resolveTypes"></span><span class="target" id="classseq_1_1Func_1a12cdba59a8f75fa2183efa3c9751c411"></span>void <code class="sig-name descname">resolveTypes</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func12resolveTypesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func7codegenEPN4llvm6ModuleE">
+<span id="_CPPv3N4Func7codegenEPN4llvm6ModuleE"></span><span id="_CPPv2N4Func7codegenEPN4llvm6ModuleE"></span><span id="Func::codegen__llvm::ModuleP"></span><span class="target" id="classseq_1_1Func_1a0ea01c53e87a323192d82c1201dbc72c"></span>void <code class="sig-name descname">codegen</code><span class="sig-paren">(</span>llvm::Module *<em>module</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func7codegenEPN4llvm6ModuleE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func13codegenReturnEPN4llvm5ValueEPN5types4TypeERPN4llvm10BasicBlockEb">
+<span id="_CPPv3N4Func13codegenReturnEPN4llvm5ValueEPN5types4TypeERPN4llvm10BasicBlockEb"></span><span id="_CPPv2N4Func13codegenReturnEPN4llvm5ValueEPN5types4TypeERPN4llvm10BasicBlockEb"></span><span id="Func::codegenReturn__llvm::ValueP.types::TypeP.llvm::BasicBlockPR.b"></span><span class="target" id="classseq_1_1Func_1a9e7a108fc33e58315dc2bea90a5f6c30"></span>void <code class="sig-name descname">codegenReturn</code><span class="sig-paren">(</span>llvm::Value *<em>val</em>, types::Type *<em>type</em>, llvm::BasicBlock *&amp;<em>block</em>, bool <em>dryrun</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func13codegenReturnEPN4llvm5ValueEPN5types4TypeERPN4llvm10BasicBlockEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func12codegenYieldEPN4llvm5ValueEPN5types4TypeERPN4llvm10BasicBlockEbb">
+<span id="_CPPv3N4Func12codegenYieldEPN4llvm5ValueEPN5types4TypeERPN4llvm10BasicBlockEbb"></span><span id="_CPPv2N4Func12codegenYieldEPN4llvm5ValueEPN5types4TypeERPN4llvm10BasicBlockEbb"></span><span id="Func::codegenYield__llvm::ValueP.types::TypeP.llvm::BasicBlockPR.b.b"></span><span class="target" id="classseq_1_1Func_1a0c34462b779099ab9b4a5e2854b16b2f"></span>void <code class="sig-name descname">codegenYield</code><span class="sig-paren">(</span>llvm::Value *<em>val</em>, types::Type *<em>type</em>, llvm::BasicBlock *&amp;<em>block</em>, bool <em>empty</em> = false, bool <em>dryrun</em> = false<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func12codegenYieldEPN4llvm5ValueEPN5types4TypeERPN4llvm10BasicBlockEbb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func5isGenEv">
+<span id="_CPPv3N4Func5isGenEv"></span><span id="_CPPv2N4Func5isGenEv"></span><span id="Func::isGen"></span><span class="target" id="classseq_1_1Func_1ae2cc94aa34b581a185777d70ac0c7494"></span>bool <code class="sig-name descname">isGen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func5isGenEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func9getArgVarENSt6stringE">
+<span id="_CPPv3N4Func9getArgVarENSt6stringE"></span><span id="_CPPv2N4Func9getArgVarENSt6stringE"></span><span id="Func::getArgVar__ss"></span><span class="target" id="classseq_1_1Func_1a4e0fdae2b177106724b14d89fd5f861e"></span>Var *<code class="sig-name descname">getArgVar</code><span class="sig-paren">(</span>std::string <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func9getArgVarENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func11getFuncTypeEv">
+<span id="_CPPv3N4Func11getFuncTypeEv"></span><span id="_CPPv2N4Func11getFuncTypeEv"></span><span id="Func::getFuncType"></span><span class="target" id="classseq_1_1Func_1a55af0fc1fcd2e0624e509e575eecb34c"></span>types::FuncType *<code class="sig-name descname">getFuncType</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func11getFuncTypeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func11setExternalEv">
+<span id="_CPPv3N4Func11setExternalEv"></span><span id="_CPPv2N4Func11setExternalEv"></span><span id="Func::setExternal"></span><span class="target" id="classseq_1_1Func_1a9bcbecf76bb1981385a11a1abc195d07"></span>void <code class="sig-name descname">setExternal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func11setExternalEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func6setInsENSt6vectorIPN5types4TypeEEE">
+<span id="_CPPv3N4Func6setInsENSt6vectorIPN5types4TypeEEE"></span><span id="_CPPv2N4Func6setInsENSt6vectorIPN5types4TypeEEE"></span><span id="Func::setIns__std::vector:types::TypeP:"></span><span class="target" id="classseq_1_1Func_1ac81da84e5b031e18eb85c7d5920b66db"></span>void <code class="sig-name descname">setIns</code><span class="sig-paren">(</span>std::vector&lt;types::Type *&gt; <em>inTypes</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func6setInsENSt6vectorIPN5types4TypeEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func6setOutEPN5types4TypeE">
+<span id="_CPPv3N4Func6setOutEPN5types4TypeE"></span><span id="_CPPv2N4Func6setOutEPN5types4TypeE"></span><span id="Func::setOut__types::TypeP"></span><span class="target" id="classseq_1_1Func_1a159757a6b25b4ea3b1ad51f28f7e9445"></span>void <code class="sig-name descname">setOut</code><span class="sig-paren">(</span>types::Type *<em>outType</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func6setOutEPN5types4TypeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func7setNameENSt6stringE">
+<span id="_CPPv3N4Func7setNameENSt6stringE"></span><span id="_CPPv2N4Func7setNameENSt6stringE"></span><span id="Func::setName__ss"></span><span class="target" id="classseq_1_1Func_1a5f9ab04f818e6421a8a54f407867ecc8"></span>void <code class="sig-name descname">setName</code><span class="sig-paren">(</span>std::string <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func7setNameENSt6stringE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func11getArgNamesEv">
+<span id="_CPPv3N4Func11getArgNamesEv"></span><span id="_CPPv2N4Func11getArgNamesEv"></span><span id="Func::getArgNames"></span><span class="target" id="classseq_1_1Func_1a23488969bec5cfb490c619db3d317984"></span>std::vector&lt;std::string&gt; <code class="sig-name descname">getArgNames</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func11getArgNamesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func11setArgNamesENSt6vectorINSt6stringEEE">
+<span id="_CPPv3N4Func11setArgNamesENSt6vectorINSt6stringEEE"></span><span id="_CPPv2N4Func11setArgNamesENSt6vectorINSt6stringEEE"></span><span id="Func::setArgNames__std::vector:ss:"></span><span class="target" id="classseq_1_1Func_1ac87d36d25ca2f44f91a24a34e9ddb9ea"></span>void <code class="sig-name descname">setArgNames</code><span class="sig-paren">(</span>std::vector&lt;std::string&gt; <em>argNames</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func11setArgNamesENSt6vectorINSt6stringEEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv4N4Func5cloneEP7Generic">
+<span id="_CPPv3N4Func5cloneEP7Generic"></span><span id="_CPPv2N4Func5cloneEP7Generic"></span><span id="Func::clone__GenericP"></span><span class="target" id="classseq_1_1Func_1ab0d1f7a157adb541db757804e9e555f0"></span>Func *<code class="sig-name descname">clone</code><span class="sig-paren">(</span>Generic *<em>ref</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4Func5cloneEP7Generic" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="classseq_1_1FuncExpr.html" class="btn btn-neutral float-right" title="Class FuncExpr" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classseq_1_1For.html" class="btn btn-neutral float-left" title="Class For" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

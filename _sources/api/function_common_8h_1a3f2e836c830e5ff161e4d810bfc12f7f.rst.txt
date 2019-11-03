@@ -1,0 +1,13 @@
+.. _exhale_function_common_8h_1a3f2e836c830e5ff161e4d810bfc12f7f:
+
+Function seq::makeFreeFunc
+==========================
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::makeFreeFunc(llvm::Module *)

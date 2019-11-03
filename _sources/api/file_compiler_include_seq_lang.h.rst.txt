@@ -1,0 +1,103 @@
+
+.. _file_compiler_include_seq_lang.h:
+
+File lang.h
+===========
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_include_seq>` (``compiler/include/seq``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/include/seq/lang.h``)
+--------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_include_seq_lang.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``expr.h`` (:ref:`file_compiler_include_seq_expr.h`)
+
+- ``patterns.h`` (:ref:`file_compiler_include_seq_patterns.h`)
+
+- ``stmt.h`` (:ref:`file_compiler_include_seq_stmt.h`)
+
+- ``var.h`` (:ref:`file_compiler_include_seq_var.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_compiler_include_seq_seq.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_seq`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classseq_1_1Assert`
+
+- :ref:`exhale_class_classseq_1_1Assign`
+
+- :ref:`exhale_class_classseq_1_1AssignIndex`
+
+- :ref:`exhale_class_classseq_1_1AssignMember`
+
+- :ref:`exhale_class_classseq_1_1Break`
+
+- :ref:`exhale_class_classseq_1_1Continue`
+
+- :ref:`exhale_class_classseq_1_1Del`
+
+- :ref:`exhale_class_classseq_1_1DelIndex`
+
+- :ref:`exhale_class_classseq_1_1ExprStmt`
+
+- :ref:`exhale_class_classseq_1_1For`
+
+- :ref:`exhale_class_classseq_1_1FuncStmt`
+
+- :ref:`exhale_class_classseq_1_1If`
+
+- :ref:`exhale_class_classseq_1_1Match`
+
+- :ref:`exhale_class_classseq_1_1Prefetch`
+
+- :ref:`exhale_class_classseq_1_1Print`
+
+- :ref:`exhale_class_classseq_1_1Return`
+
+- :ref:`exhale_class_classseq_1_1Throw`
+
+- :ref:`exhale_class_classseq_1_1TryCatch`
+
+- :ref:`exhale_class_classseq_1_1VarStmt`
+
+- :ref:`exhale_class_classseq_1_1While`
+
+- :ref:`exhale_class_classseq_1_1Yield`
+

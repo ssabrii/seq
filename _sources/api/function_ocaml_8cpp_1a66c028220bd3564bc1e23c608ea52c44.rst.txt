@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a66c028220bd3564bc1e23c608ea52c44:
+
+Function array_lookup_expr
+==========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: array_lookup_expr(Expr *, Expr *)

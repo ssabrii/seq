@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a76957cea09d15e57c51dacfe26baf548:
+
+Function ptr_type
+=================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ptr_type(types::Type *)

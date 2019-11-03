@@ -1,0 +1,13 @@
+.. _exhale_variable_seq_8cpp_1a0d3e81f8b8b1e54c54b41ab1399443ce:
+
+Variable context
+================
+
+- Defined in :ref:`file_compiler_lang_seq.cpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: context

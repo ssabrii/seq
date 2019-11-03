@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ae875eea63b67641492f90fcc7a97625a:
+
+Function iN_type
+================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: iN_type(unsigned)

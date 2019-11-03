@@ -1,0 +1,13 @@
+.. _exhale_define_jit_8cpp_1af039cc21a3132fdb4f8d4a9c57ac0250:
+
+Define FOREIGN
+==============
+
+- Defined in :ref:`file_compiler_util_jit.cpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: FOREIGN

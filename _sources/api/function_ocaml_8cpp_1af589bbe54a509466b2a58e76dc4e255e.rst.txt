@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1af589bbe54a509466b2a58e76dc4e255e:
+
+Function bool_type
+==================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: bool_type()

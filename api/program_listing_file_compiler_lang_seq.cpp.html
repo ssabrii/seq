@@ -1,0 +1,852 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Program Listing for File seq.cpp &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Compiler Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doxygen.html">Compiler API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Program Listing for File seq.cpp</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/program_listing_file_compiler_lang_seq.cpp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="program-listing-for-file-seq-cpp">
+<span id="program-listing-file-compiler-lang-seq-cpp"></span><h1>Program Listing for File seq.cpp<a class="headerlink" href="#program-listing-for-file-seq-cpp" title="Permalink to this headline">¶</a></h1>
+<p>↰ <a class="reference internal" href="file_compiler_lang_seq.cpp.html#file-compiler-lang-seq-cpp"><span class="std std-ref">Return to documentation for file</span></a> (<code class="docutils literal notranslate"><span class="pre">compiler/lang/seq.cpp</span></code>)</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&quot;seq/seq.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cassert&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;system_error&gt;</span><span class="cp"></span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">seq</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">llvm</span><span class="p">;</span>
+
+<span class="cp">#if LLVM_VERSION_MAJOR &gt;= 7</span>
+<span class="cp">#include</span> <span class="cpf">&quot;llvm/CodeGen/CommandFlags.inc&quot;</span><span class="cp"></span>
+<span class="cp">#else</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">llvm</span><span class="o">::</span><span class="n">orc</span><span class="p">;</span>
+<span class="cp">#include</span> <span class="cpf">&quot;llvm/CodeGen/CommandFlags.def&quot;</span><span class="cp"></span>
+<span class="cp">#endif</span>
+
+<span class="k">static</span> <span class="n">LLVMContext</span> <span class="n">context</span><span class="p">;</span>
+
+<span class="n">SeqModule</span><span class="o">::</span><span class="n">SeqModule</span><span class="p">()</span>
+    <span class="o">:</span> <span class="n">BaseFunc</span><span class="p">(),</span> <span class="n">scope</span><span class="p">(</span><span class="k">new</span> <span class="n">Block</span><span class="p">()),</span>
+      <span class="n">argVar</span><span class="p">(</span><span class="k">new</span> <span class="n">Var</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">ArrayType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Str</span><span class="p">))),</span> <span class="n">initFunc</span><span class="p">(</span><span class="k">nullptr</span><span class="p">),</span>
+      <span class="n">strlenFunc</span><span class="p">(</span><span class="k">nullptr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">InitializeNativeTarget</span><span class="p">();</span>
+  <span class="n">InitializeNativeTargetAsmPrinter</span><span class="p">();</span>
+
+  <span class="n">module</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Module</span><span class="p">(</span><span class="s">&quot;seq&quot;</span><span class="p">,</span> <span class="n">context</span><span class="p">);</span>
+  <span class="n">module</span><span class="o">-&gt;</span><span class="n">setTargetTriple</span><span class="p">(</span>
+      <span class="n">EngineBuilder</span><span class="p">().</span><span class="n">selectTarget</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getTargetTriple</span><span class="p">().</span><span class="n">str</span><span class="p">());</span>
+  <span class="n">module</span><span class="o">-&gt;</span><span class="n">setDataLayout</span><span class="p">(</span><span class="n">EngineBuilder</span><span class="p">().</span><span class="n">selectTarget</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">createDataLayout</span><span class="p">());</span>
+  <span class="n">argVar</span><span class="o">-&gt;</span><span class="n">setGlobal</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">Block</span> <span class="o">*</span><span class="n">SeqModule</span><span class="o">::</span><span class="n">getBlock</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">scope</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="n">Var</span> <span class="o">*</span><span class="n">SeqModule</span><span class="o">::</span><span class="n">getArgVar</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">argVar</span><span class="p">;</span> <span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">SeqModule</span><span class="o">::</span><span class="n">setFileName</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">file</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">module</span><span class="o">-&gt;</span><span class="n">setSourceFileName</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">SeqModule</span><span class="o">::</span><span class="n">resolveTypes</span><span class="p">()</span> <span class="p">{</span> <span class="n">scope</span><span class="o">-&gt;</span><span class="n">resolveTypes</span><span class="p">();</span> <span class="p">}</span>
+
+<span class="cp">#if SEQ_HAS_TAPIR</span>
+<span class="cm">/*</span>
+<span class="cm"> * Adapted from Tapir OpenMP backend source</span>
+<span class="cm"> */</span>
+<span class="cp">#include</span> <span class="cpf">&quot;llvm/Support/CommandLine.h&quot;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&quot;llvm/Transforms/Tapir/OpenMPABI.h&quot;</span><span class="cp"></span>
+
+<span class="k">static</span> <span class="n">OpenMPABI</span> <span class="n">omp</span><span class="p">;</span>
+
+<span class="k">extern</span> <span class="n">StructType</span> <span class="o">*</span><span class="n">IdentTy</span><span class="p">;</span>
+<span class="k">extern</span> <span class="n">FunctionType</span> <span class="o">*</span><span class="n">Kmpc_MicroTy</span><span class="p">;</span>
+<span class="k">extern</span> <span class="n">Constant</span> <span class="o">*</span><span class="n">DefaultOpenMPPSource</span><span class="p">;</span>
+<span class="k">extern</span> <span class="n">Constant</span> <span class="o">*</span><span class="n">DefaultOpenMPLocation</span><span class="p">;</span>
+<span class="k">extern</span> <span class="n">PointerType</span> <span class="o">*</span><span class="n">KmpRoutineEntryPtrTy</span><span class="p">;</span>
+
+<span class="k">extern</span> <span class="n">Type</span> <span class="o">*</span><span class="nf">getOrCreateIdentTy</span><span class="p">(</span><span class="n">Module</span> <span class="o">*</span><span class="n">module</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">Value</span> <span class="o">*</span><span class="nf">getOrCreateDefaultLocation</span><span class="p">(</span><span class="n">Module</span> <span class="o">*</span><span class="n">M</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">PointerType</span> <span class="o">*</span><span class="nf">getIdentTyPointerTy</span><span class="p">();</span>
+<span class="k">extern</span> <span class="n">FunctionType</span> <span class="o">*</span><span class="nf">getOrCreateKmpc_MicroTy</span><span class="p">(</span><span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span><span class="p">);</span>
+<span class="k">extern</span> <span class="n">PointerType</span> <span class="o">*</span><span class="nf">getKmpc_MicroPointerTy</span><span class="p">(</span><span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span><span class="p">);</span>
+
+<span class="k">extern</span> <span class="n">cl</span><span class="o">::</span><span class="n">opt</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span> <span class="n">fastOpenMP</span><span class="p">;</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">resetOMPABI</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">IdentTy</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+  <span class="n">Kmpc_MicroTy</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+  <span class="n">DefaultOpenMPPSource</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+  <span class="n">DefaultOpenMPLocation</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+  <span class="n">KmpRoutineEntryPtrTy</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="nf">invokeMain</span><span class="p">(</span><span class="n">Function</span> <span class="o">*</span><span class="n">main</span><span class="p">,</span> <span class="n">BasicBlock</span> <span class="o">*&amp;</span><span class="n">block</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+  <span class="n">Function</span> <span class="o">*</span><span class="n">func</span> <span class="o">=</span> <span class="n">block</span><span class="o">-&gt;</span><span class="n">getParent</span><span class="p">();</span>
+  <span class="n">Module</span> <span class="o">*</span><span class="n">module</span> <span class="o">=</span> <span class="n">func</span><span class="o">-&gt;</span><span class="n">getParent</span><span class="p">();</span>
+  <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">normal</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;normal&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+  <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">unwind</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;unwind&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+  <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">CreateInvoke</span><span class="p">(</span><span class="n">main</span><span class="p">,</span> <span class="n">normal</span><span class="p">,</span> <span class="n">unwind</span><span class="p">);</span>
+
+  <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">unwind</span><span class="p">);</span>
+  <span class="n">Function</span> <span class="o">*</span><span class="n">term</span> <span class="o">=</span> <span class="n">makeTerminateFunc</span><span class="p">(</span><span class="n">module</span><span class="p">);</span>
+  <span class="n">LandingPadInst</span> <span class="o">*</span><span class="n">caughtResult</span> <span class="o">=</span>
+      <span class="n">builder</span><span class="p">.</span><span class="n">CreateLandingPad</span><span class="p">(</span><span class="n">TryCatch</span><span class="o">::</span><span class="n">getPadType</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="n">caughtResult</span><span class="o">-&gt;</span><span class="n">setCleanup</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+  <span class="n">caughtResult</span><span class="o">-&gt;</span><span class="n">addClause</span><span class="p">(</span><span class="n">TryCatch</span><span class="o">::</span><span class="n">getTypeIdxVar</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">));</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">unwindException</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateExtractValue</span><span class="p">(</span><span class="n">caughtResult</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">term</span><span class="p">,</span> <span class="n">unwindException</span><span class="p">);</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">CreateUnreachable</span><span class="p">();</span>
+
+  <span class="n">block</span> <span class="o">=</span> <span class="n">normal</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Function</span> <span class="o">*</span><span class="n">SeqModule</span><span class="o">::</span><span class="n">makeCanonicalMainFunc</span><span class="p">(</span><span class="n">Function</span> <span class="o">*</span><span class="n">realMain</span><span class="p">)</span> <span class="p">{</span>
+<span class="cp">#define LLVM_I32() IntegerType::getInt32Ty(context)</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">realMain</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+  <span class="n">Module</span> <span class="o">*</span><span class="n">module</span> <span class="o">=</span> <span class="n">realMain</span><span class="o">-&gt;</span><span class="n">getParent</span><span class="p">();</span>
+
+  <span class="n">types</span><span class="o">::</span><span class="n">ArrayType</span> <span class="o">*</span><span class="n">arrType</span> <span class="o">=</span> <span class="n">types</span><span class="o">::</span><span class="n">ArrayType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Str</span><span class="p">);</span>
+
+  <span class="k">auto</span> <span class="o">*</span><span class="n">func</span> <span class="o">=</span> <span class="n">cast</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&gt;</span><span class="p">(</span><span class="n">module</span><span class="o">-&gt;</span><span class="n">getOrInsertFunction</span><span class="p">(</span>
+      <span class="s">&quot;main&quot;</span><span class="p">,</span> <span class="n">LLVM_I32</span><span class="p">(),</span> <span class="n">LLVM_I32</span><span class="p">(),</span>
+      <span class="n">PointerType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt8PtrTy</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="mi">0</span><span class="p">)));</span>
+
+  <span class="n">func</span><span class="o">-&gt;</span><span class="n">setPersonalityFn</span><span class="p">(</span><span class="n">makePersonalityFunc</span><span class="p">(</span><span class="n">module</span><span class="p">));</span>
+  <span class="k">auto</span> <span class="n">argiter</span> <span class="o">=</span> <span class="n">func</span><span class="o">-&gt;</span><span class="n">arg_begin</span><span class="p">();</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">argc</span> <span class="o">=</span> <span class="n">argiter</span><span class="o">++</span><span class="p">;</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">argv</span> <span class="o">=</span> <span class="n">argiter</span><span class="p">;</span>
+  <span class="n">argc</span><span class="o">-&gt;</span><span class="n">setName</span><span class="p">(</span><span class="s">&quot;argc&quot;</span><span class="p">);</span>
+  <span class="n">argv</span><span class="o">-&gt;</span><span class="n">setName</span><span class="p">(</span><span class="s">&quot;argv&quot;</span><span class="p">);</span>
+
+  <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">entry</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;entry&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+  <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">loop</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;loop&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+
+  <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">entry</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">len</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateZExt</span><span class="p">(</span><span class="n">argc</span><span class="p">,</span> <span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">));</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="n">types</span><span class="o">::</span><span class="n">Str</span><span class="o">-&gt;</span><span class="n">alloc</span><span class="p">(</span><span class="n">len</span><span class="p">,</span> <span class="n">entry</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">arr</span> <span class="o">=</span> <span class="n">arrType</span><span class="o">-&gt;</span><span class="n">make</span><span class="p">(</span><span class="n">ptr</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">entry</span><span class="p">);</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">CreateBr</span><span class="p">(</span><span class="n">loop</span><span class="p">);</span>
+
+  <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">loop</span><span class="p">);</span>
+  <span class="n">PHINode</span> <span class="o">*</span><span class="n">control</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreatePHI</span><span class="p">(</span><span class="n">LLVM_I32</span><span class="p">(),</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;i&quot;</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">next</span> <span class="o">=</span>
+      <span class="n">builder</span><span class="p">.</span><span class="n">CreateAdd</span><span class="p">(</span><span class="n">control</span><span class="p">,</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">LLVM_I32</span><span class="p">(),</span> <span class="mi">1</span><span class="p">),</span> <span class="s">&quot;next&quot;</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">cond</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpSLT</span><span class="p">(</span><span class="n">control</span><span class="p">,</span> <span class="n">argc</span><span class="p">);</span>
+
+  <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">body</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;body&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+  <span class="n">BranchInst</span> <span class="o">*</span><span class="n">branch</span> <span class="o">=</span>
+      <span class="n">builder</span><span class="p">.</span><span class="n">CreateCondBr</span><span class="p">(</span><span class="n">cond</span><span class="p">,</span> <span class="n">body</span><span class="p">,</span> <span class="n">body</span><span class="p">);</span> <span class="c1">// we set false-branch below</span>
+
+  <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">body</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">arg</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateLoad</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">CreateGEP</span><span class="p">(</span><span class="n">argv</span><span class="p">,</span> <span class="n">control</span><span class="p">));</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">argLen</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateZExtOrTrunc</span><span class="p">(</span><span class="n">builder</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">strlenFunc</span><span class="p">,</span> <span class="n">arg</span><span class="p">),</span>
+                                            <span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">));</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">str</span> <span class="o">=</span> <span class="n">types</span><span class="o">::</span><span class="n">Str</span><span class="o">-&gt;</span><span class="n">make</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">argLen</span><span class="p">,</span> <span class="n">body</span><span class="p">);</span>
+  <span class="n">Value</span> <span class="o">*</span><span class="n">idx</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateZExt</span><span class="p">(</span><span class="n">control</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Int</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">));</span>
+  <span class="n">arrType</span><span class="o">-&gt;</span><span class="n">callMagic</span><span class="p">(</span><span class="s">&quot;__setitem__&quot;</span><span class="p">,</span> <span class="p">{</span><span class="n">types</span><span class="o">::</span><span class="n">Int</span><span class="p">,</span> <span class="n">types</span><span class="o">::</span><span class="n">Str</span><span class="p">},</span> <span class="n">arr</span><span class="p">,</span> <span class="p">{</span><span class="n">idx</span><span class="p">,</span> <span class="n">str</span><span class="p">},</span>
+                     <span class="n">body</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">CreateBr</span><span class="p">(</span><span class="n">loop</span><span class="p">);</span>
+
+  <span class="n">control</span><span class="o">-&gt;</span><span class="n">addIncoming</span><span class="p">(</span><span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">LLVM_I32</span><span class="p">(),</span> <span class="mi">0</span><span class="p">),</span> <span class="n">entry</span><span class="p">);</span>
+  <span class="n">control</span><span class="o">-&gt;</span><span class="n">addIncoming</span><span class="p">(</span><span class="n">next</span><span class="p">,</span> <span class="n">body</span><span class="p">);</span>
+
+  <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">exit</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;exit&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+  <span class="n">branch</span><span class="o">-&gt;</span><span class="n">setSuccessor</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">exit</span><span class="p">);</span>
+  <span class="n">getArgVar</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">store</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">exit</span><span class="p">);</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">exit</span><span class="p">);</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">initFunc</span><span class="p">);</span>
+
+<span class="cp">#if SEQ_HAS_TAPIR</span>
+  <span class="cm">/*</span>
+<span class="cm">   * Put the entire program in a parallel+single region</span>
+<span class="cm">   */</span>
+  <span class="p">{</span>
+    <span class="n">getOrCreateKmpc_MicroTy</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+    <span class="n">getOrCreateIdentTy</span><span class="p">(</span><span class="n">module</span><span class="p">);</span>
+    <span class="n">getOrCreateDefaultLocation</span><span class="p">(</span><span class="n">module</span><span class="p">);</span>
+
+    <span class="k">auto</span> <span class="o">*</span><span class="n">IdentTyPtrTy</span> <span class="o">=</span> <span class="n">getIdentTyPointerTy</span><span class="p">();</span>
+
+    <span class="n">Type</span> <span class="o">*</span><span class="n">forkParams</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="n">IdentTyPtrTy</span><span class="p">,</span> <span class="n">LLVM_I32</span><span class="p">(),</span>
+                          <span class="n">getKmpc_MicroPointerTy</span><span class="p">(</span><span class="n">module</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">())};</span>
+    <span class="n">FunctionType</span> <span class="o">*</span><span class="n">forkFnTy</span> <span class="o">=</span>
+        <span class="n">FunctionType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">Type</span><span class="o">::</span><span class="n">getVoidTy</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">forkParams</span><span class="p">,</span> <span class="nb">true</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="o">*</span><span class="n">forkFunc</span> <span class="o">=</span> <span class="n">cast</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">module</span><span class="o">-&gt;</span><span class="n">getOrInsertFunction</span><span class="p">(</span><span class="s">&quot;__kmpc_fork_call&quot;</span><span class="p">,</span> <span class="n">forkFnTy</span><span class="p">));</span>
+
+    <span class="n">Type</span> <span class="o">*</span><span class="n">singleParams</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="n">IdentTyPtrTy</span><span class="p">,</span> <span class="n">LLVM_I32</span><span class="p">()};</span>
+    <span class="n">FunctionType</span> <span class="o">*</span><span class="n">singleFnTy</span> <span class="o">=</span>
+        <span class="n">FunctionType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">LLVM_I32</span><span class="p">(),</span> <span class="n">singleParams</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="o">*</span><span class="n">singleFunc</span> <span class="o">=</span> <span class="n">cast</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">module</span><span class="o">-&gt;</span><span class="n">getOrInsertFunction</span><span class="p">(</span><span class="s">&quot;__kmpc_single&quot;</span><span class="p">,</span> <span class="n">singleFnTy</span><span class="p">));</span>
+
+    <span class="n">Type</span> <span class="o">*</span><span class="n">singleEndParams</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="n">IdentTyPtrTy</span><span class="p">,</span> <span class="n">LLVM_I32</span><span class="p">()};</span>
+    <span class="n">FunctionType</span> <span class="o">*</span><span class="n">singleEndFnTy</span> <span class="o">=</span>
+        <span class="n">FunctionType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">Type</span><span class="o">::</span><span class="n">getVoidTy</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">singleEndParams</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="o">*</span><span class="n">singleEndFunc</span> <span class="o">=</span> <span class="n">cast</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">module</span><span class="o">-&gt;</span><span class="n">getOrInsertFunction</span><span class="p">(</span><span class="s">&quot;__kmpc_end_single&quot;</span><span class="p">,</span> <span class="n">singleEndFnTy</span><span class="p">));</span>
+
+    <span class="c1">// make the proxy main function that will be called by __kmpc_fork_call:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Type</span> <span class="o">*&gt;</span> <span class="n">proxyArgs</span> <span class="o">=</span> <span class="p">{</span><span class="n">PointerType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">LLVM_I32</span><span class="p">(),</span> <span class="mi">0</span><span class="p">),</span>
+                                     <span class="n">PointerType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">LLVM_I32</span><span class="p">(),</span> <span class="mi">0</span><span class="p">)};</span>
+    <span class="k">auto</span> <span class="o">*</span><span class="n">proxyMainTy</span> <span class="o">=</span>
+        <span class="n">FunctionType</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">Type</span><span class="o">::</span><span class="n">getVoidTy</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">proxyArgs</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="o">*</span><span class="n">proxyMain</span> <span class="o">=</span> <span class="n">cast</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">module</span><span class="o">-&gt;</span><span class="n">getOrInsertFunction</span><span class="p">(</span><span class="s">&quot;seq.proxy_main&quot;</span><span class="p">,</span> <span class="n">proxyMainTy</span><span class="p">));</span>
+    <span class="n">proxyMain</span><span class="o">-&gt;</span><span class="n">setLinkage</span><span class="p">(</span><span class="n">GlobalValue</span><span class="o">::</span><span class="n">PrivateLinkage</span><span class="p">);</span>
+    <span class="n">proxyMain</span><span class="o">-&gt;</span><span class="n">setPersonalityFn</span><span class="p">(</span><span class="n">makePersonalityFunc</span><span class="p">(</span><span class="n">module</span><span class="p">));</span>
+    <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">proxyBlockEntry</span> <span class="o">=</span>
+        <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;entry&quot;</span><span class="p">,</span> <span class="n">proxyMain</span><span class="p">);</span>
+    <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">proxyBlockMain</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;main&quot;</span><span class="p">,</span> <span class="n">proxyMain</span><span class="p">);</span>
+    <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">proxyBlockExit</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;exit&quot;</span><span class="p">,</span> <span class="n">proxyMain</span><span class="p">);</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">proxyBlockEntry</span><span class="p">);</span>
+
+    <span class="n">Value</span> <span class="o">*</span><span class="n">tid</span> <span class="o">=</span> <span class="n">proxyMain</span><span class="o">-&gt;</span><span class="n">arg_begin</span><span class="p">();</span>
+    <span class="n">tid</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateLoad</span><span class="p">(</span><span class="n">tid</span><span class="p">);</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">singleCall</span> <span class="o">=</span>
+        <span class="n">builder</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">singleFunc</span><span class="p">,</span> <span class="p">{</span><span class="n">DefaultOpenMPLocation</span><span class="p">,</span> <span class="n">tid</span><span class="p">});</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">shouldExit</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateICmpEQ</span><span class="p">(</span><span class="n">singleCall</span><span class="p">,</span> <span class="n">builder</span><span class="p">.</span><span class="n">getInt32</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">CreateCondBr</span><span class="p">(</span><span class="n">shouldExit</span><span class="p">,</span> <span class="n">proxyBlockExit</span><span class="p">,</span> <span class="n">proxyBlockMain</span><span class="p">);</span>
+
+    <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">proxyBlockExit</span><span class="p">);</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">CreateRetVoid</span><span class="p">();</span>
+
+    <span class="n">invokeMain</span><span class="p">(</span><span class="n">realMain</span><span class="p">,</span> <span class="n">proxyBlockMain</span><span class="p">);</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">proxyBlockMain</span><span class="p">);</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">singleEndFunc</span><span class="p">,</span> <span class="p">{</span><span class="n">DefaultOpenMPLocation</span><span class="p">,</span> <span class="n">tid</span><span class="p">});</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">CreateRetVoid</span><span class="p">();</span>
+
+    <span class="c1">// actually make the fork call:</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Value</span> <span class="o">*&gt;</span> <span class="n">forkArgs</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">DefaultOpenMPLocation</span><span class="p">,</span> <span class="n">builder</span><span class="p">.</span><span class="n">getInt32</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+        <span class="n">builder</span><span class="p">.</span><span class="n">CreateBitCast</span><span class="p">(</span><span class="n">proxyMain</span><span class="p">,</span> <span class="n">getKmpc_MicroPointerTy</span><span class="p">(</span><span class="n">context</span><span class="p">))};</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">exit</span><span class="p">);</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">CreateCall</span><span class="p">(</span><span class="n">forkFunc</span><span class="p">,</span> <span class="n">forkArgs</span><span class="p">);</span>
+
+    <span class="c1">// finally, tell Tapir to NOT create its own parallel regions, as we&#39;ve done</span>
+    <span class="c1">// it here:</span>
+    <span class="n">fastOpenMP</span><span class="p">.</span><span class="n">setValue</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="cp">#else</span>
+  <span class="n">invokeMain</span><span class="p">(</span><span class="n">realMain</span><span class="p">,</span> <span class="n">exit</span><span class="p">);</span>
+<span class="cp">#endif</span>
+
+  <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">exit</span><span class="p">);</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">CreateRet</span><span class="p">(</span><span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">LLVM_I32</span><span class="p">(),</span> <span class="mi">0</span><span class="p">));</span>
+  <span class="k">return</span> <span class="n">func</span><span class="p">;</span>
+<span class="cp">#undef LLVM_I32</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">SeqModule</span><span class="o">::</span><span class="n">codegen</span><span class="p">(</span><span class="n">Module</span> <span class="o">*</span><span class="n">module</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">assert</span><span class="p">(</span><span class="n">module</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">func</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">;</span>
+
+  <span class="n">resolveTypes</span><span class="p">();</span>
+  <span class="n">LLVMContext</span> <span class="o">&amp;</span><span class="n">context</span> <span class="o">=</span> <span class="n">module</span><span class="o">-&gt;</span><span class="n">getContext</span><span class="p">();</span>
+  <span class="k">this</span><span class="o">-&gt;</span><span class="n">module</span> <span class="o">=</span> <span class="n">module</span><span class="p">;</span>
+
+  <span class="n">func</span> <span class="o">=</span> <span class="n">cast</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&gt;</span><span class="p">(</span>
+      <span class="n">module</span><span class="o">-&gt;</span><span class="n">getOrInsertFunction</span><span class="p">(</span><span class="s">&quot;seq.main&quot;</span><span class="p">,</span> <span class="n">Type</span><span class="o">::</span><span class="n">getVoidTy</span><span class="p">(</span><span class="n">context</span><span class="p">)));</span>
+
+  <span class="n">func</span><span class="o">-&gt;</span><span class="n">setLinkage</span><span class="p">(</span><span class="n">GlobalValue</span><span class="o">::</span><span class="n">PrivateLinkage</span><span class="p">);</span>
+  <span class="n">func</span><span class="o">-&gt;</span><span class="n">setPersonalityFn</span><span class="p">(</span><span class="n">makePersonalityFunc</span><span class="p">(</span><span class="n">module</span><span class="p">));</span>
+
+  <span class="cm">/* preamble */</span>
+  <span class="n">preambleBlock</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;preamble&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+  <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">preambleBlock</span><span class="p">);</span>
+
+  <span class="n">initFunc</span> <span class="o">=</span> <span class="n">cast</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&gt;</span><span class="p">(</span>
+      <span class="n">module</span><span class="o">-&gt;</span><span class="n">getOrInsertFunction</span><span class="p">(</span><span class="s">&quot;seq_init&quot;</span><span class="p">,</span> <span class="n">Type</span><span class="o">::</span><span class="n">getVoidTy</span><span class="p">(</span><span class="n">context</span><span class="p">)));</span>
+  <span class="n">initFunc</span><span class="o">-&gt;</span><span class="n">setCallingConv</span><span class="p">(</span><span class="n">CallingConv</span><span class="o">::</span><span class="n">C</span><span class="p">);</span>
+
+  <span class="n">strlenFunc</span> <span class="o">=</span> <span class="n">cast</span><span class="o">&lt;</span><span class="n">Function</span><span class="o">&gt;</span><span class="p">(</span><span class="n">module</span><span class="o">-&gt;</span><span class="n">getOrInsertFunction</span><span class="p">(</span>
+      <span class="s">&quot;strlen&quot;</span><span class="p">,</span> <span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">IntegerType</span><span class="o">::</span><span class="n">getInt8PtrTy</span><span class="p">(</span><span class="n">context</span><span class="p">)));</span>
+  <span class="n">strlenFunc</span><span class="o">-&gt;</span><span class="n">setCallingConv</span><span class="p">(</span><span class="n">CallingConv</span><span class="o">::</span><span class="n">C</span><span class="p">);</span>
+
+  <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">entry</span> <span class="o">=</span> <span class="n">BasicBlock</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">context</span><span class="p">,</span> <span class="s">&quot;entry&quot;</span><span class="p">,</span> <span class="n">func</span><span class="p">);</span>
+  <span class="n">BasicBlock</span> <span class="o">*</span><span class="n">block</span> <span class="o">=</span> <span class="n">entry</span><span class="p">;</span>
+
+  <span class="n">scope</span><span class="o">-&gt;</span><span class="n">codegen</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+
+  <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">block</span><span class="p">);</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">CreateRetVoid</span><span class="p">();</span>
+
+  <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span><span class="n">preambleBlock</span><span class="p">);</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">CreateBr</span><span class="p">(</span><span class="n">entry</span><span class="p">);</span>
+
+  <span class="n">func</span> <span class="o">=</span> <span class="n">makeCanonicalMainFunc</span><span class="p">(</span><span class="n">func</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="n">verifyModuleFailFast</span><span class="p">(</span><span class="n">Module</span> <span class="o">&amp;</span><span class="n">module</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">verifyModule</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">errs</span><span class="p">()))</span> <span class="p">{</span>
+    <span class="n">errs</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">module</span><span class="p">;</span>
+    <span class="n">assert</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">SeqModule</span><span class="o">::</span><span class="n">verify</span><span class="p">()</span> <span class="p">{</span> <span class="n">verifyModuleFailFast</span><span class="p">(</span><span class="o">*</span><span class="n">module</span><span class="p">);</span> <span class="p">}</span>
+
+<span class="k">static</span> <span class="n">TargetMachine</span> <span class="o">*</span><span class="n">getTargetMachine</span><span class="p">(</span><span class="n">Triple</span> <span class="n">triple</span><span class="p">,</span> <span class="n">StringRef</span> <span class="n">cpuStr</span><span class="p">,</span>
+                                       <span class="n">StringRef</span> <span class="n">featuresStr</span><span class="p">,</span>
+                                       <span class="k">const</span> <span class="n">TargetOptions</span> <span class="o">&amp;</span><span class="n">options</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">err</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">Target</span> <span class="o">*</span><span class="n">target</span> <span class="o">=</span> <span class="n">TargetRegistry</span><span class="o">::</span><span class="n">lookupTarget</span><span class="p">(</span><span class="n">MArch</span><span class="p">,</span> <span class="n">triple</span><span class="p">,</span> <span class="n">err</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">target</span><span class="p">)</span>
+    <span class="k">return</span> <span class="k">nullptr</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="n">target</span><span class="o">-&gt;</span><span class="n">createTargetMachine</span><span class="p">(</span><span class="n">triple</span><span class="p">.</span><span class="n">getTriple</span><span class="p">(),</span> <span class="n">cpuStr</span><span class="p">,</span> <span class="n">featuresStr</span><span class="p">,</span>
+                                     <span class="n">options</span><span class="p">,</span> <span class="n">getRelocModel</span><span class="p">(),</span> <span class="n">getCodeModel</span><span class="p">(),</span>
+                                     <span class="n">CodeGenOpt</span><span class="o">::</span><span class="n">Aggressive</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="n">optimizeModule</span><span class="p">(</span><span class="n">Module</span> <span class="o">*</span><span class="n">module</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">debug</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">legacy</span><span class="o">::</span><span class="n">PassManager</span><span class="o">&gt;</span> <span class="n">pm</span><span class="p">(</span><span class="k">new</span> <span class="n">legacy</span><span class="o">::</span><span class="n">PassManager</span><span class="p">());</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">legacy</span><span class="o">::</span><span class="n">FunctionPassManager</span><span class="o">&gt;</span> <span class="n">fpm</span><span class="p">(</span>
+      <span class="k">new</span> <span class="n">legacy</span><span class="o">::</span><span class="n">FunctionPassManager</span><span class="p">(</span><span class="n">module</span><span class="p">));</span>
+
+  <span class="n">Triple</span> <span class="nf">moduleTriple</span><span class="p">(</span><span class="n">module</span><span class="o">-&gt;</span><span class="n">getTargetTriple</span><span class="p">());</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">cpuStr</span><span class="p">,</span> <span class="n">featuresStr</span><span class="p">;</span>
+  <span class="n">TargetMachine</span> <span class="o">*</span><span class="n">machine</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">TargetOptions</span> <span class="n">options</span> <span class="o">=</span> <span class="n">InitTargetOptionsFromCodeGenFlags</span><span class="p">();</span>
+  <span class="n">TargetLibraryInfoImpl</span> <span class="nf">tlii</span><span class="p">(</span><span class="n">moduleTriple</span><span class="p">);</span>
+  <span class="n">pm</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="k">new</span> <span class="n">TargetLibraryInfoWrapperPass</span><span class="p">(</span><span class="n">tlii</span><span class="p">));</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">moduleTriple</span><span class="p">.</span><span class="n">getArch</span><span class="p">())</span> <span class="p">{</span>
+    <span class="n">cpuStr</span> <span class="o">=</span> <span class="n">getCPUStr</span><span class="p">();</span>
+    <span class="n">featuresStr</span> <span class="o">=</span> <span class="n">getFeaturesStr</span><span class="p">();</span>
+    <span class="n">machine</span> <span class="o">=</span> <span class="n">getTargetMachine</span><span class="p">(</span><span class="n">moduleTriple</span><span class="p">,</span> <span class="n">cpuStr</span><span class="p">,</span> <span class="n">featuresStr</span><span class="p">,</span> <span class="n">options</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">TargetMachine</span><span class="o">&gt;</span> <span class="n">tm</span><span class="p">(</span><span class="n">machine</span><span class="p">);</span>
+  <span class="n">setFunctionAttributes</span><span class="p">(</span><span class="n">cpuStr</span><span class="p">,</span> <span class="n">featuresStr</span><span class="p">,</span> <span class="o">*</span><span class="n">module</span><span class="p">);</span>
+  <span class="n">pm</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">createTargetTransformInfoWrapperPass</span><span class="p">(</span><span class="n">tm</span> <span class="o">?</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">getTargetIRAnalysis</span><span class="p">()</span>
+                                                  <span class="o">:</span> <span class="n">TargetIRAnalysis</span><span class="p">()));</span>
+  <span class="n">fpm</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">createTargetTransformInfoWrapperPass</span><span class="p">(</span><span class="n">tm</span> <span class="o">?</span> <span class="n">tm</span><span class="o">-&gt;</span><span class="n">getTargetIRAnalysis</span><span class="p">()</span>
+                                                   <span class="o">:</span> <span class="n">TargetIRAnalysis</span><span class="p">()));</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">auto</span> <span class="o">&amp;</span><span class="n">ltm</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">LLVMTargetMachine</span> <span class="o">&amp;&gt;</span><span class="p">(</span><span class="o">*</span><span class="n">tm</span><span class="p">);</span>
+    <span class="n">Pass</span> <span class="o">*</span><span class="n">tpc</span> <span class="o">=</span> <span class="n">ltm</span><span class="p">.</span><span class="n">createPassConfig</span><span class="p">(</span><span class="o">*</span><span class="n">pm</span><span class="p">);</span>
+    <span class="n">pm</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">tpc</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="kt">unsigned</span> <span class="n">optLevel</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+  <span class="kt">unsigned</span> <span class="n">sizeLevel</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="n">PassManagerBuilder</span> <span class="n">builder</span><span class="p">;</span>
+
+<span class="cp">#if SEQ_HAS_TAPIR</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">tapirTarget</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">omp</span><span class="p">;</span>
+<span class="cp">#endif</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">debug</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">OptLevel</span> <span class="o">=</span> <span class="n">optLevel</span><span class="p">;</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">SizeLevel</span> <span class="o">=</span> <span class="n">sizeLevel</span><span class="p">;</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">Inliner</span> <span class="o">=</span> <span class="n">createFunctionInliningPass</span><span class="p">(</span><span class="n">optLevel</span><span class="p">,</span> <span class="n">sizeLevel</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">DisableUnitAtATime</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">DisableUnrollLoops</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">LoopVectorize</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">SLPVectorize</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">tm</span><span class="p">)</span>
+    <span class="n">tm</span><span class="o">-&gt;</span><span class="n">adjustPassManager</span><span class="p">(</span><span class="n">builder</span><span class="p">);</span>
+
+  <span class="n">addCoroutinePassesToExtensionPoints</span><span class="p">(</span><span class="n">builder</span><span class="p">);</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">populateModulePassManager</span><span class="p">(</span><span class="o">*</span><span class="n">pm</span><span class="p">);</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">populateFunctionPassManager</span><span class="p">(</span><span class="o">*</span><span class="n">fpm</span><span class="p">);</span>
+
+  <span class="n">fpm</span><span class="o">-&gt;</span><span class="n">doInitialization</span><span class="p">();</span>
+  <span class="k">for</span> <span class="p">(</span><span class="n">Function</span> <span class="o">&amp;</span><span class="nl">f</span> <span class="p">:</span> <span class="o">*</span><span class="n">module</span><span class="p">)</span>
+    <span class="n">fpm</span><span class="o">-&gt;</span><span class="n">run</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+  <span class="n">fpm</span><span class="o">-&gt;</span><span class="n">doFinalization</span><span class="p">();</span>
+  <span class="n">pm</span><span class="o">-&gt;</span><span class="n">run</span><span class="p">(</span><span class="o">*</span><span class="n">module</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">SeqModule</span><span class="o">::</span><span class="n">optimize</span><span class="p">(</span><span class="kt">bool</span> <span class="n">debug</span><span class="p">)</span> <span class="p">{</span> <span class="n">optimizeModule</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">debug</span><span class="p">);</span> <span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">SeqModule</span><span class="o">::</span><span class="n">compile</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">out</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">debug</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">codegen</span><span class="p">(</span><span class="n">module</span><span class="p">);</span>
+  <span class="n">verify</span><span class="p">();</span>
+  <span class="n">optimize</span><span class="p">(</span><span class="n">debug</span><span class="p">);</span>
+  <span class="n">verify</span><span class="p">();</span>
+  <span class="n">optimize</span><span class="p">(</span><span class="n">debug</span><span class="p">);</span>
+  <span class="n">verify</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">debug</span><span class="p">)</span>
+    <span class="n">errs</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">module</span><span class="p">;</span>
+
+<span class="cp">#if SEQ_HAS_TAPIR</span>
+  <span class="n">resetOMPABI</span><span class="p">();</span>
+<span class="cp">#endif</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">error_code</span> <span class="n">err</span><span class="p">;</span>
+  <span class="n">raw_fd_ostream</span> <span class="nf">stream</span><span class="p">(</span><span class="n">out</span><span class="p">,</span> <span class="n">err</span><span class="p">,</span> <span class="n">llvm</span><span class="o">::</span><span class="n">sys</span><span class="o">::</span><span class="n">fs</span><span class="o">::</span><span class="n">F_None</span><span class="p">);</span>
+
+<span class="cp">#if LLVM_VERSION_MAJOR &gt;= 7</span>
+  <span class="n">WriteBitcodeToFile</span><span class="p">(</span><span class="o">*</span><span class="n">module</span><span class="p">,</span> <span class="n">stream</span><span class="p">);</span>
+<span class="cp">#else</span>
+  <span class="n">WriteBitcodeToFile</span><span class="p">(</span><span class="n">module</span><span class="p">,</span> <span class="n">stream</span><span class="p">);</span>
+<span class="cp">#endif</span>
+
+  <span class="n">module</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;error: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">err</span><span class="p">.</span><span class="n">message</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">exit</span><span class="p">(</span><span class="n">err</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">void</span> <span class="n">seq_gc_add_roots</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">start</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">end</span><span class="p">);</span>
+<span class="k">extern</span> <span class="s">&quot;C&quot;</span> <span class="kt">void</span> <span class="n">seq_gc_remove_roots</span><span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="n">start</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">end</span><span class="p">);</span>
+<span class="k">class</span> <span class="nc">BoehmGCMemoryManager</span> <span class="o">:</span> <span class="k">public</span> <span class="n">SectionMemoryManager</span> <span class="p">{</span>
+<span class="k">private</span><span class="o">:</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">void</span> <span class="o">*</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*&gt;&gt;</span> <span class="n">roots</span><span class="p">;</span>
+
+  <span class="kt">uint8_t</span> <span class="o">*</span><span class="nf">allocateDataSection</span><span class="p">(</span><span class="kt">uintptr_t</span> <span class="n">size</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="n">alignment</span><span class="p">,</span>
+                               <span class="kt">unsigned</span> <span class="n">sectionID</span><span class="p">,</span> <span class="n">StringRef</span> <span class="n">sectionName</span><span class="p">,</span>
+                               <span class="kt">bool</span> <span class="n">isReadOnly</span><span class="p">)</span> <span class="k">override</span> <span class="p">{</span>
+    <span class="kt">uint8_t</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="n">SectionMemoryManager</span><span class="o">::</span><span class="n">allocateDataSection</span><span class="p">(</span>
+        <span class="n">size</span><span class="p">,</span> <span class="n">alignment</span><span class="p">,</span> <span class="n">sectionID</span><span class="p">,</span> <span class="n">sectionName</span><span class="p">,</span> <span class="n">isReadOnly</span><span class="p">);</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">start</span> <span class="o">=</span> <span class="n">result</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="o">*</span><span class="n">end</span> <span class="o">=</span> <span class="n">result</span> <span class="o">+</span> <span class="n">size</span><span class="p">;</span>
+    <span class="n">seq_gc_add_roots</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>
+    <span class="n">roots</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="k">public</span><span class="o">:</span>
+  <span class="n">BoehmGCMemoryManager</span><span class="p">()</span> <span class="o">:</span> <span class="n">SectionMemoryManager</span><span class="p">(),</span> <span class="n">roots</span><span class="p">()</span> <span class="p">{}</span>
+
+  <span class="o">~</span><span class="n">BoehmGCMemoryManager</span><span class="p">()</span> <span class="k">override</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span><span class="nl">root</span> <span class="p">:</span> <span class="n">roots</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">seq_gc_remove_roots</span><span class="p">(</span><span class="n">root</span><span class="p">.</span><span class="n">first</span><span class="p">,</span> <span class="n">root</span><span class="p">.</span><span class="n">second</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="n">SeqModule</span><span class="o">::</span><span class="n">execute</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">args</span><span class="p">,</span>
+                        <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">libs</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">debug</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">codegen</span><span class="p">(</span><span class="n">module</span><span class="p">);</span>
+  <span class="n">verify</span><span class="p">();</span>
+  <span class="n">optimize</span><span class="p">(</span><span class="n">debug</span><span class="p">);</span>
+  <span class="n">verify</span><span class="p">();</span>
+  <span class="n">optimize</span><span class="p">(</span><span class="n">debug</span><span class="p">);</span>
+  <span class="n">verify</span><span class="p">();</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="n">debug</span><span class="p">)</span>
+    <span class="n">errs</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">module</span><span class="p">;</span>
+
+<span class="cp">#if SEQ_HAS_TAPIR</span>
+  <span class="n">resetOMPABI</span><span class="p">();</span>
+<span class="cp">#endif</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Module</span><span class="o">&gt;</span> <span class="n">owner</span><span class="p">(</span><span class="n">module</span><span class="p">);</span>
+  <span class="n">module</span> <span class="o">=</span> <span class="k">nullptr</span><span class="p">;</span>
+  <span class="n">EngineBuilder</span> <span class="nf">EB</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">owner</span><span class="p">));</span>
+  <span class="n">EB</span><span class="p">.</span><span class="n">setMCJITMemoryManager</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">BoehmGCMemoryManager</span><span class="o">&gt;</span><span class="p">());</span>
+  <span class="n">EB</span><span class="p">.</span><span class="n">setUseOrcMCJITReplacement</span><span class="p">(</span><span class="nb">true</span><span class="p">);</span>
+  <span class="n">ExecutionEngine</span> <span class="o">*</span><span class="n">eng</span> <span class="o">=</span> <span class="n">EB</span><span class="p">.</span><span class="n">create</span><span class="p">();</span>
+
+  <span class="n">assert</span><span class="p">(</span><span class="n">initFunc</span><span class="p">);</span>
+  <span class="n">assert</span><span class="p">(</span><span class="n">strlenFunc</span><span class="p">);</span>
+  <span class="n">eng</span><span class="o">-&gt;</span><span class="n">addGlobalMapping</span><span class="p">(</span><span class="n">initFunc</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">seq_init</span><span class="p">);</span>
+  <span class="n">eng</span><span class="o">-&gt;</span><span class="n">addGlobalMapping</span><span class="p">(</span><span class="n">strlenFunc</span><span class="p">,</span> <span class="p">(</span><span class="kt">void</span> <span class="o">*</span><span class="p">)</span><span class="n">strlen</span><span class="p">);</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">err</span><span class="p">;</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;</span><span class="nl">lib</span> <span class="p">:</span> <span class="n">libs</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">sys</span><span class="o">::</span><span class="n">DynamicLibrary</span><span class="o">::</span><span class="n">LoadLibraryPermanently</span><span class="p">(</span><span class="n">lib</span><span class="p">.</span><span class="n">c_str</span><span class="p">(),</span> <span class="o">&amp;</span><span class="n">err</span><span class="p">))</span> <span class="p">{</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;error: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">err</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+      <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="n">eng</span><span class="o">-&gt;</span><span class="n">runFunctionAsMain</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="k">nullptr</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * JIT</span>
+<span class="cm"> */</span>
+<span class="cp">#if LLVM_VERSION_MAJOR == 6</span>
+<span class="k">static</span> <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Module</span><span class="o">&gt;</span> <span class="n">optimizeModule</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Module</span><span class="o">&gt;</span> <span class="n">module</span><span class="p">,</span>
+                                              <span class="kt">bool</span> <span class="n">debug</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">optimizeModule</span><span class="p">(</span><span class="n">module</span><span class="p">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">debug</span><span class="p">);</span>
+  <span class="n">verifyModuleFailFast</span><span class="p">(</span><span class="o">*</span><span class="n">module</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">module</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">SeqJIT</span><span class="o">::</span><span class="n">SeqJIT</span><span class="p">()</span>
+    <span class="o">:</span> <span class="n">target</span><span class="p">(</span><span class="n">EngineBuilder</span><span class="p">().</span><span class="n">selectTarget</span><span class="p">()),</span>
+      <span class="n">layout</span><span class="p">(</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">createDataLayout</span><span class="p">()),</span>
+      <span class="n">objLayer</span><span class="p">([]()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">BoehmGCMemoryManager</span><span class="o">&gt;</span><span class="p">();</span> <span class="p">}),</span>
+      <span class="n">comLayer</span><span class="p">(</span><span class="n">objLayer</span><span class="p">,</span> <span class="n">SimpleCompiler</span><span class="p">(</span><span class="o">*</span><span class="n">target</span><span class="p">)),</span>
+      <span class="n">optLayer</span><span class="p">(</span><span class="n">comLayer</span><span class="p">,</span>
+               <span class="p">[](</span><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">Module</span><span class="o">&gt;</span> <span class="n">M</span><span class="p">)</span> <span class="p">{</span>
+                 <span class="k">return</span> <span class="n">optimizeModule</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">M</span><span class="p">),</span> <span class="nb">true</span><span class="p">);</span>
+               <span class="p">}),</span>
+      <span class="n">callbackManager</span><span class="p">(</span>
+          <span class="n">orc</span><span class="o">::</span><span class="n">createLocalCompileCallbackManager</span><span class="p">(</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">getTargetTriple</span><span class="p">(),</span> <span class="mi">0</span><span class="p">)),</span>
+      <span class="n">codLayer</span><span class="p">(</span>
+          <span class="n">optLayer</span><span class="p">,</span> <span class="p">[](</span><span class="n">Function</span> <span class="o">&amp;</span><span class="n">F</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">set</span><span class="o">&lt;</span><span class="n">Function</span> <span class="o">*&gt;</span><span class="p">({</span><span class="o">&amp;</span><span class="n">F</span><span class="p">});</span> <span class="p">},</span>
+          <span class="o">*</span><span class="n">callbackManager</span><span class="p">,</span>
+          <span class="n">orc</span><span class="o">::</span><span class="n">createLocalIndirectStubsManagerBuilder</span><span class="p">(</span>
+              <span class="n">target</span><span class="o">-&gt;</span><span class="n">getTargetTriple</span><span class="p">())),</span>
+      <span class="n">globals</span><span class="p">(),</span> <span class="n">inputNum</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">sys</span><span class="o">::</span><span class="n">DynamicLibrary</span><span class="o">::</span><span class="n">LoadLibraryPermanently</span><span class="p">(</span><span class="k">nullptr</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">SeqJIT</span><span class="o">::</span><span class="n">init</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">InitializeNativeTarget</span><span class="p">();</span>
+  <span class="n">InitializeNativeTargetAsmPrinter</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Module</span><span class="o">&gt;</span> <span class="n">SeqJIT</span><span class="o">::</span><span class="n">makeModule</span><span class="p">()</span> <span class="p">{</span>
+  <span class="k">auto</span> <span class="n">module</span> <span class="o">=</span> <span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Module</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;seq.&quot;</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">inputNum</span><span class="p">),</span> <span class="n">context</span><span class="p">);</span>
+  <span class="n">module</span><span class="o">-&gt;</span><span class="n">setTargetTriple</span><span class="p">(</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">getTargetTriple</span><span class="p">().</span><span class="n">str</span><span class="p">());</span>
+  <span class="n">module</span><span class="o">-&gt;</span><span class="n">setDataLayout</span><span class="p">(</span><span class="n">target</span><span class="o">-&gt;</span><span class="n">createDataLayout</span><span class="p">());</span>
+  <span class="k">return</span> <span class="n">module</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">SeqJIT</span><span class="o">::</span><span class="n">ModuleHandle</span> <span class="n">SeqJIT</span><span class="o">::</span><span class="n">addModule</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Module</span><span class="o">&gt;</span> <span class="n">module</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">auto</span> <span class="n">resolver</span> <span class="o">=</span> <span class="n">createLambdaResolver</span><span class="p">(</span>
+      <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">sym</span> <span class="o">=</span> <span class="n">codLayer</span><span class="p">.</span><span class="n">findSymbol</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">false</span><span class="p">))</span>
+          <span class="k">return</span> <span class="n">sym</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nf">JITSymbol</span><span class="p">(</span><span class="k">nullptr</span><span class="p">);</span>
+      <span class="p">},</span>
+      <span class="p">[](</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">auto</span> <span class="n">symAddr</span> <span class="o">=</span> <span class="n">RTDyldMemoryManager</span><span class="o">::</span><span class="n">getSymbolAddressInProcess</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+          <span class="k">return</span> <span class="n">JITSymbol</span><span class="p">(</span><span class="n">symAddr</span><span class="p">,</span> <span class="n">JITSymbolFlags</span><span class="o">::</span><span class="n">Exported</span><span class="p">);</span>
+        <span class="k">return</span> <span class="nf">JITSymbol</span><span class="p">(</span><span class="k">nullptr</span><span class="p">);</span>
+      <span class="p">});</span>
+  <span class="k">return</span> <span class="nf">cantFail</span><span class="p">(</span><span class="n">codLayer</span><span class="p">.</span><span class="n">addModule</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">module</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">resolver</span><span class="p">)));</span>
+<span class="p">}</span>
+
+<span class="n">JITSymbol</span> <span class="n">SeqJIT</span><span class="o">::</span><span class="n">findSymbol</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">mangledName</span><span class="p">;</span>
+  <span class="n">raw_string_ostream</span> <span class="nf">mangledNameStream</span><span class="p">(</span><span class="n">mangledName</span><span class="p">);</span>
+  <span class="n">Mangler</span><span class="o">::</span><span class="n">getNameWithPrefix</span><span class="p">(</span><span class="n">mangledNameStream</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">layout</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">codLayer</span><span class="p">.</span><span class="n">findSymbol</span><span class="p">(</span><span class="n">mangledNameStream</span><span class="p">.</span><span class="n">str</span><span class="p">(),</span> <span class="nb">false</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">SeqJIT</span><span class="o">::</span><span class="n">removeModule</span><span class="p">(</span><span class="n">SeqJIT</span><span class="o">::</span><span class="n">ModuleHandle</span> <span class="n">handle</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">cantFail</span><span class="p">(</span><span class="n">codLayer</span><span class="p">.</span><span class="n">removeModule</span><span class="p">(</span><span class="n">handle</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="n">Func</span> <span class="n">SeqJIT</span><span class="o">::</span><span class="n">makeFunc</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Func</span> <span class="n">func</span><span class="p">;</span>
+  <span class="n">func</span><span class="p">.</span><span class="n">setName</span><span class="p">(</span><span class="s">&quot;seq.repl.input.&quot;</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">inputNum</span><span class="p">));</span>
+  <span class="n">func</span><span class="p">.</span><span class="n">setIns</span><span class="p">({});</span>
+  <span class="n">func</span><span class="p">.</span><span class="n">setOut</span><span class="p">(</span><span class="n">types</span><span class="o">::</span><span class="n">Void</span><span class="p">);</span>
+  <span class="k">return</span> <span class="n">func</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">SeqJIT</span><span class="o">::</span><span class="n">exec</span><span class="p">(</span><span class="n">Func</span> <span class="o">*</span><span class="n">func</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Module</span><span class="o">&gt;</span> <span class="n">module</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">func</span><span class="o">-&gt;</span><span class="n">resolveTypes</span><span class="p">();</span>
+  <span class="n">func</span><span class="o">-&gt;</span><span class="n">codegen</span><span class="p">(</span><span class="n">module</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+  <span class="n">func</span><span class="o">-&gt;</span><span class="n">getFunc</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">setLinkage</span><span class="p">(</span><span class="n">GlobalValue</span><span class="o">::</span><span class="n">ExternalLinkage</span><span class="p">);</span>
+
+  <span class="c1">// expose globals to the new function:</span>
+  <span class="n">IRBuilder</span><span class="o">&lt;&gt;</span> <span class="n">builder</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+  <span class="n">builder</span><span class="p">.</span><span class="n">SetInsertPoint</span><span class="p">(</span>
+      <span class="o">&amp;*</span><span class="p">(</span><span class="o">*</span><span class="n">func</span><span class="o">-&gt;</span><span class="n">getFunc</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getBasicBlockList</span><span class="p">().</span><span class="n">begin</span><span class="p">()).</span><span class="n">begin</span><span class="p">());</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">*</span><span class="nl">var</span> <span class="p">:</span> <span class="n">globals</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">ptr</span> <span class="o">=</span> <span class="n">var</span><span class="o">-&gt;</span><span class="n">getPtr</span><span class="p">(</span><span class="n">func</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="n">sym</span> <span class="o">=</span> <span class="n">findSymbol</span><span class="p">(</span><span class="n">var</span><span class="o">-&gt;</span><span class="n">getName</span><span class="p">());</span>
+    <span class="k">auto</span> <span class="n">addr</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint64_t</span><span class="p">)</span><span class="n">cantFail</span><span class="p">(</span><span class="n">sym</span><span class="p">.</span><span class="n">getAddress</span><span class="p">());</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">addrVal</span> <span class="o">=</span> <span class="n">ConstantInt</span><span class="o">::</span><span class="n">get</span><span class="p">(</span><span class="n">seqIntLLVM</span><span class="p">(</span><span class="n">context</span><span class="p">),</span> <span class="n">addr</span><span class="p">);</span>
+    <span class="n">Value</span> <span class="o">*</span><span class="n">ptrVal</span> <span class="o">=</span> <span class="n">builder</span><span class="p">.</span><span class="n">CreateIntToPtr</span><span class="p">(</span>
+        <span class="n">addrVal</span><span class="p">,</span> <span class="n">var</span><span class="o">-&gt;</span><span class="n">getType</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">getLLVMType</span><span class="p">(</span><span class="n">context</span><span class="p">)</span><span class="o">-&gt;</span><span class="n">getPointerTo</span><span class="p">());</span>
+    <span class="n">builder</span><span class="p">.</span><span class="n">CreateStore</span><span class="p">(</span><span class="n">ptrVal</span><span class="p">,</span> <span class="n">ptr</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">verifyModuleFailFast</span><span class="p">(</span><span class="o">*</span><span class="n">module</span><span class="p">);</span>
+  <span class="n">addModule</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">module</span><span class="p">));</span>
+  <span class="k">auto</span> <span class="n">sym</span> <span class="o">=</span> <span class="n">findSymbol</span><span class="p">(</span><span class="n">func</span><span class="o">-&gt;</span><span class="n">genericName</span><span class="p">());</span>
+  <span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="n">fn</span><span class="p">)()</span> <span class="o">=</span> <span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">*</span><span class="p">)())</span><span class="n">cantFail</span><span class="p">(</span><span class="n">sym</span><span class="p">.</span><span class="n">getAddress</span><span class="p">());</span>
+  <span class="n">fn</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">SeqJIT</span><span class="o">::</span><span class="n">addFunc</span><span class="p">(</span><span class="n">Func</span> <span class="o">*</span><span class="n">func</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">auto</span> <span class="n">module</span> <span class="o">=</span> <span class="n">makeModule</span><span class="p">();</span>
+  <span class="n">func</span><span class="o">-&gt;</span><span class="n">setName</span><span class="p">(</span><span class="s">&quot;seq.repl.input.&quot;</span> <span class="o">+</span> <span class="n">std</span><span class="o">::</span><span class="n">to_string</span><span class="p">(</span><span class="n">inputNum</span><span class="p">));</span>
+  <span class="n">exec</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">module</span><span class="p">));</span>
+  <span class="o">++</span><span class="n">inputNum</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">SeqJIT</span><span class="o">::</span><span class="n">addExpr</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">expr</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">print</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">auto</span> <span class="n">module</span> <span class="o">=</span> <span class="n">makeModule</span><span class="p">();</span>
+  <span class="n">Func</span> <span class="n">func</span> <span class="o">=</span> <span class="n">makeFunc</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">print</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">auto</span> <span class="o">*</span><span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Print</span><span class="p">(</span><span class="n">expr</span><span class="p">);</span>
+    <span class="k">auto</span> <span class="o">*</span><span class="n">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Print</span><span class="p">(</span><span class="k">new</span> <span class="n">StrExpr</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">));</span>
+    <span class="n">p1</span><span class="o">-&gt;</span><span class="n">setBase</span><span class="p">(</span><span class="o">&amp;</span><span class="n">func</span><span class="p">);</span>
+    <span class="n">p2</span><span class="o">-&gt;</span><span class="n">setBase</span><span class="p">(</span><span class="o">&amp;</span><span class="n">func</span><span class="p">);</span>
+    <span class="n">func</span><span class="p">.</span><span class="n">getBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">p1</span><span class="p">);</span>
+    <span class="n">func</span><span class="p">.</span><span class="n">getBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">p2</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">auto</span> <span class="o">*</span><span class="n">e</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ExprStmt</span><span class="p">(</span><span class="n">expr</span><span class="p">);</span>
+    <span class="n">e</span><span class="o">-&gt;</span><span class="n">setBase</span><span class="p">(</span><span class="o">&amp;</span><span class="n">func</span><span class="p">);</span>
+    <span class="n">func</span><span class="p">.</span><span class="n">getBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">e</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="n">exec</span><span class="p">(</span><span class="o">&amp;</span><span class="n">func</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">module</span><span class="p">));</span>
+  <span class="o">++</span><span class="n">inputNum</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">Var</span> <span class="o">*</span><span class="n">SeqJIT</span><span class="o">::</span><span class="n">addVar</span><span class="p">(</span><span class="n">Expr</span> <span class="o">*</span><span class="n">expr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">auto</span> <span class="n">module</span> <span class="o">=</span> <span class="n">makeModule</span><span class="p">();</span>
+  <span class="n">Func</span> <span class="n">func</span> <span class="o">=</span> <span class="n">makeFunc</span><span class="p">();</span>
+  <span class="k">auto</span> <span class="o">*</span><span class="n">v</span> <span class="o">=</span> <span class="k">new</span> <span class="n">VarStmt</span><span class="p">(</span><span class="n">expr</span><span class="p">);</span>
+  <span class="n">Var</span> <span class="o">*</span><span class="n">var</span> <span class="o">=</span> <span class="n">v</span><span class="o">-&gt;</span><span class="n">getVar</span><span class="p">();</span>
+  <span class="n">var</span><span class="o">-&gt;</span><span class="n">setGlobal</span><span class="p">();</span>
+  <span class="n">var</span><span class="o">-&gt;</span><span class="n">setExternal</span><span class="p">();</span>
+  <span class="n">v</span><span class="o">-&gt;</span><span class="n">setBase</span><span class="p">(</span><span class="o">&amp;</span><span class="n">func</span><span class="p">);</span>
+  <span class="n">func</span><span class="p">.</span><span class="n">getBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">add</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+
+  <span class="n">exec</span><span class="p">(</span><span class="o">&amp;</span><span class="n">func</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">module</span><span class="p">));</span>
+  <span class="n">var</span><span class="o">-&gt;</span><span class="n">setREPL</span><span class="p">();</span>
+  <span class="n">globals</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">var</span><span class="p">);</span>
+  <span class="o">++</span><span class="n">inputNum</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">var</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">SeqJIT</span><span class="o">::</span><span class="n">delVar</span><span class="p">(</span><span class="n">Var</span> <span class="o">*</span><span class="n">var</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find</span><span class="p">(</span><span class="n">globals</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">globals</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">var</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">globals</span><span class="p">.</span><span class="n">end</span><span class="p">())</span>
+    <span class="n">globals</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">#endif</span>
+
+<span class="k">static</span> <span class="kt">void</span> <span class="n">compilationMessage</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">header</span><span class="p">,</span>
+                               <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">file</span><span class="p">,</span>
+                               <span class="kt">int</span> <span class="n">line</span><span class="p">,</span> <span class="kt">int</span> <span class="n">col</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">assert</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">line</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">||</span> <span class="n">col</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)));</span>
+  <span class="n">assert</span><span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">col</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">line</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">));</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\033</span><span class="s">[1m&quot;</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">file</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="n">file</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="n">rfind</span><span class="p">(</span><span class="sc">&#39;/&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">line</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">line</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">col</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">col</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">file</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;: &quot;</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cerr</span> <span class="o">&lt;&lt;</span> <span class="n">header</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\033</span><span class="s">[1m &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">msg</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\033</span><span class="s">[0m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">seq</span><span class="o">::</span><span class="n">compilationError</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">file</span><span class="p">,</span>
+                           <span class="kt">int</span> <span class="n">line</span><span class="p">,</span> <span class="kt">int</span> <span class="n">col</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">compilationMessage</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\033</span><span class="s">[1;31merror:</span><span class="se">\033</span><span class="s">[0m&quot;</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">col</span><span class="p">);</span>
+  <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">seq</span><span class="o">::</span><span class="n">compilationWarning</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">msg</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span><span class="n">file</span><span class="p">,</span>
+                             <span class="kt">int</span> <span class="n">line</span><span class="p">,</span> <span class="kt">int</span> <span class="n">col</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">compilationMessage</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\033</span><span class="s">[1;33mwarning:</span><span class="se">\033</span><span class="s">[0m&quot;</span><span class="p">,</span> <span class="n">msg</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">line</span><span class="p">,</span> <span class="n">col</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+.. _program_listing_file_compiler_include_seq_void.h:
+
+Program Listing for File void.h
+===============================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_compiler_include_seq_void.h>` (``compiler/include/seq/void.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #ifndef SEQ_VOID_H
+   #define SEQ_VOID_H
+   
+   #include "types.h"
+   
+   namespace seq {
+   namespace types {
+   class VoidType : public Type {
+   private:
+     VoidType();
+   
+   public:
+     VoidType(VoidType const &) = delete;
+     void operator=(VoidType const &) = delete;
+   
+     llvm::Type *getLLVMType(llvm::LLVMContext &context) const override;
+     static VoidType *get() noexcept;
+   };
+   
+   } // namespace types
+   } // namespace seq
+   
+   #endif /* SEQ_VOID_H */

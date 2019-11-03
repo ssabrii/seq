@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a6617baef9a2de1005a71da32e70533f6:
+
+Function assign_stmt
+====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: assign_stmt(Var *, Expr *)

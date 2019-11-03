@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ab7e57cdcb4e504ed141395517a7e357a:
+
+Function var_expr_set_atomic
+============================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: var_expr_set_atomic(VarExpr *)

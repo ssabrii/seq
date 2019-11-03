@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a9dca7436b6d736ae98aaa1d85f4b681f:
+
+Function wildcard_pattern
+=========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: wildcard_pattern(void)

@@ -1,0 +1,13 @@
+.. _exhale_function_seq_8cpp_1adb83291c6c0edb6358adc743e3ffeb3b:
+
+Function seq_gc_add_roots
+=========================
+
+- Defined in :ref:`file_compiler_lang_seq.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq_gc_add_roots(void *, void *)

@@ -1,0 +1,25 @@
+.. _exhale_class_classBoehmGCMemoryManager:
+
+Class BoehmGCMemoryManager
+==========================
+
+- Defined in :ref:`file_compiler_lang_seq.cpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public SectionMemoryManager``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: BoehmGCMemoryManager
+   :members:
+   :protected-members:
+   :undoc-members:

@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a566f1144ab9866bce9f8d60c97243e1f:
+
+Function yield_stmt
+===================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: yield_stmt(Expr *)

@@ -1,0 +1,70 @@
+
+.. _file_compiler_include_seq_ops.h:
+
+File ops.h
+==========
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_include_seq>` (``compiler/include/seq``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/include/seq/ops.h``)
+-------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_include_seq_ops.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_compiler_include_seq_expr.h`
+
+- :ref:`file_compiler_include_seq_seq.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_seq`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structseq_1_1Op`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_ops_8h_1aee37aa70c83a5818b36c41145b517525`
+
+- :ref:`exhale_function_ops_8h_1a985c6b0de6caa845e716061e4a6636f5`
+

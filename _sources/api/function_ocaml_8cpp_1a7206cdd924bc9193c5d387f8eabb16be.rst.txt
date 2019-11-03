@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a7206cdd924bc9193c5d387f8eabb16be:
+
+Function get_var_type
+=====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get_var_type(Var *)

@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ab2dac3fea736dd3d1ba2fa6ab16bb3cc:
+
+Function del_index_stmt
+=======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: del_index_stmt(Expr *, Expr *)

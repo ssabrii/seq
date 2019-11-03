@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1aedec20b36e92af35fa618ed94d05f57e:
+
+Function atomic_nand_expr
+=========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: atomic_nand_expr(Var *, Expr *)

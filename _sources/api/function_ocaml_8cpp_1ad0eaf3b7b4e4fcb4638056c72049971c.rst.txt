@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ad0eaf3b7b4e4fcb4638056c72049971c:
+
+Function float_expr
+===================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: float_expr(double)

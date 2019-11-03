@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a2af7ebee02af2573efe3b5bd327688d9:
+
+Function record_type_named
+==========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: record_type_named(char **, types::Type **, size_t, char *)

@@ -1,0 +1,13 @@
+.. _exhale_function_common_8h_1acef9e0810281c168e7473b324bb2ad15:
+
+Function seq::makeThrowFunc
+===========================
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::makeThrowFunc(llvm::Module *)

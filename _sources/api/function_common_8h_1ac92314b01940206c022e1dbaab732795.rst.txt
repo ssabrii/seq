@@ -1,0 +1,13 @@
+.. _exhale_function_common_8h_1ac92314b01940206c022e1dbaab732795:
+
+Function seq::makeAlloca(llvm::Type \*, llvm::BasicBlock \*, uint64_t)
+======================================================================
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::makeAlloca(llvm::Type *, llvm::BasicBlock *, uint64_t)

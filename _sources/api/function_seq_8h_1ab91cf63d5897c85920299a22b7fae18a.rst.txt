@@ -1,0 +1,13 @@
+.. _exhale_function_seq_8h_1ab91cf63d5897c85920299a22b7fae18a:
+
+Function seq::compilationError
+==============================
+
+- Defined in :ref:`file_compiler_include_seq_seq.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::compilationError(const std::string&, const std::string&, int, int)

@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ae1f14f86a6d3e97fda61b1c65ba464c7:
+
+Function trycatch_stmt
+======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: trycatch_stmt()

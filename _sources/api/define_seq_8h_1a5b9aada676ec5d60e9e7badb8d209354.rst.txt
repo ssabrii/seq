@@ -1,0 +1,13 @@
+.. _exhale_define_seq_8h_1a5b9aada676ec5d60e9e7badb8d209354:
+
+Define SEQ_VERSION_PATCH
+========================
+
+- Defined in :ref:`file_compiler_include_seq_seq.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: SEQ_VERSION_PATCH

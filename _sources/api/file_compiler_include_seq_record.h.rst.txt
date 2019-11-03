@@ -1,0 +1,69 @@
+
+.. _file_compiler_include_seq_record.h:
+
+File record.h
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_include_seq>` (``compiler/include/seq``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/include/seq/record.h``)
+----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_include_seq_record.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``functional``
+
+- ``initializer_list``
+
+- ``types.h`` (:ref:`file_compiler_include_seq_types.h`)
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_compiler_include_seq_funct.h`
+
+- :ref:`file_compiler_include_seq_ref.h`
+
+- :ref:`file_compiler_include_seq_seq.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_seq`
+
+- :ref:`namespace_seq__types`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classseq_1_1types_1_1RecordType`
+

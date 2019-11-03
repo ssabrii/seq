@@ -1,0 +1,25 @@
+.. _exhale_class_classseq_1_1RecordPattern:
+
+Class RecordPattern
+===================
+
+- Defined in :ref:`file_compiler_include_seq_patterns.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public seq::Pattern`` (:ref:`exhale_class_classseq_1_1Pattern`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::RecordPattern
+   :members:
+   :protected-members:
+   :undoc-members:

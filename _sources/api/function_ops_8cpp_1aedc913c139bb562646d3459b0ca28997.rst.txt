@@ -1,0 +1,13 @@
+.. _exhale_function_ops_8cpp_1aedc913c139bb562646d3459b0ca28997:
+
+Function init
+=============
+
+- Defined in :ref:`file_compiler_lang_ops.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: init()

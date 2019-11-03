@@ -1,0 +1,13 @@
+.. _exhale_function_seqt_8cpp_1a2f71090620419042a27fa102980bb117:
+
+Function get2bitTable
+=====================
+
+- Defined in :ref:`file_compiler_types_seqt.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get2bitTable(Module *, const std::string&)

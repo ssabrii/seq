@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a7b7fb229d51fd9649a448c88146af292:
+
+Function del_stmt
+=================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: del_stmt(Var *)

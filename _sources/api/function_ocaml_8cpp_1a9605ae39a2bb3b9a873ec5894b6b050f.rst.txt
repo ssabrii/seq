@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a9605ae39a2bb3b9a873ec5894b6b050f:
+
+Function jit_var
+================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: jit_var(void *, Expr *)

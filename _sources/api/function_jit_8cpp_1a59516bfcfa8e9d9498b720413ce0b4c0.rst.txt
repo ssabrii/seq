@@ -1,0 +1,13 @@
+.. _exhale_function_jit_8cpp_1a59516bfcfa8e9d9498b720413ce0b4c0:
+
+Function caml_jit_init_f
+========================
+
+- Defined in :ref:`file_compiler_util_jit.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: caml_jit_init_f()

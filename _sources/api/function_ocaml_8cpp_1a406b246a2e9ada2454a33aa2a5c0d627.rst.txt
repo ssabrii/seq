@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a406b246a2e9ada2454a33aa2a5c0d627:
+
+Function get_for_var
+====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get_for_var(For *)

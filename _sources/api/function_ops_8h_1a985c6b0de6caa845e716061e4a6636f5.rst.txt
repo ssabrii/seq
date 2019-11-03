@@ -1,0 +1,13 @@
+.. _exhale_function_ops_8h_1a985c6b0de6caa845e716061e4a6636f5:
+
+Function seq::uop
+=================
+
+- Defined in :ref:`file_compiler_include_seq_ops.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::uop(const std::string&)

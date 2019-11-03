@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a0e7ac99eca217120175cb36e15aa82bb:
+
+Function var_stmt
+=================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: var_stmt(Expr *, types::Type *)

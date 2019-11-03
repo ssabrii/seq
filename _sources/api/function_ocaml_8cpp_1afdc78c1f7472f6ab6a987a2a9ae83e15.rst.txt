@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1afdc78c1f7472f6ab6a987a2a9ae83e15:
+
+Function throw_stmt
+===================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: throw_stmt(Expr *)

@@ -1,0 +1,13 @@
+.. _exhale_variable_seq_8h_1aeb3a008d69873b6215bc0cdfd50e7d99:
+
+Variable seq::types::Float
+==========================
+
+- Defined in :ref:`file_compiler_include_seq_seq.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: seq::types::Float

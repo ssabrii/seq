@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ada04c6bb3c18e4d9714742e347aba002:
+
+Function set_base
+=================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_base(Stmt *, BaseFunc *)

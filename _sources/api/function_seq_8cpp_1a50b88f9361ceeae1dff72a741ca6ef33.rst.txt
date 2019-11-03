@@ -1,0 +1,13 @@
+.. _exhale_function_seq_8cpp_1a50b88f9361ceeae1dff72a741ca6ef33:
+
+Function getTargetMachine
+=========================
+
+- Defined in :ref:`file_compiler_lang_seq.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: getTargetMachine(Triple, StringRef, StringRef, const TargetOptions&)

@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a4428c98675c811c5e20575b178f48a48:
+
+Function set_func_return
+========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_func_return(Func *, Return *)

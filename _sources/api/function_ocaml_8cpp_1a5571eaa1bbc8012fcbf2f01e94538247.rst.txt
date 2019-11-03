@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a5571eaa1bbc8012fcbf2f01e94538247:
+
+Function set_func_generic_name
+==============================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_func_generic_name(Func *, int, char *)

@@ -1,0 +1,13 @@
+.. _exhale_function_seq_8cpp_1a5804e2b07415aa6cfb268fc9e7959149:
+
+Function verifyModuleFailFast
+=============================
+
+- Defined in :ref:`file_compiler_lang_seq.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: verifyModuleFailFast(Module&)

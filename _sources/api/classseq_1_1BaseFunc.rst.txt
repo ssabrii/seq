@@ -1,0 +1,27 @@
+.. _exhale_class_classseq_1_1BaseFunc:
+
+Class BaseFunc
+==============
+
+- Defined in :ref:`file_compiler_include_seq_func.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public seq::BaseFuncLite`` (:ref:`exhale_class_classseq_1_1BaseFuncLite`)
+- ``public seq::Func`` (:ref:`exhale_class_classseq_1_1Func`)
+- ``public seq::SeqModule`` (:ref:`exhale_class_classseq_1_1SeqModule`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::BaseFunc
+   :members:
+   :protected-members:
+   :undoc-members:

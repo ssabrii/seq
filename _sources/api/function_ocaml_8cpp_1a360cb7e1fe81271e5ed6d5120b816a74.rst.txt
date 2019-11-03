@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a360cb7e1fe81271e5ed6d5120b816a74:
+
+Function in_expr
+================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: in_expr(Expr *, Expr *)

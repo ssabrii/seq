@@ -1,0 +1,20 @@
+
+.. _namespace_seq__exc:
+
+Namespace seq::exc
+==================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classseq_1_1exc_1_1SeqException`

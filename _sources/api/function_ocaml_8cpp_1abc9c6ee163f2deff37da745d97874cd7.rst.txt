@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1abc9c6ee163f2deff37da745d97874cd7:
+
+Function get_elif_block
+=======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get_elif_block(If *, Expr *)

@@ -1,0 +1,13 @@
+.. _exhale_function_common_8h_1ab8ba733f60e2589110adca1a66f73f24:
+
+Function seq::makeMallocFunc
+============================
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::makeMallocFunc(llvm::Module *)

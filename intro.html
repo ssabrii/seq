@@ -1,0 +1,278 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tutorial" href="tutorial.html" />
+    <link rel="prev" title="Seq — a language for bioinformatics" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install">Install</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pre-built-binaries">Pre-built binaries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#build-from-source">Build from source</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compile-test">Compile &amp; Test</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="internals.html">Compiler Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/doxygen.html">Compiler API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/intro.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install">
+<h2>Install<a class="headerlink" href="#install" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pre-built-binaries">
+<h3>Pre-built binaries<a class="headerlink" href="#pre-built-binaries" title="Permalink to this headline">¶</a></h3>
+<p>Pre-built binaries for Linux and macOS on x86_64 are available alongside <a class="reference external" href="https://github.com/seq-lang/seq/releases">each release</a>. We also have a script for downloading and installing pre-built versions:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget -O - https://raw.githubusercontent.com/seq-lang/seq/master/install.sh <span class="p">|</span> bash
+</pre></div>
+</div>
+<p>This will install Seq in a new <code class="docutils literal notranslate"><span class="pre">.seq</span></code> directory within your home directory. Be sure to update <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code> as the script indicates afterwards!</p>
+</div>
+<div class="section" id="build-from-source">
+<h3>Build from source<a class="headerlink" href="#build-from-source" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="dependencies">
+<h4>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Linux or macOS</p></li>
+<li><p><a class="reference external" href="https://cmake.org">CMake</a> 3.12+</p></li>
+<li><p><a class="reference external" href="https://llvm.org">LLVM</a> 6.0</p></li>
+<li><p><a class="reference external" href="https://ocaml.org">OCaml</a> 4.08</p></li>
+<li><p><a class="reference external" href="https://github.com/ivmai/bdwgc">Boehm GC</a> 7.6+</p></li>
+<li><p><a class="reference external" href="https://htslib.org">HTSlib</a> 1.9+</p></li>
+<li><p><a class="reference external" href="https://sourceware.org/libffi">libffi</a> 3.2+</p></li>
+</ul>
+<p>The following packages must be installed with <code class="docutils literal notranslate"><span class="pre">opam</span></code>: core, ctypes, ctypes-foreign, menhir, ppx_deriving</p>
+</div>
+<div class="section" id="compile-test">
+<h4>Compile &amp; Test<a class="headerlink" href="#compile-test" title="Permalink to this headline">¶</a></h4>
+<p>Make sure the <code class="docutils literal notranslate"><span class="pre">LLVM_DIR</span></code> environment variable is set (to the result of <code class="docutils literal notranslate"><span class="pre">llvm-config</span> <span class="pre">--cmakedir</span></code>). Then:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir seq/build
+<span class="nb">cd</span> seq/builld
+cmake ..
+cmake --build .
+</pre></div>
+</div>
+<p>This will produce a <code class="docutils literal notranslate"><span class="pre">seqc</span></code> executable for compiling/running Seq progrms, and a <code class="docutils literal notranslate"><span class="pre">seqtest</span></code> executable for running the test suite.</p>
+</div>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">seqc</span></code> program can either directly run Seq source in JIT mode, or produce an LLVM bitcode file if a <code class="docutils literal notranslate"><span class="pre">-o</span> <span class="pre">&lt;out.bc&gt;</span></code> argument is provided. In the latter case, <a class="reference external" href="https://llvm.org/docs/CommandGuide/llc.html">llc</a> and the system compiler can be used to convert the bitcode file to an object file and link it to produce an executable, respectively:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>seqc -o myprogram.bc myprogram.seq
+llc myprogram.bc -filetype<span class="o">=</span>obj -o myprogram.o
+g++ -L/path/to/libseqrt/ -lseqrt -o myprogram myprogram.o
+</pre></div>
+</div>
+<p>This produces a <code class="docutils literal notranslate"><span class="pre">myprogram</span></code> executable. (If multithreading is needed, the <code class="docutils literal notranslate"><span class="pre">g++</span></code> invocation should also include <code class="docutils literal notranslate"><span class="pre">-fopenmp</span></code>.)</p>
+<p><strong>Interfacing with C:</strong> If a Seq program uses C functions from a particular library, that library can be specified via a <code class="docutils literal notranslate"><span class="pre">-L/path/to/lib</span></code> argument to <code class="docutils literal notranslate"><span class="pre">seqc</span></code>. Otherwise it can be linked during the linking stage if producing an executable.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tutorial.html" class="btn btn-neutral float-right" title="Tutorial" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Seq — a language for bioinformatics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

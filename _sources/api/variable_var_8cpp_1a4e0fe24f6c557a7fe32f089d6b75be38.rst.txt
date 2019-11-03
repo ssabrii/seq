@@ -1,0 +1,13 @@
+.. _exhale_variable_var_8cpp_1a4e0fe24f6c557a7fe32f089d6b75be38:
+
+Variable nameIdx
+================
+
+- Defined in :ref:`file_compiler_lang_var.cpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: nameIdx

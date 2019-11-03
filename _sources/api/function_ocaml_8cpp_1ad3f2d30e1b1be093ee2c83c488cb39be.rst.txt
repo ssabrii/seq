@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ad3f2d30e1b1be093ee2c83c488cb39be:
+
+Function set_global
+===================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_global(Var *)

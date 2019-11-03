@@ -1,0 +1,13 @@
+.. _exhale_function_seqt_8cpp_1ad65e0a61110f94655beb2d3b94dd5996:
+
+Function revcompBits
+====================
+
+- Defined in :ref:`file_compiler_types_seqt.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: revcompBits(unsigned)

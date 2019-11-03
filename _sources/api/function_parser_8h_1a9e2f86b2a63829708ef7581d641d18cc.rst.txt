@@ -1,0 +1,13 @@
+.. _exhale_function_parser_8h_1a9e2f86b2a63829708ef7581d641d18cc:
+
+Function seq::init
+==================
+
+- Defined in :ref:`file_compiler_include_seq_parser.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::init(bool)

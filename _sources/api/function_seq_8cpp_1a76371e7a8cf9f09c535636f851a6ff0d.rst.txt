@@ -1,0 +1,13 @@
+.. _exhale_function_seq_8cpp_1a76371e7a8cf9f09c535636f851a6ff0d:
+
+Function invokeMain
+===================
+
+- Defined in :ref:`file_compiler_lang_seq.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: invokeMain(Function *, BasicBlock *&)

@@ -1,0 +1,16 @@
+.. _exhale_struct_structseq_1_1SrcInfo:
+
+Struct SrcInfo
+==============
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: seq::SrcInfo
+   :members:
+   :protected-members:
+   :undoc-members:

@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a6188c5f2d9f0e3868d19fa3d78bbed97:
+
+Function set_func_realize_types
+===============================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_func_realize_types(FuncExpr *, types::Type **, size_t)

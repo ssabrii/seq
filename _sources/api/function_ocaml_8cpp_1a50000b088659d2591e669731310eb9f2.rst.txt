@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a50000b088659d2591e669731310eb9f2:
+
+Function array_expr_alloca
+==========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: array_expr_alloca(types::Type *, Expr *)

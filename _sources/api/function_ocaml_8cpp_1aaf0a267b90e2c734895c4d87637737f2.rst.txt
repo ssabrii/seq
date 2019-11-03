@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1aaf0a267b90e2c734895c4d87637737f2:
+
+Function atomic_add_expr
+========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: atomic_add_expr(Var *, Expr *)

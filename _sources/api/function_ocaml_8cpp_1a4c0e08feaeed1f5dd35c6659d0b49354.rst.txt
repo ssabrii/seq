@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a4c0e08feaeed1f5dd35c6659d0b49354:
+
+Function set_pos
+================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_pos(SrcObject *, char *, int, int, int)

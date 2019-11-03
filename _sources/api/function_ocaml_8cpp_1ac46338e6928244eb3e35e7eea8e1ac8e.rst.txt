@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1ac46338e6928244eb3e35e7eea8e1ac8e:
+
+Function get_type_name
+======================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get_type_name(types::Type *)

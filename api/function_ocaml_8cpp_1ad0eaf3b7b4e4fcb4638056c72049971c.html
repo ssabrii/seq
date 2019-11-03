@@ -1,0 +1,492 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Function float_expr &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Function float_type" href="function_ocaml_8cpp_1a4f4986681a02d199af64be7ab7e0c2f5.html" />
+    <link rel="prev" title="Function findInTypeHelper" href="function_generic_8cpp_1af132192388910ac2338f86d1521471dc.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Compiler Internals</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="doxygen.html">Compiler API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="doxygen.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="doxygen.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="doxygen.html#full-api">Full API</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#namespaces">Namespaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#classes-and-structs">Classes and Structs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#enums">Enums</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="doxygen.html#functions">Functions</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ab454944725bae3c11ae8f77f2db16ddb.html">Function add_match_case</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a96f428c1a17c37cbe3e7c184fa7f91d0.html">Function add_ref_method</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aa7e458f004c6e4112e7895ceef69aa70.html">Function add_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_lang_8cpp_1ae361adafda45a0dcc3078023c1eb7291.html">Function anyMatch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_expr_8cpp_1a22cdad8762fb4bccf43c3c224666cc74.html">Function argName</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_types_8cpp_1a235d8e554adc25baffb4440d8d3f6485.html">Function argsVecToStr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a3d0d5de0ad80364b88691755849f9162.html">Function array_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a50000b088659d2591e669731310eb9f2.html">Function array_expr_alloca</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a66c028220bd3564bc1e23c608ea52c44.html">Function array_lookup_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ad255f10966d37d9d8da51933a9f5263a.html">Function array_pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1af60b75b943cd34f9f213405d21c3da64.html">Function array_slice_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a93e2b2a8b97645ab8bb4a92561a83e03.html">Function array_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a5c47ab00b65690d143aac9bd001d8491.html">Function assert_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a774367ec555fea771ab6b9f1dba8a374.html">Function assign_index_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1accfe51874f30b738f617b59a09995e07.html">Function assign_member_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a6617baef9a2de1005a71da32e70533f6.html">Function assign_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a5380620cbb86bdd45ae9d9a905be8421.html">Function assign_stmt_set_atomic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aaf0a267b90e2c734895c4d87637737f2.html">Function atomic_add_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a7d61ba3f254fae870b8d98499dc51ce7.html">Function atomic_and_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1af6dd3ab40b08290bfff92074a8f49af9.html">Function atomic_max_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a92e340781bcba48fca316dde63793e71.html">Function atomic_min_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aedec20b36e92af35fa618ed94d05f57e.html">Function atomic_nand_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a864536695c26dbf0e7af68da0ee758f2.html">Function atomic_or_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ad850d8109b3a6668846f99f70b7e6c03.html">Function atomic_sub_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ab79a4985a07529ef99535e048962ca16.html">Function atomic_xchg_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ad4513cc923b255b16aa58a5d8e30f569.html">Function atomic_xor_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a8e2d086f41973e31991cd25790292f22.html">Function bigint_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1affb6c255c4cf3fb7427db732e2c72f1e.html">Function bool_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a1e5e98469b79a9d0dd3a7665338b23fe.html">Function bool_pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1af589bbe54a509466b2a58e76dc4e255e.html">Function bool_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aae9e23ce5766599a227343cc4c24f1ef.html">Function bop_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a67f26ebcec182ae338250804ca09f6d7.html">Function bop_expr_in_place</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ad164e5a0debb36900f1e93e598f87433.html">Function bound_pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1af7ac333c33409d7902dad150f3e179b4.html">Function break_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a6915176895ba7bcd3b1382dd66515f42.html">Function byte_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aec693b998cb0591cb706b15687416fbe.html">Function call_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_types_8cpp_1abc83ba36449e97fcbc178e708b629e59.html">Function callType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a1123d3569b0dc126c9e7480e343d5197.html">Function caml_error_callback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_jit_8cpp_1a2cdc3cbaef443d1763809af1aef2128c.html">Function caml_jit_exec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_jit_8cpp_1ad3cc29b944ee72b5372bf27317962d2b.html">Function caml_jit_exec_f</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_jit_8cpp_1ab22f3e2484ee2e0f42c0f03d786bd9b0.html">Function caml_jit_init</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_jit_8cpp_1a59516bfcfa8e9d9498b720413ce0b4c0.html">Function caml_jit_init_f</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1afd2f1009f820d01c5620673b20b66fd8.html">Function caml_warning_callback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_expr_8cpp_1a6ada7b8e9c1c4d5443266f377ed6e42f.html">Function codegenPipe</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_patterns_8cpp_1ad361120ec3ff42b44686069ee5e90200.html">Function codegenSeqMatchForKmer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_patterns_8cpp_1a9ccb47b00f093cc30a68ec6096e5190b.html">Function codegenSeqMatchForSeq</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_seq_8cpp_1a890e5689a39e0ebed01b5e2617413940.html">Function compilationMessage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a898443681d21effbfbc0018e5449ae71.html">Function cond_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a0455354b0ba09a922f0c9fcfc1b11275.html">Function construct_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1abf49c0c52e0f382a20120141be8b4827.html">Function continue_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_expr_8cpp_1a4ac155907093626a43adc93ad46262ef.html">Function deduceTypeParametersIfNecessary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ab2dac3fea736dd3d1ba2fa6ab16bb3cc.html">Function del_index_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a7b7fb229d51fd9649a448c88146af292.html">Function del_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a93c9a14f1cc7a15cb9a87f4376298bcd.html">Function dict_comp_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aa4156788b3fbc9db24cdffa19c6962c7.html">Function dict_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_var_8cpp_1add366c04045114dc0cd8b5bb4abbaf7a.html">Function ensureNonVoid</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ac0b63b01b424f9b9096808d32c0c3224.html">Function exec_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aad2bdd0140c48ae22dbc5b648c8546b8.html">Function expr_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_generic_8cpp_1af132192388910ac2338f86d1521471dc.html">Function findInTypeHelper</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Function float_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a4f4986681a02d199af64be7ab7e0c2f5.html">Function float_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a72318fa0506c398c2de3ed8674763e16.html">Function for_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ac22bc02ec9d391a19b3f2328cb6f2da5.html">Function func</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aeb20d548a8921487e7b2ba0190253927.html">Function func_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a6074d1f9df836e16aabfa9e5721c7127.html">Function func_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ad0d45f0b1ceea44b1e3ded60cb5dd440.html">Function func_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_types_8cpp_1ae64cccf7914079295de1fb9852e0d122.html">Function funcAsMethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_types_8cpp_1a56a18ae847eda1b09b9dfc973aad0072.html">Function funcAsMethodType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_types_8cpp_1a6b4b347acf415b7dac75aa3025fee671.html">Function funcAsStaticMethod</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_types_8cpp_1a2b7eadf7c225f58e72a1fcd68e65eecc.html">Function funcAsStaticMethodType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a2498b80db09d6926dd4b231576d006b5.html">Function gen_comp_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a70e62a3e8cb9bd4b888f4e094a946efc.html">Function generator_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a5fa87355f50189aaf94ef6115d1be103.html">Function generic_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_seqt_8cpp_1a2f71090620419042a27fa102980bb117.html">Function get2bitTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_seqt_8cpp_1a90862a844003b2a1707ffd1e2216d437.html">Function get2bitTableInv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1acba879da3dd9420b3784a59777622e08.html">Function get_bound_pattern_var</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ad68e634b0eda8d102bc6ad20a3633ba8.html">Function get_elem_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1abc9c6ee163f2deff37da745d97874cd7.html">Function get_elif_block</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ab59e0bbd9b1265d561e134f927e2f3f3.html">Function get_else_block</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a17b6a669a9123ddef72a941d259dcfb3.html">Function get_expr_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1abb5bc92c13b19e721b271a8d8cc445c8.html">Function get_for_block</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a406b246a2e9ada2454a33aa2a5c0d627.html">Function get_for_var</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ab8cc2ed364167e12c98446ce20527a32.html">Function get_func</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a22e8f334feccc52222b1b509972068f4.html">Function get_func_arg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a07f0cbc4ac3f4f0daf82c8a04b8f88cd.html">Function get_func_attrs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a4012afb08c62db34b0fe96b0a6f8dc37.html">Function get_func_block</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a16a22f98587a75a4abfd1cc707f7535f.html">Function get_func_generic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a9287e3c6fc4e7e1dbb6ea5067629c5fc.html">Function get_func_names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a212e88c022f4c6ae9b1a27f7c00c1bd9.html">Function get_module_arg</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a31200a0e38af1c18f6c1ce160754e183.html">Function get_module_block</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aadccac7884ab68df0dbfb6ff97ec76ed.html">Function get_pos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aa4f204d3d44528cd34b9661e08bd5811.html">Function get_ref_generic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a057a00f4b0bcd392d80335bb0b4f42fc.html">Function get_trycatch_block</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a6568a3eee620c8849dd88a3c15e13460.html">Function get_trycatch_catch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1afe63152914c7a8f65bc8b5ac19db20e6.html">Function get_trycatch_finally</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a938bc85a9704c70fcbc4ec33ecccb190.html">Function get_trycatch_var</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1afd5fb3ca8d396e0fb58e1c0e1c928e3d.html">Function get_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ac46338e6928244eb3e35e7eea8e1ac8e.html">Function get_type_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a7206cdd924bc9193c5d387f8eabb16be.html">Function get_var_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1adabcbeeb9ed6922581b05c4a3656ec40.html">Function get_while_block</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_num_8cpp_1ac4ac777bf2c6496f91fc8c60c237a208.html">Function getByteCompTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_expr_8cpp_1a208d2d562923948c8fd5d8e1360a23b5.html">Function getFullCallTypesForPartial</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_expr_8cpp_1a7dc3e91f650fa3e0ea92d01d23cdea64.html">Function getFuncFromFuncExpr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_seqt_8cpp_1af31f70182a29ac7bf31fc2c9c7a66587.html">Function getInitFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_lang_8cpp_1a2ef869423e290da419aa81e7a89ea08d.html">Function getInnermostTryCatchBeforeLoop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_num_8cpp_1a294d83d8a914aaa6edc72863cf0e6052.html">Function getIntNPickleFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_num_8cpp_1a76dee190b247fc8a5832b339cd8c5905.html">Function getIntNUnpickleFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_seqt_8cpp_1aeabd9b47e13d8400cc56696bf2b29bf9.html">Function getRevCompTable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_seqt_8cpp_1a05f0971edc69518ae2b8249655926597.html">Function getShiftFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_seqt_8cpp_1aa6b908224c7865b1f098da637976c666.html">Function getStrFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_seq_8cpp_1a50b88f9361ceeae1dff72a741ca6ef33.html">Function getTargetMachine</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_lang_8cpp_1ab2bbc60b9c1004228b1e3a9c4656e730.html">Function getTypeInfoType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a8f421656163281ddb9aa0177186af127.html">Function guarded_pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aac27d6430b05d734beeb852ea3a996f6.html">Function if_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a360cb7e1fe81271e5ed6d5120b816a74.html">Function in_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ae875eea63b67641492f90fcc7a97625a.html">Function iN_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ops_8cpp_1aedc913c139bb562646d3459b0ca28997.html">Function init</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a747c059306bbc70ec4a1b96e0fa78faf.html">Function init_module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_lang_8cpp_1a02b29413a8567314db7c25a1caf878ce.html">Function inLoop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1adbb05bfb4601d7cc73e3641cfd89186f.html">Function int_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a81c9dbf23114312ac2c65dafa6e82de3.html">Function int_pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ad40733293fc248e5e3715eaa2a5e7355.html">Function int_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_seq_8cpp_1a76371e7a8cf9f09c535636f851a6ff0d.html">Function invokeMain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aa71175221ddff6921ed7ffe42b3f183f.html">Function is_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a976864b3a8b3e91beae9b72b7e076c50.html">Function is_not_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_types_8cpp_1adc9f7280a490da4997fa8c3d1756ca68.html">Function isMagic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ab129ee34fb8f9427447430483ae78039.html">Function jit_func</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a3bf653b9c9f34d6daf89e051513050da.html">Function jit_init</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a9605ae39a2bb3b9a873ec5894b6b050f.html">Function jit_var</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a1c90782b7fa2db238655d7c34b91a3b9.html">Function kmer_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a59354bc942ed26811ecda474bab0e1d1.html">Function list_comp_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ae45a55601a88ab07f165cd344cffd5c4.html">Function list_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a48bfee58d7a7ed12acafab640505871a.html">Function match_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ad6dc12e84366c55dbcf2fe7bc86cfaf9.html">Function method_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_expr_8cpp_1aab4769778ad376e43b20e5b4a33025b1.html">Function noGenericMethodError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a475e580198716363fd9c2213ade8391e.html">Function none_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a75eee8d2576d67a6d4df9066744dfd1f.html">Function not_in_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_funct_8cpp_1afb6bbe40824859240080f5c434c81488.html">Template Function nullMatch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_stmt_8h_1a1be62621d5fe10c9ef3300dd59eddada.html">Function operator&lt;&lt;(std::ostream&amp;, seq::Stmt&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_stmt_8cpp_1adf03e65f58153d4d57801c2d6a39892b.html">Function operator&lt;&lt;(std::ostream&amp;, Stmt&amp;)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_seq_8cpp_1af42917e44aa0e55fe1f696321ce2fb64.html">Function optimizeModule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1afc8a9de7e158e642c84b7bf6fe57a81f.html">Function or_pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a75d0531c04b9963ce8c196f106a95fc3.html">Function partial_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a08b8e37a754834fd715ffef679c204ca.html">Function pass_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a62991fc0a8a6dba43351f7eefb6aa07f.html">Function pipe_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a293bf4183e35387bbe212d14bf682f1c.html">Function pipe_expr_set_parallel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a1050972f0f404f45dda9bd63b1ab1c5d.html">Function prefetch_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a6446ebd25f064b1c302aeba9ffc6c7dc.html">Function print_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aaaf24e9779af328a94e5cb9a003fbafa.html">Function print_stmt_repl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a8d79ece225428c5d32599340e396d05d.html">Function ptr_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a76957cea09d15e57c51dacfe26baf548.html">Function ptr_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ab20a42323375b1cd66981118a2974904.html">Function range_pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1acac94cc3aa99003a4dfe152e7b2ba218.html">Function realize_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a9e0a5e56a138f8635a9c3afc34a575c4.html">Function record_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a18bce0786c12e2b276714ef4e2cbcd9a.html">Function record_pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a2af7ebee02af2573efe3b5bd327688d9.html">Function record_type_named</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a6546de75821cfff11a4ea6266b8a02ac.html">Function ref_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a9396cfc83c1e1e40e2da9c8abe2833d3.html">Function resolve_types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a2f88c2b1e2870c34538a086d25703372.html">Function return_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_seqt_8cpp_1ad65e0a61110f94655beb2d3b94dd5996.html">Function revcompBits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ops_8h_1aee37aa70c83a5818b36c41145b517525.html">Function seq::bop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_seq_8h_1ab91cf63d5897c85920299a22b7fae18a.html">Function seq::compilationError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_seq_8h_1afba990a18eeb85dac25b10fbfe1bb0e7.html">Function seq::compilationWarning</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_parser_8h_1adf669f351177432082e45446b45c924b.html">Function seq::compile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_parser_8h_1a73c88ebe2109ec86c2aab44827b861af.html">Function seq::execute</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_parser_8h_1a9e2f86b2a63829708ef7581d641d18cc.html">Function seq::init</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_common_8h_1ac92314b01940206c022e1dbaab732795.html">Function seq::makeAlloca(llvm::Type *, llvm::BasicBlock *, uint64_t)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_common_8h_1af8735153f37becf7577ba16b592fc0ee.html">Function seq::makeAlloca(llvm::Value *, llvm::BasicBlock *, uint64_t)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_common_8h_1a46b4da56836070fdf858b7a89b758850.html">Function seq::makeAllocFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_common_8h_1a5421f66f584562fce8c12205b91ac149.html">Function seq::makeExcAllocFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_common_8h_1a3f2e836c830e5ff161e4d810bfc12f7f.html">Function seq::makeFreeFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_common_8h_1ab8ba733f60e2589110adca1a66f73f24.html">Function seq::makeMallocFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_common_8h_1a1296616979d2d04d22c89d6332a37752.html">Function seq::makeMemCpy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_common_8h_1a2892047209fe9beb3b42b36e2608f370.html">Function seq::makeMemMove</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_common_8h_1a46c6677f301448fcd4168c6a02f722cd.html">Function seq::makePersonalityFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_common_8h_1aafe8c48ec16adb9f8d7b99a49dbbde22.html">Function seq::makeTerminateFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_common_8h_1acef9e0810281c168e7473b324bb2ad15.html">Function seq::makeThrowFunc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_common_8h_1a1839d912434635ce5b8d87dcd7d86747.html">Function seq::nullPtrLLVM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_common_8h_1a58650077835964bebab82a42d670519d.html">Function seq::oneLLVM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_parser_8h_1a89acf1ec7074e57445e89f607cd30372.html">Function seq::parse</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_parser_8h_1a4abf9cff27d3d1c539d4b33177a985c4.html">Function seq::repl</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_common_8h_1ac51c5a784ab114e324a69402a9b47c84.html">Function seq::seqIntLLVM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_generic_8h_1af12c6e360abb72b3ed4812e982834c30.html">Template Function seq::typeMatch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_types_8h_1afdd6758aac53b1222176aade671351f1.html">Function seq::types::is</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ops_8h_1a985c6b0de6caa845e716061e4a6636f5.html">Function seq::uop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_common_8h_1ad713823906a0d1537a8d1c1500f8a6e4.html">Function seq::zeroLLVM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_seq_8cpp_1adb83291c6c0edb6358adc743e3ffeb3b.html">Function seq_gc_add_roots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_seq_8cpp_1ad54c27ce61d2116b609fe6d807ccb8ca.html">Function seq_gc_remove_roots</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a9dd959f27d6e26d138fb8f58bfde001d.html">Function seq_pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ada04c6bb3c18e4d9714742e347aba002.html">Function set_base</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a7fc61023623f757a6ece8c5cb58eacda.html">Function set_comp_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ad4b04fe546f51f9e4d32b216c02acb39.html">Function set_dict_comp_body</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a71f657bccba8865b9c1638e8976079ed.html">Function set_elem_realize_types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a13bed7f4abdd35ce8a8f1e899aa9f226.html">Function set_enclosing_trycatch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a921a5d137b402a0f77c72a91505db6f9.html">Function set_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ab14399511e6426e52aa0d60501c96276.html">Function set_func_attr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a03060451b801d519eb57a1dbeff034b9.html">Function set_func_enclosing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a2267343037307aa5f91d917e351ab13c.html">Function set_func_extern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a5571eaa1bbc8012fcbf2f01e94538247.html">Function set_func_generic_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a343285587b289b80c1c803da71eeaae4.html">Function set_func_generics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a1b33529b959cb028558f8a2ec33cb8e3.html">Function set_func_out</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a8c7f27248ba5bac12cd97fcd5849086c.html">Function set_func_params</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a5d3c4c3a30c32855222bd3155d836ae7.html">Function set_func_prefetch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a6188c5f2d9f0e3868d19fa3d78bbed97.html">Function set_func_realize_types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a4428c98675c811c5e20575b178f48a48.html">Function set_func_return</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a428d282f38752b9c4eb941aaf50b8ba0.html">Function set_func_yield</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a53bc3cbe480b692a3b501581d627a75a.html">Function set_gen_comp_body</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ad3f2d30e1b1be093ee2c83c488cb39be.html">Function set_global</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a5daa8440985eef3a3c9487dd05156ae0.html">Function set_list_comp_body</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a274501bb2e2f43b03d5f4b0848e296fc.html">Function set_pattern_trycatch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a4c0e08feaeed1f5dd35c6659d0b49354.html">Function set_pos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a57f0445e62dbfb6d54bafd267c38b657.html">Function set_record_names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a29fe17419b3aea2ae512e5db3d8897a3.html">Function set_ref_done</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ac804eba326cb213012238388f7b14f56.html">Function set_ref_generic_name</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a45664268a9334bd5bc83ab1adc87d064.html">Function set_ref_generics</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aef01913444c5f3164701a69f8634bcfe.html">Function set_ref_record</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ac8c890a1e1976233fd837c0a1a8592f8.html">Function set_set_comp_body</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a12a0f57597ff972d945ca9ed5acb5e8c.html">Function set_static_realize_types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ac1057f8add41da1df41c69770836717d.html">Function set_thread_local</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_expr_8cpp_1a766bfb253f21c2314afde8c13588108d.html">Function setBodyBase</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a97a6cd68de67d21ca46f5f63142cb602.html">Function star_pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a05b07b07f42bd7d2324e92772b722e93.html">Function static_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aaa200b0eb536bcb799a566cbce355771.html">Function str_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a8e0da76d4adef5bb14700b9a0f03cb89.html">Function str_pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a3bd06128f287c493e216a205a7d9d8df.html">Function str_seq_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a62c5efb46a5c9c6c230521f88b8e5911.html">Function str_seq_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a8f29d4a38e2b6d748d6747fe8bff7ede.html">Function str_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a82350d50201ac2f1ba03552740d4c817.html">Function strxdup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1afdc78c1f7472f6ab6a987a2a9ae83e15.html">Function throw_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_expr_8cpp_1a9ed7ec8f2d15c19ca69ed5001567a273.html">Function translateIndex</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ae1f14f86a6d3e97fda61b1c65ba464c7.html">Function trycatch_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a1c4adc00ae8d9d93203443e9fd9b64f3.html">Function type_eq</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a2ebb58e701442aee38eecf012d23e1a2.html">Function type_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a85c5a3631b4a63449de5410d4f9552a3.html">Function type_of_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aec6eeafd86005db028703595c5dc8734.html">Function typeof_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a8acec327bb345d8ae7a78c9dd551e387.html">Function uN_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_expr_8cpp_1adb689fae6b2d97246c682fa0c4577eb7.html">Function unsupportedBOpError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_expr_8cpp_1a03043d432d9b2dd8077f493067b3a6ec.html">Function unsupportedUOpError</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a9b5be026a5b59dd1a5b8317f993767b7.html">Function uop_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a3f6c672db014628b2ee1a26cc7b6d5c1.html">Function var_expr</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ab7e57cdcb4e504ed141395517a7e357a.html">Function var_expr_set_atomic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a0e7ac99eca217120175cb36e15aa82bb.html">Function var_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1ab4aa0b924bd4b14126ffb5184d0b6b41.html">Function var_stmt_var</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_seq_8cpp_1a5804e2b07415aa6cfb268fc9e7959149.html">Function verifyModuleFailFast</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a6078830a59e94001d3bb3515bbbeadb0.html">Function void_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1aa25eb8d3c22d13d6b57d0c83c13e3615.html">Function while_stmt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a9dca7436b6d736ae98aaa1d85f4b681f.html">Function wildcard_pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="function_ocaml_8cpp_1a566f1144ab9866bce9f8d60c97243e1f.html">Function yield_stmt</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#variables">Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="doxygen.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="doxygen.html">Compiler API</a> &raquo;</li>
+        
+      <li>Function float_expr</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/function_ocaml_8cpp_1ad0eaf3b7b4e4fcb4638056c72049971c.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="function-float-expr">
+<span id="exhale-function-ocaml-8cpp-1ad0eaf3b7b4e4fcb4638056c72049971c"></span><h1>Function float_expr<a class="headerlink" href="#function-float-expr" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_compiler_util_ocaml.cpp.html#file-compiler-util-ocaml-cpp"><span class="std std-ref">File ocaml.cpp</span></a></p></li>
+</ul>
+<div class="section" id="function-documentation">
+<h2>Function Documentation<a class="headerlink" href="#function-documentation" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>doxygenfunction: Cannot find function “float_expr” in doxygen xml output for project “Seq” from directory: ../doxygen/xml</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="function_ocaml_8cpp_1a4f4986681a02d199af64be7ab7e0c2f5.html" class="btn btn-neutral float-right" title="Function float_type" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="function_generic_8cpp_1af132192388910ac2338f86d1521471dc.html" class="btn btn-neutral float-left" title="Function findInTypeHelper" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

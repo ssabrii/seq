@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a29fe17419b3aea2ae512e5db3d8897a3:
+
+Function set_ref_done
+=====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_ref_done(types::RefType *)

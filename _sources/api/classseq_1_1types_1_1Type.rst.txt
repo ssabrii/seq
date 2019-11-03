@@ -1,0 +1,44 @@
+.. _exhale_class_classseq_1_1types_1_1Type:
+
+Class Type
+==========
+
+- Defined in :ref:`file_compiler_include_seq_types.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public seq::types::AnyType`` (:ref:`exhale_class_classseq_1_1types_1_1AnyType`)
+- ``public seq::types::ArrayType`` (:ref:`exhale_class_classseq_1_1types_1_1ArrayType`)
+- ``public seq::types::BaseSeqType`` (:ref:`exhale_class_classseq_1_1types_1_1BaseSeqType`)
+- ``public seq::types::BaseType`` (:ref:`exhale_class_classseq_1_1types_1_1BaseType`)
+- ``public seq::types::BoolType`` (:ref:`exhale_class_classseq_1_1types_1_1BoolType`)
+- ``public seq::types::ByteType`` (:ref:`exhale_class_classseq_1_1types_1_1ByteType`)
+- ``public seq::types::FloatType`` (:ref:`exhale_class_classseq_1_1types_1_1FloatType`)
+- ``public seq::types::FuncType`` (:ref:`exhale_class_classseq_1_1types_1_1FuncType`)
+- ``public seq::types::GenericType`` (:ref:`exhale_class_classseq_1_1types_1_1GenericType`)
+- ``public seq::types::GenType`` (:ref:`exhale_class_classseq_1_1types_1_1GenType`)
+- ``public seq::types::IntNType`` (:ref:`exhale_class_classseq_1_1types_1_1IntNType`)
+- ``public seq::types::IntType`` (:ref:`exhale_class_classseq_1_1types_1_1IntType`)
+- ``public seq::types::KMer`` (:ref:`exhale_class_classseq_1_1types_1_1KMer`)
+- ``public seq::types::NumberType`` (:ref:`exhale_class_classseq_1_1types_1_1NumberType`)
+- ``public seq::types::OptionalType`` (:ref:`exhale_class_classseq_1_1types_1_1OptionalType`)
+- ``public seq::types::PartialFuncType`` (:ref:`exhale_class_classseq_1_1types_1_1PartialFuncType`)
+- ``public seq::types::PtrType`` (:ref:`exhale_class_classseq_1_1types_1_1PtrType`)
+- ``public seq::types::RecordType`` (:ref:`exhale_class_classseq_1_1types_1_1RecordType`)
+- ``public seq::types::RefType`` (:ref:`exhale_class_classseq_1_1types_1_1RefType`)
+- ``public seq::types::VoidType`` (:ref:`exhale_class_classseq_1_1types_1_1VoidType`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: seq::types::Type
+   :members:
+   :protected-members:
+   :undoc-members:

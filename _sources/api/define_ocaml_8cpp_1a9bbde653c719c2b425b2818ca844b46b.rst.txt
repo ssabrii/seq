@@ -1,0 +1,13 @@
+.. _exhale_define_ocaml_8cpp_1a9bbde653c719c2b425b2818ca844b46b:
+
+Define CATCH
+============
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CATCH

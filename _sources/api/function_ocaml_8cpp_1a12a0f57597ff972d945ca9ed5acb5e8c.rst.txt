@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a12a0f57597ff972d945ca9ed5acb5e8c:
+
+Function set_static_realize_types
+=================================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: set_static_realize_types(GetStaticElemExpr *, types::Type **, size_t)

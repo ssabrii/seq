@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a4f4986681a02d199af64be7ab7e0c2f5:
+
+Function float_type
+===================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: float_type()

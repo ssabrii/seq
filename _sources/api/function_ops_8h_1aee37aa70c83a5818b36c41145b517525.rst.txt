@@ -1,0 +1,13 @@
+.. _exhale_function_ops_8h_1aee37aa70c83a5818b36c41145b517525:
+
+Function seq::bop
+=================
+
+- Defined in :ref:`file_compiler_include_seq_ops.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::bop(const std::string&)

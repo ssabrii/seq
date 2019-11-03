@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a8f421656163281ddb9aa0177186af127:
+
+Function guarded_pattern
+========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: guarded_pattern(Pattern *, Expr *)

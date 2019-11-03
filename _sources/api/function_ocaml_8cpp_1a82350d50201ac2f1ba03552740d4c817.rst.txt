@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a82350d50201ac2f1ba03552740d4c817:
+
+Function strxdup
+================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: strxdup(const char *, size_t)

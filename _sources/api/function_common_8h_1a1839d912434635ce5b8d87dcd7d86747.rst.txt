@@ -1,0 +1,13 @@
+.. _exhale_function_common_8h_1a1839d912434635ce5b8d87dcd7d86747:
+
+Function seq::nullPtrLLVM
+=========================
+
+- Defined in :ref:`file_compiler_include_seq_common.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq::nullPtrLLVM(llvm::LLVMContext&)

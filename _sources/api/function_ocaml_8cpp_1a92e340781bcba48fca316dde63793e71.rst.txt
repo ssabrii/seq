@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a92e340781bcba48fca316dde63793e71:
+
+Function atomic_min_expr
+========================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: atomic_min_expr(Var *, Expr *)

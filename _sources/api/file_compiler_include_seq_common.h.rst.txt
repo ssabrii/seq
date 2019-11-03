@@ -1,0 +1,123 @@
+
+.. _file_compiler_include_seq_common.h:
+
+File common.h
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_compiler_include_seq>` (``compiler/include/seq``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``compiler/include/seq/common.h``)
+----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_compiler_include_seq_common.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``cstdint``
+
+- ``lib.h``
+
+- ``llvm.h`` (:ref:`file_compiler_include_seq_llvm.h`)
+
+- ``memory``
+
+- ``stdexcept``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_compiler_include_seq_expr.h`
+
+- :ref:`file_compiler_include_seq_patterns.h`
+
+- :ref:`file_compiler_include_seq_func.h`
+
+- :ref:`file_compiler_include_seq_stmt.h`
+
+- :ref:`file_compiler_include_seq_seq.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_seq`
+
+- :ref:`namespace_seq__exc`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structseq_1_1SrcInfo`
+
+- :ref:`exhale_struct_structseq_1_1SrcObject`
+
+- :ref:`exhale_class_classseq_1_1exc_1_1SeqException`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_common_8h_1af8735153f37becf7577ba16b592fc0ee`
+
+- :ref:`exhale_function_common_8h_1ac92314b01940206c022e1dbaab732795`
+
+- :ref:`exhale_function_common_8h_1a46b4da56836070fdf858b7a89b758850`
+
+- :ref:`exhale_function_common_8h_1a5421f66f584562fce8c12205b91ac149`
+
+- :ref:`exhale_function_common_8h_1a3f2e836c830e5ff161e4d810bfc12f7f`
+
+- :ref:`exhale_function_common_8h_1ab8ba733f60e2589110adca1a66f73f24`
+
+- :ref:`exhale_function_common_8h_1a1296616979d2d04d22c89d6332a37752`
+
+- :ref:`exhale_function_common_8h_1a2892047209fe9beb3b42b36e2608f370`
+
+- :ref:`exhale_function_common_8h_1a46c6677f301448fcd4168c6a02f722cd`
+
+- :ref:`exhale_function_common_8h_1aafe8c48ec16adb9f8d7b99a49dbbde22`
+
+- :ref:`exhale_function_common_8h_1acef9e0810281c168e7473b324bb2ad15`
+
+- :ref:`exhale_function_common_8h_1a1839d912434635ce5b8d87dcd7d86747`
+
+- :ref:`exhale_function_common_8h_1a58650077835964bebab82a42d670519d`
+
+- :ref:`exhale_function_common_8h_1ac51c5a784ab114e324a69402a9b47c84`
+
+- :ref:`exhale_function_common_8h_1ad713823906a0d1537a8d1c1500f8a6e4`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_common_8h_1a8343ea59ce6efb0eba0e4e054eaf61ef`
+
+- :ref:`exhale_define_common_8h_1a5d475453654af93d6203537bde0093ca`
+

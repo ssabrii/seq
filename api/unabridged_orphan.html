@@ -1,0 +1,929 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Full API &mdash; Seq 0.8.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js"></script>
+        <script type="text/javascript" src="../_static/collapsible-lists/js/apply-collapsible-lists.js"></script>
+        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/collapsible-lists/css/tree_view.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #333131" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Seq
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.8
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cookbook.html">Cookbook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internals.html">Compiler Internals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="doxygen.html">Compiler API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Seq</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Full API</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/unabridged_orphan.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="full-api">
+<h1>Full API<a class="headerlink" href="#full-api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="directories">
+<h2>Directories<a class="headerlink" href="#directories" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_compiler.html">Directory compiler</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_compiler.html#subdirectories">Subdirectories</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_compiler_include.html">Directory include</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_compiler_include.html#subdirectories">Subdirectories</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_compiler_include_seq.html">Directory seq</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_compiler_include_seq.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_compiler_lang.html">Directory lang</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_compiler_lang.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_compiler_types.html">Directory types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_compiler_types.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_compiler_util.html">Directory util</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_compiler_util.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="files">
+<h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_types_any.cpp.html">File any.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_any.cpp.html#definition-compiler-types-any-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/types/any.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_types_any.cpp.html">Program Listing for File any.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_any.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_any.h.html">File any.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_any.h.html#definition-compiler-include-seq-any-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/any.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_any.h.html">Program Listing for File any.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_any.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_any.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_any.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_any.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_types_array.cpp.html">File array.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_array.cpp.html#definition-compiler-types-array-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/types/array.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_types_array.cpp.html">Program Listing for File array.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_array.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_array.h.html">File array.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_array.h.html#definition-compiler-include-seq-array-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/array.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_array.h.html">Program Listing for File array.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_array.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_array.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_array.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_array.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_types_base.cpp.html">File base.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_base.cpp.html#definition-compiler-types-base-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/types/base.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_types_base.cpp.html">Program Listing for File base.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_base.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_base.h.html">File base.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_base.h.html#definition-compiler-include-seq-base-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/base.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_base.h.html">Program Listing for File base.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_base.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_base.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_base.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_base.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_common.h.html">File common.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_common.h.html#definition-compiler-include-seq-common-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/common.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_common.h.html">Program Listing for File common.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_common.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_common.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_common.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_common.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_common.h.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_common.h.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_lang_expr.cpp.html">File expr.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_expr.cpp.html#definition-compiler-lang-expr-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/lang/expr.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_lang_expr.cpp.html">Program Listing for File expr.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_expr.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_expr.cpp.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_expr.cpp.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_expr.cpp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_expr.h.html">File expr.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_expr.h.html#definition-compiler-include-seq-expr-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/expr.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_expr.h.html">Program Listing for File expr.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_expr.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_expr.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_expr.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_expr.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_lang_func.cpp.html">File func.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_func.cpp.html#definition-compiler-lang-func-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/lang/func.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_lang_func.cpp.html">Program Listing for File func.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_func.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_func.h.html">File func.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_func.h.html#definition-compiler-include-seq-func-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/func.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_func.h.html">Program Listing for File func.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_func.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_func.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_func.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_func.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_types_funct.cpp.html">File funct.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_funct.cpp.html#definition-compiler-types-funct-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/types/funct.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_types_funct.cpp.html">Program Listing for File funct.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_funct.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_funct.cpp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_funct.h.html">File funct.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_funct.h.html#definition-compiler-include-seq-funct-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/funct.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_funct.h.html">Program Listing for File funct.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_funct.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_funct.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_funct.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_funct.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_types_generic.cpp.html">File generic.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_generic.cpp.html#definition-compiler-types-generic-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/types/generic.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_types_generic.cpp.html">Program Listing for File generic.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_generic.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_generic.cpp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_generic.h.html">File generic.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_generic.h.html#definition-compiler-include-seq-generic-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/generic.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_generic.h.html">Program Listing for File generic.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_generic.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_generic.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_generic.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_generic.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_generic.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_util_jit.cpp.html">File jit.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_util_jit.cpp.html#definition-compiler-util-jit-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/util/jit.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_util_jit.cpp.html">Program Listing for File jit.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_util_jit.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_util_jit.cpp.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_util_jit.cpp.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_lang_lang.cpp.html">File lang.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_lang.cpp.html#definition-compiler-lang-lang-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/lang/lang.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_lang_lang.cpp.html">Program Listing for File lang.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_lang.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_lang.cpp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_lang.h.html">File lang.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_lang.h.html#definition-compiler-include-seq-lang-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/lang.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_lang.h.html">Program Listing for File lang.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_lang.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_lang.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_lang.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_lang.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_llvm.h.html">File llvm.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_llvm.h.html#definition-compiler-include-seq-llvm-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/llvm.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_llvm.h.html">Program Listing for File llvm.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_llvm.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_llvm.h.html#included-by">Included By</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_types_num.cpp.html">File num.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_num.cpp.html#definition-compiler-types-num-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/types/num.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_types_num.cpp.html">Program Listing for File num.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_num.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_num.cpp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_num.h.html">File num.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_num.h.html#definition-compiler-include-seq-num-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/num.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_num.h.html">Program Listing for File num.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_num.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_num.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_num.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_num.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_util_ocaml.cpp.html">File ocaml.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_util_ocaml.cpp.html#definition-compiler-util-ocaml-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/util/ocaml.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_util_ocaml.cpp.html">Program Listing for File ocaml.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_util_ocaml.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_util_ocaml.cpp.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_util_ocaml.cpp.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_util_ocaml.cpp.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_util_ocaml.cpp.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_lang_ops.cpp.html">File ops.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_ops.cpp.html#definition-compiler-lang-ops-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/lang/ops.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_lang_ops.cpp.html">Program Listing for File ops.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_ops.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_ops.cpp.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_ops.cpp.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_ops.h.html">File ops.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_ops.h.html#definition-compiler-include-seq-ops-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/ops.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_ops.h.html">Program Listing for File ops.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_ops.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_ops.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_ops.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_ops.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_ops.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_types_optional.cpp.html">File optional.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_optional.cpp.html#definition-compiler-types-optional-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/types/optional.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_types_optional.cpp.html">Program Listing for File optional.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_optional.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_optional.h.html">File optional.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_optional.h.html#definition-compiler-include-seq-optional-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/optional.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_optional.h.html">Program Listing for File optional.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_optional.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_optional.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_optional.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_optional.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_parser.h.html">File parser.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_parser.h.html#definition-compiler-include-seq-parser-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/parser.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_parser.h.html">Program Listing for File parser.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_parser.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_parser.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_parser.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_lang_patterns.cpp.html">File patterns.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_patterns.cpp.html#definition-compiler-lang-patterns-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/lang/patterns.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_lang_patterns.cpp.html">Program Listing for File patterns.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_patterns.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_patterns.cpp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_patterns.h.html">File patterns.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_patterns.h.html#definition-compiler-include-seq-patterns-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/patterns.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_patterns.h.html">Program Listing for File patterns.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_patterns.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_patterns.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_patterns.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_patterns.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_types_ptr.cpp.html">File ptr.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_ptr.cpp.html#definition-compiler-types-ptr-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/types/ptr.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_types_ptr.cpp.html">Program Listing for File ptr.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_ptr.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_ptr.h.html">File ptr.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_ptr.h.html#definition-compiler-include-seq-ptr-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/ptr.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_ptr.h.html">Program Listing for File ptr.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_ptr.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_ptr.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_ptr.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_ptr.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_types_record.cpp.html">File record.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_record.cpp.html#definition-compiler-types-record-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/types/record.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_types_record.cpp.html">Program Listing for File record.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_record.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_record.cpp.html#enums">Enums</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_record.h.html">File record.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_record.h.html#definition-compiler-include-seq-record-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/record.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_record.h.html">Program Listing for File record.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_record.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_record.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_record.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_record.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_types_ref.cpp.html">File ref.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_ref.cpp.html#definition-compiler-types-ref-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/types/ref.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_types_ref.cpp.html">Program Listing for File ref.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_ref.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_ref.h.html">File ref.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_ref.h.html#definition-compiler-include-seq-ref-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/ref.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_ref.h.html">Program Listing for File ref.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_ref.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_ref.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_ref.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_ref.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_lang_seq.cpp.html">File seq.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_seq.cpp.html#definition-compiler-lang-seq-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/lang/seq.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_lang_seq.cpp.html">Program Listing for File seq.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_seq.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_seq.cpp.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_seq.cpp.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_seq.cpp.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_seq.cpp.html#defines">Defines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_seq.cpp.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_seq.h.html">File seq.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_seq.h.html#definition-compiler-include-seq-seq-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/seq.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_seq.h.html">Program Listing for File seq.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_seq.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_seq.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_seq.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_seq.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_seq.h.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_seq.h.html#defines">Defines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_seq.h.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_types_seqt.cpp.html">File seqt.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_seqt.cpp.html#definition-compiler-types-seqt-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/types/seqt.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_types_seqt.cpp.html">Program Listing for File seqt.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_seqt.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_seqt.cpp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_seqt.h.html">File seqt.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_seqt.h.html#definition-compiler-include-seq-seqt-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/seqt.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_seqt.h.html">Program Listing for File seqt.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_seqt.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_seqt.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_seqt.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_seqt.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_lang_stmt.cpp.html">File stmt.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_stmt.cpp.html#definition-compiler-lang-stmt-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/lang/stmt.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_lang_stmt.cpp.html">Program Listing for File stmt.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_stmt.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_stmt.cpp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_stmt.h.html">File stmt.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_stmt.h.html#definition-compiler-include-seq-stmt-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/stmt.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_stmt.h.html">Program Listing for File stmt.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_stmt.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_stmt.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_stmt.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_stmt.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_stmt.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_types_types.cpp.html">File types.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_types.cpp.html#definition-compiler-types-types-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/types/types.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_types_types.cpp.html">Program Listing for File types.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_types.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_types.cpp.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_types.h.html">File types.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_types.h.html#definition-compiler-include-seq-types-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/types.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_types.h.html">Program Listing for File types.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_types.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_types.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_types.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_types.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_types.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_lang_var.cpp.html">File var.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_var.cpp.html#definition-compiler-lang-var-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/lang/var.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_lang_var.cpp.html">Program Listing for File var.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_var.cpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_var.cpp.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_lang_var.cpp.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_var.h.html">File var.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_var.h.html#definition-compiler-include-seq-var-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/var.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_var.h.html">Program Listing for File var.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_var.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_var.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_var.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_var.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_types_void.cpp.html">File void.cpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_void.cpp.html#definition-compiler-types-void-cpp">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/types/void.cpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_types_void.cpp.html">Program Listing for File void.cpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_types_void.cpp.html#includes">Includes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_compiler_include_seq_void.h.html">File void.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_void.h.html#definition-compiler-include-seq-void-h">Definition (<code class="docutils literal notranslate"><span class="pre">compiler/include/seq/void.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_compiler_include_seq_void.h.html">Program Listing for File void.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_void.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_void.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_void.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_compiler_include_seq_void.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, seq-lang
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

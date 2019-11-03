@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a9dd959f27d6e26d138fb8f58bfde001d:
+
+Function seq_pattern
+====================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: seq_pattern(char *, size_t)

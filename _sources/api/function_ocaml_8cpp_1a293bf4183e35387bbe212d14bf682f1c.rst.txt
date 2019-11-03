@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1a293bf4183e35387bbe212d14bf682f1c:
+
+Function pipe_expr_set_parallel
+===============================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: pipe_expr_set_parallel(PipeExpr *, unsigned)

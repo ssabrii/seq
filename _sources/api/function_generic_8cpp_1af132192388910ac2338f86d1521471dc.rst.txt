@@ -1,0 +1,13 @@
+.. _exhale_function_generic_8cpp_1af132192388910ac2338f86d1521471dc:
+
+Function findInTypeHelper
+=========================
+
+- Defined in :ref:`file_compiler_types_generic.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: findInTypeHelper(types::GenericType *, types::Type *, std::vector<unsigned>&, std::vector<types::Type *>&)

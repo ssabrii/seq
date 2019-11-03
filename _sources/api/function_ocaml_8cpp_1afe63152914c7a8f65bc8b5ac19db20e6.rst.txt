@@ -1,0 +1,13 @@
+.. _exhale_function_ocaml_8cpp_1afe63152914c7a8f65bc8b5ac19db20e6:
+
+Function get_trycatch_finally
+=============================
+
+- Defined in :ref:`file_compiler_util_ocaml.cpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get_trycatch_finally(TryCatch *)
