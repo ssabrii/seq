@@ -146,7 +146,8 @@ deploy:
     on:
       branch: master
       condition: $TRAVIS_OS_NAME = linux
-
+after_script:
+  - sleep 10
 cache:
   timeout: 1000
   directories:
