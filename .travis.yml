@@ -146,8 +146,10 @@ deploy:
     on:
       branch: master
       condition: $TRAVIS_OS_NAME = linux
-after_script:
-  - sleep 10
+      
+after_cache:
+  - cat ${CASHER_DIR}/push.err.log
+  
 cache:
   timeout: 1000
   directories:
